@@ -1,0 +1,4611 @@
+{
+  "source_file": "企业级私有化AI知识智能平台方案-骊甦.pptx",
+  "output_root": "public/企业级私有化AI知识智能平台方案-骊甦",
+  "slide_size": {
+    "cx": 12192000,
+    "cy": 6858000
+  },
+  "slide_count": 30,
+  "media_count": 125,
+  "slides": [
+    {
+      "slide_number": 1,
+      "slide_path": "ppt/slides/slide1.xml",
+      "title": "企业级私有化AI知识智能平台方案",
+      "text": "企业级私有化AI知识智能平台方案\n\n从「数据查询」到「知识决策」—— 构建可解释、可审计的企业智能中枢\n\n澎湃算力底座\n\n64卡H20集群\n9024GB显存支撑\n\n知识驱动决策\n\n构建语义层模型\n业务决策全可溯\n\n内生安全体系\n\n全链路可审计\n关键路径上链存证\n\n汇报人：北京骊甦科技\n\n| [2026/5]",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业级私有化AI知识智能平台方案"
+          ],
+          "text": "企业级私有化AI知识智能平台方案"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "从「数据查询」到「知识决策」—— 构建可解释、可审计的企业智能中枢"
+          ],
+          "text": "从「数据查询」到「知识决策」—— 构建可解释、可审计的企业智能中枢"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "澎湃算力底座"
+          ],
+          "text": "澎湃算力底座"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "64卡H20集群\n9024GB显存支撑"
+          ],
+          "text": "64卡H20集群\n9024GB显存支撑"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识驱动决策"
+          ],
+          "text": "知识驱动决策"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "构建语义层模型\n业务决策全可溯"
+          ],
+          "text": "构建语义层模型\n业务决策全可溯"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "内生安全体系"
+          ],
+          "text": "内生安全体系"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "全链路可审计\n关键路径上链存证"
+          ],
+          "text": "全链路可审计\n关键路径上链存证"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "汇报人：北京骊甦科技",
+            "| [2026/5]"
+          ],
+          "text": "汇报人：北京骊甦科技\n\n| [2026/5]"
+        }
+      ],
+      "images": [
+        {
+          "kind": "background-image",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "cx": 12192000,
+            "cy": 6858000
+          },
+          "relationship_id": "rId1",
+          "source": "ppt/media/image1.jpeg",
+          "file": "images/image1.jpeg"
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image2.png",
+          "file": "images/image2.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image3.svg",
+          "alternate_svg_source": "ppt/media/image3.svg"
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image4.png",
+          "file": "images/image4.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image5.svg",
+          "alternate_svg_source": "ppt/media/image5.svg"
+        },
+        {
+          "relationship_id": "rId6",
+          "source": "ppt/media/image6.png",
+          "file": "images/image6.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image7.svg",
+          "alternate_svg_source": "ppt/media/image7.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 2,
+      "slide_path": "ppt/slides/slide2.xml",
+      "title": "目录",
+      "text": "目录\n\nCONTENTS\n\nTABLE OF CONTENTS\n\nAI PLATFORM SOLUTION\nENTERPRISE LEVEL\n\n01\n\n时代之需\n\nWhy\n\n02\n\n价值定位\n\nWhat\n\n03\n\n方案详解\n\nHow\n\n04\n\n价值落地与展望\n\nResult\n\n附录 (Appendix)\n\n●案例分享\n\n●团队介绍",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "目录"
+          ],
+          "text": "目录"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "CONTENTS"
+          ],
+          "text": "CONTENTS"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "TABLE OF CONTENTS"
+          ],
+          "text": "TABLE OF CONTENTS"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI PLATFORM SOLUTION\nENTERPRISE LEVEL"
+          ],
+          "text": "AI PLATFORM SOLUTION\nENTERPRISE LEVEL"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "01"
+          ],
+          "text": "01"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "时代之需",
+            "Why"
+          ],
+          "text": "时代之需\n\nWhy"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "02"
+          ],
+          "text": "02"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "价值定位",
+            "What"
+          ],
+          "text": "价值定位\n\nWhat"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "03"
+          ],
+          "text": "03"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "方案详解",
+            "How"
+          ],
+          "text": "方案详解\n\nHow"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "04"
+          ],
+          "text": "04"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "价值落地与展望",
+            "Result"
+          ],
+          "text": "价值落地与展望\n\nResult"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "附录 (Appendix)"
+          ],
+          "text": "附录 (Appendix)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "●案例分享",
+            "●团队介绍"
+          ],
+          "text": "●案例分享\n\n●团队介绍"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 3,
+      "slide_path": "ppt/slides/slide3.xml",
+      "title": "PART 01",
+      "text": "PART 01\n\n时代之需\n\n为何现在必须建设企业级AI平台？",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "PART 01"
+          ],
+          "text": "PART 01"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "时代之需"
+          ],
+          "text": "时代之需"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "为何现在必须建设企业级AI平台？"
+          ],
+          "text": "为何现在必须建设企业级AI平台？"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 4,
+      "slide_path": "ppt/slides/slide4.xml",
+      "title": "为什么现在必须建设企业级AI平台？",
+      "text": "为什么现在必须建设企业级AI平台？\n\n核心观点：企业AI的竞争已进入下半场，关键不再是“有没有AI”，而是“能不能让AI在核心业务中安全、可信、高效地工作”。\n\nAI从“实验”到“生产”\n\n⚠️ 现状痛点\n\n通用大模型存在幻觉、答案无依据等“不可控”特性，导致业务部门在核心决策环节“不敢用”。\n\n📉 业务影响\n\n核心业务严重依赖专家经验，决策效率低，无法快速响应市场变化，错失发展机遇。\n\n从“数据”到“知识孤岛”\n\n⚠️ 现状痛点\n\n同一业务概念（如“客户”）在不同系统中定义、编码不一致，数据无法互通，形成深层的“知识孤岛”。\n\n📉 业务影响\n\n跨部门协作时各方“各说各话”，决策依据相互质疑，导致沟通成本高、会议效率低下。\n\n算力需求跨越式升级\n\n⚠️ 现状痛点\n\n算力资源多为实验性零散部署，难以支撑千亿级大模型的生产化部署和高并发推理。\n\n📉 业务影响\n\n新模型的研发、微调、上线周期漫长（按月计算），无法快速迭代以适应瞬息万变的市场环境。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "为什么现在必须建设企业级AI平台？"
+          ],
+          "text": "为什么现在必须建设企业级AI平台？"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心观点：企业AI的竞争已进入下半场，关键不再是“有没有AI”，而是“能不能让AI在核心业务中安全、可信、高效地工作”。"
+          ],
+          "text": "核心观点：企业AI的竞争已进入下半场，关键不再是“有没有AI”，而是“能不能让AI在核心业务中安全、可信、高效地工作”。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI从“实验”到“生产”"
+          ],
+          "text": "AI从“实验”到“生产”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "⚠️ 现状痛点"
+          ],
+          "text": "⚠️ 现状痛点"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用大模型存在幻觉、答案无依据等“不可控”特性，导致业务部门在核心决策环节“不敢用”。"
+          ],
+          "text": "通用大模型存在幻觉、答案无依据等“不可控”特性，导致业务部门在核心决策环节“不敢用”。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "📉 业务影响"
+          ],
+          "text": "📉 业务影响"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心业务严重依赖专家经验，决策效率低，无法快速响应市场变化，错失发展机遇。"
+          ],
+          "text": "核心业务严重依赖专家经验，决策效率低，无法快速响应市场变化，错失发展机遇。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "从“数据”到“知识孤岛”"
+          ],
+          "text": "从“数据”到“知识孤岛”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "⚠️ 现状痛点"
+          ],
+          "text": "⚠️ 现状痛点"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "同一业务概念（如“客户”）在不同系统中定义、编码不一致，数据无法互通，形成深层的“知识孤岛”。"
+          ],
+          "text": "同一业务概念（如“客户”）在不同系统中定义、编码不一致，数据无法互通，形成深层的“知识孤岛”。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "📉 业务影响"
+          ],
+          "text": "📉 业务影响"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "跨部门协作时各方“各说各话”，决策依据相互质疑，导致沟通成本高、会议效率低下。"
+          ],
+          "text": "跨部门协作时各方“各说各话”，决策依据相互质疑，导致沟通成本高、会议效率低下。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "算力需求跨越式升级"
+          ],
+          "text": "算力需求跨越式升级"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "⚠️ 现状痛点"
+          ],
+          "text": "⚠️ 现状痛点"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "算力资源多为实验性零散部署，难以支撑千亿级大模型的生产化部署和高并发推理。"
+          ],
+          "text": "算力资源多为实验性零散部署，难以支撑千亿级大模型的生产化部署和高并发推理。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "📉 业务影响"
+          ],
+          "text": "📉 业务影响"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "新模型的研发、微调、上线周期漫长（按月计算），无法快速迭代以适应瞬息万变的市场环境。"
+          ],
+          "text": "新模型的研发、微调、上线周期漫长（按月计算），无法快速迭代以适应瞬息万变的市场环境。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image8.png",
+          "file": "images/image8.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image9.svg",
+          "alternate_svg_source": "ppt/media/image9.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image4.png",
+          "file": "images/image4.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image5.svg",
+          "alternate_svg_source": "ppt/media/image5.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image10.png",
+          "file": "images/image10.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image11.svg",
+          "alternate_svg_source": "ppt/media/image11.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 5,
+      "slide_path": "ppt/slides/slide5.xml",
+      "title": "我们的战略判断",
+      "text": "我们的战略判断\n\n竞争格局转变\n\n未来12-18个月，竞争焦点将从“算力比拼”转向“业务敢用、会用、可追溯”。缺乏可解释、可审计能力的企业，将在供应链响应、风控合规等关键场景面临实质劣势。\n\n合规要求迫近\n\n国资委、证监会正积极推进可解释AI合规要求，预计2027年Q1启动试点验收。提前布局具备可解释性的AI平台，不仅是构建技术优势，更是未来的合规入场券。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "我们的战略判断"
+          ],
+          "text": "我们的战略判断"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "竞争格局转变"
+          ],
+          "text": "竞争格局转变"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "未来12-18个月，竞争焦点将从“算力比拼”转向“业务敢用、会用、可追溯”。缺乏可解释、可审计能力的企业，将在供应链响应、风控合规等关键场景面临实质劣势。"
+          ],
+          "text": "未来12-18个月，竞争焦点将从“算力比拼”转向“业务敢用、会用、可追溯”。缺乏可解释、可审计能力的企业，将在供应链响应、风控合规等关键场景面临实质劣势。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "合规要求迫近"
+          ],
+          "text": "合规要求迫近"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "国资委、证监会正积极推进可解释AI合规要求，预计2027年Q1启动试点验收。提前布局具备可解释性的AI平台，不仅是构建技术优势，更是未来的合规入场券。"
+          ],
+          "text": "国资委、证监会正积极推进可解释AI合规要求，预计2027年Q1启动试点验收。提前布局具备可解释性的AI平台，不仅是构建技术优势，更是未来的合规入场券。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image4.png",
+          "file": "images/image4.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image5.svg",
+          "alternate_svg_source": "ppt/media/image5.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image12.png",
+          "file": "images/image12.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image13.svg",
+          "alternate_svg_source": "ppt/media/image13.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image1.jpeg",
+          "file": "images/image1.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 6,
+      "slide_path": "ppt/slides/slide6.xml",
+      "title": "PART 02",
+      "text": "PART 02\n\n价值定位\n\n带给企业什么？",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "PART 02"
+          ],
+          "text": "PART 02"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "价值定位"
+          ],
+          "text": "价值定位"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "带给企业什么？"
+          ],
+          "text": "带给企业什么？"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 7,
+      "slide_path": "ppt/slides/slide7.xml",
+      "title": "方案核心定位与差异化价值",
+      "text": "方案核心定位与差异化价值\n\n核心主张：拒绝“概率玩具”，打造“知识大脑”\n\n缺乏稳固知识语义层支持的AI，只是基于概率的昂贵玩具。我们致力于建设让业务语言直接驱动决策的“企业知识大脑”，实现从“随机猜测”到“确定性决策”的跨越。\n\n价值总结：从“临时工”到“数字助手”\n\n通用AI方案如同“租了个聪明的临时工”，而本方案是“培养了一个懂业务、有记忆、可编排、可审计、能传承的专属数字决策助手”。\n\n传统做法 · 通用AI中台\n\n功能定位\n\n仅提供底层算力与模型API，业务场景需自行开发对接\n\n交互方式\n\n依赖技术人员调用API、编写SQL，存在明显的技术门槛\n\n决策可信\n\n基于大模型“概率猜测”，输出结果为“黑箱”，不可解释\n\n本方案 · 企业知识大脑\n\n功能定位\n\n直接面向业务场景，提供“提问-回答-带依据”的端到端服务\n\n交互方式\n\n业务人员自然语言提问，直达业务概念，零技术门槛操作\n\n决策可信\n\n业务规则显性约束，决策路径“白箱”化，全程可解释、可审计",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "方案核心定位与差异化价值"
+          ],
+          "text": "方案核心定位与差异化价值"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心主张：拒绝“概率玩具”，打造“知识大脑”"
+          ],
+          "text": "核心主张：拒绝“概率玩具”，打造“知识大脑”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "缺乏稳固知识语义层支持的AI，只是基于概率的昂贵玩具。我们致力于建设让业务语言直接驱动决策的“企业知识大脑”，实现从“随机猜测”到“确定性决策”的跨越。"
+          ],
+          "text": "缺乏稳固知识语义层支持的AI，只是基于概率的昂贵玩具。我们致力于建设让业务语言直接驱动决策的“企业知识大脑”，实现从“随机猜测”到“确定性决策”的跨越。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "价值总结：从“临时工”到“数字助手”"
+          ],
+          "text": "价值总结：从“临时工”到“数字助手”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用AI方案如同“租了个聪明的临时工”，而本方案是“培养了一个懂业务、有记忆、可编排、可审计、能传承的专属数字决策助手”。"
+          ],
+          "text": "通用AI方案如同“租了个聪明的临时工”，而本方案是“培养了一个懂业务、有记忆、可编排、可审计、能传承的专属数字决策助手”。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "传统做法 · 通用AI中台"
+          ],
+          "text": "传统做法 · 通用AI中台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "功能定位"
+          ],
+          "text": "功能定位"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "仅提供底层算力与模型API，业务场景需自行开发对接"
+          ],
+          "text": "仅提供底层算力与模型API，业务场景需自行开发对接"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "交互方式"
+          ],
+          "text": "交互方式"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "依赖技术人员调用API、编写SQL，存在明显的技术门槛"
+          ],
+          "text": "依赖技术人员调用API、编写SQL，存在明显的技术门槛"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "决策可信"
+          ],
+          "text": "决策可信"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "基于大模型“概率猜测”，输出结果为“黑箱”，不可解释"
+          ],
+          "text": "基于大模型“概率猜测”，输出结果为“黑箱”，不可解释"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "本方案 · 企业知识大脑"
+          ],
+          "text": "本方案 · 企业知识大脑"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "功能定位"
+          ],
+          "text": "功能定位"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "直接面向业务场景，提供“提问-回答-带依据”的端到端服务"
+          ],
+          "text": "直接面向业务场景，提供“提问-回答-带依据”的端到端服务"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "交互方式"
+          ],
+          "text": "交互方式"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务人员自然语言提问，直达业务概念，零技术门槛操作"
+          ],
+          "text": "业务人员自然语言提问，直达业务概念，零技术门槛操作"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "决策可信"
+          ],
+          "text": "决策可信"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务规则显性约束，决策路径“白箱”化，全程可解释、可审计"
+          ],
+          "text": "业务规则显性约束，决策路径“白箱”化，全程可解释、可审计"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 8,
+      "slide_path": "ppt/slides/slide8.xml",
+      "title": "与通用方案的核心差异（多维对比）",
+      "text": "与通用方案的核心差异（多维对比）\n\n架构范式\n\n通用方案：数据+模型API，结构单一\n\n数据+语义+智能三层贯通，语义为核心枢纽\n\nAI生成机制\n\n通用方案：概率预测黑箱，幻觉不可控\n\n语义约束生成(白箱)，核心业务场景零幻觉\n\n模型支持上限\n\n通用方案：私有化环境主流72B/13B级\n\n支持405B+/MoE/未来1T级，预留3-5年空间\n\n交互方式\n\n通用方案：需技术人员编写代码调用API\n\n业务人员自然语言决策，大幅降低使用门槛\n\n知识沉淀\n\n通用方案：经验在人脑，规则散落在文档中\n\n知识结构化入库，版本可追溯，实现资产化\n\n幻觉控制\n\n通用方案：依赖提示工程，效果有限且不稳定\n\n语义层刚性约束机制，从根本上杜绝幻觉\n\n智能编排\n\n通用方案：硬编码调用链，扩展性极差\n\nDAG工作流+动态规划，积木式组合AI能力\n\n记忆组件\n\n通用方案：无状态对话，每次交互重新开始\n\n短期/长期/业务三级记忆，支持复杂连续决策\n\n工具生态\n\n通用方案：各业务线自行对接，标准不统一\n\n统一协议适配，支持注册发现与安全沙箱调用\n\n供应链安全\n\n通用方案：安全手段常缺失，管控力度不足\n\n严格执行三条底线准入，确保环境绝对可信",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "与通用方案的核心差异（多维对比）"
+          ],
+          "text": "与通用方案的核心差异（多维对比）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "架构范式"
+          ],
+          "text": "架构范式"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：数据+模型API，结构单一"
+          ],
+          "text": "通用方案：数据+模型API，结构单一"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据+语义+智能三层贯通，语义为核心枢纽"
+          ],
+          "text": "数据+语义+智能三层贯通，语义为核心枢纽"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI生成机制"
+          ],
+          "text": "AI生成机制"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：概率预测黑箱，幻觉不可控"
+          ],
+          "text": "通用方案：概率预测黑箱，幻觉不可控"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义约束生成(白箱)，核心业务场景零幻觉"
+          ],
+          "text": "语义约束生成(白箱)，核心业务场景零幻觉"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "模型支持上限"
+          ],
+          "text": "模型支持上限"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：私有化环境主流72B/13B级"
+          ],
+          "text": "通用方案：私有化环境主流72B/13B级"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "支持405B+/MoE/未来1T级，预留3-5年空间"
+          ],
+          "text": "支持405B+/MoE/未来1T级，预留3-5年空间"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "交互方式"
+          ],
+          "text": "交互方式"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：需技术人员编写代码调用API"
+          ],
+          "text": "通用方案：需技术人员编写代码调用API"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务人员自然语言决策，大幅降低使用门槛"
+          ],
+          "text": "业务人员自然语言决策，大幅降低使用门槛"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识沉淀"
+          ],
+          "text": "知识沉淀"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：经验在人脑，规则散落在文档中"
+          ],
+          "text": "通用方案：经验在人脑，规则散落在文档中"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识结构化入库，版本可追溯，实现资产化"
+          ],
+          "text": "知识结构化入库，版本可追溯，实现资产化"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "幻觉控制"
+          ],
+          "text": "幻觉控制"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：依赖提示工程，效果有限且不稳定"
+          ],
+          "text": "通用方案：依赖提示工程，效果有限且不稳定"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义层刚性约束机制，从根本上杜绝幻觉"
+          ],
+          "text": "语义层刚性约束机制，从根本上杜绝幻觉"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能编排"
+          ],
+          "text": "智能编排"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：硬编码调用链，扩展性极差"
+          ],
+          "text": "通用方案：硬编码调用链，扩展性极差"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "DAG工作流+动态规划，积木式组合AI能力"
+          ],
+          "text": "DAG工作流+动态规划，积木式组合AI能力"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "记忆组件"
+          ],
+          "text": "记忆组件"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：无状态对话，每次交互重新开始"
+          ],
+          "text": "通用方案：无状态对话，每次交互重新开始"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "短期/长期/业务三级记忆，支持复杂连续决策"
+          ],
+          "text": "短期/长期/业务三级记忆，支持复杂连续决策"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "工具生态"
+          ],
+          "text": "工具生态"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：各业务线自行对接，标准不统一"
+          ],
+          "text": "通用方案：各业务线自行对接，标准不统一"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一协议适配，支持注册发现与安全沙箱调用"
+          ],
+          "text": "统一协议适配，支持注册发现与安全沙箱调用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "供应链安全"
+          ],
+          "text": "供应链安全"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用方案：安全手段常缺失，管控力度不足"
+          ],
+          "text": "通用方案：安全手段常缺失，管控力度不足"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "严格执行三条底线准入，确保环境绝对可信"
+          ],
+          "text": "严格执行三条底线准入，确保环境绝对可信"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 9,
+      "slide_path": "ppt/slides/slide9.xml",
+      "title": "PART 03",
+      "text": "PART 03\n\n方案详解\n\n七层贯通 · 语义驱动的智能中枢",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "PART 03"
+          ],
+          "text": "PART 03"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "方案详解"
+          ],
+          "text": "方案详解"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "七层贯通 · 语义驱动的智能中枢"
+          ],
+          "text": "七层贯通 · 语义驱动的智能中枢"
+        }
+      ],
+      "images": [
+        {
+          "kind": "background-image",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "cx": 12192000,
+            "cy": 6858000
+          },
+          "relationship_id": "rId1",
+          "source": "ppt/media/image14.jpeg",
+          "file": "images/image14.jpeg"
+        }
+      ]
+    },
+    {
+      "slide_number": 10,
+      "slide_path": "ppt/slides/slide10.xml",
+      "title": "总体架构——七层贯通、语义驱动",
+      "text": "总体架构——七层贯通、语义驱动\n\n架构全景分层视图 (L7-L1)\n\nL7 应用层\n\n智能客服 · 知识问答 · 决策驾驶舱 · AI Agents · 业务中台\n\nL6 能力开放层\n\nSkill Engine · Context Engine · 知识处理引擎 ·\n\n智能编排 · 记忆组件 · 工具连接层\n\nL5 核心语义层\n\n核心差异化 | 业务概念统一 · 规则显性化 · 决策溯源\n\nL4 数据层\n\nMilvus · ES · Neo4j Fabric · PGSQL · MinIO (向量/文档/多媒体/图数据库)\n\nL3.5 运维网关\n\n统一观测 · 安全网关 · 算力解耦 · 模型鉴权 · 调度权限\n\nL2-L3 引擎层\n\nvLLM/Triton推理 · Kueue/Volcano云原生资源编排\n\nL1 超算底座\n\n超融合架构 · 推理GPU算卡 · 400G RoCE 高速网络 · 分布式全闪存储\n\n安全\n\n管控切面\n\nOVTP\n\n供应链安全\n\n纵向贯通 · 层层递进\n\n从底层算力到上层应用，职责边界清晰，实现数据与语义在各层级间的无缝流转。\n\n语义驱动 · 核心枢纽\n\nL5知识语义层是架构核心，向上支撑复杂业务应用，向下统一贯通数据存储与AI推理。\n\n安全内嵌 · 基因植入\n\n安全绝非外挂组件，而是贯穿L2至L7全链路的内置基因，实现全域安全监测与治理。\n\n自研协同 · 自主可控\n\n核心引擎自研，结合开源生态，确保关键能力掌控",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "总体架构——七层贯通、语义驱动"
+          ],
+          "text": "总体架构——七层贯通、语义驱动"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "架构全景分层视图 (L7-L1)"
+          ],
+          "text": "架构全景分层视图 (L7-L1)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L7 应用层"
+          ],
+          "text": "L7 应用层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能客服 · 知识问答 · 决策驾驶舱 · AI Agents · 业务中台"
+          ],
+          "text": "智能客服 · 知识问答 · 决策驾驶舱 · AI Agents · 业务中台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L6 能力开放层"
+          ],
+          "text": "L6 能力开放层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Skill Engine · Context Engine · 知识处理引擎 ·",
+            "智能编排 · 记忆组件 · 工具连接层"
+          ],
+          "text": "Skill Engine · Context Engine · 知识处理引擎 ·\n\n智能编排 · 记忆组件 · 工具连接层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L5 核心语义层"
+          ],
+          "text": "L5 核心语义层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心差异化 | 业务概念统一 · 规则显性化 · 决策溯源"
+          ],
+          "text": "核心差异化 | 业务概念统一 · 规则显性化 · 决策溯源"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L4 数据层"
+          ],
+          "text": "L4 数据层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Milvus · ES · Neo4j Fabric · PGSQL · MinIO (向量/文档/多媒体/图数据库)"
+          ],
+          "text": "Milvus · ES · Neo4j Fabric · PGSQL · MinIO (向量/文档/多媒体/图数据库)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L3.5 运维网关"
+          ],
+          "text": "L3.5 运维网关"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一观测 · 安全网关 · 算力解耦 · 模型鉴权 · 调度权限"
+          ],
+          "text": "统一观测 · 安全网关 · 算力解耦 · 模型鉴权 · 调度权限"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L2-L3 引擎层"
+          ],
+          "text": "L2-L3 引擎层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "vLLM/Triton推理 · Kueue/Volcano云原生资源编排"
+          ],
+          "text": "vLLM/Triton推理 · Kueue/Volcano云原生资源编排"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L1 超算底座"
+          ],
+          "text": "L1 超算底座"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "超融合架构 · 推理GPU算卡 · 400G RoCE 高速网络 · 分布式全闪存储"
+          ],
+          "text": "超融合架构 · 推理GPU算卡 · 400G RoCE 高速网络 · 分布式全闪存储"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "安全",
+            "管控切面",
+            "OVTP",
+            "供应链安全"
+          ],
+          "text": "安全\n\n管控切面\n\nOVTP\n\n供应链安全"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "纵向贯通 · 层层递进"
+          ],
+          "text": "纵向贯通 · 层层递进"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "从底层算力到上层应用，职责边界清晰，实现数据与语义在各层级间的无缝流转。"
+          ],
+          "text": "从底层算力到上层应用，职责边界清晰，实现数据与语义在各层级间的无缝流转。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义驱动 · 核心枢纽"
+          ],
+          "text": "语义驱动 · 核心枢纽"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L5知识语义层是架构核心，向上支撑复杂业务应用，向下统一贯通数据存储与AI推理。"
+          ],
+          "text": "L5知识语义层是架构核心，向上支撑复杂业务应用，向下统一贯通数据存储与AI推理。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "安全内嵌 · 基因植入"
+          ],
+          "text": "安全内嵌 · 基因植入"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "安全绝非外挂组件，而是贯穿L2至L7全链路的内置基因，实现全域安全监测与治理。"
+          ],
+          "text": "安全绝非外挂组件，而是贯穿L2至L7全链路的内置基因，实现全域安全监测与治理。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "自研协同 · 自主可控"
+          ],
+          "text": "自研协同 · 自主可控"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心引擎自研，结合开源生态，确保关键能力掌控"
+          ],
+          "text": "核心引擎自研，结合开源生态，确保关键能力掌控"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image15.png",
+          "file": "images/image15.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image16.svg",
+          "alternate_svg_source": "ppt/media/image16.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image17.png",
+          "file": "images/image17.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image18.svg",
+          "alternate_svg_source": "ppt/media/image18.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image6.png",
+          "file": "images/image6.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image7.svg",
+          "alternate_svg_source": "ppt/media/image7.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image19.png",
+          "file": "images/image19.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image20.svg",
+          "alternate_svg_source": "ppt/media/image20.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 11,
+      "slide_path": "ppt/slides/slide11.xml",
+      "title": "算力基石：超算底座、云原生编排与推理引擎 (L1-L3)",
+      "text": "算力基石：超算底座、云原生编排与推理引擎 (L1-L3)\n\nL1 超算底座 · 硬件配置\n\n• CPU: 4节点×16颗Xeon，总计4096GB内存\n\n• GPU: 8节点×8卡H20，总计9024GB显存\n\n• 网络: Quantum-2 IB NDR 400G超低延迟\n\n• 存储: WEKA/GPFS聚合带宽>300GB/s\n\nL2 云原生编排 · 核心组件\n\n• 调度: Kueue+Volcano，64卡统一池化管理\n\n• 管理: GPU Operator支持MIG切分精细调度\n\n• 网络: Cilium (eBPF) 实现IB RDMA硬件透传\n\nL3 超大规模推理引擎\n\n• vLLM: 面向高吞吐场景，吞吐量大幅提升\n\n• TRT-LLM: 面向低延迟场景，首Token<100ms\n\n• Triton: 多框架兼容，提供标准化服务接口\n\n集群混合负载性能目标：综合 QPS 预期达到12,000 - 20,000+(混合业务场景下)",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "算力基石：超算底座、云原生编排与推理引擎 (L1-L3)"
+          ],
+          "text": "算力基石：超算底座、云原生编排与推理引擎 (L1-L3)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L1 超算底座 · 硬件配置"
+          ],
+          "text": "L1 超算底座 · 硬件配置"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• CPU: 4节点×16颗Xeon，总计4096GB内存",
+            "• GPU: 8节点×8卡H20，总计9024GB显存",
+            "• 网络: Quantum-2 IB NDR 400G超低延迟",
+            "• 存储: WEKA/GPFS聚合带宽>300GB/s"
+          ],
+          "text": "• CPU: 4节点×16颗Xeon，总计4096GB内存\n\n• GPU: 8节点×8卡H20，总计9024GB显存\n\n• 网络: Quantum-2 IB NDR 400G超低延迟\n\n• 存储: WEKA/GPFS聚合带宽>300GB/s"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L2 云原生编排 · 核心组件"
+          ],
+          "text": "L2 云原生编排 · 核心组件"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• 调度: Kueue+Volcano，64卡统一池化管理",
+            "• 管理: GPU Operator支持MIG切分精细调度",
+            "• 网络: Cilium (eBPF) 实现IB RDMA硬件透传"
+          ],
+          "text": "• 调度: Kueue+Volcano，64卡统一池化管理\n\n• 管理: GPU Operator支持MIG切分精细调度\n\n• 网络: Cilium (eBPF) 实现IB RDMA硬件透传"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L3 超大规模推理引擎"
+          ],
+          "text": "L3 超大规模推理引擎"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• vLLM: 面向高吞吐场景，吞吐量大幅提升",
+            "• TRT-LLM: 面向低延迟场景，首Token<100ms",
+            "• Triton: 多框架兼容，提供标准化服务接口"
+          ],
+          "text": "• vLLM: 面向高吞吐场景，吞吐量大幅提升\n\n• TRT-LLM: 面向低延迟场景，首Token<100ms\n\n• Triton: 多框架兼容，提供标准化服务接口"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "集群混合负载性能目标：综合 QPS 预期达到12,000 - 20,000+(混合业务场景下)"
+          ],
+          "text": "集群混合负载性能目标：综合 QPS 预期达到12,000 - 20,000+(混合业务场景下)"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image21.jpeg",
+          "file": "images/image21.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image22.jpeg",
+          "file": "images/image22.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image23.jpeg",
+          "file": "images/image23.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image24.png",
+          "file": "images/image24.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image25.svg",
+          "alternate_svg_source": "ppt/media/image25.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 12,
+      "slide_path": "ppt/slides/slide12.xml",
+      "title": "稳健护航：平台运维监测与模型安全网关 (L3.5)",
+      "text": "稳健护航：平台运维监测与模型安全网关 (L3.5)\n\n核心价值：实现算力与平台的解耦，让上层业务专注于业务逻辑开发，无需关心底层算力调度与资源管理的细节。\n\n平台运维监测管理\n\n从「黑箱跑模型」进化到「全链路白箱监控」\n\n统一观测中心\n\n集群/模型/业务全栈指标监控，实时掌握状态\n\nFinOps 成本治理\n\n算力成本可视化与精细核算，优化资源利用率\n\n日志与全链路追踪\n\n端到端可观测性建设，实现秒级故障定位与诊断\n\n资源生命周期治理\n\n模型版本与服务实例的统一管理、自动扩缩容\n\n模型安全网关\n\n所有模型调用的统一安全入口与流量枢纽\n\n统一接入与路由分发\n\n模型服务统一入口，支持后端模型的无感切换与路由\n\n输入安全与合规管控\n\nPrompt 注入防护、敏感词过滤，确保输入请求合规\n\n输出内容安全审计\n\n生成内容实时审查、违规拦截与全量日志留存\n\n流量治理与智能限流\n\n多租户公平调度、突发流量削峰填谷，保障核心业务",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "稳健护航：平台运维监测与模型安全网关 (L3.5)"
+          ],
+          "text": "稳健护航：平台运维监测与模型安全网关 (L3.5)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心价值：实现算力与平台的解耦，让上层业务专注于业务逻辑开发，无需关心底层算力调度与资源管理的细节。"
+          ],
+          "text": "核心价值：实现算力与平台的解耦，让上层业务专注于业务逻辑开发，无需关心底层算力调度与资源管理的细节。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "平台运维监测管理"
+          ],
+          "text": "平台运维监测管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "从「黑箱跑模型」进化到「全链路白箱监控」"
+          ],
+          "text": "从「黑箱跑模型」进化到「全链路白箱监控」"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一观测中心"
+          ],
+          "text": "统一观测中心"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "集群/模型/业务全栈指标监控，实时掌握状态"
+          ],
+          "text": "集群/模型/业务全栈指标监控，实时掌握状态"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "FinOps 成本治理"
+          ],
+          "text": "FinOps 成本治理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "算力成本可视化与精细核算，优化资源利用率"
+          ],
+          "text": "算力成本可视化与精细核算，优化资源利用率"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "日志与全链路追踪"
+          ],
+          "text": "日志与全链路追踪"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "端到端可观测性建设，实现秒级故障定位与诊断"
+          ],
+          "text": "端到端可观测性建设，实现秒级故障定位与诊断"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "资源生命周期治理"
+          ],
+          "text": "资源生命周期治理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "模型版本与服务实例的统一管理、自动扩缩容"
+          ],
+          "text": "模型版本与服务实例的统一管理、自动扩缩容"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "模型安全网关"
+          ],
+          "text": "模型安全网关"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "所有模型调用的统一安全入口与流量枢纽"
+          ],
+          "text": "所有模型调用的统一安全入口与流量枢纽"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一接入与路由分发"
+          ],
+          "text": "统一接入与路由分发"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "模型服务统一入口，支持后端模型的无感切换与路由"
+          ],
+          "text": "模型服务统一入口，支持后端模型的无感切换与路由"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "输入安全与合规管控"
+          ],
+          "text": "输入安全与合规管控"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Prompt 注入防护、敏感词过滤，确保输入请求合规"
+          ],
+          "text": "Prompt 注入防护、敏感词过滤，确保输入请求合规"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "输出内容安全审计"
+          ],
+          "text": "输出内容安全审计"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "生成内容实时审查、违规拦截与全量日志留存"
+          ],
+          "text": "生成内容实时审查、违规拦截与全量日志留存"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "流量治理与智能限流"
+          ],
+          "text": "流量治理与智能限流"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "多租户公平调度、突发流量削峰填谷，保障核心业务"
+          ],
+          "text": "多租户公平调度、突发流量削峰填谷，保障核心业务"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image26.png",
+          "file": "images/image26.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image27.svg",
+          "alternate_svg_source": "ppt/media/image27.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image28.png",
+          "file": "images/image28.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image29.svg",
+          "alternate_svg_source": "ppt/media/image29.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image30.png",
+          "file": "images/image30.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image31.svg",
+          "alternate_svg_source": "ppt/media/image31.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image32.png",
+          "file": "images/image32.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image9.svg",
+          "alternate_svg_source": "ppt/media/image9.svg"
+        },
+        {
+          "relationship_id": "rId9",
+          "source": "ppt/media/image33.png",
+          "file": "images/image33.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image34.svg",
+          "alternate_svg_source": "ppt/media/image34.svg"
+        },
+        {
+          "relationship_id": "rId11",
+          "source": "ppt/media/image35.png",
+          "file": "images/image35.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image7.svg",
+          "alternate_svg_source": "ppt/media/image7.svg"
+        },
+        {
+          "relationship_id": "rId13",
+          "source": "ppt/media/image36.png",
+          "file": "images/image36.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image37.svg",
+          "alternate_svg_source": "ppt/media/image37.svg"
+        },
+        {
+          "relationship_id": "rId15",
+          "source": "ppt/media/image38.png",
+          "file": "images/image38.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image39.svg",
+          "alternate_svg_source": "ppt/media/image39.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 13,
+      "slide_path": "ppt/slides/slide13.xml",
+      "title": "数据基石：AI数据平台与多引擎协同 (L4)",
+      "text": "数据基石：AI数据平台与多引擎协同 (L4)\n\n设计理念：业务系统不动，语义贯通\n\n保留原有ERP/CRM/BI作为核心数据源，不推翻、不替换。通过AI平台实现异构系统间的语义层统一治理与索引。\n\n五大数据引擎协同工作\n\nMilvus:稠密向量检索核心\n\nES:全文/日志快速索引\n\nNeo4j:语义存储与推理核心\n\nPGSQL:结构化事实数据存储\n\nMinIO:海量非结构化对象存储\n\nRAG 增强智能数据流 (KAG - 知识增强)\n\n① Query意图精准识别\n\n② 多路并行混合召回\n\n③ 知识处理引擎深度融合\n\n④ 重排序与幻觉检测\n\n⑤ 精准上下文注入\n\n⑥ LLM生成\n\n⑦ 用户反馈闭环持续更新进化",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据基石：AI数据平台与多引擎协同 (L4)"
+          ],
+          "text": "数据基石：AI数据平台与多引擎协同 (L4)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "设计理念：业务系统不动，语义贯通"
+          ],
+          "text": "设计理念：业务系统不动，语义贯通"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "保留原有ERP/CRM/BI作为核心数据源，不推翻、不替换。通过AI平台实现异构系统间的语义层统一治理与索引。"
+          ],
+          "text": "保留原有ERP/CRM/BI作为核心数据源，不推翻、不替换。通过AI平台实现异构系统间的语义层统一治理与索引。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "五大数据引擎协同工作"
+          ],
+          "text": "五大数据引擎协同工作"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Milvus:稠密向量检索核心",
+            "ES:全文/日志快速索引",
+            "Neo4j:语义存储与推理核心"
+          ],
+          "text": "Milvus:稠密向量检索核心\n\nES:全文/日志快速索引\n\nNeo4j:语义存储与推理核心"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "PGSQL:结构化事实数据存储",
+            "MinIO:海量非结构化对象存储"
+          ],
+          "text": "PGSQL:结构化事实数据存储\n\nMinIO:海量非结构化对象存储"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "RAG 增强智能数据流 (KAG - 知识增强)"
+          ],
+          "text": "RAG 增强智能数据流 (KAG - 知识增强)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "① Query意图精准识别",
+            "② 多路并行混合召回",
+            "③ 知识处理引擎深度融合"
+          ],
+          "text": "① Query意图精准识别\n\n② 多路并行混合召回\n\n③ 知识处理引擎深度融合"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "④ 重排序与幻觉检测",
+            "⑤ 精准上下文注入",
+            "⑥ LLM生成",
+            "⑦ 用户反馈闭环持续更新进化"
+          ],
+          "text": "④ 重排序与幻觉检测\n\n⑤ 精准上下文注入\n\n⑥ LLM生成\n\n⑦ 用户反馈闭环持续更新进化"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image40.png",
+          "file": "images/image40.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image41.svg",
+          "alternate_svg_source": "ppt/media/image41.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image42.png",
+          "file": "images/image42.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image11.svg",
+          "alternate_svg_source": "ppt/media/image11.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image30.png",
+          "file": "images/image30.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image31.svg",
+          "alternate_svg_source": "ppt/media/image31.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image43.jpeg",
+          "file": "images/image43.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 14,
+      "slide_path": "ppt/slides/slide14.xml",
+      "title": "核心引擎：统一企业知识语义层——方案的灵魂 (L5)",
+      "text": "核心引擎：统一企业知识语义层——方案的灵魂 (L5)\n\n核心定位 · 企业的“知识大脑”\n\n它定义了“业务是什么、业务之间如何关联、什么规则不可违背”。它不是数据库结构，而是企业统一的业务语义架构。\n\n领域语义\n\n定义供应链、订单等核心业务概念与关系。\n\n规则语义\n\n定义“延迟→利润”等业务逻辑与风控阈值。\n\n数据语义\n\n建立表字段、API与上层业务概念的映射。\n\n核心闭环：受控生成 (Constrained Generation)\n\n语义解析\n\n识别业务概念\n\n规则执行\n\n确定性计算\n\n生成框架\n\n结构化决策链\n\nLLM润色\n\n边界内自然语言\n\n可审计\n\n附带全路径溯源\n\n企业知识语义层是实现从“数据智能”到“知识智能”跨越的核心，是为LLM提供可验证的企业定义的语义边界，也是本方案的“灵魂”所在。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心引擎：统一企业知识语义层——方案的灵魂 (L5)"
+          ],
+          "text": "核心引擎：统一企业知识语义层——方案的灵魂 (L5)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心定位 · 企业的“知识大脑”"
+          ],
+          "text": "核心定位 · 企业的“知识大脑”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "它定义了“业务是什么、业务之间如何关联、什么规则不可违背”。它不是数据库结构，而是企业统一的业务语义架构。"
+          ],
+          "text": "它定义了“业务是什么、业务之间如何关联、什么规则不可违背”。它不是数据库结构，而是企业统一的业务语义架构。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "领域语义"
+          ],
+          "text": "领域语义"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "定义供应链、订单等核心业务概念与关系。"
+          ],
+          "text": "定义供应链、订单等核心业务概念与关系。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "规则语义"
+          ],
+          "text": "规则语义"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "定义“延迟→利润”等业务逻辑与风控阈值。"
+          ],
+          "text": "定义“延迟→利润”等业务逻辑与风控阈值。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据语义"
+          ],
+          "text": "数据语义"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "建立表字段、API与上层业务概念的映射。"
+          ],
+          "text": "建立表字段、API与上层业务概念的映射。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心闭环：受控生成 (Constrained Generation)"
+          ],
+          "text": "核心闭环：受控生成 (Constrained Generation)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义解析"
+          ],
+          "text": "语义解析"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "识别业务概念"
+          ],
+          "text": "识别业务概念"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "规则执行"
+          ],
+          "text": "规则执行"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "确定性计算"
+          ],
+          "text": "确定性计算"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "生成框架"
+          ],
+          "text": "生成框架"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "结构化决策链"
+          ],
+          "text": "结构化决策链"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "LLM润色"
+          ],
+          "text": "LLM润色"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "边界内自然语言"
+          ],
+          "text": "边界内自然语言"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "可审计"
+          ],
+          "text": "可审计"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "附带全路径溯源"
+          ],
+          "text": "附带全路径溯源"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业知识语义层是实现从“数据智能”到“知识智能”跨越的核心，是为LLM提供可验证的企业定义的语义边界，也是本方案的“灵魂”所在。"
+          ],
+          "text": "企业知识语义层是实现从“数据智能”到“知识智能”跨越的核心，是为LLM提供可验证的企业定义的语义边界，也是本方案的“灵魂”所在。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image40.png",
+          "file": "images/image40.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image41.svg",
+          "alternate_svg_source": "ppt/media/image41.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image32.png",
+          "file": "images/image32.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image9.svg",
+          "alternate_svg_source": "ppt/media/image9.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image44.png",
+          "file": "images/image44.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image5.svg",
+          "alternate_svg_source": "ppt/media/image5.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image45.png",
+          "file": "images/image45.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image46.svg",
+          "alternate_svg_source": "ppt/media/image46.svg"
+        },
+        {
+          "relationship_id": "rId9",
+          "source": "ppt/media/image42.png",
+          "file": "images/image42.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image11.svg",
+          "alternate_svg_source": "ppt/media/image11.svg"
+        },
+        {
+          "relationship_id": "rId11",
+          "source": "ppt/media/image47.png",
+          "file": "images/image47.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image48.svg",
+          "alternate_svg_source": "ppt/media/image48.svg"
+        },
+        {
+          "relationship_id": "rId13",
+          "source": "ppt/media/image49.png",
+          "file": "images/image49.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image50.svg",
+          "alternate_svg_source": "ppt/media/image50.svg"
+        },
+        {
+          "relationship_id": "rId15",
+          "source": "ppt/media/image51.png",
+          "file": "images/image51.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image52.svg",
+          "alternate_svg_source": "ppt/media/image52.svg"
+        },
+        {
+          "relationship_id": "rId17",
+          "source": "ppt/media/image53.jpeg",
+          "file": "images/image53.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 15,
+      "slide_path": "ppt/slides/slide15.xml",
+      "title": "能力开放：自研引擎与智能编排 (L6)",
+      "text": "能力开放：自研引擎与智能编排 (L6)\n\n核心价值 Core Value\n\n将平台能力以模块化、可组合的方式开放给上层应用，打破技术壁垒，实现复杂业务场景的快速构建和灵活编排。\n\nL6 完整能力架构体系\n\nSkill Engine (业务编排)\n\n摒弃传统API端点，直接调用语义概念，实现业务逻辑的抽象复用。\n\nContext Engine (状态管理)\n\n存储的不仅是文本，更是语义实例状态，精准维护多轮对话上下文。\n\n知识处理引擎 (KAG增强)\n\n深度融合语义子图+规则+事实，解决大模型幻觉问题。\n\nOrchestration (编排引擎)\n\n支持DAG工作流+动态规划，像搭积木一样灵活组装AI能力。\n\nMemory Layer (记忆组件)\n\n构建短期+长期+业务三级记忆体系，支持个性化连续交互。\n\nTool Connector (工具连接 )\n\n提供统一协议适配、服务注册发现与沙箱安全执行环境。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "能力开放：自研引擎与智能编排 (L6)"
+          ],
+          "text": "能力开放：自研引擎与智能编排 (L6)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心价值 Core Value"
+          ],
+          "text": "核心价值 Core Value"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "将平台能力以模块化、可组合的方式开放给上层应用，打破技术壁垒，实现复杂业务场景的快速构建和灵活编排。"
+          ],
+          "text": "将平台能力以模块化、可组合的方式开放给上层应用，打破技术壁垒，实现复杂业务场景的快速构建和灵活编排。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "L6 完整能力架构体系"
+          ],
+          "text": "L6 完整能力架构体系"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Skill Engine (业务编排)"
+          ],
+          "text": "Skill Engine (业务编排)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "摒弃传统API端点，直接调用语义概念，实现业务逻辑的抽象复用。"
+          ],
+          "text": "摒弃传统API端点，直接调用语义概念，实现业务逻辑的抽象复用。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Context Engine (状态管理)"
+          ],
+          "text": "Context Engine (状态管理)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "存储的不仅是文本，更是语义实例状态，精准维护多轮对话上下文。"
+          ],
+          "text": "存储的不仅是文本，更是语义实例状态，精准维护多轮对话上下文。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识处理引擎 (KAG增强)"
+          ],
+          "text": "知识处理引擎 (KAG增强)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "深度融合语义子图+规则+事实，解决大模型幻觉问题。"
+          ],
+          "text": "深度融合语义子图+规则+事实，解决大模型幻觉问题。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Orchestration (编排引擎)"
+          ],
+          "text": "Orchestration (编排引擎)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "支持DAG工作流+动态规划，像搭积木一样灵活组装AI能力。"
+          ],
+          "text": "支持DAG工作流+动态规划，像搭积木一样灵活组装AI能力。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Memory Layer (记忆组件)"
+          ],
+          "text": "Memory Layer (记忆组件)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "构建短期+长期+业务三级记忆体系，支持个性化连续交互。"
+          ],
+          "text": "构建短期+长期+业务三级记忆体系，支持个性化连续交互。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Tool Connector (工具连接 )"
+          ],
+          "text": "Tool Connector (工具连接 )"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "提供统一协议适配、服务注册发现与沙箱安全执行环境。"
+          ],
+          "text": "提供统一协议适配、服务注册发现与沙箱安全执行环境。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image54.jpeg",
+          "file": "images/image54.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image55.png",
+          "file": "images/image55.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image56.svg",
+          "alternate_svg_source": "ppt/media/image56.svg"
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image57.png",
+          "file": "images/image57.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image58.svg",
+          "alternate_svg_source": "ppt/media/image58.svg"
+        },
+        {
+          "relationship_id": "rId6",
+          "source": "ppt/media/image59.png",
+          "file": "images/image59.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image60.svg",
+          "alternate_svg_source": "ppt/media/image60.svg"
+        },
+        {
+          "relationship_id": "rId8",
+          "source": "ppt/media/image61.png",
+          "file": "images/image61.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image62.svg",
+          "alternate_svg_source": "ppt/media/image62.svg"
+        },
+        {
+          "relationship_id": "rId10",
+          "source": "ppt/media/image63.png",
+          "file": "images/image63.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image64.svg",
+          "alternate_svg_source": "ppt/media/image64.svg"
+        },
+        {
+          "relationship_id": "rId12",
+          "source": "ppt/media/image65.png",
+          "file": "images/image65.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image16.svg",
+          "alternate_svg_source": "ppt/media/image16.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 16,
+      "slide_path": "ppt/slides/slide16.xml",
+      "title": "业务赋能：各业务版块价值落地 (L7)",
+      "text": "业务赋能：各业务版块价值落地 (L7)\n\n本方案将为各核心业务版块带来革命性的价值提升，实现降本增效与合规管控的双重突破。\n\n供应链版块 · 智能决策\n\n• 智能问答：调货决策周期 3天 →10分钟\n\n• 规则沉淀：专家经验显性化，形成数字资产\n\n• 跨域对齐：自动关联“延迟-成本-利润”因果链\n\n财务版块 · 精准提效\n\n• 预算智能：大幅提升编制的科学性与准确性\n\n• 口径治理：核心指标统一定义，解决数据冲突\n\n• 审计支撑：材料准备周级 → 分钟级\n\n风控版块 · 合规可视\n\n• 规则显性：纳入知识大脑，变更需审批确保合规\n\n• 可解释性：预警附带推理路径，拒绝“黑盒”警报\n\n• 监管报送：可自动生成标准化决策档案\n\n客服运营 · 智能传承\n\n• 智能客服： 基于业务知识提供精准答案\n\n• 自助分析：业务语言提问，生成分析图表\n\n• 经验传承：显著缩短新人上岗培训周期",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务赋能：各业务版块价值落地 (L7)"
+          ],
+          "text": "业务赋能：各业务版块价值落地 (L7)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "本方案将为各核心业务版块带来革命性的价值提升，实现降本增效与合规管控的双重突破。"
+          ],
+          "text": "本方案将为各核心业务版块带来革命性的价值提升，实现降本增效与合规管控的双重突破。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "供应链版块 · 智能决策"
+          ],
+          "text": "供应链版块 · 智能决策"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• 智能问答：调货决策周期 3天 →10分钟",
+            "• 规则沉淀：专家经验显性化，形成数字资产",
+            "• 跨域对齐：自动关联“延迟-成本-利润”因果链"
+          ],
+          "text": "• 智能问答：调货决策周期 3天 →10分钟\n\n• 规则沉淀：专家经验显性化，形成数字资产\n\n• 跨域对齐：自动关联“延迟-成本-利润”因果链"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "财务版块 · 精准提效"
+          ],
+          "text": "财务版块 · 精准提效"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• 预算智能：大幅提升编制的科学性与准确性",
+            "• 口径治理：核心指标统一定义，解决数据冲突",
+            "• 审计支撑：材料准备周级 → 分钟级"
+          ],
+          "text": "• 预算智能：大幅提升编制的科学性与准确性\n\n• 口径治理：核心指标统一定义，解决数据冲突\n\n• 审计支撑：材料准备周级 → 分钟级"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "风控版块 · 合规可视"
+          ],
+          "text": "风控版块 · 合规可视"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• 规则显性：纳入知识大脑，变更需审批确保合规",
+            "• 可解释性：预警附带推理路径，拒绝“黑盒”警报",
+            "• 监管报送：可自动生成标准化决策档案"
+          ],
+          "text": "• 规则显性：纳入知识大脑，变更需审批确保合规\n\n• 可解释性：预警附带推理路径，拒绝“黑盒”警报\n\n• 监管报送：可自动生成标准化决策档案"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "客服运营 · 智能传承"
+          ],
+          "text": "客服运营 · 智能传承"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "• 智能客服： 基于业务知识提供精准答案",
+            "• 自助分析：业务语言提问，生成分析图表",
+            "• 经验传承：显著缩短新人上岗培训周期"
+          ],
+          "text": "• 智能客服： 基于业务知识提供精准答案\n\n• 自助分析：业务语言提问，生成分析图表\n\n• 经验传承：显著缩短新人上岗培训周期"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image44.png",
+          "file": "images/image44.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image5.svg",
+          "alternate_svg_source": "ppt/media/image5.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image66.jpeg",
+          "file": "images/image66.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image67.jpeg",
+          "file": "images/image67.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image68.jpeg",
+          "file": "images/image68.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 17,
+      "slide_path": "ppt/slides/slide17.xml",
+      "title": "供应链安全：三条底线",
+      "text": "供应链安全：三条底线\n\n核心理念：不追求大而全，严守三条不可逾越的准入红线，构建“绝对可信”的生产环境底座。\n\n底线一：镜像签名与准入拦截\n\n技术实现：Harbor集成Cosign自动化签名；Kyverno策略引擎强制拦截未签名镜像。\n\n底线二：模型哈希全链路校验\n\n技术实现：入库时生成并固化SHA256指纹；加载前自动进行分块一致性校验，防篡改。\n\n底线三：SBOM 物料清单留存\n\n技术实现：CI流水线自动生成SPDX标准SBOM；与镜像、模型包一并归档，支持溯源审计。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "供应链安全：三条底线"
+          ],
+          "text": "供应链安全：三条底线"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心理念：不追求大而全，严守三条不可逾越的准入红线，构建“绝对可信”的生产环境底座。"
+          ],
+          "text": "核心理念：不追求大而全，严守三条不可逾越的准入红线，构建“绝对可信”的生产环境底座。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "底线一：镜像签名与准入拦截",
+            "技术实现：Harbor集成Cosign自动化签名；Kyverno策略引擎强制拦截未签名镜像。"
+          ],
+          "text": "底线一：镜像签名与准入拦截\n\n技术实现：Harbor集成Cosign自动化签名；Kyverno策略引擎强制拦截未签名镜像。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "底线二：模型哈希全链路校验",
+            "技术实现：入库时生成并固化SHA256指纹；加载前自动进行分块一致性校验，防篡改。"
+          ],
+          "text": "底线二：模型哈希全链路校验\n\n技术实现：入库时生成并固化SHA256指纹；加载前自动进行分块一致性校验，防篡改。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "底线三：SBOM 物料清单留存",
+            "技术实现：CI流水线自动生成SPDX标准SBOM；与镜像、模型包一并归档，支持溯源审计。"
+          ],
+          "text": "底线三：SBOM 物料清单留存\n\n技术实现：CI流水线自动生成SPDX标准SBOM；与镜像、模型包一并归档，支持溯源审计。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image69.jpeg",
+          "file": "images/image69.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image35.png",
+          "file": "images/image35.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image7.svg",
+          "alternate_svg_source": "ppt/media/image7.svg"
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image70.png",
+          "file": "images/image70.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image71.svg",
+          "alternate_svg_source": "ppt/media/image71.svg"
+        },
+        {
+          "relationship_id": "rId6",
+          "source": "ppt/media/image72.png",
+          "file": "images/image72.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image73.svg",
+          "alternate_svg_source": "ppt/media/image73.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 18,
+      "slide_path": "ppt/slides/slide18.xml",
+      "title": "统一安全管控体系：OVTP全链路",
+      "text": "统一安全管控体系：OVTP全链路\n\n基于 Operator / Voucher / Traceable 构建的全链路安全闭环体系，L2-L7层全程贯穿\n\nOperator · 身份可确认\n\n技术：Keycloak OIDC 对接集团 IAM 系统\n增强：引入“供应链管理员”等业务语义角色\n\nVoucher · 操作有审批\n\n技术：自研 Voucher 服务 + OTel Baggage 传递\n增强：核心规则变更强制绑定业务决策审批单\n\nTraceable · 全程可追溯\n\n技术：Falco + K8s Audit + 企业区块链存证\n增强：决策路径语义化，完整操作轨迹不可篡改\n\n零信任多维防护\n\n网络微隔离 | 运行时自动阻断 | 敏感数据脱敏\n\n构建“身份-审批-溯源”三位一体的\n企业级全链路安全管控闭环",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一安全管控体系：OVTP全链路"
+          ],
+          "text": "统一安全管控体系：OVTP全链路"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "基于 Operator / Voucher / Traceable 构建的全链路安全闭环体系，L2-L7层全程贯穿"
+          ],
+          "text": "基于 Operator / Voucher / Traceable 构建的全链路安全闭环体系，L2-L7层全程贯穿"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Operator · 身份可确认"
+          ],
+          "text": "Operator · 身份可确认"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术：Keycloak OIDC 对接集团 IAM 系统\n增强：引入“供应链管理员”等业务语义角色"
+          ],
+          "text": "技术：Keycloak OIDC 对接集团 IAM 系统\n增强：引入“供应链管理员”等业务语义角色"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Voucher · 操作有审批"
+          ],
+          "text": "Voucher · 操作有审批"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术：自研 Voucher 服务 + OTel Baggage 传递\n增强：核心规则变更强制绑定业务决策审批单"
+          ],
+          "text": "技术：自研 Voucher 服务 + OTel Baggage 传递\n增强：核心规则变更强制绑定业务决策审批单"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Traceable · 全程可追溯"
+          ],
+          "text": "Traceable · 全程可追溯"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术：Falco + K8s Audit + 企业区块链存证\n增强：决策路径语义化，完整操作轨迹不可篡改"
+          ],
+          "text": "技术：Falco + K8s Audit + 企业区块链存证\n增强：决策路径语义化，完整操作轨迹不可篡改"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "零信任多维防护"
+          ],
+          "text": "零信任多维防护"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "网络微隔离 | 运行时自动阻断 | 敏感数据脱敏"
+          ],
+          "text": "网络微隔离 | 运行时自动阻断 | 敏感数据脱敏"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "构建“身份-审批-溯源”三位一体的\n企业级全链路安全管控闭环"
+          ],
+          "text": "构建“身份-审批-溯源”三位一体的\n企业级全链路安全管控闭环"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image74.png",
+          "file": "images/image74.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image75.svg",
+          "alternate_svg_source": "ppt/media/image75.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image76.png",
+          "file": "images/image76.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image77.svg",
+          "alternate_svg_source": "ppt/media/image77.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image78.png",
+          "file": "images/image78.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image79.svg",
+          "alternate_svg_source": "ppt/media/image79.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image35.png",
+          "file": "images/image35.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image7.svg",
+          "alternate_svg_source": "ppt/media/image7.svg"
+        },
+        {
+          "relationship_id": "rId9",
+          "source": "ppt/media/image80.jpeg",
+          "file": "images/image80.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 19,
+      "slide_path": "ppt/slides/slide19.xml",
+      "title": "PART 04",
+      "text": "PART 04\n\n价值落地与展望\n\n赋能各业务版块的具体场景",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "PART 04"
+          ],
+          "text": "PART 04"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "价值落地与展望"
+          ],
+          "text": "价值落地与展望"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "赋能各业务版块的具体场景"
+          ],
+          "text": "赋能各业务版块的具体场景"
+        }
+      ],
+      "images": [
+        {
+          "kind": "background-image",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "cx": 12192000,
+            "cy": 6858000
+          },
+          "relationship_id": "rId1",
+          "source": "ppt/media/image81.jpeg",
+          "file": "images/image81.jpeg"
+        }
+      ]
+    },
+    {
+      "slide_number": 20,
+      "slide_path": "ppt/slides/slide20.xml",
+      "title": "核心优势：私有化部署的价值",
+      "text": "核心优势：私有化部署的价值\n\n数据主权\n\n数据出域，存在合规与安全风险，无法完全掌控数据流向\n\n数据不出机房，完全自主可控，满足最严格的数据安全与合规要求\n\n语义定制\n\n通用模型能力，无法深度嵌入企业专有业务规则、流程与知识库\n\n自研语义层，业务规则深度内嵌，实现真正的“懂业务”智能决策\n\n长期成本\n\n按 Token 调用量计费，高频业务场景下成本不可控，长期投入巨大\n\n一次性投入，3年TCO(总拥有成本)更优，有效规避成本失控风险\n\n网络依赖\n\n强依赖公网环境，网络延迟不可控，严重影响实时交互与决策体验\n\n内网闭环，延迟<10ms，保障核心业务系统的低延迟、高并发响应",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心优势：私有化部署的价值"
+          ],
+          "text": "核心优势：私有化部署的价值"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据主权"
+          ],
+          "text": "数据主权"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据出域，存在合规与安全风险，无法完全掌控数据流向"
+          ],
+          "text": "数据出域，存在合规与安全风险，无法完全掌控数据流向"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据不出机房，完全自主可控，满足最严格的数据安全与合规要求"
+          ],
+          "text": "数据不出机房，完全自主可控，满足最严格的数据安全与合规要求"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义定制"
+          ],
+          "text": "语义定制"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用模型能力，无法深度嵌入企业专有业务规则、流程与知识库"
+          ],
+          "text": "通用模型能力，无法深度嵌入企业专有业务规则、流程与知识库"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "自研语义层，业务规则深度内嵌，实现真正的“懂业务”智能决策"
+          ],
+          "text": "自研语义层，业务规则深度内嵌，实现真正的“懂业务”智能决策"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "长期成本"
+          ],
+          "text": "长期成本"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "按 Token 调用量计费，高频业务场景下成本不可控，长期投入巨大"
+          ],
+          "text": "按 Token 调用量计费，高频业务场景下成本不可控，长期投入巨大"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "一次性投入，3年TCO(总拥有成本)更优，有效规避成本失控风险"
+          ],
+          "text": "一次性投入，3年TCO(总拥有成本)更优，有效规避成本失控风险"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "网络依赖"
+          ],
+          "text": "网络依赖"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "强依赖公网环境，网络延迟不可控，严重影响实时交互与决策体验"
+          ],
+          "text": "强依赖公网环境，网络延迟不可控，严重影响实时交互与决策体验"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "内网闭环，延迟<10ms，保障核心业务系统的低延迟、高并发响应"
+          ],
+          "text": "内网闭环，延迟<10ms，保障核心业务系统的低延迟、高并发响应"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 21,
+      "slide_path": "ppt/slides/slide21.xml",
+      "title": "行稳致远：关键成功因素与风险应对",
+      "text": "行稳致远：关键成功因素与风险应对\n\n五大关键成功因素 (KSF)\n\n知识Owner 深度参与\n\n每个业务域指定1名知识Owner，全程参与语义建模，确保模型贴合业务。\n\n术语治理机制先行\n\n成立专门的术语治理委员会，项目初期首批统一20个核心业务术语。\n\n核心数据质量保障\n\n系统上线前，完成核心表字段的数据清洗、标准化与业务对标工作。\n\n安全合规同步建设\n\nOVTP体系与供应链安全建设与项目启动同步，规避后期合规风险。\n\n主要风险与应对策略\n\nNeo4j 图数据库规模瓶颈\n\n架构设计时预留分布式图引擎迁移接口，在未来节点规模突破10亿级时，确保平滑升级，保证性能，降低迁移成本。\n\n多源异构数据的口径冲突\n\n由术语治理委员会前置介入，在数据接入前裁定至少20个核心术语定义，统一业务标准。\n\nAI 模型幻觉突破业务约束\n\n建立多层级校验机制：规则引擎初筛 → 多源交叉验证 → 关键场景人工复核（随机抽取10%）。\n\n业务验证闭环\n\n每完成一个语义域建设，立即对接1-2个真实业务场景进行验证，拒绝“建完再看效果”。\n\n业务Owner投入与部门配合度不足\n\n项目由集团分管副总直接挂帅；将知识Owner纳入项目KPI考核；语义域验收需Owner签字确认；冲突由术语治理委员会裁定。\n\n源系统数据质量不达标\n\n语义层建设前，先执行数据质量评估；质量不达标的字段标记为“低置信度”，不进入受控决策流程。",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "行稳致远：关键成功因素与风险应对"
+          ],
+          "text": "行稳致远：关键成功因素与风险应对"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "五大关键成功因素 (KSF)"
+          ],
+          "text": "五大关键成功因素 (KSF)"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识Owner 深度参与"
+          ],
+          "text": "知识Owner 深度参与"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "每个业务域指定1名知识Owner，全程参与语义建模，确保模型贴合业务。"
+          ],
+          "text": "每个业务域指定1名知识Owner，全程参与语义建模，确保模型贴合业务。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "术语治理机制先行"
+          ],
+          "text": "术语治理机制先行"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "成立专门的术语治理委员会，项目初期首批统一20个核心业务术语。"
+          ],
+          "text": "成立专门的术语治理委员会，项目初期首批统一20个核心业务术语。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心数据质量保障"
+          ],
+          "text": "核心数据质量保障"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "系统上线前，完成核心表字段的数据清洗、标准化与业务对标工作。"
+          ],
+          "text": "系统上线前，完成核心表字段的数据清洗、标准化与业务对标工作。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "安全合规同步建设"
+          ],
+          "text": "安全合规同步建设"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "OVTP体系与供应链安全建设与项目启动同步，规避后期合规风险。"
+          ],
+          "text": "OVTP体系与供应链安全建设与项目启动同步，规避后期合规风险。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "主要风险与应对策略"
+          ],
+          "text": "主要风险与应对策略"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Neo4j 图数据库规模瓶颈"
+          ],
+          "text": "Neo4j 图数据库规模瓶颈"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "架构设计时预留分布式图引擎迁移接口，在未来节点规模突破10亿级时，确保平滑升级，保证性能，降低迁移成本。"
+          ],
+          "text": "架构设计时预留分布式图引擎迁移接口，在未来节点规模突破10亿级时，确保平滑升级，保证性能，降低迁移成本。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "多源异构数据的口径冲突"
+          ],
+          "text": "多源异构数据的口径冲突"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "由术语治理委员会前置介入，在数据接入前裁定至少20个核心术语定义，统一业务标准。"
+          ],
+          "text": "由术语治理委员会前置介入，在数据接入前裁定至少20个核心术语定义，统一业务标准。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI 模型幻觉突破业务约束"
+          ],
+          "text": "AI 模型幻觉突破业务约束"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "建立多层级校验机制：规则引擎初筛 → 多源交叉验证 → 关键场景人工复核（随机抽取10%）。"
+          ],
+          "text": "建立多层级校验机制：规则引擎初筛 → 多源交叉验证 → 关键场景人工复核（随机抽取10%）。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务验证闭环"
+          ],
+          "text": "业务验证闭环"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "每完成一个语义域建设，立即对接1-2个真实业务场景进行验证，拒绝“建完再看效果”。"
+          ],
+          "text": "每完成一个语义域建设，立即对接1-2个真实业务场景进行验证，拒绝“建完再看效果”。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "业务Owner投入与部门配合度不足"
+          ],
+          "text": "业务Owner投入与部门配合度不足"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "项目由集团分管副总直接挂帅；将知识Owner纳入项目KPI考核；语义域验收需Owner签字确认；冲突由术语治理委员会裁定。"
+          ],
+          "text": "项目由集团分管副总直接挂帅；将知识Owner纳入项目KPI考核；语义域验收需Owner签字确认；冲突由术语治理委员会裁定。"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "源系统数据质量不达标"
+          ],
+          "text": "源系统数据质量不达标"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "语义层建设前，先执行数据质量评估；质量不达标的字段标记为“低置信度”，不进入受控决策流程。"
+          ],
+          "text": "语义层建设前，先执行数据质量评估；质量不达标的字段标记为“低置信度”，不进入受控决策流程。"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image82.png",
+          "file": "images/image82.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image83.svg",
+          "alternate_svg_source": "ppt/media/image83.svg"
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image84.png",
+          "file": "images/image84.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image85.svg",
+          "alternate_svg_source": "ppt/media/image85.svg"
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image86.png",
+          "file": "images/image86.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image87.svg",
+          "alternate_svg_source": "ppt/media/image87.svg"
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image88.png",
+          "file": "images/image88.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image89.svg",
+          "alternate_svg_source": "ppt/media/image89.svg"
+        },
+        {
+          "relationship_id": "rId9",
+          "source": "ppt/media/image90.png",
+          "file": "images/image90.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image91.svg",
+          "alternate_svg_source": "ppt/media/image91.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 22,
+      "slide_path": "ppt/slides/slide22.xml",
+      "title": "我们希望提供的不是一套AI工具，而是帮助企业建设「数字决策中枢」",
+      "text": "我们希望提供的不是一套AI工具，而是帮助企业建设「数字决策中枢」\n\n▍ 三个确定性承诺\n\n决策确定性\n\n核心业务拒绝“概率猜测”，坚持走“规则驱动+可解释路径”\n\n口径确定性\n\n全集团核心术语统一定义，彻底告别跨部门“各说各话”\n\n审计确定性\n\n关键决策全链路上链存证，监管审计材料5分钟快速生成\n\n▍ 未来三年展望\n\n第 1 年 · 核心突破\n\n完成供应链、财务语义域上线，核心决策AI辅助率 > 50%\n\n第 2 年 · 全域扩展\n\n扩展至风控、客服、运营版块，实现多域数据深度关联分析\n\n第 3 年 · 人机协同\n\n构建企业全域语义互联网络，在复杂业务场景实现人机协同决策\n\n谢 谢\n\nTHANKS FOR WATCHING",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "我们希望提供的不是一套AI工具，而是帮助企业建设「数字决策中枢」"
+          ],
+          "text": "我们希望提供的不是一套AI工具，而是帮助企业建设「数字决策中枢」"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "▍ 三个确定性承诺"
+          ],
+          "text": "▍ 三个确定性承诺"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "决策确定性"
+          ],
+          "text": "决策确定性"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心业务拒绝“概率猜测”，坚持走“规则驱动+可解释路径”"
+          ],
+          "text": "核心业务拒绝“概率猜测”，坚持走“规则驱动+可解释路径”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "口径确定性"
+          ],
+          "text": "口径确定性"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "全集团核心术语统一定义，彻底告别跨部门“各说各话”"
+          ],
+          "text": "全集团核心术语统一定义，彻底告别跨部门“各说各话”"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "审计确定性"
+          ],
+          "text": "审计确定性"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "关键决策全链路上链存证，监管审计材料5分钟快速生成"
+          ],
+          "text": "关键决策全链路上链存证，监管审计材料5分钟快速生成"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "▍ 未来三年展望"
+          ],
+          "text": "▍ 未来三年展望"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "第 1 年 · 核心突破"
+          ],
+          "text": "第 1 年 · 核心突破"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "完成供应链、财务语义域上线，核心决策AI辅助率 > 50%"
+          ],
+          "text": "完成供应链、财务语义域上线，核心决策AI辅助率 > 50%"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "第 2 年 · 全域扩展"
+          ],
+          "text": "第 2 年 · 全域扩展"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "扩展至风控、客服、运营版块，实现多域数据深度关联分析"
+          ],
+          "text": "扩展至风控、客服、运营版块，实现多域数据深度关联分析"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "第 3 年 · 人机协同"
+          ],
+          "text": "第 3 年 · 人机协同"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "构建企业全域语义互联网络，在复杂业务场景实现人机协同决策"
+          ],
+          "text": "构建企业全域语义互联网络，在复杂业务场景实现人机协同决策"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "谢 谢"
+          ],
+          "text": "谢 谢"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "THANKS FOR WATCHING"
+          ],
+          "text": "THANKS FOR WATCHING"
+        }
+      ],
+      "images": [
+        {
+          "kind": "background-image",
+          "position": {
+            "x": 0,
+            "y": 0,
+            "cx": 12192000,
+            "cy": 6858000
+          },
+          "relationship_id": "rId1",
+          "source": "ppt/media/image80.jpeg",
+          "file": "images/image80.jpeg"
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image92.png",
+          "file": "images/image92.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image93.svg",
+          "alternate_svg_source": "ppt/media/image93.svg"
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image94.png",
+          "file": "images/image94.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image95.svg",
+          "alternate_svg_source": "ppt/media/image95.svg"
+        },
+        {
+          "relationship_id": "rId6",
+          "source": "ppt/media/image96.png",
+          "file": "images/image96.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image97.svg",
+          "alternate_svg_source": "ppt/media/image97.svg"
+        },
+        {
+          "relationship_id": "rId8",
+          "source": "ppt/media/image98.png",
+          "file": "images/image98.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image99.svg",
+          "alternate_svg_source": "ppt/media/image99.svg"
+        },
+        {
+          "relationship_id": "rId10",
+          "source": "ppt/media/image100.png",
+          "file": "images/image100.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image101.svg",
+          "alternate_svg_source": "ppt/media/image101.svg"
+        },
+        {
+          "relationship_id": "rId12",
+          "source": "ppt/media/image102.png",
+          "file": "images/image102.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": "images/image103.svg",
+          "alternate_svg_source": "ppt/media/image103.svg"
+        }
+      ]
+    },
+    {
+      "slide_number": 23,
+      "slide_path": "ppt/slides/slide23.xml",
+      "title": "附录",
+      "text": "附录\n\n类似案例分享",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "附录"
+          ],
+          "text": "附录"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "类似案例分享"
+          ],
+          "text": "类似案例分享"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 24,
+      "slide_path": "ppt/slides/slide24.xml",
+      "title": "案例1：中国汽车零部件制造头部企业构建全球AI知识中台",
+      "text": "案例1：中国汽车零部件制造头部企业构建全球AI知识中台",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "案例1：中国汽车零部件制造头部企业构建全球AI知识中台"
+          ],
+          "text": "案例1：中国汽车零部件制造头部企业构建全球AI知识中台"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image104.jpeg",
+          "file": "images/image104.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 25,
+      "slide_path": "ppt/slides/slide25.xml",
+      "title": "本地部署GPU算力",
+      "text": "本地部署GPU算力\n\n（保证企业内部文档智能解析全部本地完成）\n\n统一的本地知识存储\n\n（保证基于企业知识安全管理目标统一管理）\n\n飞书\n（文件、文件夹、知识库）\n\n内网文档同步\n\n文件上传\n\n爱助手多模型网关\n\n爱助手知识处理平台\n\n为企业量身定制的知识管理（文档管理、流程、权限管控、系统对接）\n\n基础\n\n设施\n\nJF-AI\n\n知识\n\n中台\n\n应用层\n\n知识检索\n\n智能问答\n\n规划中（AI培训、TDM报价、全流程质量分析报告等）\n\n文档同步\n\n本地化\n\n统一管理\n\n继峰AI\n\n智能体应用\n\n用户登录与权限\n\n知识空间管理\n\n知识库管理\n\n专业词库管理\n\n文件管理\n\n个人知识库\n\n个人中心\n\n日志管理\n\n数据看盘\n\n.......\n\nAI知识中台架构示意图",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "本地部署GPU算力",
+            "（保证企业内部文档智能解析全部本地完成）"
+          ],
+          "text": "本地部署GPU算力\n\n（保证企业内部文档智能解析全部本地完成）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一的本地知识存储",
+            "（保证基于企业知识安全管理目标统一管理）"
+          ],
+          "text": "统一的本地知识存储\n\n（保证基于企业知识安全管理目标统一管理）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "飞书\n（文件、文件夹、知识库）"
+          ],
+          "text": "飞书\n（文件、文件夹、知识库）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "内网文档同步"
+          ],
+          "text": "内网文档同步"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "文件上传"
+          ],
+          "text": "文件上传"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "爱助手多模型网关"
+          ],
+          "text": "爱助手多模型网关"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "爱助手知识处理平台"
+          ],
+          "text": "爱助手知识处理平台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "为企业量身定制的知识管理（文档管理、流程、权限管控、系统对接）"
+          ],
+          "text": "为企业量身定制的知识管理（文档管理、流程、权限管控、系统对接）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "基础",
+            "设施"
+          ],
+          "text": "基础\n\n设施"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "JF-AI",
+            "知识",
+            "中台"
+          ],
+          "text": "JF-AI\n\n知识\n\n中台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "应用层"
+          ],
+          "text": "应用层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识检索"
+          ],
+          "text": "知识检索"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能问答"
+          ],
+          "text": "智能问答"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "规划中（AI培训、TDM报价、全流程质量分析报告等）"
+          ],
+          "text": "规划中（AI培训、TDM报价、全流程质量分析报告等）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "文档同步",
+            "本地化",
+            "统一管理"
+          ],
+          "text": "文档同步\n\n本地化\n\n统一管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "继峰AI"
+          ],
+          "text": "继峰AI"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能体应用"
+          ],
+          "text": "智能体应用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "用户登录与权限"
+          ],
+          "text": "用户登录与权限"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识空间管理"
+          ],
+          "text": "知识空间管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识库管理"
+          ],
+          "text": "知识库管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "专业词库管理"
+          ],
+          "text": "专业词库管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "文件管理"
+          ],
+          "text": "文件管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "个人知识库"
+          ],
+          "text": "个人知识库"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "个人中心"
+          ],
+          "text": "个人中心"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "日志管理"
+          ],
+          "text": "日志管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据看盘"
+          ],
+          "text": "数据看盘"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "......."
+          ],
+          "text": "......."
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI知识中台架构示意图"
+          ],
+          "text": "AI知识中台架构示意图"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 26,
+      "slide_path": "ppt/slides/slide26.xml",
+      "title": "01",
+      "text": "01\n\n知识资产全生命周期管理\n\n覆盖企业+个人双场景\n\n02\n\n强权限与安全管控体系\n\n适配企业级管理需求（多层级、多角色的内部管控）\n\n03\n\n企业级文件\n\n全生命周期管理\n\n20+格式·智能处理·内外源整合\n\n04\n\n高可扩展性架构\n\n兼容企业现有IT生态\n\n05\n\n融合业务深度拓展\n\n依托AI知识中台，融合业务深度拓展\n\n满足五大核心需求\n\n座椅靠背放下时出现异响是怎么回事？\n\n典型原因：\n\n1、头枕自动解锁位置未标定或位置偏后……\n\n2、结构与工艺因素……\n\n知识来源：2026-V1整椅设计指导书.pdf\n\n智能问答示例",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "01"
+          ],
+          "text": "01"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识资产全生命周期管理"
+          ],
+          "text": "知识资产全生命周期管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "覆盖企业+个人双场景"
+          ],
+          "text": "覆盖企业+个人双场景"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "02"
+          ],
+          "text": "02"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "强权限与安全管控体系"
+          ],
+          "text": "强权限与安全管控体系"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "适配企业级管理需求（多层级、多角色的内部管控）"
+          ],
+          "text": "适配企业级管理需求（多层级、多角色的内部管控）"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "03"
+          ],
+          "text": "03"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业级文件",
+            "全生命周期管理"
+          ],
+          "text": "企业级文件\n\n全生命周期管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "20+格式·智能处理·内外源整合"
+          ],
+          "text": "20+格式·智能处理·内外源整合"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "04"
+          ],
+          "text": "04"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "高可扩展性架构"
+          ],
+          "text": "高可扩展性架构"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "兼容企业现有IT生态"
+          ],
+          "text": "兼容企业现有IT生态"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "05"
+          ],
+          "text": "05"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "融合业务深度拓展"
+          ],
+          "text": "融合业务深度拓展"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "依托AI知识中台，融合业务深度拓展"
+          ],
+          "text": "依托AI知识中台，融合业务深度拓展"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "满足五大核心需求"
+          ],
+          "text": "满足五大核心需求"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "座椅靠背放下时出现异响是怎么回事？"
+          ],
+          "text": "座椅靠背放下时出现异响是怎么回事？"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "典型原因：",
+            "1、头枕自动解锁位置未标定或位置偏后……",
+            "2、结构与工艺因素……",
+            "知识来源：2026-V1整椅设计指导书.pdf"
+          ],
+          "text": "典型原因：\n\n1、头枕自动解锁位置未标定或位置偏后……\n\n2、结构与工艺因素……\n\n知识来源：2026-V1整椅设计指导书.pdf"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能问答示例"
+          ],
+          "text": "智能问答示例"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image105.png",
+          "file": "images/image105.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image106.png",
+          "file": "images/image106.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image107.png",
+          "file": "images/image107.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image108.jpeg",
+          "file": "images/image108.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 27,
+      "slide_path": "ppt/slides/slide27.xml",
+      "title": "案例2：中国叉车制造头部企业的工业产品知识图谱应用",
+      "text": "案例2：中国叉车制造头部企业的工业产品知识图谱应用",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "案例2：中国叉车制造头部企业的工业产品知识图谱应用"
+          ],
+          "text": "案例2：中国叉车制造头部企业的工业产品知识图谱应用"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image109.png",
+          "file": "images/image109.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 28,
+      "slide_path": "ppt/slides/slide28.xml",
+      "title": "员工AI工作台",
+      "text": "员工AI工作台\n\n企业知识中心\n\n智能体中心\n\n工具市场\n\n标准应用\n\n支撑层\n\n交互层\n\n知识搜索\n\n知识问答\n\n内置应用\n\n配置应用\n\n简洁部署发布\n\n复杂部署发布\n\nAPI\n\n工具\n\nMCP\n\n工具\n\n通用\n\n工具\n\n模型层\n\n多模型网关\n\n解析引擎\n\n多模态知识库\n\n知识图谱\n\n评测组件\n\n长短记忆\n\n应用模板\n\n人员组织权限\n\n体系\n\n企业工具\n\nWeb端\n\nH5移动端\n\n第三方IM平台\n\nAPI集成应用\n\nAzure openAI\n\n通义千问、 DeepSeek\n\n小模型\n\n快速交付平台\n\n统一运营管理\n\n日志安全审计\n\n系统配置\n\n企业级管控\n\n技术标准智搜\n\n专业表格翻译\n\n证书/报告取数\n\n海关编码智搜\n\n行业分析报告\n\n物料备货推荐\n\n产品合规检查\n\n装箱计算\n\n售后服务助手\n\n售前咨询助手\n\n产品亮点提炼\n\n定制AI智能体\n\n爱助手企业AI平台\n\n标准产品\n\n技术信息管理\n\n平台\n\n坐席系统\n\n微信小程序\n\nSAP\n\nWMS\n\n文档同步\n\n多智能体对接\n\n单智能体对接\n\n数据打通\n\n数据打通\n\n定制与服务：智能体开发、知识梳理、智能体评测、AI能力建设陪跑\n\n手册检查润色\n\n产品配置顾问\n\nAI平台架构",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "员工AI工作台"
+          ],
+          "text": "员工AI工作台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业知识中心"
+          ],
+          "text": "企业知识中心"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "智能体中心"
+          ],
+          "text": "智能体中心"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "工具市场"
+          ],
+          "text": "工具市场"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "标准应用"
+          ],
+          "text": "标准应用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "支撑层"
+          ],
+          "text": "支撑层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "交互层"
+          ],
+          "text": "交互层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识搜索"
+          ],
+          "text": "知识搜索"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识问答"
+          ],
+          "text": "知识问答"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "内置应用"
+          ],
+          "text": "内置应用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "配置应用"
+          ],
+          "text": "配置应用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "简洁部署发布"
+          ],
+          "text": "简洁部署发布"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "复杂部署发布"
+          ],
+          "text": "复杂部署发布"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "API",
+            "工具"
+          ],
+          "text": "API\n\n工具"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "MCP",
+            "工具"
+          ],
+          "text": "MCP\n\n工具"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通用",
+            "工具"
+          ],
+          "text": "通用\n\n工具"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "模型层"
+          ],
+          "text": "模型层"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "多模型网关"
+          ],
+          "text": "多模型网关"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "解析引擎"
+          ],
+          "text": "解析引擎"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "多模态知识库"
+          ],
+          "text": "多模态知识库"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识图谱"
+          ],
+          "text": "知识图谱"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "评测组件"
+          ],
+          "text": "评测组件"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "长短记忆"
+          ],
+          "text": "长短记忆"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "应用模板"
+          ],
+          "text": "应用模板"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "人员组织权限",
+            "体系"
+          ],
+          "text": "人员组织权限\n\n体系"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业工具"
+          ],
+          "text": "企业工具"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Web端"
+          ],
+          "text": "Web端"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "H5移动端"
+          ],
+          "text": "H5移动端"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "第三方IM平台"
+          ],
+          "text": "第三方IM平台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "API集成应用"
+          ],
+          "text": "API集成应用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "Azure openAI"
+          ],
+          "text": "Azure openAI"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "通义千问、 DeepSeek"
+          ],
+          "text": "通义千问、 DeepSeek"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "小模型"
+          ],
+          "text": "小模型"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "快速交付平台"
+          ],
+          "text": "快速交付平台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "统一运营管理"
+          ],
+          "text": "统一运营管理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "日志安全审计"
+          ],
+          "text": "日志安全审计"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "系统配置"
+          ],
+          "text": "系统配置"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业级管控"
+          ],
+          "text": "企业级管控"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术标准智搜"
+          ],
+          "text": "技术标准智搜"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "专业表格翻译"
+          ],
+          "text": "专业表格翻译"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "证书/报告取数"
+          ],
+          "text": "证书/报告取数"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "海关编码智搜"
+          ],
+          "text": "海关编码智搜"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "行业分析报告"
+          ],
+          "text": "行业分析报告"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "物料备货推荐"
+          ],
+          "text": "物料备货推荐"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "产品合规检查"
+          ],
+          "text": "产品合规检查"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "装箱计算"
+          ],
+          "text": "装箱计算"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "售后服务助手"
+          ],
+          "text": "售后服务助手"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "售前咨询助手"
+          ],
+          "text": "售前咨询助手"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "产品亮点提炼"
+          ],
+          "text": "产品亮点提炼"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "定制AI智能体"
+          ],
+          "text": "定制AI智能体"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "爱助手企业AI平台",
+            "标准产品"
+          ],
+          "text": "爱助手企业AI平台\n\n标准产品"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术信息管理",
+            "平台"
+          ],
+          "text": "技术信息管理\n\n平台"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "坐席系统"
+          ],
+          "text": "坐席系统"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "微信小程序"
+          ],
+          "text": "微信小程序"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "SAP"
+          ],
+          "text": "SAP"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "WMS"
+          ],
+          "text": "WMS"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "文档同步"
+          ],
+          "text": "文档同步"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "多智能体对接"
+          ],
+          "text": "多智能体对接"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "单智能体对接"
+          ],
+          "text": "单智能体对接"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据打通"
+          ],
+          "text": "数据打通"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "数据打通"
+          ],
+          "text": "数据打通"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "定制与服务：智能体开发、知识梳理、智能体评测、AI能力建设陪跑"
+          ],
+          "text": "定制与服务：智能体开发、知识梳理、智能体评测、AI能力建设陪跑"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "手册检查润色"
+          ],
+          "text": "手册检查润色"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "产品配置顾问"
+          ],
+          "text": "产品配置顾问"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "AI平台架构"
+          ],
+          "text": "AI平台架构"
+        }
+      ],
+      "images": []
+    },
+    {
+      "slide_number": 29,
+      "slide_path": "ppt/slides/slide29.xml",
+      "title": "知识体系",
+      "text": "知识体系\n\n产品技术参数\n\n操作、保养、维修手册、故障代码表……\n\n向量&图谱\n\n知识梳理\n\n向量&图谱\n\n基于图谱的智能售前咨询· 售后维修\n\n应\n\n用\n\n标配/选配查找\n\n技术参数解答",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识体系"
+          ],
+          "text": "知识体系"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "产品技术参数"
+          ],
+          "text": "产品技术参数"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "操作、保养、维修手册、故障代码表……"
+          ],
+          "text": "操作、保养、维修手册、故障代码表……"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "向量&图谱"
+          ],
+          "text": "向量&图谱"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "知识梳理"
+          ],
+          "text": "知识梳理"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "向量&图谱"
+          ],
+          "text": "向量&图谱"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "基于图谱的智能售前咨询· 售后维修"
+          ],
+          "text": "基于图谱的智能售前咨询· 售后维修"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "应",
+            "用"
+          ],
+          "text": "应\n\n用"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "标配/选配查找"
+          ],
+          "text": "标配/选配查找"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "技术参数解答"
+          ],
+          "text": "技术参数解答"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image110.png",
+          "file": "images/image110.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image111.png",
+          "file": "images/image111.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image112.png",
+          "file": "images/image112.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image113.png",
+          "file": "images/image113.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId5",
+          "source": "ppt/media/image114.png",
+          "file": "images/image114.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId6",
+          "source": "ppt/media/image115.png",
+          "file": "images/image115.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId7",
+          "source": "ppt/media/image116.png",
+          "file": "images/image116.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId8",
+          "source": "ppt/media/image117.jpeg",
+          "file": "images/image117.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId9",
+          "source": "ppt/media/image118.png",
+          "file": "images/image118.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId10",
+          "source": "ppt/media/image119.png",
+          "file": "images/image119.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId11",
+          "source": "ppt/media/image120.png",
+          "file": "images/image120.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId12",
+          "source": "ppt/media/image121.png",
+          "file": "images/image121.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    },
+    {
+      "slide_number": 30,
+      "slide_path": "ppt/slides/slide30.xml",
+      "title": "核心团队介绍",
+      "text": "核心团队介绍\n\n浙江大学计算机学院院长\n\n人工智能专家\n\n校学术委员会委员\n\n首席科学家\n\n任奎\n\n企业数智化专家\n\n谭瑞忠\n\n30年数智化转型专家\n\n人工智能本体论先驱\n\n人工智能专家\n\n周识儒\n\n15年互联网开发经验\n\n前盛大、淘宝AI专家\n\n多项NLP发明专利\n\n安全技术专家\n\n杨海\n\n30年软件开发管理经验\n\n前Intel研发总监\n\n多项发明专利",
+      "text_blocks": [
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "核心团队介绍"
+          ],
+          "text": "核心团队介绍"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "浙江大学计算机学院院长",
+            "人工智能专家",
+            "校学术委员会委员"
+          ],
+          "text": "浙江大学计算机学院院长\n\n人工智能专家\n\n校学术委员会委员"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "首席科学家",
+            "任奎"
+          ],
+          "text": "首席科学家\n\n任奎"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "企业数智化专家",
+            "谭瑞忠"
+          ],
+          "text": "企业数智化专家\n\n谭瑞忠"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "30年数智化转型专家",
+            "人工智能本体论先驱"
+          ],
+          "text": "30年数智化转型专家\n\n人工智能本体论先驱"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "人工智能专家",
+            "周识儒"
+          ],
+          "text": "人工智能专家\n\n周识儒"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "15年互联网开发经验",
+            "前盛大、淘宝AI专家",
+            "多项NLP发明专利"
+          ],
+          "text": "15年互联网开发经验\n\n前盛大、淘宝AI专家\n\n多项NLP发明专利"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "安全技术专家",
+            "杨海"
+          ],
+          "text": "安全技术专家\n\n杨海"
+        },
+        {
+          "kind": "text",
+          "position": null,
+          "paragraphs": [
+            "30年软件开发管理经验",
+            "前Intel研发总监",
+            "多项发明专利"
+          ],
+          "text": "30年软件开发管理经验\n\n前Intel研发总监\n\n多项发明专利"
+        }
+      ],
+      "images": [
+        {
+          "relationship_id": "rId1",
+          "source": "ppt/media/image122.jpeg",
+          "file": "images/image122.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId2",
+          "source": "ppt/media/image123.png",
+          "file": "images/image123.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId3",
+          "source": "ppt/media/image124.jpeg",
+          "file": "images/image124.jpeg",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        },
+        {
+          "relationship_id": "rId4",
+          "source": "ppt/media/image125.png",
+          "file": "images/image125.png",
+          "kind": "image",
+          "position": null,
+          "alternate_svg_file": null,
+          "alternate_svg_source": null
+        }
+      ]
+    }
+  ]
+}
