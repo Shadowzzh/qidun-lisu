@@ -13,6 +13,12 @@ import { siteNavMenus } from "@/content/site-nav";
 describe("home content contract", () => {
   it("maps the homepage into a multipage-entry structure", () => {
     expect(homeHero.id).toBe("hero");
+    expect(homeHero.title).toBe("AI 创造无限可能");
+    expect(homeHero.metrics.map((metric) => metric.title)).toEqual([
+      "澎湃算力底座",
+      "知识驱动决策",
+      "内生安全体系",
+    ]);
     expect(homeOverviewBand.id).toBe("overview");
     expect(homeEntryBands.map((band) => band.id)).toEqual([
       "solution-overview",

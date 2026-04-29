@@ -14,9 +14,7 @@ import type {
 
 export const homeHero: HomeHeroContent = {
   id: "hero",
-  eyebrow: "PRIVATE AI KNOWLEDGE PLATFORM",
-  title: "企业级私有化 AI 知识智能平台方案",
-  description: "从「数据查询」到「知识决策」，构建可解释、可审计的企业智能中枢。",
+  title: "AI 创造无限可能",
   desktopVisual: homeVisuals.heroDesktop,
   mobileVisual: homeVisuals.heroMobile,
   sourceSlides: ["slide-01"],

@@ -77,8 +77,6 @@ export type HomeProofCard = {
 export type HomeHeroContent = {
   id: "hero";
   title: string;
-  description: string;
-  eyebrow: string;
   metrics: HomeMetric[];
   desktopVisual: HomeVisualSlot;
   mobileVisual: HomeVisualSlot;

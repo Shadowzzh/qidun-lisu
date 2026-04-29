@@ -10,12 +10,15 @@ describe("HomePage", () => {
     window.alert = originalAlert;
   });
 
-  it("renders the homepage as a five-section multipage entry shell", () => {
+  it("renders the homepage as a five-section multipage entry shell with the refreshed hero", () => {
     render(<HomePage />);
 
+    const heroRegion = screen.getByRole("region", { name: "AI 创造无限可能" });
     const overviewRegion = screen.getByRole("region", { name: "为什么现在必须建设企业级 AI 平台" });
 
-    expect(screen.getByRole("heading", { name: "企业级私有化 AI 知识智能平台方案" })).toBeInTheDocument();
+    expect(heroRegion).toHaveAttribute("id", "hero");
+    expect(within(heroRegion).queryByText("PRIVATE AI KNOWLEDGE PLATFORM")).not.toBeInTheDocument();
+    expect(within(heroRegion).getByText("澎湃算力底座")).toBeInTheDocument();
     expect(overviewRegion).toHaveAttribute("id", "overview");
     expect(within(overviewRegion).getByText("L7 应用层")).toBeInTheDocument();
     expect(within(overviewRegion).getByText("L1 超算底座")).toBeInTheDocument();
@@ -57,6 +60,7 @@ describe("app page", () => {
   it("renders the rebuilt multipage-entry homepage from the route entry", () => {
     render(<Page />);
 
+    expect(screen.getByRole("region", { name: "AI 创造无限可能" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "解决方案入口" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "继续浏览官网结构" })).toBeInTheDocument();
   });
