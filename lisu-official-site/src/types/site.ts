@@ -86,6 +86,13 @@ export type HomeFeatureBand = {
   sourceSlides: SlideRef[];
 };
 
+export type HomeProofSection = {
+  id: "proof";
+  title: string;
+  description: string;
+  sourceSlides: SlideRef[];
+};
+
 export type HomeClosingBand = {
   id: "closing";
   title: string;

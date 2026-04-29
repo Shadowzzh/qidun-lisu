@@ -12,6 +12,7 @@ import {
   homeHero,
   homeOverviewBand,
   homeProofCards,
+  homeProofSection,
 } from "@/content/home";
 import { homeNavItems } from "@/content/navigation";
 import { useActiveSection } from "@/hooks/use-active-section";
@@ -42,7 +43,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <ClosingBand closingBand={homeClosingBand} proofCards={homeProofCards} />
+        <ClosingBand closingBand={homeClosingBand} proofCards={homeProofCards} proofSection={homeProofSection} />
       </main>
       <Footer />
     </>

@@ -1,25 +1,27 @@
 import { HomeVisual } from "@/components/pages/home/home-visual";
-import { homeSections } from "@/content/home";
-import type { HomeClosingBand as HomeClosingBandContent, HomeProofCard } from "@/types/site";
+import type {
+  HomeClosingBand as HomeClosingBandContent,
+  HomeProofCard,
+  HomeProofSection,
+} from "@/types/site";
 
 type ClosingBandProps = {
   closingBand: HomeClosingBandContent;
+  proofSection: HomeProofSection;
   proofCards: HomeProofCard[];
 };
 
-const proofSection = homeSections.find((section) => section.id === "proof");
-
-export function ClosingBand({ closingBand, proofCards }: ClosingBandProps) {
+export function ClosingBand({ closingBand, proofSection, proofCards }: ClosingBandProps) {
   return (
     <section className="bg-[#f7fbff]">
       <div className="mx-auto max-w-[1200px] px-4 py-16 md:py-20">
         <section id="proof" aria-labelledby="home-proof-heading" className="scroll-mt-24">
           <div className="mb-10 text-center">
             <h2 id="home-proof-heading" className="text-balance text-3xl font-semibold text-slate-950 md:text-4xl">
-              {proofSection?.title ?? "案例与团队摘要"}
+              {proofSection.title}
             </h2>
             <p className="mx-auto mt-4 max-w-[760px] text-pretty text-sm leading-7 text-slate-600 md:text-base">
-              {proofSection?.description ?? "在首页建立最小可信度，而不展开完整案例页。"}
+              {proofSection.description}
             </p>
           </div>
 
