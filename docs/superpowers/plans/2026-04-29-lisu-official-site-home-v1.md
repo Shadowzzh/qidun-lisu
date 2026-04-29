@@ -6,7 +6,7 @@
 
 **Architecture:** Create a fresh `lisu-official-site` app instead of mutating the clone template, but borrow the template's decomposition style: thin `app/` files, typed `content/` modules, focused `components/home/` sections, and a small `site/` shell. Use a typed content contract with `sourceSlides` on every section and summary item, then render the homepage from data so archive traceability and later multi-page expansion stay intact.
 
-**Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, `next/font`, `lucide-react`, Vitest, Testing Library, jsdom
+**Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, `next/font`, Vitest, Testing Library, jsdom
 
 ---
 
@@ -27,6 +27,7 @@
 - Create: `lisu-official-site/src/content/navigation.ts`
 - Create: `lisu-official-site/src/content/home.ts`
 - Create: `lisu-official-site/src/content/home.test.ts`
+- Create: `lisu-official-site/src/assets/home/index.ts`
 
 ### Site shell and behaviors
 
@@ -261,7 +262,15 @@ Create `lisu-official-site/src/content/home.test.ts`:
 
 ```ts
 import { describe, expect, it } from "vitest";
-import { homeSections, homeSummaryCards } from "@/content/home";
+import {
+  homeArchitectureLayers,
+  homeClosingPoints,
+  homeHeroMetrics,
+  homePropositionCards,
+  homeSections,
+  homeSummaryCards,
+  homeWhyNowGroups,
+} from "@/content/home";
 
 describe("home content contract", () => {
   it("defines eight rendered sections with source slides", () => {
@@ -284,6 +293,15 @@ describe("home content contract", () => {
     expect(homeSummaryCards.proof).toHaveLength(3);
     expect(homeSummaryCards.capabilities.every((item) => item.sourceSlides.length > 0)).toBe(true);
     expect(homeSummaryCards.proof.every((item) => item.sourceSlides.length > 0)).toBe(true);
+  });
+
+  it("keeps upper-section content traceable", () => {
+    expect(homeHeroMetrics.every((item) => item.sourceSlides.length > 0)).toBe(true);
+    expect(homePropositionCards.every((item) => item.sourceSlides.length > 0)).toBe(true);
+    expect(homeArchitectureLayers.every((item) => item.sourceSlides.length > 0)).toBe(true);
+    expect(homeClosingPoints.every((item) => item.sourceSlides.length > 0)).toBe(true);
+    expect(homeWhyNowGroups.every((group) => group.sourceSlides.length > 0)).toBe(true);
+    expect(homeWhyNowGroups.flatMap((group) => group.items).every((item) => item.sourceSlides.length > 0)).toBe(true);
   });
 });
 ```
@@ -311,6 +329,13 @@ Create `lisu-official-site/src/types/site.ts`:
 ```ts
 export type SlideRef = `slide-${string}`;
 
+export type AssetRef = {
+  key: string;
+  assetPath: `src/assets/home/${string}`;
+  alt: string;
+  sourceSlides: SlideRef[];
+};
+
 export type NavItem = {
   id: string;
   label: string;
@@ -322,6 +347,21 @@ export type SummaryCard = {
   title: string;
   description: string;
   sourceSlides: SlideRef[];
+  visual?: AssetRef;
+};
+
+export type TraceableTextItem = {
+  title: string;
+  description?: string;
+  sourceSlides: SlideRef[];
+  visual?: AssetRef;
+};
+
+export type TraceableGroup = {
+  title: string;
+  sourceSlides: SlideRef[];
+  items: TraceableTextItem[];
+  visual?: AssetRef;
 };
 
 export type HomeSection = {
@@ -338,6 +378,7 @@ export type HomeSection = {
   eyebrow?: string;
   description?: string;
   sourceSlides: SlideRef[];
+  visuals?: AssetRef[];
 };
 ```
 
@@ -380,7 +421,8 @@ export const reservedRouteItems: NavItem[] = [
 Create `lisu-official-site/src/content/home.ts`:
 
 ```ts
-import type { HomeSection, SummaryCard } from "@/types/site";
+import { homeAssetMap } from "@/assets/home";
+import type { HomeSection, SummaryCard, TraceableGroup, TraceableTextItem } from "@/types/site";
 
 export const homeSections: HomeSection[] = [
   {
@@ -388,49 +430,156 @@ export const homeSections: HomeSection[] = [
     title: "企业级私有化 AI 知识智能平台方案",
     description: "从数据查询到知识决策，构建可解释、可审计的企业智能中枢。",
     sourceSlides: ["slide-01"],
+    visuals: [homeAssetMap.heroPanel],
   },
   {
     id: "why-now",
     title: "为什么现在必须建设企业级 AI 平台",
     description: "把时代之需和战略判断合并为一个复合 section，但继续保留两类来源边界。",
     sourceSlides: ["slide-04", "slide-05"],
+    visuals: [homeAssetMap.whyNowGrid],
   },
   {
     id: "proposition",
     title: "拒绝概率玩具，打造知识大脑",
     description: "让业务语言直接驱动决策，从临时工走向数字助手。",
     sourceSlides: ["slide-07"],
+    visuals: [homeAssetMap.propositionCards],
   },
   {
     id: "architecture",
     title: "七层贯通、语义驱动的平台总览",
     description: "从算力到底层应用，建立清晰的职责边界和可追溯能力。",
     sourceSlides: ["slide-10"],
+    visuals: [homeAssetMap.architectureOverview],
   },
   {
     id: "capabilities",
     title: "核心能力入口",
     description: "保留算力、数据、语义、安全、工作台五条入口，支撑后续真实子页扩展。",
     sourceSlides: ["slide-11", "slide-13", "slide-14", "slide-17", "slide-28"],
+    visuals: [homeAssetMap.capabilityGrid],
   },
   {
     id: "scenarios",
     title: "业务场景价值",
     description: "聚焦供应链、财务、风控、客服运营四个场景价值。",
     sourceSlides: ["slide-16"],
+    visuals: [homeAssetMap.scenarioGrid],
   },
   {
     id: "proof",
     title: "案例与团队摘要",
     description: "在首页建立最小可信度，而不展开完整案例页。",
     sourceSlides: ["slide-24", "slide-27", "slide-30"],
+    visuals: [homeAssetMap.proofGrid],
   },
   {
     id: "closing",
     title: "价值承诺",
     description: "用确定性价值判断与公司署名收束首页。",
     sourceSlides: ["slide-01", "slide-22"],
+    visuals: [homeAssetMap.closingPanel],
   },
+];
+
+export const homeHeroMetrics: TraceableTextItem[] = [
+  {
+    title: "澎湃算力底座",
+    description: "64 卡 H20 集群 / 9024GB 显存支撑",
+    sourceSlides: ["slide-01"],
+    visual: homeAssetMap.heroPanel,
+  },
+  {
+    title: "知识驱动决策",
+    description: "构建语义层模型 / 业务决策全可溯",
+    sourceSlides: ["slide-01"],
+    visual: homeAssetMap.heroPanel,
+  },
+  {
+    title: "内生安全体系",
+    description: "全链路可审计 / 关键路径上链存证",
+    sourceSlides: ["slide-01"],
+    visual: homeAssetMap.heroPanel,
+  },
+];
+
+export const homeWhyNowGroups: TraceableGroup[] = [
+  {
+    title: "时代之需",
+    sourceSlides: ["slide-04"],
+    visual: homeAssetMap.whyNowGrid,
+    items: [
+      {
+        title: "AI 从实验到生产",
+        description: "核心业务不敢用黑盒答案。",
+        sourceSlides: ["slide-04"],
+      },
+      {
+        title: "从数据到知识孤岛",
+        description: "跨部门定义不一致，决策彼此质疑。",
+        sourceSlides: ["slide-04"],
+      },
+      {
+        title: "算力需求跨越式升级",
+        description: "实验级部署难以支撑生产推理。",
+        sourceSlides: ["slide-04"],
+      },
+    ],
+  },
+  {
+    title: "战略判断",
+    sourceSlides: ["slide-05"],
+    visual: homeAssetMap.whyNowGrid,
+    items: [
+      {
+        title: "竞争焦点变化",
+        description: "焦点从算力比拼转向业务敢用、会用、可追溯。",
+        sourceSlides: ["slide-05"],
+      },
+      {
+        title: "合规要求迫近",
+        description: "可解释能力将成为未来准入门槛。",
+        sourceSlides: ["slide-05"],
+      },
+      {
+        title: "布局窗口期",
+        description: "提前布局意味着更早获得竞争资格。",
+        sourceSlides: ["slide-05"],
+      },
+    ],
+  },
+];
+
+export const homePropositionCards: TraceableTextItem[] = [
+  {
+    title: "拒绝概率玩具",
+    description: "缺乏稳固知识语义层支持的 AI，只是基于概率的昂贵玩具。",
+    sourceSlides: ["slide-07"],
+    visual: homeAssetMap.propositionCards,
+  },
+  {
+    title: "打造知识大脑",
+    description: "让业务语言直接驱动决策，实现从随机猜测到确定性决策的跨越。",
+    sourceSlides: ["slide-07"],
+    visual: homeAssetMap.propositionCards,
+  },
+  {
+    title: "数字助手",
+    description: "从聪明的临时工，变成懂业务、有记忆、可审计的数字助手。",
+    sourceSlides: ["slide-07"],
+    visual: homeAssetMap.propositionCards,
+  },
+];
+
+export const homeArchitectureLayers: TraceableTextItem[] = [
+  { title: "L7 应用层", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L6 能力开放层", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L5 核心语义层", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L4 数据层", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L3.5 运维网关", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L2-L3 引擎层", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
+  { title: "L1 超算底座", sourceSlides: ["slide-10"], visual: homeAssetMap.architectureOverview },
 ];
 
 export const homeSummaryCards: {
@@ -443,26 +592,31 @@ export const homeSummaryCards: {
       title: "算力底座",
       description: "面向本地部署与生产推理的超算底座。",
       sourceSlides: ["slide-11"],
+      visual: homeAssetMap.capabilityGrid,
     },
     {
       title: "AI 数据平台",
       description: "贯通多引擎数据处理、召回、重排和反馈闭环。",
       sourceSlides: ["slide-13"],
+      visual: homeAssetMap.capabilityGrid,
     },
     {
       title: "知识语义层",
       description: "统一业务概念、规则语义与可解释输出。",
       sourceSlides: ["slide-14"],
+      visual: homeAssetMap.capabilityGrid,
     },
     {
       title: "安全管控",
       description: "从模型接入、供应链到底层审计的全链路安全能力。",
       sourceSlides: ["slide-17"],
+      visual: homeAssetMap.capabilityGrid,
     },
     {
       title: "员工 AI 工作台",
       description: "面向业务人员的知识中心、智能体中心和工具市场。",
       sourceSlides: ["slide-28"],
+      visual: homeAssetMap.capabilityGrid,
     },
   ],
   scenarios: [
@@ -470,21 +624,25 @@ export const homeSummaryCards: {
       title: "供应链",
       description: "让规则沉淀和跨域因果链成为数字资产。",
       sourceSlides: ["slide-16"],
+      visual: homeAssetMap.scenarioGrid,
     },
     {
       title: "财务",
       description: "统一口径治理，缩短审计支撑链路。",
       sourceSlides: ["slide-16"],
+      visual: homeAssetMap.scenarioGrid,
     },
     {
       title: "风控",
       description: "让预警附带推理路径，拒绝黑盒警报。",
       sourceSlides: ["slide-16"],
+      visual: homeAssetMap.scenarioGrid,
     },
     {
       title: "客服运营",
       description: "基于业务知识提供精准答复和经验传承。",
       sourceSlides: ["slide-16"],
+      visual: homeAssetMap.scenarioGrid,
     },
   ],
   proof: [
@@ -492,18 +650,99 @@ export const homeSummaryCards: {
       title: "汽车零部件案例",
       description: "全球 AI 知识中台建设案例摘要。",
       sourceSlides: ["slide-24"],
+      visual: homeAssetMap.proofGrid,
     },
     {
       title: "叉车制造案例",
       description: "工业产品知识图谱应用案例摘要。",
       sourceSlides: ["slide-27"],
+      visual: homeAssetMap.proofGrid,
     },
     {
       title: "核心团队",
       description: "人工智能、数智化、安全与工程背景的团队摘要。",
       sourceSlides: ["slide-30"],
+      visual: homeAssetMap.proofGrid,
     },
   ],
+};
+
+export const homeClosingPoints: TraceableTextItem[] = [
+  {
+    title: "方案价值总结",
+    description: "把 AI 从演示能力变成真正可进入核心业务的生产能力。",
+    sourceSlides: ["slide-22"],
+    visual: homeAssetMap.closingPanel,
+  },
+  {
+    title: "三个确定性承诺",
+    description: "围绕可解释、可审计和企业可落地三条主线收束首页。",
+    sourceSlides: ["slide-22"],
+    visual: homeAssetMap.closingPanel,
+  },
+  {
+    title: "公司署名",
+    description: "北京骊甦科技",
+    sourceSlides: ["slide-01"],
+    visual: homeAssetMap.closingPanel,
+  },
+];
+```
+
+Create `lisu-official-site/src/assets/home/index.ts`:
+
+```ts
+import type { AssetRef } from "@/types/site";
+
+export const homeAssetMap: Record<string, AssetRef> = {
+  heroPanel: {
+    key: "heroPanel",
+    assetPath: "src/assets/home/hero-panel.svg",
+    alt: "首页首屏信号图",
+    sourceSlides: ["slide-01"],
+  },
+  whyNowGrid: {
+    key: "whyNowGrid",
+    assetPath: "src/assets/home/why-now-grid.svg",
+    alt: "时代之需与战略判断摘要图",
+    sourceSlides: ["slide-04", "slide-05"],
+  },
+  propositionCards: {
+    key: "propositionCards",
+    assetPath: "src/assets/home/proposition-cards.svg",
+    alt: "方案主张摘要图",
+    sourceSlides: ["slide-07"],
+  },
+  architectureOverview: {
+    key: "architectureOverview",
+    assetPath: "src/assets/home/architecture-overview.svg",
+    alt: "七层架构总览图",
+    sourceSlides: ["slide-10"],
+  },
+  capabilityGrid: {
+    key: "capabilityGrid",
+    assetPath: "src/assets/home/capability-grid.svg",
+    alt: "核心能力入口图",
+    sourceSlides: ["slide-11", "slide-13", "slide-14", "slide-17", "slide-28"],
+  },
+  scenarioGrid: {
+    key: "scenarioGrid",
+    assetPath: "src/assets/home/scenario-grid.svg",
+    alt: "场景价值摘要图",
+    sourceSlides: ["slide-16"],
+  },
+  proofGrid: {
+    key: "proofGrid",
+    assetPath: "src/assets/home/proof-grid.svg",
+    alt: "案例与团队摘要图",
+    sourceSlides: ["slide-24", "slide-27", "slide-30"],
+  },
+  closingPanel: {
+    key: "closingPanel",
+    assetPath: "src/assets/home/closing-panel.svg",
+    alt: "价值承诺收束图",
+    sourceSlides: ["slide-01", "slide-22"],
+  },
 };
 ```
 
@@ -519,7 +758,7 @@ npm run test:run -- src/content/home.test.ts
 Expected:
 
 ```text
-✓ src/content/home.test.ts (2 tests)
+✓ src/content/home.test.ts (3 tests)
 ```
 
 - [ ] **Step 5: Commit**
@@ -527,6 +766,7 @@ Expected:
 ```bash
 cd /Users/zhangziheng/Documents/work/qidun-lisu
 git add lisu-official-site/src/types/site.ts \
+        lisu-official-site/src/assets/home/index.ts \
         lisu-official-site/src/content/site.ts \
         lisu-official-site/src/content/navigation.ts \
         lisu-official-site/src/content/home.ts \
@@ -551,20 +791,77 @@ git commit -m "feat: define lisu homepage content contract"
 Create `lisu-official-site/src/hooks/use-active-section.test.tsx`:
 
 ```tsx
-import { renderHook } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { useActiveSection } from "@/hooks/use-active-section";
 
+let observerCallback:
+  | ((entries: Array<{ isIntersecting: boolean; intersectionRatio: number; target: { id: string } }>) => void)
+  | undefined;
+
 class IntersectionObserverMock {
+  constructor(callback: typeof observerCallback) {
+    observerCallback = callback;
+  }
+
   observe = vi.fn();
   disconnect = vi.fn();
+  unobserve = vi.fn();
 }
 
 describe("useActiveSection", () => {
   it("starts with the first section id", () => {
+    document.body.innerHTML = `
+      <section id="hero"></section>
+      <section id="why-now"></section>
+      <section id="closing"></section>
+    `;
     vi.stubGlobal("IntersectionObserver", IntersectionObserverMock as unknown as typeof IntersectionObserver);
     const { result } = renderHook(() => useActiveSection(["hero", "why-now", "closing"]));
     expect(result.current).toBe("hero");
+  });
+
+  it("keeps the highest visible section active across separate observer callbacks", () => {
+    document.body.innerHTML = `
+      <section id="hero"></section>
+      <section id="why-now"></section>
+      <section id="closing"></section>
+    `;
+    vi.stubGlobal("IntersectionObserver", IntersectionObserverMock as unknown as typeof IntersectionObserver);
+    const { result } = renderHook(() => useActiveSection(["hero", "why-now", "closing"]));
+
+    act(() => {
+      observerCallback?.([
+        {
+          target: document.getElementById("why-now") as HTMLElement,
+          isIntersecting: true,
+          intersectionRatio: 0.7,
+        },
+      ]);
+    });
+    expect(result.current).toBe("why-now");
+
+    act(() => {
+      observerCallback?.([
+        {
+          target: document.getElementById("closing") as HTMLElement,
+          isIntersecting: true,
+          intersectionRatio: 0.3,
+        },
+      ]);
+    });
+    expect(result.current).toBe("why-now");
+
+    act(() => {
+      observerCallback?.([
+        {
+          target: document.getElementById("closing") as HTMLElement,
+          isIntersecting: true,
+          intersectionRatio: 0.8,
+        },
+      ]);
+    });
+    expect(result.current).toBe("closing");
   });
 });
 ```
@@ -609,11 +906,8 @@ FAIL  src/components/site/header.test.tsx
 Create `lisu-official-site/src/lib/utils.ts`:
 
 ```ts
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+export function cn(...inputs: Array<string | false | null | undefined>) {
+  return inputs.filter(Boolean).join(" ");
 }
 ```
 
@@ -622,10 +916,11 @@ Create `lisu-official-site/src/hooks/use-active-section.ts`:
 ```tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function useActiveSection(ids: string[]) {
   const [activeId, setActiveId] = useState(ids[0] ?? "");
+  const ratiosRef = useRef(new Map<string, number>());
 
   useEffect(() => {
     if (ids.length === 0) {
@@ -642,12 +937,26 @@ export function useActiveSection(ids: string[]) {
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((left, right) => right.intersectionRatio - left.intersectionRatio)[0];
+        entries.forEach((entry) => {
+          if (entry.target instanceof HTMLElement) {
+            ratiosRef.current.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+          }
+        });
 
-        if (visible?.target instanceof HTMLElement) {
-          setActiveId(visible.target.id);
+        let nextActiveId = ids[0] ?? "";
+        let bestRatio = -1;
+
+        ids.forEach((id) => {
+          const ratio = ratiosRef.current.get(id) ?? 0;
+
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            nextActiveId = id;
+          }
+        });
+
+        if (bestRatio > 0) {
+          setActiveId(nextActiveId);
         }
       },
       {
@@ -657,7 +966,11 @@ export function useActiveSection(ids: string[]) {
     );
 
     elements.forEach((element) => observer.observe(element));
-    return () => observer.disconnect();
+
+    return () => {
+      observer.disconnect();
+      ratiosRef.current.clear();
+    };
   }, [ids]);
 
   return activeId;
@@ -733,7 +1046,6 @@ Create `lisu-official-site/src/components/site/mobile-menu.tsx`:
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import type { NavItem } from "@/types/site";
 import { cn } from "@/lib/utils";
 
@@ -761,7 +1073,9 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
         className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700"
         onClick={() => setOpen((value) => !value)}
       >
-        {open ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
+        <span aria-hidden="true" className="text-sm font-medium">
+          {open ? "关闭" : "菜单"}
+        </span>
       </button>
 
       {open ? (
@@ -820,7 +1134,7 @@ npm run test:run -- src/hooks/use-active-section.test.tsx src/components/site/he
 Expected:
 
 ```text
-✓ src/hooks/use-active-section.test.tsx (1 test)
+✓ src/hooks/use-active-section.test.tsx (2 tests)
 ✓ src/components/site/header.test.tsx (1 test)
 ```
 
@@ -890,7 +1204,7 @@ Error: Failed to resolve import "@/components/home/home-page"
 Create `lisu-official-site/src/components/home/hero-section.tsx`:
 
 ```tsx
-import { homeSections } from "@/content/home";
+import { homeHeroMetrics, homeSections } from "@/content/home";
 
 const hero = homeSections.find((section) => section.id === "hero");
 
@@ -910,13 +1224,10 @@ export function HeroSection() {
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 md:text-lg">{hero.description}</p>
         </div>
         <div className="grid gap-4 rounded-3xl border border-white/10 bg-white/5 p-6">
-          {[
-            "64 卡 H20 集群 / 9024GB 显存支撑",
-            "构建语义层模型 / 业务决策全可溯",
-            "全链路可审计 / 关键路径上链存证",
-          ].map((line) => (
-            <div key={line} className="rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-7 text-slate-200">
-              {line}
+          {homeHeroMetrics.map((item) => (
+            <div key={item.title} className="rounded-2xl border border-white/10 bg-black/20 p-4 text-sm leading-7 text-slate-200">
+              <p className="font-medium text-white">{item.title}</p>
+              <p className="mt-2">{item.description}</p>
             </div>
           ))}
         </div>
@@ -929,19 +1240,9 @@ export function HeroSection() {
 Create `lisu-official-site/src/components/home/why-now-section.tsx`:
 
 ```tsx
+import { homeWhyNowGroups } from "@/content/home";
+
 export function WhyNowSection() {
-  const painPoints = [
-    "AI 从实验到生产：核心业务不敢用黑盒答案",
-    "从数据到知识孤岛：跨部门定义不一致，决策彼此质疑",
-    "算力需求跨越式升级：实验级部署难以支撑生产推理",
-  ];
-
-  const strategyPoints = [
-    "竞争焦点正在从算力比拼转向业务敢用、会用、可追溯",
-    "合规要求迫近，可解释能力将成为准入门槛",
-    "提前布局不是锦上添花，而是未来竞争资格",
-  ];
-
   return (
     <section
       id="why-now"
@@ -954,22 +1255,22 @@ export function WhyNowSection() {
           为什么现在必须建设企业级 AI 平台
         </h2>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <article className="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <h3 className="text-lg font-semibold text-slate-950">时代之需</h3>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-              {painPoints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
-          <article className="rounded-3xl border border-slate-200 bg-sky-50 p-6">
-            <h3 className="text-lg font-semibold text-slate-950">战略判断</h3>
-            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-              {strategyPoints.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </article>
+          {homeWhyNowGroups.map((group, index) => (
+            <article
+              key={group.title}
+              className={index === 0 ? "rounded-3xl border border-slate-200 bg-slate-50 p-6" : "rounded-3xl border border-slate-200 bg-sky-50 p-6"}
+            >
+              <h3 className="text-lg font-semibold text-slate-950">{group.title}</h3>
+              <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+                {group.items.map((item) => (
+                  <li key={item.title}>
+                    <span className="font-medium text-slate-900">{item.title}</span>
+                    {item.description ? `：${item.description}` : ""}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -980,6 +1281,8 @@ export function WhyNowSection() {
 Create `lisu-official-site/src/components/home/proposition-section.tsx`:
 
 ```tsx
+import { homePropositionCards } from "@/content/home";
+
 export function PropositionSection() {
   return (
     <section
@@ -993,13 +1296,10 @@ export function PropositionSection() {
           拒绝概率玩具，打造知识大脑
         </h2>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {[
-            "缺乏稳固知识语义层支持的 AI，只是基于概率的昂贵玩具。",
-            "让业务语言直接驱动决策，实现从随机猜测到确定性决策的跨越。",
-            "从聪明的临时工，变成懂业务、有记忆、可审计的数字助手。",
-          ].map((item) => (
-            <article key={item} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm leading-7 text-slate-200">
-              {item}
+          {homePropositionCards.map((item) => (
+            <article key={item.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm leading-7 text-slate-200">
+              <p className="font-medium text-white">{item.title}</p>
+              <p className="mt-3">{item.description}</p>
             </article>
           ))}
         </div>
@@ -1012,17 +1312,9 @@ export function PropositionSection() {
 Create `lisu-official-site/src/components/home/architecture-section.tsx`:
 
 ```tsx
-export function ArchitectureSection() {
-  const layers = [
-    "L7 应用层",
-    "L6 能力开放层",
-    "L5 核心语义层",
-    "L4 数据层",
-    "L3.5 运维网关",
-    "L2-L3 引擎层",
-    "L1 超算底座",
-  ];
+import { homeArchitectureLayers } from "@/content/home";
 
+export function ArchitectureSection() {
   return (
     <section
       id="architecture"
@@ -1035,9 +1327,9 @@ export function ArchitectureSection() {
           七层贯通、语义驱动的平台总览
         </h2>
         <div className="mt-10 grid gap-4 rounded-[32px] border border-slate-200 bg-slate-50 p-6">
-          {layers.map((layer) => (
-            <div key={layer} className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800">
-              {layer}
+          {homeArchitectureLayers.map((layer) => (
+            <div key={layer.title} className="rounded-2xl border border-slate-200 bg-white px-5 py-4 text-sm font-medium text-slate-800">
+              {layer.title}
             </div>
           ))}
         </div>
@@ -1256,6 +1548,8 @@ export function ProofSection() {
 Create `lisu-official-site/src/components/home/closing-section.tsx`:
 
 ```tsx
+import { homeClosingPoints } from "@/content/home";
+
 export function ClosingSection() {
   return (
     <section
@@ -1268,10 +1562,14 @@ export function ClosingSection() {
         <h2 id="closing-heading" className="mt-3 text-3xl font-semibold text-slate-950 md:text-4xl">
           价值承诺
         </h2>
-        <p className="mt-6 text-base leading-8 text-slate-700 md:text-lg">
-          用企业知识、可解释路径与可审计机制，把 AI 从演示能力变成真正可进入核心业务的生产能力。
-        </p>
-        <p className="mt-6 text-sm font-medium tracking-[0.18em] text-slate-600">北京骊甦科技</p>
+        <div className="mt-6 space-y-4 text-base leading-8 text-slate-700 md:text-lg">
+          {homeClosingPoints.map((item) => (
+            <p key={item.title}>
+              <span className="font-medium text-slate-950">{item.title}</span>
+              {item.description ? `：${item.description}` : ""}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -1578,6 +1876,7 @@ git commit -m "feat: wire lisu homepage app entry and metadata"
 - Phase 1 homepage only: covered by Tasks 1-6 and no subpages are implemented.
 - 8 rendered sections / 9 content responsibilities: covered by Task 2 content contract and Tasks 4-5 section components.
 - `sourceSlides` traceability: covered by Task 2.
+- `src/assets/home/*` image traceability contract: covered by Task 2 asset map and typed `AssetRef`.
 - Sticky anchor navigation and active state: covered by Task 3 and verified by Task 6 full checks.
 - Metadata and homepage route: covered by Task 6.
 
