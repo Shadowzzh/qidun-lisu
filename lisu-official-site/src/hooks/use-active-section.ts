@@ -1,11 +1,40 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+
+const OBSERVER_ROOT_MARGIN = "-96px 0px -55% 0px";
+const OBSERVER_THRESHOLD = [0.2, 0.4, 0.6];
+
+function parseRootMarginValue(value: string, viewportHeight: number) {
+  if (value.endsWith("%")) {
+    return (Number.parseFloat(value) / 100) * viewportHeight;
+  }
+
+  return Number.parseFloat(value);
+}
+
+function getCurrentVisibilityRatio(element: HTMLElement) {
+  const rect = element.getBoundingClientRect();
+
+  if (rect.height <= 0) {
+    return 0;
+  }
+
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+  const [topMarginValue, , bottomMarginValue] = OBSERVER_ROOT_MARGIN.split(" ");
+  const rootTop = 0 - parseRootMarginValue(topMarginValue ?? "0px", viewportHeight);
+  const rootBottom = viewportHeight + parseRootMarginValue(bottomMarginValue ?? "0px", viewportHeight);
+  const visibleHeight = Math.min(rect.bottom, rootBottom) - Math.max(rect.top, rootTop);
+
+  if (visibleHeight <= 0) {
+    return 0;
+  }
+
+  return Math.min(visibleHeight / rect.height, 1);
+}
 
 export function useActiveSection(ids: string[]) {
   const [activeId, setActiveId] = useState(ids[0] ?? "");
-  const ratiosRef = useRef(new Map<string, { ratio: number; updatedAt: number }>());
-  const updateCounterRef = useRef(0);
   const idsKey = ids.join("|");
 
   useEffect(() => {
@@ -15,7 +44,6 @@ export function useActiveSection(ids: string[]) {
       return;
     }
 
-    const ratios = ratiosRef.current;
     const elements = stableIds
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element instanceof HTMLElement);
@@ -25,30 +53,16 @@ export function useActiveSection(ids: string[]) {
     }
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.target instanceof HTMLElement) {
-            updateCounterRef.current += 1;
-            ratios.set(entry.target.id, {
-              ratio: entry.isIntersecting ? entry.intersectionRatio : 0,
-              updatedAt: updateCounterRef.current,
-            });
-          }
-        });
-
+      () => {
         let nextActiveId = stableIds[0] ?? "";
         let bestRatio = -1;
-        let bestUpdatedAt = -1;
 
-        stableIds.forEach((id) => {
-          const state = ratios.get(id);
-          const ratio = state?.ratio ?? 0;
-          const updatedAt = state?.updatedAt ?? -1;
+        elements.forEach((element) => {
+          const ratio = getCurrentVisibilityRatio(element);
 
-          if (ratio > bestRatio || (ratio === bestRatio && updatedAt > bestUpdatedAt)) {
+          if (ratio > bestRatio) {
             bestRatio = ratio;
-            bestUpdatedAt = updatedAt;
-            nextActiveId = id;
+            nextActiveId = element.id;
           }
         });
 
@@ -57,8 +71,8 @@ export function useActiveSection(ids: string[]) {
         }
       },
       {
-        rootMargin: "-96px 0px -55% 0px",
-        threshold: [0.2, 0.4, 0.6],
+        rootMargin: OBSERVER_ROOT_MARGIN,
+        threshold: OBSERVER_THRESHOLD,
       },
     );
 
@@ -66,7 +80,6 @@ export function useActiveSection(ids: string[]) {
 
     return () => {
       observer.disconnect();
-      ratios.clear();
     };
   }, [idsKey]);
 
