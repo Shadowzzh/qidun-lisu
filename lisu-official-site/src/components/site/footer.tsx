@@ -2,6 +2,22 @@ import Link from "next/link";
 import { footerGroups, footerSummary } from "@/content/site-footer";
 import { siteConfig } from "@/content/site";
 
+function renderFooterItem(item: (typeof footerGroups)[number]["items"][number]) {
+  if (item.kind === "text") {
+    return <span className="text-sm text-slate-600">{item.label}</span>;
+  }
+
+  if (!item.href) {
+    return <span className="text-sm text-rose-700">{item.label}</span>;
+  }
+
+  return (
+    <Link className="text-sm text-slate-600 hover:text-blue-700" href={item.href} prefetch={false}>
+      {item.label}
+    </Link>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
@@ -12,19 +28,7 @@ export function Footer() {
               <p className="text-balance text-sm font-semibold text-slate-900">{group.title}</p>
               <ul className="mt-5 space-y-4">
                 {group.items.map((item) => (
-                  <li key={item.label}>
-                    {item.kind === "text" ? (
-                      <span className="text-sm text-slate-600">{item.label}</span>
-                    ) : (
-                      <Link
-                        className="text-sm text-slate-600 hover:text-blue-700"
-                        href={item.href ?? "#hero"}
-                        prefetch={false}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </li>
+                  <li key={item.label}>{renderFooterItem(item)}</li>
                 ))}
               </ul>
             </div>

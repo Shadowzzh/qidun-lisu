@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRef } from "react";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/site";
 
@@ -10,20 +11,22 @@ type MobileMenuProps = {
 };
 
 export function MobileMenu({ items, activeId }: MobileMenuProps) {
-  const normalizedItems = items.map((item) => {
-    if (item.id === "architecture" && item.href === "#architecture") {
-      return {
-        ...item,
-        id: "overview",
-        href: "#overview" as const,
-      };
+  const detailsRef = useRef<HTMLDetailsElement>(null);
+
+  function handleItemSelect(item: NavItem) {
+    if (item.kind !== "anchor") {
+      return;
     }
 
-    return item;
-  });
+    if (!item.href.startsWith("#")) {
+      return;
+    }
+
+    detailsRef.current?.removeAttribute("open");
+  }
 
   return (
-    <details className="group relative md:hidden">
+    <details ref={detailsRef} className="group relative md:hidden">
       <summary
         aria-label="打开导航菜单"
         className="inline-flex size-10 list-none items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 shadow-sm marker:content-none"
@@ -45,11 +48,12 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
         }}
       >
         <ul className="space-y-3">
-          {normalizedItems.map((item) => (
+          {items.map((item) => (
             <li key={item.id}>
               <Link
                 href={item.href}
                 prefetch={false}
+                onClick={() => handleItemSelect(item)}
                 className={cn(
                   "block rounded-md px-3 py-2 text-base text-slate-700",
                   activeId === item.id && "bg-blue-50 font-semibold text-blue-700",

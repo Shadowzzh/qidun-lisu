@@ -5,7 +5,7 @@ export const footerGroups: FooterGroup[] = [
     title: "网站导览",
     items: [
       { label: "首页概览", href: "#hero", kind: "anchor" },
-      { label: "平台总览", href: "#overview", kind: "anchor" },
+      { label: "平台总览", href: "#architecture", kind: "anchor" },
       { label: "核心能力", href: "#capabilities", kind: "anchor" },
       { label: "场景价值", href: "#scenarios", kind: "anchor" },
       { label: "案例团队", href: "#proof", kind: "anchor" },
