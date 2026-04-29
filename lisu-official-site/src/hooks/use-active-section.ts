@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 
 export function useActiveSection(ids: string[]) {
   const [activeId, setActiveId] = useState(ids[0] ?? "");
-  const ratiosRef = useRef(new Map<string, number>());
+  const ratiosRef = useRef(new Map<string, { ratio: number; updatedAt: number }>());
+  const updateCounterRef = useRef(0);
   const idsKey = ids.join("|");
 
   useEffect(() => {
@@ -27,18 +28,26 @@ export function useActiveSection(ids: string[]) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target instanceof HTMLElement) {
-            ratios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+            updateCounterRef.current += 1;
+            ratios.set(entry.target.id, {
+              ratio: entry.isIntersecting ? entry.intersectionRatio : 0,
+              updatedAt: updateCounterRef.current,
+            });
           }
         });
 
         let nextActiveId = stableIds[0] ?? "";
         let bestRatio = -1;
+        let bestUpdatedAt = -1;
 
         stableIds.forEach((id) => {
-          const ratio = ratios.get(id) ?? 0;
+          const state = ratios.get(id);
+          const ratio = state?.ratio ?? 0;
+          const updatedAt = state?.updatedAt ?? -1;
 
-          if (ratio > bestRatio) {
+          if (ratio > bestRatio || (ratio === bestRatio && updatedAt > bestUpdatedAt)) {
             bestRatio = ratio;
+            bestUpdatedAt = updatedAt;
             nextActiveId = id;
           }
         });

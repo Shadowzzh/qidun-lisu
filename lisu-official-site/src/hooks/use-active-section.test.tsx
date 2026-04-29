@@ -70,4 +70,36 @@ describe("useActiveSection", () => {
     });
     expect(result.current).toBe("closing");
   });
+
+  it("drops stale ratios when a later callback reports a different section as fully visible", () => {
+    document.body.innerHTML = `
+      <section id="hero"></section>
+      <section id="why-now"></section>
+      <section id="closing"></section>
+    `;
+    vi.stubGlobal("IntersectionObserver", IntersectionObserverMock as unknown as typeof IntersectionObserver);
+    const { result } = renderHook(() => useActiveSection(["hero", "why-now", "closing"]));
+
+    act(() => {
+      observerCallback?.([
+        {
+          target: document.getElementById("hero") as HTMLElement,
+          isIntersecting: true,
+          intersectionRatio: 1,
+        },
+      ]);
+    });
+    expect(result.current).toBe("hero");
+
+    act(() => {
+      observerCallback?.([
+        {
+          target: document.getElementById("closing") as HTMLElement,
+          isIntersecting: true,
+          intersectionRatio: 1,
+        },
+      ]);
+    });
+    expect(result.current).toBe("closing");
+  });
 });
