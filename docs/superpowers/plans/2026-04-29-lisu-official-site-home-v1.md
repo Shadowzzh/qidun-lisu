@@ -2,15 +2,21 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build `lisu-official-site` as a new Next.js 16 App Router project and deliver the Phase 1 homepage V1 with 8 rendered sections, anchor navigation, source traceability, and production-safe metadata.
+**Goal:** Build `lisu-official-site` as a new Next.js 16 App Router project and deliver the Phase 1 homepage V1 while keeping the template page framework, section rhythm, and site shell as close as practical, with 8 rendered sections, anchor navigation, source traceability, and production-safe metadata.
 
-**Architecture:** Create a fresh `lisu-official-site` app instead of mutating the clone template, but borrow the template's decomposition style: thin `app/` files, typed `content/` modules, focused `components/home/` sections, and a small `site/` shell. Use a typed content contract with `sourceSlides` on every section and summary item, then render the homepage from data so archive traceability and later multi-page expansion stay intact.
+**Architecture:** Create a fresh `lisu-official-site` app instead of mutating the clone template, but port the template's homepage frame and `site/` shell with minimal topology changes: thin `app/` files, typed `content/` modules, focused `components/home/` sections, and a small `site/` shell. Use a typed content contract with `sourceSlides` on every section and summary item, then map that content back into a template-shaped homepage so archive traceability and later multi-page expansion stay intact without needlessly redesigning the page.
 
 **Tech Stack:** Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4, `next/font`, Vitest, Testing Library, jsdom
 
 ---
 
 ## File Map
+
+### Layout preservation rule
+
+- `ai-website-cloner-template/src/components/pages/home/home-page.tsx` is the reference for homepage section rhythm and major layout transitions.
+- `ai-website-cloner-template/src/components/site/header.tsx`, `footer.tsx`, and `mobile-menu.tsx` are references for shell boundaries and responsive behavior.
+- During implementation, replace content first and only change structure when the old frame cannot hold the approved content.
 
 ### Project bootstrap and tooling
 
@@ -903,6 +909,21 @@ FAIL  src/components/site/header.test.tsx
 
 - [ ] **Step 3: Implement the shell and active-section behavior**
 
+Before writing these files, inspect the template shell references:
+
+```bash
+cd /Users/zhangziheng/Documents/work/qidun-lisu
+sed -n '1,220p' ai-website-cloner-template/src/components/site/header.tsx
+sed -n '1,220p' ai-website-cloner-template/src/components/site/footer.tsx
+sed -n '1,220p' ai-website-cloner-template/src/components/site/mobile-menu.tsx
+```
+
+Expected:
+
+```text
+You can point to the existing shell boundaries, sticky header treatment, and mobile menu separation before writing the new files.
+```
+
 Create `lisu-official-site/src/lib/utils.ts`:
 
 ```ts
@@ -1201,6 +1222,19 @@ Error: Failed to resolve import "@/components/home/home-page"
 
 - [ ] **Step 3: Implement `hero`, `why-now`, `proposition`, and `architecture`**
 
+Before writing these files, inspect the template homepage frame:
+
+```bash
+cd /Users/zhangziheng/Documents/work/qidun-lisu
+sed -n '1,260p' ai-website-cloner-template/src/components/pages/home/home-page.tsx
+```
+
+Expected:
+
+```text
+You can identify which template blocks correspond to hero, lead cards, split content rows, and closing content patterns.
+```
+
 Create `lisu-official-site/src/components/home/hero-section.tsx`:
 
 ```tsx
@@ -1451,6 +1485,14 @@ Unable to find role="region" name="核心能力入口"
 ```
 
 - [ ] **Step 3: Implement `capabilities`, `scenarios`, `proof`, and `closing`**
+
+Keep these rules while implementing:
+
+```text
+1. Reuse the template's card-grid and split-layout patterns before inventing new ones.
+2. Prefer replacing labels, descriptions, and media references over changing DOM hierarchy.
+3. If a section needs structural adjustment, keep the original visual rhythm: heading block -> content grid -> closing value block.
+```
 
 Create `lisu-official-site/src/components/home/capability-section.tsx`:
 
