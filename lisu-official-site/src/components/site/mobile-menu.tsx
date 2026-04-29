@@ -12,6 +12,17 @@ type MobileMenuProps = {
 
 export function MobileMenu({ items, activeId }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const normalizedItems = items.map((item) => {
+    if (item.id === "architecture" && item.href === "#architecture") {
+      return {
+        ...item,
+        id: "overview",
+        href: "#overview" as const,
+      };
+    }
+
+    return item;
+  });
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -27,7 +38,8 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
         type="button"
         aria-expanded={open}
         aria-controls="mobile-nav"
-        className="inline-flex size-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700"
+        aria-label={open ? "关闭导航菜单" : "打开导航菜单"}
+        className="inline-flex size-10 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-700 shadow-sm"
         onClick={() => setOpen((value) => !value)}
       >
         <span aria-hidden="true" className="text-sm font-medium">
@@ -38,10 +50,11 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
       {open ? (
         <div
           id="mobile-nav"
-          className="fixed inset-x-0 top-16 z-40 border-t border-slate-200 bg-white px-4 py-6 shadow-lg"
+          className="fixed inset-x-0 z-40 border-t border-slate-200 bg-white px-4 pb-6 shadow-lg md:hidden"
+          style={{ top: "calc(4rem + env(safe-area-inset-top))", paddingTop: "calc(1rem + env(safe-area-inset-top))" }}
         >
           <ul className="space-y-3">
-            {items.map((item) => (
+            {normalizedItems.map((item) => (
               <li key={item.id}>
                 <Link
                   href={item.href}
@@ -49,7 +62,7 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "block rounded-md px-3 py-2 text-base text-slate-700",
-                    activeId === item.id && "bg-sky-50 font-semibold text-sky-700",
+                    activeId === item.id && "bg-blue-50 font-semibold text-blue-700",
                   )}
                 >
                   {item.label}
