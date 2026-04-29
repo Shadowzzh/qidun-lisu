@@ -1,52 +1,106 @@
-import type { AssetRef } from "@/types/site";
+import type { HomeVisualSlot } from "@/types/site";
 
-export const homeAssetMap: Record<string, AssetRef> = {
-  heroPanel: {
-    key: "heroPanel",
-    assetPath: "src/assets/home/hero-panel.svg",
-    alt: "首页首屏信号图",
-    sourceSlides: ["slide-01"],
-  },
-  whyNowGrid: {
-    key: "whyNowGrid",
-    assetPath: "src/assets/home/why-now-grid.svg",
-    alt: "时代之需与战略判断摘要图",
-    sourceSlides: ["slide-04", "slide-05"],
-  },
-  propositionCards: {
-    key: "propositionCards",
-    assetPath: "src/assets/home/proposition-cards.svg",
-    alt: "方案主张摘要图",
-    sourceSlides: ["slide-07"],
-  },
-  architectureOverview: {
-    key: "architectureOverview",
-    assetPath: "src/assets/home/architecture-overview.svg",
-    alt: "七层架构总览图",
-    sourceSlides: ["slide-10"],
-  },
-  capabilityGrid: {
-    key: "capabilityGrid",
-    assetPath: "src/assets/home/capability-grid.svg",
-    alt: "核心能力入口图",
-    sourceSlides: ["slide-11", "slide-13", "slide-14", "slide-17", "slide-28"],
-  },
-  scenarioGrid: {
-    key: "scenarioGrid",
-    assetPath: "src/assets/home/scenario-grid.svg",
-    alt: "场景价值摘要图",
-    sourceSlides: ["slide-16"],
-  },
-  proofGrid: {
-    key: "proofGrid",
-    assetPath: "src/assets/home/proof-grid.svg",
-    alt: "案例与团队摘要图",
-    sourceSlides: ["slide-24", "slide-27", "slide-30"],
-  },
-  closingPanel: {
-    key: "closingPanel",
-    assetPath: "src/assets/home/closing-panel.svg",
-    alt: "价值承诺收束图",
-    sourceSlides: ["slide-01", "slide-22"],
-  },
-};
+function createPlaceholder(
+  frame: HomeVisualSlot["frame"],
+  alt: string,
+  title: string,
+  hint: string,
+  sourceSlides: HomeVisualSlot["sourceSlides"],
+): HomeVisualSlot {
+  return {
+    kind: "placeholder",
+    frame,
+    alt,
+    title,
+    hint,
+    sourceSlides,
+    sourceArchiveFiles: [],
+  };
+}
+
+export const homeVisuals = {
+  heroPlaceholder: createPlaceholder(
+    "hero",
+    "首页主视觉图占位",
+    "建议放：首页主视觉图",
+    "类型：平台总览 / 架构概览 / 品牌主 KV",
+    ["slide-01"],
+  ),
+  heroDesktop: createPlaceholder(
+    "hero",
+    "首页主视觉图占位",
+    "建议放：首页主视觉图",
+    "类型：平台总览 / 架构概览 / 品牌主 KV",
+    ["slide-01"],
+  ),
+  heroMobile: createPlaceholder(
+    "hero",
+    "首页主视觉图占位",
+    "建议放：首页主视觉图",
+    "类型：平台总览 / 架构概览 / 品牌主 KV",
+    ["slide-01"],
+  ),
+  platformOverviewPlaceholder: createPlaceholder(
+    "overview",
+    "平台总览图占位",
+    "建议放：七层架构总览图",
+    "类型：分层架构 / 平台全景 / 安全纵向切面",
+    ["slide-10"],
+  ),
+  platformOverview: createPlaceholder(
+    "overview",
+    "平台总览图占位",
+    "建议放：七层架构总览图",
+    "类型：分层架构 / 平台全景 / 安全纵向切面",
+    ["slide-10"],
+  ),
+  capabilityVisual: createPlaceholder(
+    "feature",
+    "核心能力入口图占位",
+    "建议放：核心能力入口图",
+    "类型：能力矩阵 / 产品功能总览 / 工作台示意",
+    ["slide-14", "slide-28"],
+  ),
+  scenarioVisual: createPlaceholder(
+    "feature",
+    "业务场景价值图占位",
+    "建议放：业务场景价值图",
+    "类型：供应链 / 财务 / 风控 / 客服运营场景图",
+    ["slide-16"],
+  ),
+  scenarioPlaceholder: createPlaceholder(
+    "feature",
+    "业务场景价值图占位",
+    "建议放：业务场景价值图",
+    "类型：供应链 / 财务 / 风控 / 客服运营场景图",
+    ["slide-16"],
+  ),
+  proofPlaceholder: createPlaceholder(
+    "proof-card",
+    "案例缩略图占位",
+    "建议放：案例缩略图",
+    "类型：制造业案例 / 知识中台 / 架构落地图",
+    ["slide-24"],
+  ),
+  proofCaseOne: createPlaceholder(
+    "proof-card",
+    "汽车零部件案例缩略图占位",
+    "建议放：案例缩略图",
+    "类型：制造业案例 / 知识中台 / 架构落地图",
+    ["slide-24"],
+  ),
+  proofCaseTwo: createPlaceholder(
+    "proof-card",
+    "叉车制造案例缩略图占位",
+    "建议放：案例缩略图",
+    "类型：产品知识图谱 / 工业产品案例图",
+    ["slide-27"],
+  ),
+  proofTeam: createPlaceholder(
+    "proof-card",
+    "核心团队缩略图占位",
+    "建议放：团队背书图",
+    "类型：团队形象 / 专家介绍 / 组织背书图",
+    ["slide-30"],
+  ),
+} satisfies Record<string, HomeVisualSlot>;

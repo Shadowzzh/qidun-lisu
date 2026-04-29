@@ -1,11 +1,28 @@
+import type { StaticImageData } from "next/image";
+
 export type SlideRef = `slide-${string}`;
 
-export type AssetRef = {
-  key: string;
-  assetPath: `src/assets/home/${string}`;
-  alt: string;
-  sourceSlides: SlideRef[];
-};
+export type HomeVisualFrame = "hero" | "overview" | "feature" | "proof-card";
+
+export type HomeVisualSlot =
+  | {
+      kind: "image";
+      frame: HomeVisualFrame;
+      alt: string;
+      src: StaticImageData;
+      mobileSrc?: StaticImageData;
+      sourceSlides: SlideRef[];
+      sourceArchiveFiles: string[];
+    }
+  | {
+      kind: "placeholder";
+      frame: HomeVisualFrame;
+      alt: string;
+      title: string;
+      hint: string;
+      sourceSlides: SlideRef[];
+      sourceArchiveFiles: string[];
+    };
 
 export type NavItem = {
   id: string;
@@ -14,40 +31,74 @@ export type NavItem = {
   kind: "anchor" | "route";
 };
 
-export type SummaryCard = {
+export type HomeMetric = {
   title: string;
   description: string;
   sourceSlides: SlideRef[];
-  visual?: AssetRef;
 };
 
-export type TraceableTextItem = {
+export type HomeOverviewCard = {
   title: string;
-  description?: string;
+  description: string;
   sourceSlides: SlideRef[];
-  visual?: AssetRef;
 };
 
-export type TraceableGroup = {
+export type HomeFeatureItem = {
   title: string;
+  description: string;
   sourceSlides: SlideRef[];
-  items: TraceableTextItem[];
-  visual?: AssetRef;
 };
 
-export type HomeSection = {
-  id:
-    | "hero"
-    | "why-now"
-    | "proposition"
-    | "architecture"
-    | "capabilities"
-    | "scenarios"
-    | "proof"
-    | "closing";
+export type HomeProofCard = {
+  id: "case-one" | "case-two" | "team";
   title: string;
-  eyebrow?: string;
-  description?: string;
+  description: string;
+  visual: HomeVisualSlot;
   sourceSlides: SlideRef[];
-  visuals?: AssetRef[];
+};
+
+export type HomeHeroContent = {
+  id: "hero";
+  title: string;
+  description: string;
+  eyebrow: string;
+  metrics: HomeMetric[];
+  desktopVisual: HomeVisualSlot;
+  mobileVisual: HomeVisualSlot;
+  sourceSlides: SlideRef[];
+};
+
+export type HomeOverviewBand = {
+  id: "overview";
+  title: string;
+  description: string;
+  visual: HomeVisualSlot;
+  cards: HomeOverviewCard[];
+  sourceSlides: SlideRef[];
+};
+
+export type HomeFeatureBand = {
+  id: "capabilities" | "scenarios";
+  title: string;
+  description: string;
+  items: HomeFeatureItem[];
+  visual: HomeVisualSlot;
+  sourceSlides: SlideRef[];
+};
+
+export type HomeClosingBand = {
+  id: "closing";
+  title: string;
+  description: string;
+  points: HomeMetric[];
+  sourceSlides: SlideRef[];
+};
+
+export type FooterGroup = {
+  title: string;
+  items: Array<{
+    label: string;
+    href?: `#${string}` | `/${string}`;
+    kind: "anchor" | "route" | "text";
+  }>;
 };

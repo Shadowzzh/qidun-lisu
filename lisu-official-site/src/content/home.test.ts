@@ -1,43 +1,40 @@
 import { describe, expect, it } from "vitest";
 import {
-  homeArchitectureLayers,
-  homeClosingPoints,
-  homeHeroMetrics,
-  homePropositionCards,
-  homeSections,
-  homeSummaryCards,
-  homeWhyNowGroups,
+  homeClosingBand,
+  homeFeatureBands,
+  homeHero,
+  homeOverviewBand,
+  homeProofCards,
 } from "@/content/home";
+import { homeNavItems } from "@/content/navigation";
 
 describe("home content contract", () => {
-  it("defines eight rendered sections with source slides", () => {
-    expect(homeSections).toHaveLength(8);
-    expect(homeSections.map((section) => section.id)).toEqual([
+  it("maps the homepage into template-shaped bands", () => {
+    expect(homeHero.id).toBe("hero");
+    expect(homeOverviewBand.id).toBe("overview");
+    expect(homeFeatureBands.map((band) => band.id)).toEqual(["capabilities", "scenarios"]);
+    expect(homeClosingBand.id).toBe("closing");
+  });
+
+  it("exposes six visible anchor links for the shell", () => {
+    expect(homeNavItems.map((item) => item.id)).toEqual([
       "hero",
-      "why-now",
-      "proposition",
-      "architecture",
+      "overview",
       "capabilities",
       "scenarios",
       "proof",
       "closing",
     ]);
-    expect(homeSections.every((section) => section.sourceSlides.length > 0)).toBe(true);
+    expect(homeNavItems.every((item) => item.kind === "anchor")).toBe(true);
   });
 
-  it("keeps summary cards traceable", () => {
-    expect(homeSummaryCards.capabilities).toHaveLength(5);
-    expect(homeSummaryCards.proof).toHaveLength(3);
-    expect(homeSummaryCards.capabilities.every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homeSummaryCards.proof.every((item) => item.sourceSlides.length > 0)).toBe(true);
-  });
-
-  it("keeps upper-section content traceable", () => {
-    expect(homeHeroMetrics.every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homePropositionCards.every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homeArchitectureLayers.every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homeClosingPoints.every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homeWhyNowGroups.every((group) => group.sourceSlides.length > 0)).toBe(true);
-    expect(homeWhyNowGroups.flatMap((group) => group.items).every((item) => item.sourceSlides.length > 0)).toBe(true);
+  it("keeps every rendered block traceable to source slides", () => {
+    expect(homeHero.sourceSlides).toEqual(["slide-01"]);
+    expect(homeOverviewBand.sourceSlides).toEqual(["slide-04", "slide-05", "slide-07", "slide-10"]);
+    expect(homeOverviewBand.cards.every((card) => card.sourceSlides.length > 0)).toBe(true);
+    expect(homeFeatureBands.every((band) => band.sourceSlides.length > 0)).toBe(true);
+    expect(homeFeatureBands.flatMap((band) => band.items).every((item) => item.sourceSlides.length > 0)).toBe(true);
+    expect(homeProofCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
+    expect(homeClosingBand.points.every((point) => point.sourceSlides.length > 0)).toBe(true);
   });
 });
