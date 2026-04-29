@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 pb-8 pt-10 md:px-6 md:pt-12">
-        <div className="grid gap-8 border-b border-slate-200 pb-8 md:grid-cols-[repeat(3,minmax(0,1fr))_18rem]">
+        <div className="grid gap-8 border-b border-slate-200 pb-8 md:grid-cols-2 xl:grid-cols-4">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <p className="text-balance text-sm font-semibold text-slate-900">{group.title}</p>
@@ -30,7 +30,7 @@ export function Footer() {
             </div>
           ))}
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:col-span-2 xl:col-span-1">
             <p className="text-balance text-sm font-semibold text-slate-900">{footerSummary.title}</p>
             <p className="mt-4 text-pretty text-sm leading-7 text-slate-700">{footerSummary.description}</p>
             <p className="mt-3 text-pretty text-sm leading-7 text-slate-600">{footerSummary.detail}</p>
