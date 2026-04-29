@@ -1,71 +1,42 @@
 import { describe, expect, it } from "vitest";
-import * as homeContent from "@/content/home";
-import { homeNavItems } from "@/content/navigation";
+import {
+  homeClosingStatement,
+  homeEntryBands,
+  homeHero,
+  homeOverviewBand,
+  homeProofCards,
+  homeProofSection,
+  homeScenarioCards,
+} from "@/content/home";
+import { siteNavMenus } from "@/content/site-nav";
 
 describe("home content contract", () => {
-  const homeProofSection = Reflect.get(homeContent, "homeProofSection") as
-    | {
-        id: string;
-        title: string;
-        description: string;
-        sourceSlides: string[];
-      }
-    | undefined;
-
-  it("maps the homepage into template-shaped bands", () => {
-    expect(homeContent.homeHero.id).toBe("hero");
-    expect(homeContent.homeOverviewBand.id).toBe("overview");
-    expect(homeContent.homeFeatureBands.map((band) => band.id)).toEqual(["capabilities", "scenarios"]);
-    expect(homeProofSection?.id).toBe("proof");
-    expect(homeContent.homeClosingBand.id).toBe("closing");
+  it("maps the homepage into a multipage-entry structure", () => {
+    expect(homeHero.id).toBe("hero");
+    expect(homeOverviewBand.id).toBe("overview");
+    expect(homeEntryBands.map((band) => band.id)).toEqual([
+      "solution-overview",
+      "semantic-layer",
+      "data-platform",
+      "security",
+      "workspace",
+    ]);
+    expect(homeScenarioCards.map((card) => card.title)).toEqual(["供应链", "财务", "风控", "客服运营"]);
+    expect(homeProofSection.id).toBe("proof");
+    expect(homeClosingStatement.id).toBe("route-closing");
   });
 
-  it("exposes six visible anchor links for the shell", () => {
-    expect(homeNavItems.map((item) => item.id)).toEqual([
-      "hero",
-      "overview",
-      "capabilities",
-      "scenarios",
-      "proof",
-      "closing",
-    ]);
-    expect(homeNavItems.map((item) => item.label)).toEqual([
-      "首页概览",
-      "平台总览",
-      "核心能力",
-      "场景价值",
-      "案例团队",
-      "价值承诺",
-    ]);
-    expect(homeNavItems.map((item) => item.href)).toEqual([
-      "#hero",
-      "#overview",
-      "#capabilities",
-      "#scenarios",
-      "#proof",
-      "#closing",
-    ]);
-    expect(homeNavItems.every((item) => item.kind === "anchor")).toBe(true);
+  it("defines four desktop navigation menus for the site shell", () => {
+    expect(siteNavMenus.map((menu) => menu.id)).toEqual(["solution", "scenarios", "cases", "company"]);
+    expect(siteNavMenus.map((menu) => menu.label)).toEqual(["解决方案", "应用场景", "案例中心", "关于我们"]);
   });
 
-  it("exposes dedicated proof content without legacy section compatibility", () => {
-    expect(homeProofSection).toEqual({
-      id: "proof",
-      title: "案例与团队摘要",
-      description: "在首页建立最小可信度，而不展开完整案例页。",
-      sourceSlides: ["slide-24", "slide-27", "slide-30"],
-    });
-    expect(homeContent).not.toHaveProperty("homeSections");
-  });
-
-  it("keeps every rendered block traceable to source slides", () => {
-    expect(homeContent.homeHero.sourceSlides).toEqual(["slide-01"]);
-    expect(homeContent.homeOverviewBand.sourceSlides).toEqual(["slide-04", "slide-05", "slide-07", "slide-10"]);
-    expect(homeContent.homeOverviewBand.cards.every((card) => card.sourceSlides.length > 0)).toBe(true);
-    expect(homeContent.homeFeatureBands.every((band) => band.sourceSlides.length > 0)).toBe(true);
-    expect(homeContent.homeFeatureBands.flatMap((band) => band.items).every((item) => item.sourceSlides.length > 0)).toBe(true);
-    expect(homeContent.homeProofCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
-    expect(homeContent.homeClosingBand.points.every((point) => point.sourceSlides.length > 0)).toBe(true);
-    expect(homeProofSection?.sourceSlides).toEqual(["slide-24", "slide-27", "slide-30"]);
+  it("keeps every homepage section traceable to source slides", () => {
+    expect(homeHero.sourceSlides).toEqual(["slide-01"]);
+    expect(homeOverviewBand.sourceSlides).toEqual(["slide-04", "slide-05", "slide-07", "slide-10"]);
+    expect(homeEntryBands.every((band) => band.sourceSlides.length > 0)).toBe(true);
+    expect(homeScenarioCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
+    expect(homeProofCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
+    expect(homeClosingStatement.sourceSlides).toEqual(["slide-22"]);
   });
 });

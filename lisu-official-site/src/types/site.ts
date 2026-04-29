@@ -24,6 +24,23 @@ export type HomeVisualSlot =
       sourceArchiveFiles: string[];
     };
 
+export type SiteLinkItem = {
+  label: string;
+  href: "/" | `/${string}` | `/${string}#${string}`;
+  kind: "route" | "pending";
+};
+
+export type NavColumn = {
+  title: string;
+  items: SiteLinkItem[];
+};
+
+export type SiteNavMenu = {
+  id: "solution" | "scenarios" | "cases" | "company";
+  label: string;
+  columns: NavColumn[];
+};
+
 export type NavItem = {
   id: string;
   label: string;
@@ -101,11 +118,37 @@ export type HomeClosingBand = {
   sourceSlides: SlideRef[];
 };
 
+export type HomeEntryBand = {
+  id: "solution-overview" | "semantic-layer" | "data-platform" | "security" | "workspace";
+  title: string;
+  description: string;
+  visual: HomeVisualSlot;
+  action: SiteLinkItem;
+  sourceSlides: SlideRef[];
+};
+
+export type HomeScenarioCard = {
+  title: string;
+  description: string;
+  sourceSlides: SlideRef[];
+};
+
+export type HomeClosingStatement = {
+  id: "route-closing";
+  title: string;
+  description: string;
+  routeGroups: FooterGroup[];
+  sourceSlides: SlideRef[];
+};
+
 export type FooterGroup = {
   title: string;
-  items: Array<{
-    label: string;
-    href?: `#${string}` | `/${string}`;
-    kind: "anchor" | "route" | "text";
-  }>;
+  items: Array<
+    | SiteLinkItem
+    | {
+        label: string;
+        href?: `#${string}` | `/${string}`;
+        kind: "anchor" | "route" | "text";
+      }
+  >;
 };

@@ -1,11 +1,15 @@
 import { homeVisuals } from "@/assets/home";
+import { footerRouteGroups } from "@/content/site-nav";
 import type {
+  HomeClosingStatement,
   HomeClosingBand,
+  HomeEntryBand,
   HomeFeatureBand,
   HomeHeroContent,
   HomeOverviewBand,
   HomeProofCard,
   HomeProofSection,
+  HomeScenarioCard,
 } from "@/types/site";
 
 export const homeHero: HomeHeroContent = {
@@ -91,6 +95,56 @@ export const homeFeatureBands: HomeFeatureBand[] = [
   },
 ];
 
+export const homeEntryBands: HomeEntryBand[] = [
+  {
+    id: "solution-overview",
+    title: "主方案总览",
+    description: "解释整套私有化 AI 知识智能平台的总体定位、差异化价值与架构全景。",
+    visual: homeVisuals.platformOverview,
+    action: { label: "查看详情", href: "/solution", kind: "pending" },
+    sourceSlides: ["slide-01", "slide-07", "slide-10"],
+  },
+  {
+    id: "semantic-layer",
+    title: "知识语义层",
+    description: "说明业务知识、规则语义与生成结果如何被统一约束，形成可解释的知识大脑。",
+    visual: homeVisuals.capabilityVisual,
+    action: { label: "查看详情", href: "/semantic-layer", kind: "pending" },
+    sourceSlides: ["slide-07", "slide-14"],
+  },
+  {
+    id: "data-platform",
+    title: "AI 数据平台",
+    description: "说明企业真实数据如何通过多引擎协同、召回重排与闭环反馈转化为可调用知识。",
+    visual: homeVisuals.capabilityVisual,
+    action: { label: "查看详情", href: "/data-platform", kind: "pending" },
+    sourceSlides: ["slide-13", "slide-15"],
+  },
+  {
+    id: "security",
+    title: "安全管控",
+    description: "说明平台为什么能够进入核心业务生产环境，并满足运行时治理与合规审计要求。",
+    visual: homeVisuals.capabilityVisual,
+    action: { label: "查看详情", href: "/security", kind: "pending" },
+    sourceSlides: ["slide-17", "slide-18"],
+  },
+  {
+    id: "workspace",
+    title: "员工 AI 工作台",
+    description: "说明平台能力最终如何进入员工工作界面，支撑知识中心、智能体中心与统一运营管理。",
+    visual: homeVisuals.scenarioVisual,
+    action: { label: "查看详情", href: "/workspace", kind: "pending" },
+    sourceSlides: ["slide-28", "slide-29"],
+  },
+];
+
+export const homeScenarioCards: HomeScenarioCard[] = [
+  { title: "供应链", description: "让规则沉淀、问答推理与跨域协同进入供应链关键环节。", sourceSlides: ["slide-16"] },
+  { title: "财务", description: "让口径治理、审计支撑与财务判断建立在统一知识与可追溯过程之上。", sourceSlides: ["slide-16"] },
+  { title: "风控", description: "让预警结果附带推理路径，避免黑盒式结论进入关键管理流程。", sourceSlides: ["slide-16"] },
+  { title: "客服运营", description: "让业务知识、经验传承与精准答复沉淀为稳定可复用的服务能力。", sourceSlides: ["slide-16"] },
+];
+
 export const homeProofCards: HomeProofCard[] = [
   {
     id: "case-one",
@@ -132,4 +186,12 @@ export const homeClosingBand: HomeClosingBand = {
     { title: "可审计", description: "关键链路留痕，满足企业合规要求。", sourceSlides: ["slide-22"] },
     { title: "北京骊甦科技", description: "企业级私有化 AI 知识智能平台方案。", sourceSlides: ["slide-01"] },
   ],
+};
+
+export const homeClosingStatement: HomeClosingStatement = {
+  id: "route-closing",
+  title: "继续浏览官网结构",
+  description: "首页只建立品牌与方案总览，后续内容将围绕解决方案、应用场景、案例中心与关于我们持续展开。",
+  routeGroups: footerRouteGroups,
+  sourceSlides: ["slide-22"],
 };
