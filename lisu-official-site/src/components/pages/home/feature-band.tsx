@@ -1,15 +1,22 @@
 import { HomeVisual } from "@/components/pages/home/home-visual";
+import { cn } from "@/lib/utils";
 import type { HomeFeatureBand as HomeFeatureBandContent } from "@/types/site";
 
 type FeatureBandProps = {
   band: HomeFeatureBandContent;
+  variant?: "default" | "reversed";
 };
 
-export function FeatureBand({ band }: FeatureBandProps) {
+export function FeatureBand({ band, variant = "default" }: FeatureBandProps) {
   return (
-    <section id={band.id} aria-labelledby={`${band.id}-heading`} className="scroll-mt-24">
+    <section
+      id={band.id}
+      aria-labelledby={`${band.id}-heading`}
+      className="scroll-mt-24"
+      data-feature-layout={variant}
+    >
       <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_600px]">
-        <div className="max-w-[520px]">
+        <div className={cn("max-w-[520px]", variant === "reversed" && "md:order-2 md:justify-self-end")}>
           <h2 id={`${band.id}-heading`} className="text-balance text-lg font-semibold text-slate-950 md:text-xl">
             {band.title}
           </h2>
@@ -25,7 +32,7 @@ export function FeatureBand({ band }: FeatureBandProps) {
           </ul>
         </div>
 
-        <div className="w-full justify-self-end">
+        <div className={cn("w-full justify-self-end", variant === "reversed" && "md:order-1 md:justify-self-start")}>
           <HomeVisual className="w-full" sizes="(min-width: 768px) 600px, 100vw" slot={band.visual} />
         </div>
       </div>

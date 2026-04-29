@@ -31,8 +31,12 @@ export function HomePage() {
         <section className="bg-[linear-gradient(180deg,#eef6ff_0%,#f7fbff_100%)]">
           <div className="mx-auto max-w-[1200px] px-4 py-16 md:py-20">
             <div className="space-y-16 md:space-y-20">
-              {homeFeatureBands.map((band) => (
-                <FeatureBand key={band.id} band={band} />
+              {homeFeatureBands.map((band, index) => (
+                <FeatureBand
+                  key={band.id}
+                  band={band}
+                  variant={index % 2 === 0 ? "default" : "reversed"}
+                />
               ))}
             </div>
           </div>
