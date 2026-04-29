@@ -14,8 +14,10 @@ describe("Header", () => {
 
     const desktopNav = screen.getByRole("navigation", { name: "主导航" });
     const trigger = screen.getByRole("button", { name: "解决方案" });
+    const banner = screen.getByRole("banner");
 
     expect(screen.getByRole("link", { name: "北京骊甦科技" })).toHaveAttribute("href", "/");
+    expect(banner).toHaveAttribute("data-menu-state", "closed");
     expect(within(desktopNav).getByRole("button", { name: "应用场景" })).toBeInTheDocument();
     expect(within(desktopNav).getByRole("button", { name: "案例中心" })).toBeInTheDocument();
     expect(within(desktopNav).getByRole("button", { name: "关于我们" })).toBeInTheDocument();
@@ -24,6 +26,7 @@ describe("Header", () => {
 
     const panel = screen.getByTestId("desktop-nav-panel");
     expect(trigger).toHaveAttribute("aria-expanded", "true");
+    expect(banner).toHaveAttribute("data-menu-state", "open");
     expect(within(panel).getByRole("button", { name: "主方案总览" })).toBeInTheDocument();
     expect(within(panel).getByRole("button", { name: "安全管控" })).toBeInTheDocument();
   });

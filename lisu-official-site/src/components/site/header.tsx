@@ -12,6 +12,7 @@ import {
 import { MobileMenu } from "@/components/site/mobile-menu";
 import { SiteLink } from "@/components/site/site-link";
 import { siteNavMenus } from "@/content/site-nav";
+import { cn } from "@/lib/utils";
 import type { NavColumn } from "@/types/site";
 
 function renderMenuColumn(column: NavColumn) {
@@ -43,6 +44,7 @@ function renderMenuColumn(column: NavColumn) {
 export function Header() {
   const [openMenu, setOpenMenu] = useState<HeaderMenuId | null>(null);
   const activeMenu = siteNavMenus.find((menu) => menu.id === openMenu) ?? null;
+  const menuState = activeMenu ? "open" : "closed";
 
   function closeIfFocusLeaves(event: FocusEvent<HTMLElement>) {
     if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
@@ -64,7 +66,13 @@ export function Header() {
 
   return (
     <header
-      className="relative sticky top-0 z-50 border-b border-slate-200 bg-white shadow-sm"
+      data-menu-state={menuState}
+      className={cn(
+        "relative sticky top-0 z-50 border-b shadow-sm transition-colors duration-200",
+        menuState === "open"
+          ? "border-slate-200/80 bg-white/80 backdrop-blur-lg"
+          : "border-white/20 bg-white/45 backdrop-blur-md",
+      )}
       onBlurCapture={closeIfFocusLeaves}
       onMouseLeave={() => setOpenMenu(null)}
     >
@@ -100,7 +108,7 @@ export function Header() {
       {activeMenu ? (
         <div
           data-testid="desktop-nav-panel"
-          className="absolute inset-x-0 top-full border-t border-sky-100 bg-slate-50 shadow-lg"
+          className="absolute inset-x-0 top-full border-t border-slate-200/70 bg-white/88 shadow-lg backdrop-blur-lg"
         >
           <div className="mx-auto grid max-w-6xl gap-10 px-6 py-8 md:grid-cols-2">
             {activeMenu.columns.map((column) => renderMenuColumn(column))}
