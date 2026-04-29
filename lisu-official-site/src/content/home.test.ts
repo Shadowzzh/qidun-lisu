@@ -4,6 +4,7 @@ import {
   homeFeatureBands,
   homeHero,
   homeOverviewBand,
+  homeSections,
   homeProofCards,
 } from "@/content/home";
 import { homeNavItems } from "@/content/navigation";
@@ -17,6 +18,14 @@ describe("home content contract", () => {
   });
 
   it("exposes six visible anchor links for the shell", () => {
+    expect(homeNavItems.map((item) => item.id)).toEqual([
+      "hero",
+      "architecture",
+      "capabilities",
+      "scenarios",
+      "proof",
+      "closing",
+    ]);
     expect(homeNavItems.map((item) => item.label)).toEqual([
       "首页概览",
       "平台总览",
@@ -34,6 +43,13 @@ describe("home content contract", () => {
       "#closing",
     ]);
     expect(homeNavItems.every((item) => item.kind === "anchor")).toBe(true);
+  });
+
+  it("keeps compatibility proposition content on an explicit mapping", () => {
+    const propositionSection = homeSections.find((section) => section.id === "proposition");
+    const propositionCard = homeOverviewBand.cards.find((card) => card.title === "方案主张");
+
+    expect(propositionSection?.description).toBe(propositionCard?.description);
   });
 
   it("keeps every rendered block traceable to source slides", () => {

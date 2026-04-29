@@ -126,6 +126,8 @@ export const homeClosingBand: HomeClosingBand = {
   ],
 };
 
+const propositionOverviewCard = homeOverviewBand.cards.find((card) => card.title === "方案主张");
+
 export const homeSections = [
   {
     id: "hero",
@@ -142,7 +144,7 @@ export const homeSections = [
   {
     id: "proposition",
     title: "拒绝概率玩具，打造知识大脑",
-    description: homeOverviewBand.cards[2]?.description,
+    description: propositionOverviewCard?.description,
     sourceSlides: ["slide-07"],
   },
   {
