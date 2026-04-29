@@ -1,49 +1,55 @@
 "use client";
 
-import { ClosingBand } from "@/components/pages/home/closing-band";
-import { FeatureBand } from "@/components/pages/home/feature-band";
+import { EntryBand } from "@/components/pages/home/entry-band";
 import { HeroBand } from "@/components/pages/home/hero-band";
 import { OverviewBand } from "@/components/pages/home/overview-band";
+import { RouteClosingBand } from "@/components/pages/home/route-closing-band";
+import { ScenarioProofBand } from "@/components/pages/home/scenario-proof-band";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import {
-  homeClosingBand,
-  homeFeatureBands,
+  homeClosingStatement,
+  homeEntryBands,
   homeHero,
   homeOverviewBand,
   homeProofCards,
   homeProofSection,
+  homeScenarioCards,
 } from "@/content/home";
-import { homeNavItems } from "@/content/navigation";
-import { useActiveSection } from "@/hooks/use-active-section";
-
-const sectionIds = homeNavItems.map((item) => item.id);
 
 export function HomePage() {
-  const activeId = useActiveSection(sectionIds);
-
   return (
     <>
-      <Header activeId={activeId} />
+      <Header />
       <main id="main-content" className="bg-[#f7fbff]">
         <HeroBand content={homeHero} />
         <OverviewBand band={homeOverviewBand} />
 
-        <section className="bg-[linear-gradient(180deg,#eef6ff_0%,#f7fbff_100%)]">
+        <section
+          id="solutions"
+          aria-labelledby="home-solutions-heading"
+          className="bg-[linear-gradient(180deg,#eef6ff_0%,#f7fbff_100%)] scroll-mt-24"
+        >
           <div className="mx-auto max-w-[1200px] px-4 py-16 md:py-20">
+            <div className="mb-10 max-w-[760px]">
+              <h2 id="home-solutions-heading" className="text-balance text-3xl font-semibold text-slate-950 md:text-4xl">
+                解决方案入口
+              </h2>
+              <p className="mt-4 text-pretty text-sm leading-7 text-slate-600 md:text-base">
+                首页只建立第一层理解，具体能力将在后续页面中分别展开。
+              </p>
+            </div>
+
             <div className="space-y-16 md:space-y-20">
-              {homeFeatureBands.map((band, index) => (
-                <FeatureBand
-                  key={band.id}
-                  band={band}
-                  variant={index % 2 === 0 ? "default" : "reversed"}
-                />
+              {homeEntryBands.map((band, index) => (
+                <EntryBand key={band.id} band={band} variant={index % 2 === 0 ? "default" : "reversed"} />
               ))}
             </div>
           </div>
         </section>
 
-        <ClosingBand closingBand={homeClosingBand} proofCards={homeProofCards} proofSection={homeProofSection} />
+        <ScenarioProofBand scenarios={homeScenarioCards} proofCards={homeProofCards} proofSection={homeProofSection} />
+        <RouteClosingBand content={homeClosingStatement} />
       </main>
       <Footer />
     </>

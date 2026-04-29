@@ -143,12 +143,5 @@ export type HomeClosingStatement = {
 
 export type FooterGroup = {
   title: string;
-  items: Array<
-    | SiteLinkItem
-    | {
-        label: string;
-        href?: `#${string}` | `/${string}`;
-        kind: "anchor" | "route" | "text";
-      }
-  >;
+  items: SiteLinkItem[];
 };
