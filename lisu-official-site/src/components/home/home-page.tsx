@@ -1,5 +1,9 @@
 "use client";
 
+import { CapabilitySection } from "@/components/home/capability-section";
+import { ClosingSection } from "@/components/home/closing-section";
+import { ProofSection } from "@/components/home/proof-section";
+import { ScenariosSection } from "@/components/home/scenarios-section";
 import { ArchitectureSection } from "@/components/home/architecture-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { PropositionSection } from "@/components/home/proposition-section";
@@ -22,6 +26,10 @@ export function HomePage() {
         <WhyNowSection />
         <PropositionSection />
         <ArchitectureSection />
+        <CapabilitySection />
+        <ScenariosSection />
+        <ProofSection />
+        <ClosingSection />
       </main>
       <Footer />
     </>
