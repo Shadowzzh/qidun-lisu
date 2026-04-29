@@ -5,7 +5,7 @@ import { homeNavItems } from "@/content/navigation";
 
 describe("Header", () => {
   it("renders the six visible homepage anchors in template-like shell order", () => {
-    const { container } = render(<Header items={homeNavItems} activeId="architecture" />);
+    const { container } = render(<Header items={homeNavItems} activeId="overview" />);
     const mobileDisclosure = container.querySelector("details");
 
     expect(mobileDisclosure).toBeInTheDocument();
@@ -14,9 +14,8 @@ describe("Header", () => {
     expect(
       screen
         .getAllByRole("link", { name: "平台总览" })
-        .every((node) => node.getAttribute("href") === "#architecture"),
+        .every((node) => node.getAttribute("href") === "#overview"),
     ).toBe(true);
-    expect(container.querySelector("a[href='#overview']")).not.toBeInTheDocument();
     expect(
       screen
         .getAllByRole("link", { name: "平台总览" })

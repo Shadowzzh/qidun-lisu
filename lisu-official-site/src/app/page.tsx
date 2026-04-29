@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { HomePage } from "@/components/home/home-page";
+import { HomePage } from "@/components/pages/home/home-page";
 
 export const metadata: Metadata = {
   title: "首页",

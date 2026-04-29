@@ -20,7 +20,7 @@ describe("home content contract", () => {
   it("exposes six visible anchor links for the shell", () => {
     expect(homeNavItems.map((item) => item.id)).toEqual([
       "hero",
-      "architecture",
+      "overview",
       "capabilities",
       "scenarios",
       "proof",
@@ -36,7 +36,7 @@ describe("home content contract", () => {
     ]);
     expect(homeNavItems.map((item) => item.href)).toEqual([
       "#hero",
-      "#architecture",
+      "#overview",
       "#capabilities",
       "#scenarios",
       "#proof",

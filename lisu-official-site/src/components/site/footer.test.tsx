@@ -13,8 +13,7 @@ describe("Footer", () => {
     expect(screen.getByText("方案能力")).toBeInTheDocument();
     expect(screen.getByText("页面规划")).toBeInTheDocument();
     expect(screen.getByText("企业级私有化 AI 知识智能平台方案")).toBeInTheDocument();
-    expect(footerOverviewLink).toHaveAttribute("href", "#architecture");
-    expect(container.querySelector("a[href='#overview']")).not.toBeInTheDocument();
+    expect(footerOverviewLink).toHaveAttribute("href", "#overview");
     expect(screen.queryByText(/ICP备/)).not.toBeInTheDocument();
     expect(container.querySelector("[class*='grid-cols-\\[']")).not.toBeInTheDocument();
   });

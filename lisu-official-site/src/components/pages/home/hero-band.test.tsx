@@ -1,0 +1,17 @@
+import { render, screen } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
+import { HeroBand } from "@/components/pages/home/hero-band";
+import { homeHero } from "@/content/home";
+
+describe("HeroBand", () => {
+  it("keeps the template hero wrapper while rendering the Lisu hero content", () => {
+    const { container } = render(<HeroBand content={homeHero} />);
+
+    expect(screen.getByText(homeHero.eyebrow)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: homeHero.title })).toBeInTheDocument();
+    expect(screen.getByText(homeHero.description)).toBeInTheDocument();
+    expect(screen.getByText("64 卡 H20 集群，9024GB 显存支撑。")).toBeInTheDocument();
+    expect(container.querySelectorAll("[data-testid='home-visual-hero']")).toHaveLength(2);
+    expect(container.querySelector(".relative.mx-auto.flex.min-h-\\[388px\\]")).toBeInTheDocument();
+  });
+});
