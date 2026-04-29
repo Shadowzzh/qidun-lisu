@@ -22,18 +22,21 @@ export function HeroBand({ content }: HeroBandProps) {
 
       <div
         data-testid="hero-stage"
-        className="relative mx-auto flex h-[calc((100dvh-4rem)/2)] max-w-[1200px] items-center justify-center px-4 py-8 text-center md:py-10"
+        className="relative mx-auto flex h-[calc((100dvh-4rem)*0.35)] max-w-[1200px] items-center justify-center px-4 py-6 text-center md:py-8"
       >
         <h1
           id="home-hero-heading"
           data-testid="hero-title"
-          className="relative max-w-none whitespace-nowrap italic bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#172554_100%)] bg-clip-text text-4xl font-semibold leading-[1.08] text-transparent [text-shadow:0_10px_30px_rgba(255,255,255,0.24)] md:text-5xl lg:text-6xl"
+          className="relative max-w-none whitespace-nowrap italic bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#172554_100%)] bg-clip-text text-4xl font-semibold leading-[1.08] text-transparent [text-shadow:0_10px_30px_rgba(255,255,255,0.24)] md:-translate-x-4 md:text-5xl lg:text-6xl"
         >
           {content.title}
         </h1>
       </div>
 
-      <div className="relative mx-auto max-w-[1200px] px-4 pb-10 pt-3 md:pb-14 md:pt-4">
+      <div
+        data-testid="hero-metrics-wrap"
+        className="relative mx-auto max-w-[1200px] px-4 pb-10 pt-6 md:pb-14 md:pt-8"
+      >
         <ul data-testid="hero-metrics-rail" className="grid gap-3 md:grid-cols-3">
           {content.metrics.map((metric) => (
             <li
