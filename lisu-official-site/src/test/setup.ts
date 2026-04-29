@@ -19,12 +19,22 @@ vi.mock("next/link", () => ({
   default: ({
     children,
     href,
+    prefetch,
     ...props
-  }: AnchorHTMLAttributes<HTMLAnchorElement> & { href?: string }) =>
-    createElement("a", { ...props, href: typeof href === "string" ? href : "#" }, children),
+  }: AnchorHTMLAttributes<HTMLAnchorElement> & { href?: string; prefetch?: boolean }) => {
+    void prefetch;
+
+    return createElement("a", { ...props, href: typeof href === "string" ? href : "#" }, children);
+  },
 }));
 
 vi.mock("next/image", () => ({
-  default: (props: ImgHTMLAttributes<HTMLImageElement>) =>
-    createElement("img", { ...props, alt: props.alt ?? "" }),
+  default: ({
+    priority,
+    ...props
+  }: ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) => {
+    void priority;
+
+    return createElement("img", { ...props, alt: props.alt ?? "" });
+  },
 }));

@@ -8,11 +8,14 @@ export function useActiveSection(ids: string[]) {
   const idsKey = ids.join("|");
 
   useEffect(() => {
-    if (ids.length === 0) {
+    const stableIds = idsKey === "" ? [] : idsKey.split("|");
+
+    if (stableIds.length === 0) {
       return;
     }
 
-    const elements = ids
+    const ratios = ratiosRef.current;
+    const elements = stableIds
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element instanceof HTMLElement);
 
@@ -24,15 +27,15 @@ export function useActiveSection(ids: string[]) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.target instanceof HTMLElement) {
-            ratiosRef.current.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+            ratios.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
           }
         });
 
-        let nextActiveId = ids[0] ?? "";
+        let nextActiveId = stableIds[0] ?? "";
         let bestRatio = -1;
 
-        ids.forEach((id) => {
-          const ratio = ratiosRef.current.get(id) ?? 0;
+        stableIds.forEach((id) => {
+          const ratio = ratios.get(id) ?? 0;
 
           if (ratio > bestRatio) {
             bestRatio = ratio;
@@ -54,7 +57,7 @@ export function useActiveSection(ids: string[]) {
 
     return () => {
       observer.disconnect();
-      ratiosRef.current.clear();
+      ratios.clear();
     };
   }, [idsKey]);
 

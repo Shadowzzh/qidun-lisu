@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import Page from "@/app/page";
 import { HomePage } from "@/components/home/home-page";
 
 describe("HomePage", () => {
@@ -12,5 +13,12 @@ describe("HomePage", () => {
     expect(screen.getByRole("region", { name: "价值承诺" })).toHaveAttribute("id", "closing");
     expect(screen.getByText("员工 AI 工作台")).toBeInTheDocument();
     expect(screen.getByText("汽车零部件案例")).toBeInTheDocument();
+  });
+});
+
+describe("app page", () => {
+  it("renders the homepage through the route entry", () => {
+    render(<Page />);
+    expect(screen.getByRole("heading", { name: "企业级私有化 AI 知识智能平台方案" })).toBeInTheDocument();
   });
 });
