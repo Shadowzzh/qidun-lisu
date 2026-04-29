@@ -32,6 +32,14 @@ function getFrameClassName(frame: HomeVisualFrame): string {
   return assertNever(frame);
 }
 
+function getImageClassName(frame: HomeVisualFrame): string {
+  if (frame === "hero") {
+    return "object-cover";
+  }
+
+  return "object-contain bg-white";
+}
+
 export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
   const frameClassName = getFrameClassName(slot.frame);
 
@@ -72,7 +80,7 @@ export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
 
   return (
     <div data-testid={`home-visual-${slot.frame}`} className={cn(frameClassName, className)}>
-      <Image alt={slot.alt} className="object-cover" fill sizes={sizes} src={slot.src} />
+      <Image alt={slot.alt} className={getImageClassName(slot.frame)} fill sizes={sizes} src={slot.src} />
     </div>
   );
 }

@@ -65,6 +65,16 @@ export const homeOverviewBand: HomeOverviewBand = {
   ],
 };
 
+export const homeArchitectureLayers = [
+  { label: "L7 应用层", description: "智能客服 · 知识问答 · 决策驾驶舱 · AI Agents · 业务中台" },
+  { label: "L6 能力开放层", description: "Skill Engine · Context Engine · 知识处理引擎 · 智能编排 · 记忆组件 · 工具连接层" },
+  { label: "L5 核心语义层", description: "业务概念统一 · 规则显性化 · 决策溯源" },
+  { label: "L4 数据层", description: "Milvus · ES · Neo4j Fabric · PGSQL · MinIO" },
+  { label: "L3.5 运维网关", description: "统一观测 · 安全网关 · 算力解耦 · 模型鉴权 · 调度权限" },
+  { label: "L2-L3 引擎层", description: "vLLM/Triton 推理 · Kueue/Volcano 云原生资源编排" },
+  { label: "L1 超算底座", description: "超融合架构 · 推理 GPU 算卡 · 400G RoCE 高速网络 · 分布式全闪存储" },
+] as const;
+
 export const homeFeatureBands: HomeFeatureBand[] = [
   {
     id: "capabilities",
@@ -100,7 +110,7 @@ export const homeEntryBands: HomeEntryBand[] = [
     id: "solution-overview",
     title: "主方案总览",
     description: "解释整套私有化 AI 知识智能平台的总体定位、差异化价值与架构全景。",
-    visual: homeVisuals.platformOverview,
+    visual: homeVisuals.capabilityVisual,
     action: { label: "查看详情", href: "/solution", kind: "pending" },
     sourceSlides: ["slide-01", "slide-07", "slide-10"],
   },

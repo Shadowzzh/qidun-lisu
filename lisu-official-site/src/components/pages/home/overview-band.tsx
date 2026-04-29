@@ -1,11 +1,14 @@
-import { HomeVisual } from "@/components/pages/home/home-visual";
 import type { HomeOverviewBand as HomeOverviewBandContent } from "@/types/site";
 
 type OverviewBandProps = {
   band: HomeOverviewBandContent;
+  layers: ReadonlyArray<{
+    label: string;
+    description: string;
+  }>;
 };
 
-export function OverviewBand({ band }: OverviewBandProps) {
+export function OverviewBand({ band, layers }: OverviewBandProps) {
   return (
     <section
       id={band.id}
@@ -22,8 +25,15 @@ export function OverviewBand({ band }: OverviewBandProps) {
           </p>
         </div>
 
-        <div className="mt-8 rounded-[20px] bg-white p-3 shadow-lg shadow-slate-200/70">
-          <HomeVisual className="w-full" sizes="100vw" slot={band.visual} />
+        <div className="mt-8 rounded-[20px] bg-white p-6 shadow-lg shadow-slate-200/70 md:p-8">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {layers.map((layer) => (
+              <article key={layer.label} className="rounded-[20px] border border-slate-200 bg-slate-50 px-5 py-5">
+                <p className="text-sm font-semibold text-sky-700">{layer.label}</p>
+                <p className="mt-3 text-pretty text-sm leading-7 text-slate-700">{layer.description}</p>
+              </article>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-3">

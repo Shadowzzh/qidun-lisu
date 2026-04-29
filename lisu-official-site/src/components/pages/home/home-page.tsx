@@ -8,6 +8,7 @@ import { ScenarioProofBand } from "@/components/pages/home/scenario-proof-band";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import {
+  homeArchitectureLayers,
   homeClosingStatement,
   homeEntryBands,
   homeHero,
@@ -23,7 +24,7 @@ export function HomePage() {
       <Header />
       <main id="main-content" className="bg-[#f7fbff]">
         <HeroBand content={homeHero} />
-        <OverviewBand band={homeOverviewBand} />
+        <OverviewBand band={homeOverviewBand} layers={homeArchitectureLayers} />
 
         <section
           id="solutions"
