@@ -125,3 +125,141 @@ export const homeClosingBand: HomeClosingBand = {
     { title: "北京骊甦科技", description: "企业级私有化 AI 知识智能平台方案。", sourceSlides: ["slide-01"] },
   ],
 };
+
+export const homeSections = [
+  {
+    id: "hero",
+    title: homeHero.title,
+    description: homeHero.description,
+    sourceSlides: homeHero.sourceSlides,
+  },
+  {
+    id: "why-now",
+    title: homeOverviewBand.title,
+    description: homeOverviewBand.description,
+    sourceSlides: ["slide-04", "slide-05"],
+  },
+  {
+    id: "proposition",
+    title: "拒绝概率玩具，打造知识大脑",
+    description: homeOverviewBand.cards[2]?.description,
+    sourceSlides: ["slide-07"],
+  },
+  {
+    id: "architecture",
+    title: "七层贯通、语义驱动的平台总览",
+    description: "从算力到底层应用，建立清晰的职责边界和可追溯能力。",
+    sourceSlides: ["slide-10"],
+  },
+  {
+    id: "capabilities",
+    title: homeFeatureBands[0].title,
+    description: homeFeatureBands[0].description,
+    sourceSlides: homeFeatureBands[0].sourceSlides,
+  },
+  {
+    id: "scenarios",
+    title: homeFeatureBands[1].title,
+    description: homeFeatureBands[1].description,
+    sourceSlides: homeFeatureBands[1].sourceSlides,
+  },
+  {
+    id: "proof",
+    title: "案例与团队摘要",
+    description: "在首页建立最小可信度，而不展开完整案例页。",
+    sourceSlides: homeProofCards.flatMap((card) => card.sourceSlides),
+  },
+  {
+    id: "closing",
+    title: homeClosingBand.title,
+    description: homeClosingBand.description,
+    sourceSlides: homeClosingBand.sourceSlides,
+  },
+] as const;
+
+export const homeHeroMetrics = homeHero.metrics;
+
+export const homeWhyNowGroups = [
+  {
+    title: "时代之需",
+    sourceSlides: ["slide-04"],
+    items: [
+      {
+        title: "AI 从实验到生产",
+        description: "核心业务不敢用黑盒答案。",
+        sourceSlides: ["slide-04"],
+      },
+      {
+        title: "从数据到知识孤岛",
+        description: "跨部门定义不一致，决策彼此质疑。",
+        sourceSlides: ["slide-04"],
+      },
+      {
+        title: "算力需求跨越式升级",
+        description: "实验级部署难以支撑生产推理。",
+        sourceSlides: ["slide-04"],
+      },
+    ],
+  },
+  {
+    title: "战略判断",
+    sourceSlides: ["slide-05"],
+    items: [
+      {
+        title: "竞争焦点变化",
+        description: "焦点从算力比拼转向业务敢用、会用、可追溯。",
+        sourceSlides: ["slide-05"],
+      },
+      {
+        title: "合规要求迫近",
+        description: "可解释能力将成为未来准入门槛。",
+        sourceSlides: ["slide-05"],
+      },
+      {
+        title: "布局窗口期",
+        description: "提前布局意味着更早获得竞争资格。",
+        sourceSlides: ["slide-05"],
+      },
+    ],
+  },
+] as const;
+
+export const homePropositionCards = [
+  {
+    title: "拒绝概率玩具",
+    description: "缺乏稳固知识语义层支持的 AI，只是基于概率的昂贵玩具。",
+    sourceSlides: ["slide-07"],
+  },
+  {
+    title: "打造知识大脑",
+    description: "让业务语言直接驱动决策，实现从随机猜测到确定性决策的跨越。",
+    sourceSlides: ["slide-07"],
+  },
+  {
+    title: "数字助手",
+    description: "从聪明的临时工，变成懂业务、有记忆、可审计的数字助手。",
+    sourceSlides: ["slide-07"],
+  },
+] as const;
+
+export const homeArchitectureLayers = [
+  { title: "L7 应用层", sourceSlides: ["slide-10"] },
+  { title: "L6 能力开放层", sourceSlides: ["slide-10"] },
+  { title: "L5 核心语义层", sourceSlides: ["slide-10"] },
+  { title: "L4 数据层", sourceSlides: ["slide-10"] },
+  { title: "L3.5 运维网关", sourceSlides: ["slide-10"] },
+  { title: "L2-L3 引擎层", sourceSlides: ["slide-10"] },
+  { title: "L1 超算底座", sourceSlides: ["slide-10"] },
+] as const;
+
+export const homeSummaryCards = {
+  capabilities: homeFeatureBands[0].items,
+  scenarios: homeFeatureBands[1].items,
+  proof: homeProofCards.map((card) => ({
+    title: card.title,
+    description: card.description,
+    sourceSlides: card.sourceSlides,
+  })),
+};
+
+export const homeClosingPoints = homeClosingBand.points;

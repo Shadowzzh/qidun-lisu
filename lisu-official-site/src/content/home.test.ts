@@ -17,13 +17,21 @@ describe("home content contract", () => {
   });
 
   it("exposes six visible anchor links for the shell", () => {
-    expect(homeNavItems.map((item) => item.id)).toEqual([
-      "hero",
-      "overview",
-      "capabilities",
-      "scenarios",
-      "proof",
-      "closing",
+    expect(homeNavItems.map((item) => item.label)).toEqual([
+      "首页概览",
+      "平台总览",
+      "核心能力",
+      "场景价值",
+      "案例团队",
+      "价值承诺",
+    ]);
+    expect(homeNavItems.map((item) => item.href)).toEqual([
+      "#hero",
+      "#architecture",
+      "#capabilities",
+      "#scenarios",
+      "#proof",
+      "#closing",
     ]);
     expect(homeNavItems.every((item) => item.kind === "anchor")).toBe(true);
   });
