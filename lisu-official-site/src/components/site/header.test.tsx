@@ -23,6 +23,7 @@ describe("Header", () => {
     fireEvent.mouseEnter(trigger);
 
     const panel = screen.getByTestId("desktop-nav-panel");
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(within(panel).getByRole("button", { name: "主方案总览" })).toBeInTheDocument();
     expect(within(panel).getByRole("button", { name: "安全管控" })).toBeInTheDocument();
   });
