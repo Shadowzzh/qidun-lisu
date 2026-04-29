@@ -8,6 +8,10 @@ type HomeVisualProps = {
   sizes?: string;
 };
 
+function assertNever(value: never): never {
+  throw new Error(`Unhandled home visual frame: ${String(value)}`);
+}
+
 function getFrameClassName(frame: HomeVisualFrame): string {
   if (frame === "hero") {
     return "absolute inset-0 h-full w-full overflow-hidden";
@@ -21,7 +25,11 @@ function getFrameClassName(frame: HomeVisualFrame): string {
     return "relative aspect-[1200/928] overflow-hidden rounded-[20px]";
   }
 
-  return "relative aspect-[772/332] overflow-hidden";
+  if (frame === "proof-card") {
+    return "relative aspect-[772/332] overflow-hidden";
+  }
+
+  return assertNever(frame);
 }
 
 export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
@@ -64,7 +72,7 @@ export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
 
   return (
     <div data-testid={`home-visual-${slot.frame}`} className={cn(frameClassName, className)}>
-      <Image alt={slot.alt} className="object-cover" fill sizes={sizes} src={slot.mobileSrc ?? slot.src} />
+      <Image alt={slot.alt} className="object-cover" fill sizes={sizes} src={slot.src} />
     </div>
   );
 }

@@ -1,9 +1,7 @@
 import capabilityVisualImage from "@/assets/home/capability-visual.jpeg";
 import heroBackground from "@/assets/home/hero-background.jpeg";
-import platformOverviewImage from "@/assets/home/platform-overview.png";
 import proofCaseOneImage from "@/assets/home/proof-case-one.jpeg";
 import proofCaseTwoImage from "@/assets/home/proof-case-two.png";
-import proofTeamImage from "@/assets/home/proof-team.jpeg";
 import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
 import type { HomeVisualSlot } from "@/types/site";
 
@@ -15,7 +13,7 @@ const image104Path = "archive/ppt-source/images/image104.jpeg";
 const image109Path = "archive/ppt-source/images/image109.png";
 const image122Path = "archive/ppt-source/images/image122.jpeg";
 
-export const homeVisuals: Record<string, HomeVisualSlot> = {
+export const homeVisuals = {
   heroPlaceholder: {
     kind: "placeholder",
     frame: "hero",
@@ -52,10 +50,11 @@ export const homeVisuals: Record<string, HomeVisualSlot> = {
     sourceArchiveFiles: [],
   },
   platformOverview: {
-    kind: "image",
+    kind: "placeholder",
     frame: "overview",
-    alt: "平台总览图",
-    src: platformOverviewImage,
+    alt: "平台总览图占位",
+    title: "建议放：七层架构总览图",
+    hint: "类型：分层架构 / 平台全景 / 安全纵向切面",
     sourceSlides: ["slide-10"],
     sourceArchiveFiles: [image17Path],
   },
@@ -110,11 +109,26 @@ export const homeVisuals: Record<string, HomeVisualSlot> = {
     sourceArchiveFiles: [image109Path],
   },
   proofTeam: {
-    kind: "image",
+    kind: "placeholder",
     frame: "proof-card",
-    alt: "核心团队缩略图",
-    src: proofTeamImage,
+    alt: "核心团队缩略图占位",
+    title: "建议放：团队背书图",
+    hint: "类型：团队形象 / 专家介绍 / 组织背书图",
     sourceSlides: ["slide-30"],
     sourceArchiveFiles: [image122Path],
   },
-};
+} satisfies Record<
+  | "heroPlaceholder"
+  | "heroDesktop"
+  | "heroMobile"
+  | "platformOverviewPlaceholder"
+  | "platformOverview"
+  | "capabilityVisual"
+  | "scenarioVisual"
+  | "scenarioPlaceholder"
+  | "proofPlaceholder"
+  | "proofCaseOne"
+  | "proofCaseTwo"
+  | "proofTeam",
+  HomeVisualSlot
+>;
