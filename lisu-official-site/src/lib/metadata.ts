@@ -7,6 +7,14 @@ export const defaultMetadata: Metadata = {
     template: `%s | ${siteConfig.companyName}`,
   },
   description: siteConfig.siteDescription,
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: siteConfig.siteName,
     description: siteConfig.siteDescription,

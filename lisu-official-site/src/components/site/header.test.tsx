@@ -14,9 +14,11 @@ describe("Header", () => {
 
     const desktopNav = screen.getByRole("navigation", { name: "主导航" });
     const trigger = screen.getByRole("button", { name: "解决方案" });
+    const brandLink = screen.getByRole("link", { name: "北京骊甦科技" });
     const banner = screen.getByRole("banner");
 
-    expect(screen.getByRole("link", { name: "北京骊甦科技" })).toHaveAttribute("href", "/");
+    expect(brandLink).toHaveAttribute("href", "/");
+    expect(within(brandLink).getByRole("presentation", { hidden: true })).toHaveAttribute("alt", "");
     expect(banner).toHaveAttribute("data-menu-state", "closed");
     expect(within(desktopNav).getByRole("button", { name: "应用场景" })).toBeInTheDocument();
     expect(within(desktopNav).getByRole("button", { name: "案例中心" })).toBeInTheDocument();

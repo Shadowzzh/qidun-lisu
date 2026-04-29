@@ -3,6 +3,7 @@
 import type { FocusEvent, KeyboardEvent } from "react";
 import { useState } from "react";
 import Link from "next/link";
+import { BrandLogo } from "@/components/site/brand-logo";
 import {
   getDesktopNavItemClassName,
   isHeaderMenuOpen,
@@ -78,8 +79,12 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 md:px-6">
         <div className="flex h-full items-center gap-10">
-          <Link href="/" className="text-base font-semibold text-slate-900 md:text-lg" prefetch={false}>
-            北京骊甦科技
+          <Link href="/" className="shrink-0" prefetch={false}>
+            <BrandLogo
+              className="flex items-center gap-3.5"
+              markClassName="size-9 rounded-xl"
+              textClassName="text-sm font-semibold text-slate-900 md:text-base"
+            />
           </Link>
 
           <nav aria-label="主导航" className="hidden h-full md:flex md:items-stretch">
