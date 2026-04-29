@@ -1,27 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import { useRef } from "react";
-import { cn } from "@/lib/utils";
-import type { NavItem } from "@/types/site";
+import { SiteLink } from "@/components/site/site-link";
+import type { SiteNavMenu } from "@/types/site";
 
 type MobileMenuProps = {
-  items: NavItem[];
-  activeId: string;
+  menus: SiteNavMenu[];
 };
 
-export function MobileMenu({ items, activeId }: MobileMenuProps) {
+export function MobileMenu({ menus }: MobileMenuProps) {
   const detailsRef = useRef<HTMLDetailsElement>(null);
 
-  function handleItemSelect(item: NavItem) {
-    if (item.kind !== "anchor") {
-      return;
-    }
-
-    if (!item.href.startsWith("#")) {
-      return;
-    }
-
+  function handleItemSelect() {
     detailsRef.current?.removeAttribute("open");
   }
 
@@ -47,23 +37,35 @@ export function MobileMenu({ items, activeId }: MobileMenuProps) {
           paddingTop: "calc(1rem + env(safe-area-inset-top))",
         }}
       >
-        <ul className="space-y-3">
-          {items.map((item) => (
-            <li key={item.id}>
-              <Link
-                href={item.href}
-                prefetch={false}
-                onClick={() => handleItemSelect(item)}
-                className={cn(
-                  "block rounded-md px-3 py-2 text-base text-slate-700",
-                  activeId === item.id && "bg-blue-50 font-semibold text-blue-700",
-                )}
-              >
-                {item.label}
-              </Link>
-            </li>
+        <div className="space-y-6">
+          {menus.map((menu) => (
+            <section key={menu.id} aria-labelledby={`mobile-menu-${menu.id}`}>
+              <h2 id={`mobile-menu-${menu.id}`} className="text-sm font-semibold text-slate-900">
+                {menu.label}
+              </h2>
+              <div className="mt-3 space-y-4">
+                {menu.columns.map((column) => (
+                  <div key={column.title}>
+                    <p className="text-xs font-medium uppercase text-slate-500">{column.title}</p>
+                    <ul className="mt-2 space-y-2">
+                      {column.items.map((item) => (
+                        <li key={item.label}>
+                          <SiteLink
+                            item={item}
+                            className="block w-full rounded-md px-3 py-2 text-left text-base text-slate-700 hover:bg-slate-50"
+                            onClick={handleItemSelect}
+                          >
+                            {item.label}
+                          </SiteLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
           ))}
-        </ul>
+        </div>
       </div>
     </details>
   );

@@ -1,25 +1,32 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { Footer } from "@/components/site/footer";
-import { homeNavItems } from "@/content/navigation";
-import { footerGroups } from "@/content/site-footer";
 
 describe("Footer", () => {
-  it("renders grouped footer content without fake qr or filing entries", () => {
-    const { container } = render(<Footer />);
-    const footerOverviewLink = screen.getByRole("link", { name: "平台总览" });
+  const originalAlert = window.alert;
 
-    expect(screen.getByText("网站导览")).toBeInTheDocument();
-    expect(screen.getByText("方案能力")).toBeInTheDocument();
-    expect(screen.getByText("页面规划")).toBeInTheDocument();
-    expect(screen.getByText("企业级私有化 AI 知识智能平台方案")).toBeInTheDocument();
-    expect(footerOverviewLink).toHaveAttribute("href", "#overview");
-    expect(screen.queryByText(/ICP备/)).not.toBeInTheDocument();
-    expect(container.querySelector("[class*='grid-cols-\\[']")).not.toBeInTheDocument();
+  afterEach(() => {
+    window.alert = originalAlert;
   });
 
-  it("reuses the shared homepage nav source for the 网站导览 group", () => {
-    expect(footerGroups[0]?.title).toBe("网站导览");
-    expect(footerGroups[0]?.items).toBe(homeNavItems);
+  it("renders formal footer groups without anchor navigation or planning copy", () => {
+    render(<Footer />);
+
+    expect(screen.getByText("解决方案")).toBeInTheDocument();
+    expect(screen.getByText("能力页面")).toBeInTheDocument();
+    expect(screen.getByText("应用与案例")).toBeInTheDocument();
+    expect(screen.getByText("关于我们")).toBeInTheDocument();
+    expect(screen.queryByText("页面规划")).not.toBeInTheDocument();
+    expect(screen.queryByText("平台总览")).not.toBeInTheDocument();
+  });
+
+  it("uses the shared pending-page alert for footer items", () => {
+    const alertSpy = vi.fn();
+    window.alert = alertSpy;
+    render(<Footer />);
+
+    fireEvent.click(screen.getByRole("button", { name: "主方案总览" }));
+
+    expect(alertSpy).toHaveBeenCalledWith("该页面暂未开放，敬请期待。");
   });
 });

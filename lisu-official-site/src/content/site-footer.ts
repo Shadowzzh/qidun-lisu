@@ -1,32 +1,6 @@
-import { homeNavItems } from "@/content/navigation";
-import type { FooterGroup } from "@/types/site";
+import { footerRouteGroups } from "@/content/site-nav";
 
-export const footerGroups: FooterGroup[] = [
-  {
-    title: "网站导览",
-    items: homeNavItems,
-  },
-  {
-    title: "方案能力",
-    items: [
-      { label: "算力底座", kind: "text" },
-      { label: "AI 数据平台", kind: "text" },
-      { label: "知识语义层", kind: "text" },
-      { label: "安全管控", kind: "text" },
-      { label: "员工 AI 工作台", kind: "text" },
-    ],
-  },
-  {
-    title: "页面规划",
-    items: [
-      { label: "主方案总览", kind: "text" },
-      { label: "案例中心", kind: "text" },
-      { label: "关于我们", kind: "text" },
-      { label: "行业洞察", kind: "text" },
-      { label: "价值展望", kind: "text" },
-    ],
-  },
-];
+export const footerGroups = footerRouteGroups;
 
 export const footerSummary = {
   title: "北京骊甦科技",

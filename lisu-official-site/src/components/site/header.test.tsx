@@ -1,41 +1,45 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { Header } from "@/components/site/header";
-import { homeNavItems } from "@/content/navigation";
 
 describe("Header", () => {
-  it("renders the six visible homepage anchors in template-like shell order", () => {
-    const { container } = render(<Header items={homeNavItems} activeId="overview" />);
+  const originalAlert = window.alert;
+
+  afterEach(() => {
+    window.alert = originalAlert;
+  });
+
+  it("renders four top-level menus and opens the solution panel on hover", () => {
+    render(<Header />);
+
+    const desktopNav = screen.getByRole("navigation", { name: "主导航" });
+    const trigger = screen.getByRole("button", { name: "解决方案" });
+
+    expect(screen.getByRole("link", { name: "北京骊甦科技" })).toHaveAttribute("href", "/");
+    expect(within(desktopNav).getByRole("button", { name: "应用场景" })).toBeInTheDocument();
+    expect(within(desktopNav).getByRole("button", { name: "案例中心" })).toBeInTheDocument();
+    expect(within(desktopNav).getByRole("button", { name: "关于我们" })).toBeInTheDocument();
+
+    fireEvent.mouseEnter(trigger);
+
+    const panel = screen.getByTestId("desktop-nav-panel");
+    expect(within(panel).getByRole("button", { name: "主方案总览" })).toBeInTheDocument();
+    expect(within(panel).getByRole("button", { name: "安全管控" })).toBeInTheDocument();
+  });
+
+  it("shows the pending-page alert from both desktop and mobile menus", () => {
+    const alertSpy = vi.fn();
+    window.alert = alertSpy;
+    const { container } = render(<Header />);
+
+    fireEvent.mouseEnter(screen.getByRole("button", { name: "关于我们" }));
+    fireEvent.click(within(screen.getByTestId("desktop-nav-panel")).getByRole("button", { name: "公司介绍" }));
+
     const mobileDisclosure = container.querySelector("details");
-
-    expect(mobileDisclosure).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "北京骊甦科技" })).toHaveAttribute("href", "#hero");
-    expect(screen.getAllByRole("link", { name: "平台总览" })).toHaveLength(2);
-    expect(
-      screen
-        .getAllByRole("link", { name: "平台总览" })
-        .every((node) => node.getAttribute("href") === "#overview"),
-    ).toBe(true);
-    expect(
-      screen
-        .getAllByRole("link", { name: "平台总览" })
-        .some((node) => node.getAttribute("data-active") === "true"),
-    ).toBe(true);
-    expect(
-      screen
-        .getAllByRole("link", { name: "平台总览" })
-        .some((node) => node.getAttribute("aria-current") === "page"),
-    ).toBe(true);
-    expect(container.querySelectorAll("nav[aria-label='首页导航'] a")).toHaveLength(6);
-    expect(container.querySelector("summary[aria-label='打开导航菜单']")).toBeInTheDocument();
-
     mobileDisclosure?.setAttribute("open", "");
-    const mobileOverviewLink = within(mobileDisclosure as HTMLDetailsElement).getAllByRole("link", {
-      name: "平台总览",
-    })[0];
+    fireEvent.click(within(mobileDisclosure as HTMLDetailsElement).getByRole("button", { name: "应用场景" }));
 
-    fireEvent.click(mobileOverviewLink);
-
-    expect(mobileDisclosure).not.toHaveAttribute("open");
+    expect(alertSpy).toHaveBeenCalledTimes(2);
+    expect(alertSpy).toHaveBeenCalledWith("该页面暂未开放，敬请期待。");
   });
 });

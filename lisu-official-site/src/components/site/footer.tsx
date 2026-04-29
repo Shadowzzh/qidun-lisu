@@ -1,40 +1,28 @@
-import Link from "next/link";
+import { SiteLink } from "@/components/site/site-link";
 import { footerGroups, footerSummary } from "@/content/site-footer";
 import { siteConfig } from "@/content/site";
-
-function renderFooterItem(item: (typeof footerGroups)[number]["items"][number]) {
-  if (item.kind === "text") {
-    return <span className="text-sm text-slate-600">{item.label}</span>;
-  }
-
-  if (!item.href) {
-    return <span className="text-sm text-rose-700">{item.label}</span>;
-  }
-
-  return (
-    <Link className="text-sm text-slate-600 hover:text-blue-700" href={item.href} prefetch={false}>
-      {item.label}
-    </Link>
-  );
-}
 
 export function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-6xl px-4 pb-8 pt-10 md:px-6 md:pt-12">
-        <div className="grid gap-8 border-b border-slate-200 pb-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-8 border-b border-slate-200 pb-8 md:grid-cols-2 xl:grid-cols-5">
           {footerGroups.map((group) => (
             <div key={group.title}>
               <p className="text-balance text-sm font-semibold text-slate-900">{group.title}</p>
               <ul className="mt-5 space-y-4">
                 {group.items.map((item) => (
-                  <li key={item.label}>{renderFooterItem(item)}</li>
+                  <li key={item.label}>
+                    <SiteLink item={item} className="text-sm text-slate-600 hover:text-sky-700">
+                      {item.label}
+                    </SiteLink>
+                  </li>
                 ))}
               </ul>
             </div>
           ))}
 
-          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm md:col-span-2 xl:col-span-1">
+          <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
             <p className="text-balance text-sm font-semibold text-slate-900">{footerSummary.title}</p>
             <p className="mt-4 text-pretty text-sm leading-7 text-slate-700">{footerSummary.description}</p>
             <p className="mt-3 text-pretty text-sm leading-7 text-slate-600">{footerSummary.detail}</p>
