@@ -22,12 +22,12 @@ export function HeroBand({ content }: HeroBandProps) {
 
       <div
         data-testid="hero-stage"
-        className="relative mx-auto flex h-[calc((100dvh-4rem)*0.35)] max-w-[1200px] items-center justify-center px-4 py-6 text-center md:py-8"
+        className="relative mx-auto flex h-[calc((100dvh-4rem)*0.37)] max-w-[1200px] items-center justify-center px-4 py-6 text-center md:py-8"
       >
         <h1
           id="home-hero-heading"
           data-testid="hero-title"
-          className="relative max-w-none whitespace-nowrap italic bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#172554_100%)] bg-clip-text text-4xl font-semibold leading-[1.08] text-transparent [text-shadow:0_10px_30px_rgba(255,255,255,0.24)] md:-translate-x-4 md:text-5xl lg:text-6xl"
+          className="relative max-w-none whitespace-nowrap italic bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#1e40af_100%)] bg-clip-text text-[2.125rem] font-semibold leading-[1.08] text-transparent [-webkit-text-stroke:1px_rgba(255,255,255,0.82)] [text-shadow:0_8px_18px_rgba(255,255,255,0.16)] md:-translate-x-12 md:translate-y-2 md:text-[3rem] lg:text-[3.5rem]"
         >
           {content.title}
         </h1>

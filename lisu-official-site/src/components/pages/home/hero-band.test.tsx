@@ -23,12 +23,14 @@ describe("HeroBand", () => {
     expect(heroBackdrop).toBeInTheDocument();
     expect(heroRegion.contains(heroBackdrop as Node)).toBe(true);
     expect(heroStage?.contains(heroBackdrop as Node)).toBe(false);
-    expect(heroStage).toHaveClass("h-[calc((100dvh-4rem)*0.35)]");
+    expect(heroStage).toHaveClass("h-[calc((100dvh-4rem)*0.37)]");
     expect(heroTitle).toHaveClass("whitespace-nowrap");
     expect(heroTitle).toHaveClass("italic");
-    expect(heroTitle).toHaveClass("md:-translate-x-4");
-    expect(heroTitle).toHaveClass("text-4xl", "md:text-5xl", "lg:text-6xl");
-    expect(heroTitle).toHaveClass("bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#172554_100%)]");
+    expect(heroTitle).toHaveClass("md:translate-y-2");
+    expect(heroTitle).toHaveClass("md:-translate-x-12");
+    expect(heroTitle).toHaveClass("text-[2.125rem]", "md:text-[3rem]", "lg:text-[3.5rem]");
+    expect(heroTitle).toHaveClass("bg-[linear-gradient(90deg,#60a5fa_0%,#2563eb_52%,#1e40af_100%)]");
+    expect(heroTitle).toHaveClass("[-webkit-text-stroke:1px_rgba(255,255,255,0.82)]");
     expect(screen.getByText("64 卡 H20 集群，9024GB 显存支撑。")).toBeInTheDocument();
     expect(container.querySelectorAll("[data-testid='home-visual-hero']")).toHaveLength(2);
     expect(metricsRail).toBeInTheDocument();
