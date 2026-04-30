@@ -62,6 +62,9 @@
 ## 编码风格与命名约定
 项目使用 TypeScript 严格模式和 React 函数组件。保持现有的 2 空格缩进、双引号导入风格，以及 `@/` 到 `src/*` 的路径别名。组件和页面区块使用 PascalCase，例如 `HeroBand`；工具函数使用 camelCase；内容与配置文件使用清晰的领域命名，例如 `site-nav.ts`、`hero-band.tsx`。不要使用嵌套三元表达式，分支逻辑拆成变量或 `if`。注释只在复杂逻辑处添加，并统一使用英文。
 
+## Tailwind 与 UI 规范
+凡是涉及 Tailwind CSS、页面样式、组件视觉、交互动效、可访问性基线的工作，必须强制使用 `$baseline-ui` 规范，不得跳过或降级为可选参考。若任务包含 UI 评审、组件开发、样式调整、Tailwind class 编写或页面重构，默认先应用 `$baseline-ui` skill，再进行分析、实现或审查。
+
 ## 测试指南
 测试框架为 Vitest，运行环境是 `jsdom`，公共初始化文件为 `src/test/setup.ts`。优先为组件、内容结构和页面壳层补充同目录测试。测试文件名应直接描述行为，例如 `header.test.tsx`、`home.test.ts`。当前配置未强制覆盖率阈值，但修改共享组件、内容映射或导航结构时，应补齐相应测试；如需查看覆盖率，可运行 `vitest --coverage`。
 
