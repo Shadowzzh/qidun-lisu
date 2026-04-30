@@ -33,7 +33,7 @@ function getFrameClassName(frame: HomeVisualFrame): string {
 }
 
 function getImageClassName(frame: HomeVisualFrame): string {
-  if (frame === "hero") {
+  if (frame === "hero" || frame === "feature") {
     return "object-cover";
   }
 
@@ -99,6 +99,23 @@ export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
           </svg>
           <p className="mt-4 text-base font-semibold text-slate-900">{slot.title}</p>
           <p className="mt-2 text-sm leading-7 text-slate-600">{slot.hint}</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (slot.frame === "feature") {
+    return (
+      <div
+        data-testid={`home-visual-${slot.frame}`}
+        className={cn(
+          frameClassName,
+          "border border-sky-100 bg-white p-3 shadow-lg shadow-slate-200/40",
+          className,
+        )}
+      >
+        <div className="relative h-full w-full overflow-hidden rounded-[16px] border border-slate-200/80 bg-white">
+          <Image alt={slot.alt} className={getImageClassName(slot.frame)} fill sizes={sizes} src={slot.src} />
         </div>
       </div>
     );

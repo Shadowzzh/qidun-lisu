@@ -18,6 +18,25 @@ describe("HomeVisual", () => {
     expect(screen.queryByText("建议放：团队背书图")).not.toBeInTheDocument();
   });
 
+  it("wraps feature imagery in a bordered stage with rounded clipping", () => {
+    render(<HomeVisual slot={homeVisuals.scenarioVisual} className="w-full" sizes="100vw" />);
+
+    const featureVisual = screen.getByTestId("home-visual-feature");
+    const clippedStage = featureVisual.firstElementChild;
+    const featureImage = screen.getByRole("img", { name: "业务场景价值图" });
+
+    expect(featureVisual).toHaveClass("border");
+    expect(featureVisual).toHaveClass("border-sky-100");
+    expect(featureVisual).toHaveClass("bg-white");
+    expect(featureVisual).toHaveClass("p-3");
+    expect(clippedStage).not.toBeNull();
+    expect(clippedStage).toHaveClass("overflow-hidden");
+    expect(clippedStage).toHaveClass("rounded-[16px]");
+    expect(clippedStage).toHaveClass("border");
+    expect(clippedStage).toHaveClass("border-slate-200/80");
+    expect(featureImage).toHaveClass("object-cover");
+  });
+
   it("renders feature placeholders as a muted light centered label block", () => {
     const { container } = render(<HomeVisual slot={homeVisuals.solutionOverviewEntry} className="w-full" sizes="100vw" />);
 
