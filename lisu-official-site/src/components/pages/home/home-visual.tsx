@@ -22,7 +22,7 @@ function getFrameClassName(frame: HomeVisualFrame): string {
   }
 
   if (frame === "feature") {
-    return "relative aspect-[1200/928] overflow-hidden rounded-[20px]";
+    return "relative aspect-[1200/720] overflow-hidden rounded-[20px]";
   }
 
   if (frame === "proof-card") {
@@ -44,6 +44,32 @@ export function HomeVisual({ slot, className, sizes }: HomeVisualProps) {
   const frameClassName = getFrameClassName(slot.frame);
 
   if (slot.kind === "placeholder") {
+    if (slot.frame === "feature") {
+      return (
+        <div
+          data-testid={`home-visual-${slot.frame}`}
+          className={cn(
+            frameClassName,
+            "flex items-center justify-center overflow-hidden border border-slate-200 bg-slate-100/80",
+            className,
+          )}
+        >
+          <div aria-hidden="true" className="absolute inset-5 rounded-2xl border border-dashed border-slate-300/80 bg-white/40" />
+          <div
+            aria-hidden="true"
+            className="absolute left-1/2 top-1/2 h-px w-3/5 -translate-x-1/2 -translate-y-1/2 rotate-12 bg-slate-300/80"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute left-1/2 top-1/2 h-px w-3/5 -translate-x-1/2 -translate-y-1/2 -rotate-12 bg-slate-300/80"
+          />
+          <p className="relative bg-white/85 px-4 py-2 text-sm font-medium text-slate-400 md:text-base">
+            {slot.title}
+          </p>
+        </div>
+      );
+    }
+
     return (
       <div
         data-testid={`home-visual-${slot.frame}`}

@@ -17,4 +17,12 @@ describe("HomeVisual", () => {
     expect(screen.getByRole("img", { name: "核心团队缩略图" })).toBeInTheDocument();
     expect(screen.queryByText("建议放：团队背书图")).not.toBeInTheDocument();
   });
+
+  it("renders feature placeholders as a muted light centered label block", () => {
+    const { container } = render(<HomeVisual slot={homeVisuals.solutionOverviewEntry} className="w-full" sizes="100vw" />);
+
+    expect(screen.getByText("占位图")).toBeInTheDocument();
+    expect(screen.getByTestId("home-visual-feature")).toHaveClass("bg-slate-100/80", "border-slate-200");
+    expect(container.querySelector("svg")).toBeNull();
+  });
 });

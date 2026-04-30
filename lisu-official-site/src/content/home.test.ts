@@ -45,4 +45,13 @@ describe("home content contract", () => {
     expect(homeProofCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
     expect(homeClosingStatement.sourceSlides).toEqual(["slide-22"]);
   });
+
+  it("uses a shared placeholder treatment for the first four solution entry modules", () => {
+    const entryVisuals = homeEntryBands.slice(0, 4).map((band) => band.visual);
+
+    expect(entryVisuals.every((visual) => visual.kind === "placeholder")).toBe(true);
+    expect(
+      entryVisuals.every((visual) => visual.kind === "placeholder" && visual.title === "占位图" && visual.hint === ""),
+    ).toBe(true);
+  });
 });

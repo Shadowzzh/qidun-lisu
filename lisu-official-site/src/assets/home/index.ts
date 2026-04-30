@@ -67,6 +67,42 @@ export const homeVisuals = {
     sourceSlides: ["slide-14"],
     sourceArchiveFiles: [image53Path],
   },
+  solutionOverviewEntry: {
+    kind: "placeholder",
+    frame: "feature",
+    alt: "主方案总览占位图",
+    title: "占位图",
+    hint: "",
+    sourceSlides: ["slide-01", "slide-07", "slide-10"],
+    sourceArchiveFiles: [],
+  },
+  semanticLayerEntry: {
+    kind: "placeholder",
+    frame: "feature",
+    alt: "知识语义层占位图",
+    title: "占位图",
+    hint: "",
+    sourceSlides: ["slide-07", "slide-14"],
+    sourceArchiveFiles: [],
+  },
+  dataPlatformEntry: {
+    kind: "placeholder",
+    frame: "feature",
+    alt: "AI 数据平台占位图",
+    title: "占位图",
+    hint: "",
+    sourceSlides: ["slide-13", "slide-15"],
+    sourceArchiveFiles: [],
+  },
+  securityEntry: {
+    kind: "placeholder",
+    frame: "feature",
+    alt: "安全管控占位图",
+    title: "占位图",
+    hint: "",
+    sourceSlides: ["slide-17", "slide-18"],
+    sourceArchiveFiles: [],
+  },
   scenarioVisual: {
     kind: "image",
     frame: "feature",
@@ -124,6 +160,10 @@ export const homeVisuals = {
   | "platformOverviewPlaceholder"
   | "platformOverview"
   | "capabilityVisual"
+  | "solutionOverviewEntry"
+  | "semanticLayerEntry"
+  | "dataPlatformEntry"
+  | "securityEntry"
   | "scenarioVisual"
   | "scenarioPlaceholder"
   | "proofPlaceholder"
