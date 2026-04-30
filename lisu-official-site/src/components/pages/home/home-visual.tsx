@@ -18,7 +18,7 @@ function getFrameClassName(frame: HomeVisualFrame): string {
   }
 
   if (frame === "overview") {
-    return "relative aspect-[2400/1352] overflow-hidden rounded-[20px]";
+    return "relative aspect-[1672/941] overflow-hidden rounded-[24px]";
   }
 
   if (frame === "feature") {

@@ -39,26 +39,26 @@ export const homeHero: HomeHeroContent = {
 
 export const homeOverviewBand: HomeOverviewBand = {
   id: "overview",
-  title: "为什么现在必须建设企业级 AI 平台",
+  title: "企业级私有化 AI 知识智能平台方案",
   description:
-    "企业 AI 的竞争已进入下半场，关键不再是“有没有 AI”，而是“能不能让 AI 在核心业务中安全、可信、高效地工作”。",
+    "我们希望提供的不是一套 AI 工具，而是帮助企业建设“数字决策中枢”。通过统一企业知识语义层，让业务语言直接驱动决策，推动企业从“数据查询”走向“知识决策”，在核心业务中实现可解释、可审计、可追溯的智能应用。",
   visual: homeVisuals.platformOverview,
-  sourceSlides: ["slide-04", "slide-05", "slide-07", "slide-10"],
+  sourceSlides: ["slide-04", "slide-07", "slide-10", "slide-26", "slide-28", "slide-29"],
   cards: [
     {
-      title: "时代之需",
-      description: "AI 从实验走向生产，企业不能再让核心业务停留在“不敢用”的阶段。",
+      title: "生产可用",
+      description: "让 AI 从演示能力走进核心业务，而不是停留在试点和问答实验。",
       sourceSlides: ["slide-04"],
     },
     {
-      title: "战略判断",
-      description: "竞争焦点正在转向业务敢用、会用、可追溯，可解释能力将成为合规入场券。",
-      sourceSlides: ["slide-05"],
+      title: "知识资产",
+      description: "把手册、参数、故障代码和专家经验沉淀为统一的企业知识资产，减少跨部门“各说各话”。",
+      sourceSlides: ["slide-04", "slide-26", "slide-29"],
     },
     {
-      title: "方案主张",
-      description: "拒绝概率玩具，打造知识大脑，让 AI 从临时工进化为可审计的数字助手。",
-      sourceSlides: ["slide-07"],
+      title: "知识大脑",
+      description: "通过企业知识中心、知识图谱和语义约束，让搜索、问答和决策都建立在企业知识之上。",
+      sourceSlides: ["slide-07", "slide-28", "slide-29"],
     },
   ],
 };
@@ -107,15 +107,15 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "solution-overview",
     title: "主方案总览",
-    description: "解释整套私有化 AI 知识智能平台的总体定位、差异化价值与架构全景。",
+    description: "先解释平台为何不止是 AI 工具，而是把知识库、业务规则与决策链路沉淀为可追溯的企业知识资产。",
     visual: homeVisuals.solutionOverviewEntry,
     action: { label: "查看详情", href: "/solution", kind: "pending" },
-    sourceSlides: ["slide-01", "slide-07", "slide-10"],
+    sourceSlides: ["slide-01", "slide-07", "slide-10", "slide-20", "slide-22"],
   },
   {
     id: "semantic-layer",
     title: "知识语义层",
-    description: "说明业务知识、规则语义与生成结果如何被统一约束，形成可解释的知识大脑。",
+    description: "说明知识库中的术语、规则和数据映射如何被统一约束，让问答与决策建立在可解释的业务语义之上。",
     visual: homeVisuals.semanticLayerEntry,
     action: { label: "查看详情", href: "/semantic-layer", kind: "pending" },
     sourceSlides: ["slide-07", "slide-14"],
@@ -123,10 +123,10 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "data-platform",
     title: "AI 数据平台",
-    description: "说明企业真实数据如何通过多引擎协同、召回重排与闭环反馈转化为可调用知识。",
+    description: "说明多源文档、结构化数据与召回重排如何形成可调用知识，为上层问答和智能体持续供给事实依据。",
     visual: homeVisuals.dataPlatformEntry,
     action: { label: "查看详情", href: "/data-platform", kind: "pending" },
-    sourceSlides: ["slide-13", "slide-15"],
+    sourceSlides: ["slide-13", "slide-15", "slide-25"],
   },
   {
     id: "security",
@@ -139,10 +139,10 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "workspace",
     title: "员工 AI 工作台",
-    description: "说明平台能力最终如何进入员工工作界面，支撑知识中心、智能体中心与统一运营管理。",
+    description: "说明员工如何通过企业知识中心使用多模态知识库、知识搜索与智能体应用，让知识真正进入日常工作界面。",
     visual: homeVisuals.scenarioVisual,
     action: { label: "查看详情", href: "/workspace", kind: "pending" },
-    sourceSlides: ["slide-28", "slide-29"],
+    sourceSlides: ["slide-25", "slide-28", "slide-29"],
   },
 ];
 

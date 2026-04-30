@@ -1,6 +1,6 @@
 import capabilityVisualImage from "@/assets/home/capability-visual.jpeg";
 import heroBackground from "@/assets/home/hero-background.jpeg";
-import platformOverviewImage from "@/assets/home/platform-overview.png";
+import platformArchitectureOverviewDesktopImage from "@/assets/home/platform-architecture-overview-desktop.png";
 import proofCaseOneImage from "@/assets/home/proof-case-one.jpeg";
 import proofCaseTwoImage from "@/assets/home/proof-case-two.png";
 import proofTeamImage from "@/assets/home/proof-team.jpeg";
@@ -14,6 +14,7 @@ const image68Path = "archive/ppt-source/images/image68.jpeg";
 const image104Path = "archive/ppt-source/images/image104.jpeg";
 const image109Path = "archive/ppt-source/images/image109.png";
 const image122Path = "archive/ppt-source/images/image122.jpeg";
+const platformArchitectureOverviewDesktopPath = "lisu-official-site/src/assets/home/platform-architecture-overview-desktop.png";
 
 export const homeVisuals = {
   heroPlaceholder: {
@@ -55,9 +56,9 @@ export const homeVisuals = {
     kind: "image",
     frame: "overview",
     alt: "平台总览图",
-    src: platformOverviewImage,
+    src: platformArchitectureOverviewDesktopImage,
     sourceSlides: ["slide-10"],
-    sourceArchiveFiles: [image17Path],
+    sourceArchiveFiles: [platformArchitectureOverviewDesktopPath],
   },
   capabilityVisual: {
     kind: "image",

@@ -1,3 +1,4 @@
+import { HomeVisual } from "@/components/pages/home/home-visual";
 import type { HomeOverviewBand as HomeOverviewBandContent } from "@/types/site";
 
 type OverviewBandProps = {
@@ -20,12 +21,18 @@ export function OverviewBand({ band, layers }: OverviewBandProps) {
           <h2 id="home-overview-heading" className="text-balance text-3xl font-semibold text-slate-950 md:text-4xl">
             {band.title}
           </h2>
-          <p className="mx-auto mt-6 max-w-[1160px] text-pretty text-sm leading-7 text-slate-600 md:text-base">
+          <p className="mx-auto mt-6 max-w-[900px] text-pretty text-sm leading-7 text-slate-600 md:text-base">
             {band.description}
           </p>
         </div>
 
-        <div className="mt-8 rounded-[20px] bg-white p-6 shadow-lg shadow-slate-200/70 md:p-8">
+        <div className="mx-auto mt-10 hidden max-w-[920px] rounded-[32px] border border-sky-100 bg-white p-3 shadow-lg shadow-slate-200/60 md:block">
+          <div className="overflow-hidden rounded-[28px] border border-sky-50">
+            <HomeVisual className="w-full rounded-[24px]" sizes="(min-width: 1200px) 920px, 100vw" slot={band.visual} />
+          </div>
+        </div>
+
+        <div className="mt-8 rounded-[20px] bg-white p-6 shadow-lg shadow-slate-200/70 md:hidden">
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {layers.map((layer) => (
               <article key={layer.label} className="rounded-[20px] border border-slate-200 bg-slate-50 px-5 py-5">
