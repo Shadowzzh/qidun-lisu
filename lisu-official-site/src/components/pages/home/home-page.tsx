@@ -37,7 +37,7 @@ export function HomePage() {
                 解决方案入口
               </h2>
               <p className="mt-4 text-pretty text-sm leading-7 text-slate-600 md:text-base">
-                首页只建立第一层理解，具体能力将在后续页面中分别展开。
+                这里先建立整体理解，再把主方案、知识资产化路径与前台工作入口分发到后续页面。
               </p>
             </div>
 
