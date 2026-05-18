@@ -14,6 +14,9 @@ describe("Header", () => {
     expect(brandLink).toHaveAttribute("href", "/");
     expect(within(brandLink).getByRole("presentation", { hidden: true })).toHaveAttribute("alt", "");
     expect(banner).toHaveAttribute("data-menu-state", "closed");
+    expect(banner).toHaveClass("bg-white");
+    expect(banner.className).not.toContain("bg-white/");
+    expect(banner.className).not.toContain("backdrop-blur");
     expect(trigger).toHaveAttribute("href", "/solution");
     expect(within(desktopNav).getByRole("link", { name: "能力页" })).toHaveAttribute("href", "/capabilities");
     expect(within(desktopNav).getByRole("link", { name: "应用场景" })).toHaveAttribute("href", "/scenarios");

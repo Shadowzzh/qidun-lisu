@@ -68,10 +68,8 @@ export function Header() {
     <header
       data-menu-state={menuState}
       className={cn(
-        "relative sticky top-0 z-50 border-b shadow-sm transition-colors duration-200",
-        menuState === "open"
-          ? "border-slate-200/80 bg-white/80 backdrop-blur-lg"
-          : "border-white/20 bg-white/45 backdrop-blur-md",
+        "relative sticky top-0 z-50 border-b bg-white shadow-sm transition-colors duration-200",
+        menuState === "open" ? "border-slate-200" : "border-white",
       )}
       onBlurCapture={closeIfFocusLeaves}
       onMouseLeave={() => setOpenMenu(null)}
@@ -112,7 +110,7 @@ export function Header() {
       {activeMenu ? (
         <div
           data-testid="desktop-nav-panel"
-          className="absolute inset-x-0 top-full border-t border-slate-200/70 bg-white/88 shadow-lg backdrop-blur-lg"
+          className="absolute inset-x-0 top-full border-t border-slate-200 bg-white shadow-lg"
         >
           <div className="mx-auto grid max-w-6xl gap-10 px-6 py-8 md:grid-cols-2">
             {activeMenu.columns.map((column) => renderMenuColumn(column))}
