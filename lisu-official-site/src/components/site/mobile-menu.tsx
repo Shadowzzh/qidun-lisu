@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { SiteLink } from "@/components/site/site-link";
 import type { SiteNavMenu } from "@/types/site";
 
@@ -40,9 +41,19 @@ export function MobileMenu({ menus }: MobileMenuProps) {
         <div className="space-y-6">
           {menus.map((menu) => (
             <section key={menu.id} aria-labelledby={`mobile-menu-${menu.id}`}>
-              <h2 id={`mobile-menu-${menu.id}`} className="text-sm font-semibold text-slate-900">
-                {menu.label}
-              </h2>
+              <div className="flex items-center justify-between gap-4">
+                <h2 id={`mobile-menu-${menu.id}`} className="text-sm font-semibold text-slate-900">
+                  {menu.label}
+                </h2>
+                <Link
+                  href={menu.href}
+                  className="text-sm font-medium text-sky-700 hover:text-sky-800"
+                  onClick={handleItemSelect}
+                  prefetch={false}
+                >
+                  {menu.label}
+                </Link>
+              </div>
               <div className="mt-3 space-y-4">
                 {menu.columns.map((column) => (
                   <div key={column.title}>

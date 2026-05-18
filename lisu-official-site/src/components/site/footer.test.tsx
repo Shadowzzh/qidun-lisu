@@ -1,14 +1,8 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import { Footer } from "@/components/site/footer";
 
 describe("Footer", () => {
-  const originalAlert = window.alert;
-
-  afterEach(() => {
-    window.alert = originalAlert;
-  });
-
   it("renders formal footer groups without anchor navigation or planning copy", () => {
     render(<Footer />);
     const companyName = screen.getAllByText("北京骊甦科技").at(-1) as HTMLElement;
@@ -35,13 +29,11 @@ describe("Footer", () => {
     expect(screen.queryByText("平台总览")).not.toBeInTheDocument();
   });
 
-  it("uses the shared pending-page alert for footer items", () => {
-    const alertSpy = vi.fn();
-    window.alert = alertSpy;
+  it("links footer items to real target pages", () => {
     render(<Footer />);
 
-    fireEvent.click(screen.getByRole("button", { name: "主方案总览" }));
-
-    expect(alertSpy).toHaveBeenCalledWith("该页面暂未开放，敬请期待。");
+    expect(screen.getByRole("link", { name: "主方案总览" })).toHaveAttribute("href", "/solution");
+    expect(screen.getByRole("link", { name: "知识语义层" })).toHaveAttribute("href", "/capabilities/semantic-layer");
+    expect(screen.getByRole("link", { name: "联系方式" })).toHaveAttribute("href", "/about/contact");
   });
 });

@@ -27,6 +27,12 @@ describe("home content contract", () => {
       "workspace",
     ]);
     expect(homeScenarioCards.map((card) => card.title)).toEqual(["供应链", "财务", "风控", "客服运营"]);
+    expect(homeScenarioCards.map((card) => card.action.href)).toEqual([
+      "/scenarios/supply-chain",
+      "/scenarios/finance",
+      "/scenarios/risk-control",
+      "/scenarios/customer-operations",
+    ]);
     expect(homeProofSection.id).toBe("proof");
   });
 
@@ -75,8 +81,8 @@ describe("home content contract", () => {
   });
 
   it("defines four desktop navigation menus for the site shell", () => {
-    expect(siteNavMenus.map((menu) => menu.id)).toEqual(["solution", "scenarios", "cases", "company"]);
-    expect(siteNavMenus.map((menu) => menu.label)).toEqual(["解决方案", "应用场景", "案例中心", "关于我们"]);
+    expect(siteNavMenus.map((menu) => menu.id)).toEqual(["solution", "capabilities", "scenarios", "cases", "about"]);
+    expect(siteNavMenus.map((menu) => menu.label)).toEqual(["解决方案", "能力页", "应用场景", "案例中心", "关于我们"]);
   });
 
   it("keeps every homepage section traceable to source slides", () => {

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export type HeaderMenuId = "solution" | "scenarios" | "cases" | "company";
+export type HeaderMenuId = "solution" | "capabilities" | "scenarios" | "cases" | "about";
 
 const desktopNavItemBaseClassName =
   "flex h-full flex-col justify-center whitespace-nowrap border-b-4 px-5 text-base leading-none transition-colors duration-200";
@@ -18,12 +18,4 @@ export function getDesktopNavItemClassName(isActive: boolean) {
 
 export function isHeaderMenuOpen(openMenu: HeaderMenuId | null, menu: HeaderMenuId) {
   return openMenu === menu;
-}
-
-export function toggleHeaderMenu(openMenu: HeaderMenuId | null, menu: HeaderMenuId) {
-  if (openMenu === menu) {
-    return null;
-  }
-
-  return menu;
 }

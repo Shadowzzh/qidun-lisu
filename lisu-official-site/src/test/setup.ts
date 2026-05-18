@@ -30,9 +30,11 @@ vi.mock("next/link", () => ({
 
 vi.mock("next/image", () => ({
   default: ({
+    fill,
     priority,
     ...props
-  }: ImgHTMLAttributes<HTMLImageElement> & { priority?: boolean }) => {
+  }: ImgHTMLAttributes<HTMLImageElement> & { fill?: boolean; priority?: boolean }) => {
+    void fill;
     void priority;
 
     return createElement("img", { ...props, alt: props.alt ?? "" });

@@ -36,8 +36,9 @@ export type NavColumn = {
 };
 
 export type SiteNavMenu = {
-  id: "solution" | "scenarios" | "cases" | "company";
+  id: "solution" | "capabilities" | "scenarios" | "cases" | "about";
   label: string;
+  href: import("@/content/site-routes").TargetSiteRoute;
   columns: NavColumn[];
 };
 
@@ -71,6 +72,7 @@ export type HomeProofCard = {
   title: string;
   description: string;
   visual: HomeVisualSlot;
+  action: SiteLinkItem;
   sourceSlides: SlideRef[];
 };
 
@@ -128,10 +130,28 @@ export type HomeEntryBand = {
 export type HomeScenarioCard = {
   title: string;
   description: string;
+  action: SiteLinkItem;
   sourceSlides: SlideRef[];
 };
 
 export type FooterGroup = {
   title: string;
   items: SiteLinkItem[];
+};
+
+export type SitePageSection = {
+  title: string;
+  description: string;
+  points: string[];
+};
+
+export type SitePageContent = {
+  href: import("@/content/site-routes").TargetSiteRoute;
+  title: string;
+  eyebrow: string;
+  description: string;
+  summaryPoints: string[];
+  sections: SitePageSection[];
+  relatedLinks: SiteLinkItem[];
+  sourceSlides: SlideRef[];
 };

@@ -8,7 +8,6 @@ import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
 import type { HomeVisualSlot } from "@/types/site";
 
 const image1Path = "archive/ppt-source/images/image1.jpeg";
-const image17Path = "archive/ppt-source/images/image17.png";
 const image53Path = "archive/ppt-source/images/image53.jpeg";
 const image68Path = "archive/ppt-source/images/image68.jpeg";
 const image104Path = "archive/ppt-source/images/image104.jpeg";

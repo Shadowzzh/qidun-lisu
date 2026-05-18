@@ -7,6 +7,7 @@ import type { SiteLinkItem } from "@/types/site";
 
 type SiteLinkProps = {
   item: SiteLinkItem;
+  "aria-label"?: string;
   className?: string;
   children?: ReactNode;
   onClick?: () => void;
@@ -14,12 +15,12 @@ type SiteLinkProps = {
 
 const pendingPageMessage = "该页面暂未开放，敬请期待。";
 
-export function SiteLink({ item, className, children, onClick }: SiteLinkProps) {
+export function SiteLink({ item, "aria-label": ariaLabel, className, children, onClick }: SiteLinkProps) {
   const content = children ?? item.label;
 
   if (item.kind === "route") {
     return (
-      <Link className={cn(className)} href={item.href} onClick={onClick} prefetch={false}>
+      <Link aria-label={ariaLabel} className={cn(className)} href={item.href} onClick={onClick} prefetch={false}>
         {content}
       </Link>
     );
@@ -31,7 +32,13 @@ export function SiteLink({ item, className, children, onClick }: SiteLinkProps) 
   }
 
   return (
-    <button type="button" className={cn(className)} data-pending-href={item.href} onClick={handlePendingClick}>
+    <button
+      type="button"
+      aria-label={ariaLabel}
+      className={cn(className)}
+      data-pending-href={item.href}
+      onClick={handlePendingClick}
+    >
       {content}
     </button>
   );

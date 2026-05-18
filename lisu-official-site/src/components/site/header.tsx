@@ -7,7 +7,6 @@ import { BrandLogo } from "@/components/site/brand-logo";
 import {
   getDesktopNavItemClassName,
   isHeaderMenuOpen,
-  toggleHeaderMenu,
   type HeaderMenuId,
 } from "@/components/site/header-desktop-nav";
 import { MobileMenu } from "@/components/site/mobile-menu";
@@ -53,8 +52,8 @@ export function Header() {
     }
   }
 
-  function handleTriggerKeyDown(event: KeyboardEvent<HTMLButtonElement>, menu: HeaderMenuId) {
-    if (event.key === "Enter" || event.key === " " || event.key === "ArrowDown") {
+  function handleTriggerKeyDown(event: KeyboardEvent<HTMLAnchorElement>, menu: HeaderMenuId) {
+    if (event.key === "ArrowDown") {
       event.preventDefault();
       setOpenMenu(menu);
     }
@@ -91,16 +90,16 @@ export function Header() {
             <ul className="flex h-full items-stretch pl-3">
               {siteNavMenus.map((menu) => (
                 <li key={menu.id} className="flex h-full items-stretch">
-                  <button
-                    type="button"
+                  <Link
+                    href={menu.href}
                     aria-expanded={isHeaderMenuOpen(openMenu, menu.id)}
                     className={getDesktopNavItemClassName(isHeaderMenuOpen(openMenu, menu.id))}
-                    onClick={() => setOpenMenu((value) => toggleHeaderMenu(value, menu.id))}
                     onKeyDown={(event) => handleTriggerKeyDown(event, menu.id)}
                     onMouseEnter={() => setOpenMenu(menu.id)}
+                    prefetch={false}
                   >
                     {menu.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>

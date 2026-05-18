@@ -107,7 +107,7 @@ export const homeEntryBands: HomeEntryBand[] = [
     title: "主方案总览",
     description: "先解释平台为何不止是 AI 工具，而是把知识库、业务规则与决策链路沉淀为可追溯的企业知识资产。",
     visual: homeVisuals.solutionOverviewEntry,
-    action: { label: "查看详情", href: "/solution", kind: "pending" },
+    action: { label: "查看详情", href: "/solution", kind: "route" },
     sourceSlides: ["slide-01", "slide-07", "slide-10", "slide-20", "slide-22"],
   },
   {
@@ -115,7 +115,7 @@ export const homeEntryBands: HomeEntryBand[] = [
     title: "知识语义层",
     description: "说明知识库中的术语、规则和数据映射如何被统一约束，让问答与决策建立在可解释的业务语义之上。",
     visual: homeVisuals.semanticLayerEntry,
-    action: { label: "查看详情", href: "/semantic-layer", kind: "pending" },
+    action: { label: "查看详情", href: "/capabilities/semantic-layer", kind: "route" },
     sourceSlides: ["slide-07", "slide-14"],
   },
   {
@@ -123,7 +123,7 @@ export const homeEntryBands: HomeEntryBand[] = [
     title: "AI 数据平台",
     description: "说明多源文档、结构化数据与召回重排如何形成可调用知识，为上层问答和智能体持续供给事实依据。",
     visual: homeVisuals.dataPlatformEntry,
-    action: { label: "查看详情", href: "/data-platform", kind: "pending" },
+    action: { label: "查看详情", href: "/capabilities/data-platform", kind: "route" },
     sourceSlides: ["slide-13", "slide-15", "slide-25"],
   },
   {
@@ -131,7 +131,7 @@ export const homeEntryBands: HomeEntryBand[] = [
     title: "安全管控",
     description: "说明平台为什么能够进入核心业务生产环境，并满足运行时治理与合规审计要求。",
     visual: homeVisuals.securityEntry,
-    action: { label: "查看详情", href: "/security", kind: "pending" },
+    action: { label: "查看详情", href: "/capabilities/security", kind: "route" },
     sourceSlides: ["slide-17", "slide-18"],
   },
   {
@@ -139,16 +139,36 @@ export const homeEntryBands: HomeEntryBand[] = [
     title: "员工 AI 工作台",
     description: "说明员工如何通过企业知识中心使用多模态知识库、知识搜索与智能体应用，让知识真正进入日常工作界面。",
     visual: homeVisuals.scenarioVisual,
-    action: { label: "查看详情", href: "/workspace", kind: "pending" },
+    action: { label: "查看详情", href: "/capabilities/workspace", kind: "route" },
     sourceSlides: ["slide-25", "slide-28", "slide-29"],
   },
 ];
 
 export const homeScenarioCards: HomeScenarioCard[] = [
-  { title: "供应链", description: "让规则沉淀、问答推理与跨域协同进入供应链关键环节。", sourceSlides: ["slide-16"] },
-  { title: "财务", description: "让口径治理、审计支撑与财务判断建立在统一知识与可追溯过程之上。", sourceSlides: ["slide-16"] },
-  { title: "风控", description: "让预警结果附带推理路径，避免黑盒式结论进入关键管理流程。", sourceSlides: ["slide-16"] },
-  { title: "客服运营", description: "让业务知识、经验传承与精准答复沉淀为稳定可复用的服务能力。", sourceSlides: ["slide-16"] },
+  {
+    title: "供应链",
+    description: "让规则沉淀、问答推理与跨域协同进入供应链关键环节。",
+    action: { label: "供应链场景", href: "/scenarios/supply-chain", kind: "route" },
+    sourceSlides: ["slide-16"],
+  },
+  {
+    title: "财务",
+    description: "让口径治理、审计支撑与财务判断建立在统一知识与可追溯过程之上。",
+    action: { label: "财务场景", href: "/scenarios/finance", kind: "route" },
+    sourceSlides: ["slide-16"],
+  },
+  {
+    title: "风控",
+    description: "让预警结果附带推理路径，避免黑盒式结论进入关键管理流程。",
+    action: { label: "风控场景", href: "/scenarios/risk-control", kind: "route" },
+    sourceSlides: ["slide-16"],
+  },
+  {
+    title: "客服运营",
+    description: "让业务知识、经验传承与精准答复沉淀为稳定可复用的服务能力。",
+    action: { label: "客服运营场景", href: "/scenarios/customer-operations", kind: "route" },
+    sourceSlides: ["slide-16"],
+  },
 ];
 
 export const homeProofCards: HomeProofCard[] = [
@@ -157,6 +177,7 @@ export const homeProofCards: HomeProofCard[] = [
     title: "汽车零部件案例",
     description: "中国汽车零部件制造头部企业的全球 AI 知识中台案例。",
     visual: homeVisuals.proofCaseOne,
+    action: { label: "汽车零部件案例", href: "/cases/auto-parts", kind: "route" },
     sourceSlides: ["slide-24"],
   },
   {
@@ -164,6 +185,7 @@ export const homeProofCards: HomeProofCard[] = [
     title: "叉车制造案例",
     description: "中国叉车制造头部企业的工业产品知识图谱应用案例。",
     visual: homeVisuals.proofCaseTwo,
+    action: { label: "叉车制造案例", href: "/cases/forklift", kind: "route" },
     sourceSlides: ["slide-27"],
   },
   {
@@ -171,6 +193,7 @@ export const homeProofCards: HomeProofCard[] = [
     title: "核心团队",
     description: "人工智能、数智化与安全工程背景构成的复合型核心团队。",
     visual: homeVisuals.proofTeam,
+    action: { label: "核心团队", href: "/about/team", kind: "route" },
     sourceSlides: ["slide-30"],
   },
 ];

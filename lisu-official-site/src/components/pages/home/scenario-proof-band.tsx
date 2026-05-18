@@ -1,4 +1,5 @@
 import { HomeVisual } from "@/components/pages/home/home-visual";
+import { SiteLink } from "@/components/site/site-link";
 import type { HomeProofCard, HomeProofSection, HomeScenarioCard } from "@/types/site";
 
 type ScenarioProofBandProps = {
@@ -25,6 +26,13 @@ export function ScenarioProofBand({ scenarios, proofSection, proofCards }: Scena
             <li key={card.title} className="rounded-[20px] bg-white px-6 py-6 shadow-lg shadow-slate-200/60">
               <p className="text-base font-semibold text-slate-950">{card.title}</p>
               <p className="mt-3 text-pretty text-sm leading-7 text-slate-600">{card.description}</p>
+              <SiteLink
+                item={card.action}
+                aria-label={card.action.label}
+                className="mt-5 inline-flex text-sm font-medium text-sky-700 transition-colors duration-200 hover:text-sky-800"
+              >
+                查看详情
+              </SiteLink>
             </li>
           ))}
         </ul>
@@ -44,6 +52,13 @@ export function ScenarioProofBand({ scenarios, proofSection, proofCards }: Scena
                 <div className="p-5">
                   <p className="text-balance text-base font-medium text-slate-950">{card.title}</p>
                   <p className="mt-4 text-pretty text-sm leading-7 text-slate-600">{card.description}</p>
+                  <SiteLink
+                    item={card.action}
+                    aria-label={card.action.label}
+                    className="mt-5 inline-flex text-sm font-medium text-sky-700 transition-colors duration-200 hover:text-sky-800"
+                  >
+                    查看详情
+                  </SiteLink>
                 </div>
               </li>
             ))}

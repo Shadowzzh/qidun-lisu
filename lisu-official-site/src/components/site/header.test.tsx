@@ -1,51 +1,55 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { Header } from "@/components/site/header";
 
 describe("Header", () => {
-  const originalAlert = window.alert;
-
-  afterEach(() => {
-    window.alert = originalAlert;
-  });
-
-  it("renders four top-level menus and opens the solution panel on hover", () => {
+  it("renders five top-level menus and opens the solution panel on hover", () => {
     render(<Header />);
 
     const desktopNav = screen.getByRole("navigation", { name: "主导航" });
-    const trigger = screen.getByRole("button", { name: "解决方案" });
+    const trigger = within(desktopNav).getByRole("link", { name: "解决方案" });
     const brandLink = screen.getByRole("link", { name: "北京骊甦科技" });
     const banner = screen.getByRole("banner");
 
     expect(brandLink).toHaveAttribute("href", "/");
     expect(within(brandLink).getByRole("presentation", { hidden: true })).toHaveAttribute("alt", "");
     expect(banner).toHaveAttribute("data-menu-state", "closed");
-    expect(within(desktopNav).getByRole("button", { name: "应用场景" })).toBeInTheDocument();
-    expect(within(desktopNav).getByRole("button", { name: "案例中心" })).toBeInTheDocument();
-    expect(within(desktopNav).getByRole("button", { name: "关于我们" })).toBeInTheDocument();
+    expect(trigger).toHaveAttribute("href", "/solution");
+    expect(within(desktopNav).getByRole("link", { name: "能力页" })).toHaveAttribute("href", "/capabilities");
+    expect(within(desktopNav).getByRole("link", { name: "应用场景" })).toHaveAttribute("href", "/scenarios");
+    expect(within(desktopNav).getByRole("link", { name: "案例中心" })).toHaveAttribute("href", "/cases");
+    expect(within(desktopNav).getByRole("link", { name: "关于我们" })).toHaveAttribute("href", "/about");
 
     fireEvent.mouseEnter(trigger);
 
     const panel = screen.getByTestId("desktop-nav-panel");
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     expect(banner).toHaveAttribute("data-menu-state", "open");
-    expect(within(panel).getByRole("button", { name: "主方案总览" })).toBeInTheDocument();
-    expect(within(panel).getByRole("button", { name: "安全管控" })).toBeInTheDocument();
+    expect(within(panel).getByRole("link", { name: "主方案总览" })).toHaveAttribute("href", "/solution");
+    expect(within(panel).getByRole("link", { name: "能力总览" })).toHaveAttribute("href", "/capabilities");
   });
 
-  it("shows the pending-page alert from both desktop and mobile menus", () => {
-    const alertSpy = vi.fn();
-    window.alert = alertSpy;
+  it("links desktop and mobile menus to real target pages", () => {
     const { container } = render(<Header />);
 
-    fireEvent.mouseEnter(screen.getByRole("button", { name: "关于我们" }));
-    fireEvent.click(within(screen.getByTestId("desktop-nav-panel")).getByRole("button", { name: "公司介绍" }));
+    const desktopNav = screen.getByRole("navigation", { name: "主导航" });
+
+    fireEvent.mouseEnter(within(desktopNav).getByRole("link", { name: "关于我们" }));
+    expect(within(screen.getByTestId("desktop-nav-panel")).getByRole("link", { name: "公司介绍" })).toHaveAttribute(
+      "href",
+      "/about",
+    );
 
     const mobileDisclosure = container.querySelector("details");
     mobileDisclosure?.setAttribute("open", "");
-    fireEvent.click(within(mobileDisclosure as HTMLDetailsElement).getByRole("button", { name: "应用场景" }));
-
-    expect(alertSpy).toHaveBeenCalledTimes(2);
-    expect(alertSpy).toHaveBeenCalledWith("该页面暂未开放，敬请期待。");
+    expect(within(mobileDisclosure as HTMLDetailsElement).getByRole("link", { name: "解决方案" })).toHaveAttribute(
+      "href",
+      "/solution",
+    );
+    expect(
+      within(mobileDisclosure as HTMLDetailsElement)
+        .getAllByRole("link", { name: "应用场景总览" })
+        .some((link) => link.getAttribute("href") === "/scenarios"),
+    ).toBe(true);
   });
 });

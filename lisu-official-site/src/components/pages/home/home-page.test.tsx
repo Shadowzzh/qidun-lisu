@@ -1,15 +1,9 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import { describe, expect, it } from "vitest";
 import Page from "@/app/page";
 import { HomePage } from "@/components/pages/home/home-page";
 
 describe("HomePage", () => {
-  const originalAlert = window.alert;
-
-  afterEach(() => {
-    window.alert = originalAlert;
-  });
-
   it("renders the homepage as a five-section multipage entry shell with the refreshed hero", () => {
     render(<HomePage />);
 
@@ -37,8 +31,6 @@ describe("HomePage", () => {
   });
 
   it("renders five solution entry modules with pending detail buttons", () => {
-    const alertSpy = vi.fn();
-    window.alert = alertSpy;
     render(<HomePage />);
 
     const entryRegion = screen.getByRole("region", { name: "解决方案入口" });
@@ -51,9 +43,13 @@ describe("HomePage", () => {
     expect(within(entryRegion).getByText("安全管控")).toBeInTheDocument();
     expect(within(entryRegion).getByText("员工 AI 工作台")).toBeInTheDocument();
 
-    fireEvent.click(within(entryRegion).getAllByRole("button", { name: "查看详情" })[0]);
-
-    expect(alertSpy).toHaveBeenCalledWith("该页面暂未开放，敬请期待。");
+    expect(within(entryRegion).getAllByRole("link", { name: "查看详情" }).map((link) => link.getAttribute("href"))).toEqual([
+      "/solution",
+      "/capabilities/semantic-layer",
+      "/capabilities/data-platform",
+      "/capabilities/security",
+      "/capabilities/workspace",
+    ]);
   });
 
   it("renders scenario summaries and proof cards together in the closing content region", () => {
@@ -70,6 +66,15 @@ describe("HomePage", () => {
     expect(within(proofRegion).getByText("财务")).toBeInTheDocument();
     expect(within(proofRegion).getByText("汽车零部件案例")).toBeInTheDocument();
     expect(within(proofRegion).getByText("核心团队")).toBeInTheDocument();
+    expect(within(proofRegion).getByRole("link", { name: "供应链场景" })).toHaveAttribute(
+      "href",
+      "/scenarios/supply-chain",
+    );
+    expect(within(proofRegion).getByRole("link", { name: "汽车零部件案例" })).toHaveAttribute(
+      "href",
+      "/cases/auto-parts",
+    );
+    expect(within(proofRegion).getByRole("link", { name: "核心团队" })).toHaveAttribute("href", "/about/team");
   });
 });
 
