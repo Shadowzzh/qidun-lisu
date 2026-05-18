@@ -3,13 +3,11 @@
 import { EntryBand } from "@/components/pages/home/entry-band";
 import { HeroBand } from "@/components/pages/home/hero-band";
 import { OverviewBand } from "@/components/pages/home/overview-band";
-import { RouteClosingBand } from "@/components/pages/home/route-closing-band";
 import { ScenarioProofBand } from "@/components/pages/home/scenario-proof-band";
 import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import {
   homeArchitectureLayers,
-  homeClosingStatement,
   homeEntryBands,
   homeHero,
   homeOverviewBand,
@@ -50,7 +48,6 @@ export function HomePage() {
         </section>
 
         <ScenarioProofBand scenarios={homeScenarioCards} proofCards={homeProofCards} proofSection={homeProofSection} />
-        <RouteClosingBand content={homeClosingStatement} />
       </main>
       <Footer />
     </>

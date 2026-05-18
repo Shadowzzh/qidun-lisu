@@ -16,7 +16,7 @@ export function ScenarioProofBand({ scenarios, proofSection, proofCards }: Scena
             场景与案例
           </h2>
           <p className="mx-auto mt-4 max-w-[760px] text-pretty text-sm leading-7 text-slate-600 md:text-base">
-            让平台能力进入关键业务场景，并用现有案例和团队背书建立最小可信度。
+            围绕供应链、财务、风控与客服运营四类业务版块，展示知识智能平台如何支撑智能决策、精准提效、合规可视与智能传承，并通过制造业知识中台与工业产品知识图谱案例呈现落地基础。
           </p>
         </div>
 

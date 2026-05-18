@@ -131,14 +131,6 @@ export type HomeScenarioCard = {
   sourceSlides: SlideRef[];
 };
 
-export type HomeClosingStatement = {
-  id: "route-closing";
-  title: string;
-  description: string;
-  routeGroups: FooterGroup[];
-  sourceSlides: SlideRef[];
-};
-
 export type FooterGroup = {
   title: string;
   items: SiteLinkItem[];

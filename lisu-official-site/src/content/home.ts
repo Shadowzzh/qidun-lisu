@@ -1,7 +1,5 @@
 import { homeVisuals } from "@/assets/home";
-import { footerRouteGroups } from "@/content/site-nav";
 import type {
-  HomeClosingStatement,
   HomeClosingBand,
   HomeEntryBand,
   HomeFeatureBand,
@@ -180,7 +178,7 @@ export const homeProofCards: HomeProofCard[] = [
 export const homeProofSection: HomeProofSection = {
   id: "proof",
   title: "案例与团队摘要",
-  description: "在首页建立最小可信度，而不展开完整案例页。",
+  description: "来自汽车零部件制造头部企业的全球 AI 知识中台、叉车制造头部企业的工业产品知识图谱应用，以及人工智能、数智化与安全技术背景构成的核心团队。",
   sourceSlides: homeProofCards.flatMap((card) => card.sourceSlides),
 };
 
@@ -194,12 +192,4 @@ export const homeClosingBand: HomeClosingBand = {
     { title: "可审计", description: "关键链路留痕，满足企业合规要求。", sourceSlides: ["slide-22"] },
     { title: "北京骊甦科技", description: "企业级私有化 AI 知识智能平台方案。", sourceSlides: ["slide-01"] },
   ],
-};
-
-export const homeClosingStatement: HomeClosingStatement = {
-  id: "route-closing",
-  title: "继续浏览官网结构",
-  description: "首页只建立品牌与方案总览，后续内容将围绕解决方案、应用场景、案例中心与关于我们持续展开。",
-  routeGroups: footerRouteGroups,
-  sourceSlides: ["slide-22"],
 };

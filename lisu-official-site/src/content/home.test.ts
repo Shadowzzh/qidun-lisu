@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest";
 import {
-  homeClosingStatement,
   homeEntryBands,
   homeHero,
   homeOverviewBand,
@@ -29,7 +28,6 @@ describe("home content contract", () => {
     ]);
     expect(homeScenarioCards.map((card) => card.title)).toEqual(["供应链", "财务", "风控", "客服运营"]);
     expect(homeProofSection.id).toBe("proof");
-    expect(homeClosingStatement.id).toBe("route-closing");
   });
 
   it("uses the platform overview section as a solution summary with architecture imagery", () => {
@@ -87,7 +85,7 @@ describe("home content contract", () => {
     expect(homeEntryBands.every((band) => band.sourceSlides.length > 0)).toBe(true);
     expect(homeScenarioCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
     expect(homeProofCards.every((card) => card.sourceSlides.length > 0)).toBe(true);
-    expect(homeClosingStatement.sourceSlides).toEqual(["slide-22"]);
+    expect(homeProofSection.sourceSlides).toEqual(["slide-24", "slide-27", "slide-30"]);
   });
 
   it("uses a shared placeholder treatment for the first four solution entry modules", () => {

@@ -33,7 +33,7 @@ describe("HomePage", () => {
     expect(within(overviewRegion).getByText("L1 超算底座")).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "解决方案入口" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "场景与案例" })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: "继续浏览官网结构" })).toHaveAttribute("id", "route-closing");
+    expect(screen.queryByRole("region", { name: "继续浏览官网结构" })).not.toBeInTheDocument();
   });
 
   it("renders five solution entry modules with pending detail buttons", () => {
@@ -61,6 +61,11 @@ describe("HomePage", () => {
 
     const proofRegion = screen.getByRole("region", { name: "场景与案例" });
 
+    expect(
+      within(proofRegion).getByText(
+        "围绕供应链、财务、风控与客服运营四类业务版块，展示知识智能平台如何支撑智能决策、精准提效、合规可视与智能传承，并通过制造业知识中台与工业产品知识图谱案例呈现落地基础。",
+      ),
+    ).toBeInTheDocument();
     expect(within(proofRegion).getByText("供应链")).toBeInTheDocument();
     expect(within(proofRegion).getByText("财务")).toBeInTheDocument();
     expect(within(proofRegion).getByText("汽车零部件案例")).toBeInTheDocument();
@@ -74,6 +79,6 @@ describe("app page", () => {
 
     expect(screen.getByRole("region", { name: "AI 创造无限可能" })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: "解决方案入口" })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: "继续浏览官网结构" })).toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "继续浏览官网结构" })).not.toBeInTheDocument();
   });
 });
