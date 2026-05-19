@@ -9,8 +9,15 @@ describe("SitePage", () => {
 
     render(<SitePage page={page} />);
 
-    expect(screen.getByTestId("site-page-hero")).toHaveClass("min-h-[500px]");
-    expect(screen.getByRole("img", { name: "主方案总览页面背景图" })).toBeInTheDocument();
+    const hero = screen.getByTestId("site-page-hero");
+
+    expect(hero).toHaveClass("min-h-[420px]");
+    expect(hero).toHaveClass("md:min-h-[480px]");
+    expect(hero.querySelector('[class*="bg-[#eef4fb]/70"]')).not.toBeInTheDocument();
+    expect(within(hero).getByTestId("site-page-hero-softener")).toHaveClass("bg-[#eef4fb]/30");
+    expect(within(hero).getByTestId("site-page-hero-copy")).toHaveClass("max-w-[600px]");
+    expect(screen.getByText(page.description)).toHaveClass("max-w-[560px]");
+    expect(screen.getByRole("img", { name: "主方案总览封面图" })).toBeInTheDocument();
     expect(within(screen.getByTestId("site-page-hero")).queryByText("拒绝概率玩具，打造企业知识大脑。")).not.toBeInTheDocument();
     expect(screen.queryByTestId("site-page-cover-visual")).not.toBeInTheDocument();
     expect(screen.getAllByRole("img", { name: "平台总览图" }).length).toBeGreaterThan(0);
@@ -32,6 +39,26 @@ describe("SitePage", () => {
       "href",
       "/capabilities",
     );
+  });
+
+  it("uses dedicated cover visuals for the core solution and capability pages", () => {
+    const expectedCovers = [
+      ["/solution", "主方案总览封面图"],
+      ["/capabilities", "能力总览封面图"],
+      ["/capabilities/semantic-layer", "知识语义层封面图"],
+      ["/capabilities/data-platform", "AI 数据平台封面图"],
+      ["/capabilities/security", "安全管控封面图"],
+      ["/capabilities/workspace", "员工 AI 工作台封面图"],
+      ["/scenarios", "应用场景总览封面图"],
+    ] as const;
+
+    for (const [href, alt] of expectedCovers) {
+      const { unmount } = render(<SitePage page={getSitePageByHref(href)} />);
+
+      expect(screen.getByRole("img", { name: alt })).toBeInTheDocument();
+
+      unmount();
+    }
   });
 
   it("renders detail pages with a parent route and sibling links", () => {

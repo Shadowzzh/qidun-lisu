@@ -150,6 +150,7 @@ export type SitePageCover = {
   alt: string;
   title: string;
   hint: string;
+  visual?: StaticImageData;
   sourceSlides: SlideRef[];
 };
 

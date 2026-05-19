@@ -35,7 +35,7 @@ describe("HomePage", () => {
 
     const entryRegion = screen.getByRole("region", { name: "解决方案入口" });
     expect(
-      within(entryRegion).getByText("这里先建立整体理解，再把主方案、知识资产化路径与前台工作入口分发到后续页面。"),
+      within(entryRegion).getByText("从平台架构、知识语义、安全治理到员工工作入口，了解企业私有化 AI 平台的建设路径。"),
     ).toBeInTheDocument();
     expect(within(entryRegion).getByText("主方案总览")).toBeInTheDocument();
     expect(within(entryRegion).getByText("知识语义层")).toBeInTheDocument();

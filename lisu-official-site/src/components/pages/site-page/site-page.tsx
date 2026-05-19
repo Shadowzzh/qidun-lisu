@@ -113,29 +113,31 @@ function getShowcaseVisual(page: SitePageContent, index: number): SiteSectionVis
 }
 
 function PageHeroBlock({ page }: SitePageProps) {
+  const heroVisual = page.cover.visual ?? (homeVisuals.heroDesktop.kind === "image" ? homeVisuals.heroDesktop.src : null);
+
   return (
     <section
-      className="relative min-h-[500px] overflow-hidden bg-[#eef4fb] md:min-h-[560px]"
+      className="relative min-h-[420px] overflow-hidden bg-[#eef4fb] md:min-h-[480px]"
       data-testid="site-page-hero"
     >
-      {homeVisuals.heroDesktop.kind === "image" ? (
+      {heroVisual ? (
         <Image
-          alt={`${page.title}页面背景图`}
+          alt={`${page.title}封面图`}
           className="object-cover object-center"
           fill
           priority
           sizes="100vw"
-          src={homeVisuals.heroDesktop.src}
+          src={heroVisual}
         />
       ) : null}
-      <div className="absolute inset-0 bg-[#eef4fb]/70" />
-      <div className="relative mx-auto flex min-h-[500px] max-w-[1200px] items-center px-5 py-16 sm:px-8 md:min-h-[560px]">
-        <div className="max-w-[680px]">
+      <div className="absolute inset-0 bg-[#eef4fb]/30" data-testid="site-page-hero-softener" />
+      <div className="relative mx-auto flex min-h-[420px] max-w-[1200px] items-center px-5 py-16 sm:px-8 md:min-h-[480px]">
+        <div className="max-w-[600px]" data-testid="site-page-hero-copy">
           <p className="text-sm font-semibold text-[#2563eb]">{page.eyebrow}</p>
           <h1 className="mt-5 max-w-3xl text-balance text-[34px] font-semibold leading-tight text-[#1f2129] md:text-[48px]">
             {page.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-pretty text-sm leading-8 text-[#212121] md:text-base">
+          <p className="mt-6 max-w-[560px] text-pretty text-sm leading-8 text-[#212121] md:text-base">
             {page.description}
           </p>
         </div>

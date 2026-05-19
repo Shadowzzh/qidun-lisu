@@ -35,7 +35,7 @@ export function HomePage() {
                 解决方案入口
               </h2>
               <p className="mt-4 text-pretty text-sm leading-7 text-slate-600 md:text-base">
-                这里先建立整体理解，再把主方案、知识资产化路径与前台工作入口分发到后续页面。
+                从平台架构、知识语义、安全治理到员工工作入口，了解企业私有化 AI 平台的建设路径。
               </p>
             </div>
 

@@ -43,4 +43,40 @@ describe("site page content", () => {
     expect(sitePages.find((page) => page.href === "/cases")?.title).toBe("案例总览");
     expect(sitePages.find((page) => page.href === "/about")?.title).toBe("公司介绍");
   });
+
+  it("uses dedicated cover visuals for cases and about pages", () => {
+    const casesCover = sitePages.find((page) => page.href === "/cases")?.cover.visual;
+    const aboutCover = sitePages.find((page) => page.href === "/about")?.cover.visual;
+
+    expect(casesCover).toBeDefined();
+    expect(aboutCover).toBeDefined();
+    expect(casesCover).not.toBe(aboutCover);
+  });
+
+  it("keeps customer-facing copy free from internal planning language", () => {
+    const internalCopyPatterns = [
+      /首页/,
+      /详情页/,
+      /页面/,
+      /摘要/,
+      /叙述/,
+      /官网表达/,
+      /官网主线/,
+      /不编造/,
+      /未确认/,
+      /素材/,
+      /转化闭环/,
+      /落地表达/,
+    ];
+    const customerCopy = sitePages.flatMap((page) => [
+      page.description,
+      ...page.highlights.map((highlight) => highlight.description),
+      ...page.summaryPoints,
+      ...page.sections.flatMap((section) => [section.title, section.description, ...section.points]),
+    ]);
+
+    expect(
+      customerCopy.filter((copy) => internalCopyPatterns.some((pattern) => pattern.test(copy))),
+    ).toEqual([]);
+  });
 });

@@ -1,3 +1,4 @@
+import { coverVisuals } from "@/assets/cover";
 import type { SitePageContent } from "@/types/site";
 
 export const sitePages: SitePageContent[] = [
@@ -11,6 +12,7 @@ export const sitePages: SitePageContent[] = [
       alt: "主方案总览占位图",
       title: "企业智能中枢架构占位图",
       hint: "后续可替换为七层架构、语义层枢纽与安全切面的组合示意图。",
+      visual: coverVisuals.solution,
       sourceSlides: ["slide-01", "slide-10"],
     },
     highlights: [
@@ -124,6 +126,7 @@ export const sitePages: SitePageContent[] = [
       alt: "能力总览占位图",
       title: "平台能力分层占位图",
       hint: "后续可替换为 L4 数据层、L5 语义层、L6 编排层和 L7 工作台的分层图。",
+      visual: coverVisuals.capabilities,
       sourceSlides: ["slide-10", "slide-13", "slide-14", "slide-15"],
     },
     highlights: [
@@ -156,7 +159,7 @@ export const sitePages: SitePageContent[] = [
     sections: [
       {
         title: "能力分层",
-        description: "能力页承接平台架构中的关键能力层，不把所有技术细节堆回首页。",
+        description: "平台能力围绕数据、语义、编排、安全和工作台展开，让不同业务场景可以按需组合使用。",
         points: [
           "L4 数据层负责结构化、非结构化、向量和图数据协同。",
           "L5 语义层是约束生成和可解释决策的核心。",
@@ -237,6 +240,7 @@ export const sitePages: SitePageContent[] = [
       alt: "知识语义层占位图",
       title: "语义约束生成占位图",
       hint: "后续可替换为语义解析、规则执行、生成框架、LLM 润色和全路径溯源闭环图。",
+      visual: coverVisuals.semanticLayer,
       sourceSlides: ["slide-14"],
     },
     highlights: [
@@ -299,6 +303,7 @@ export const sitePages: SitePageContent[] = [
       alt: "AI 数据平台占位图",
       title: "多引擎协同占位图",
       hint: "后续可替换为 Milvus、ES、Neo4j、PGSQL、MinIO 与 RAG/KAG 流程图。",
+      visual: coverVisuals.dataPlatform,
       sourceSlides: ["slide-13"],
     },
     highlights: [
@@ -359,6 +364,7 @@ export const sitePages: SitePageContent[] = [
       alt: "安全管控占位图",
       title: "OVTP 安全闭环占位图",
       hint: "后续可替换为供应链安全三条底线与 Operator/Voucher/Traceable 全链路图。",
+      visual: coverVisuals.securityGovernance,
       sourceSlides: ["slide-17", "slide-18"],
     },
     highlights: [
@@ -419,6 +425,7 @@ export const sitePages: SitePageContent[] = [
       alt: "员工 AI 工作台占位图",
       title: "员工工作入口占位图",
       hint: "后续可替换为企业知识中心、智能体中心、工具市场和统一运营管理的产品界面图。",
+      visual: coverVisuals.workspace,
       sourceSlides: ["slide-28"],
     },
     highlights: [
@@ -474,11 +481,12 @@ export const sitePages: SitePageContent[] = [
     title: "应用场景总览",
     eyebrow: "应用场景",
     description:
-      "应用场景页把平台能力翻译成供应链、财务、风控和客服运营中的业务价值，突出骊甦自己的落地表达。",
+      "平台能力可进入供应链、财务、风控和客服运营等关键环节，让业务判断建立在统一知识、可解释路径和可审计过程之上。",
     cover: {
       alt: "应用场景总览占位图",
       title: "四类业务场景占位图",
       hint: "后续可替换为供应链、财务、风控、客服运营四个业务版块的价值地图。",
+      visual: coverVisuals.industrialAi,
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -758,7 +766,7 @@ export const sitePages: SitePageContent[] = [
       },
       {
         title: "运营闭环",
-        description: "客服运营页面连接员工 AI 工作台和知识体系建设。",
+        description: "客服运营场景连接员工 AI 工作台和知识体系建设。",
         points: ["问答质量通过反馈持续优化。", "工具市场连接坐席系统、微信小程序和业务系统。", "统一日志和审计支撑服务质量复盘。"],
         sourceSlides: ["slide-13", "slide-28"],
       },
@@ -774,11 +782,12 @@ export const sitePages: SitePageContent[] = [
     title: "案例总览",
     eyebrow: "案例中心",
     description:
-      "案例中心集中承接制造业知识中台、工业产品知识图谱和团队能力背书，让首页摘要进入完整叙述。",
+      "制造业知识中台与工业产品知识图谱案例，展示平台在本地部署、知识治理、权限管控和业务智能体中的落地方式。",
     cover: {
       alt: "案例总览占位图",
       title: "制造业案例矩阵占位图",
       hint: "后续可替换为汽车零部件全球 AI 知识中台和叉车工业产品知识图谱的双案例封面。",
+      visual: coverVisuals.cases,
       sourceSlides: ["slide-24", "slide-27"],
     },
     highlights: [
@@ -804,15 +813,15 @@ export const sitePages: SitePageContent[] = [
     summaryPoints: [
       "汽车零部件案例展示全球 AI 知识中台建设。",
       "叉车制造案例展示工业产品知识图谱应用。",
-      "案例叙述与团队能力共同建立可信度。",
+      "案例经验与团队能力共同建立可信度。",
       "案例材料覆盖本地部署、知识管理、权限管控和业务智能体。",
     ],
     sourceSlides: ["slide-24", "slide-25", "slide-26", "slide-27", "slide-28", "slide-29"],
     sections: [
       {
         title: "案例结构",
-        description: "案例页不复述所有方案内容，而是展示平台如何进入具体行业、具体知识体系和具体业务应用。",
-        points: ["从客户业务问题切入。", "说明知识资产、权限、系统对接和智能体应用。", "展示可复用的建设方法。"],
+        description: "案例从行业知识、系统对接和业务应用出发，呈现平台进入真实业务场景的建设路径。",
+        points: ["从客户业务问题切入。", "梳理知识资产、权限、系统对接和智能体应用。", "形成可复用的建设方法。"],
         sourceSlides: ["slide-24", "slide-27"],
       },
       {
@@ -842,7 +851,7 @@ export const sitePages: SitePageContent[] = [
       {
         title: "背书价值",
         description: "案例中心与关于我们、团队页互相补充，建立技术、行业和交付能力信任。",
-        points: ["制造业案例支撑平台可落地性。", "团队背景支撑复杂项目交付能力。", "详情页承接完整行业叙述。"],
+        points: ["制造业案例支撑平台可落地性。", "团队背景支撑复杂项目交付能力。", "行业知识、工程能力和安全治理形成合力。"],
         sourceSlides: ["slide-24", "slide-27", "slide-30"],
       },
     ],
@@ -970,13 +979,14 @@ export const sitePages: SitePageContent[] = [
       alt: "公司介绍占位图",
       title: "骊甦团队与方案占位图",
       hint: "后续可替换为团队能力、方案主张和制造业案例背书组合图。",
+      visual: coverVisuals.about,
       sourceSlides: ["slide-01", "slide-30"],
     },
     highlights: [
       {
         label: "公司主线",
         value: "企业级私有化 AI 知识智能平台",
-        description: "官网公司表达围绕平台方案、知识决策和私有化可信交付展开。",
+        description: "公司能力围绕平台方案、知识决策和私有化可信交付展开。",
         sourceSlides: ["slide-01"],
       },
       {
@@ -988,22 +998,22 @@ export const sitePages: SitePageContent[] = [
       {
         label: "背书路径",
         value: "方案、能力、案例、团队",
-        description: "通过解决方案、能力体系、制造业案例和核心团队共同建立可信官网表达。",
+        description: "通过解决方案、能力体系、制造业案例和核心团队建立客户信任。",
         sourceSlides: ["slide-01", "slide-24", "slide-27", "slide-30"],
       },
     ],
     summaryPoints: [
       "定位企业级私有化 AI 知识智能平台方案服务商。",
       "团队覆盖人工智能、数智化转型和安全工程。",
-      "以方案、能力、案例和团队共同建立可信官网表达。",
-      "关于我们只使用已有素材，不编造联系方式和未确认履历。",
+      "以方案、能力、案例和团队共同支撑复杂企业 AI 项目。",
+      "聚焦知识决策、私有化部署和安全可审计的企业级场景。",
     ],
     sourceSlides: ["slide-01", "slide-30"],
     sections: [
       {
         title: "公司定位",
-        description: "公司表达应服务于官网主线，不把关于我们写成单纯介绍页。",
-        points: ["围绕知识决策、私有化部署和安全可审计组织表达。", "用团队能力支撑复杂企业 AI 项目交付。", "通过案例和联系方式形成转化闭环。"],
+        description: "北京骊甦科技聚焦企业级私有化 AI 知识智能平台，为核心业务提供知识驱动的智能中枢能力。",
+        points: ["围绕知识决策、私有化部署和安全可审计组织能力。", "用团队能力支撑复杂企业 AI 项目交付。", "通过案例和咨询入口连接真实业务需求。"],
         sourceSlides: ["slide-01", "slide-22"],
       },
       {
@@ -1096,7 +1106,7 @@ export const sitePages: SitePageContent[] = [
     title: "联系方式",
     eyebrow: "关于我们",
     description:
-      "联系方式页承接咨询转化，帮助有私有化 AI、知识中台、场景落地和安全治理需求的企业进入下一步沟通。",
+      "面向有私有化 AI、知识中台、场景落地和安全治理需求的企业，提供方案咨询与建设路径沟通。",
     cover: {
       alt: "联系方式占位图",
       title: "咨询入口占位图",
@@ -1128,7 +1138,7 @@ export const sitePages: SitePageContent[] = [
     sections: [
       {
         title: "沟通方向",
-        description: "联系方式页不新增未经确认的邮箱或电话，先提供明确的业务沟通入口说明。",
+        description: "围绕平台方案、业务场景和交付路径，帮助企业明确私有化 AI 建设的优先级。",
         points: ["企业级私有化 AI 知识智能平台方案咨询。", "供应链、财务、风控、客服运营场景评估。", "案例复盘、团队能力和交付路径沟通。"],
         sourceSlides: ["slide-01", "slide-16", "slide-24", "slide-27", "slide-30"],
       },
