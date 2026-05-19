@@ -3,7 +3,8 @@ import Link from "next/link";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { PlaceholderVisual } from "@/components/site/placeholder-visual";
-import type { SitePageContent } from "@/types/site";
+import { cn } from "@/lib/utils";
+import type { SitePageContent, SitePageSection } from "@/types/site";
 
 type SitePageProps = {
   page: SitePageContent;
@@ -11,6 +12,35 @@ type SitePageProps = {
 
 function getSectionVisualLabel(index: number) {
   return String(index + 1).padStart(2, "0");
+}
+
+function SectionVisual({
+  className,
+  hint,
+  section,
+}: {
+  className?: string;
+  hint: string;
+  section: SitePageSection;
+}) {
+  return (
+    <div
+      className={cn("relative overflow-hidden bg-[#f4f7fb]", className)}
+      data-testid="site-page-section-visual"
+    >
+      {section.visual ? (
+        <Image
+          alt={section.visual.alt}
+          className="object-contain object-center p-5"
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          src={section.visual.src}
+        />
+      ) : (
+        <PlaceholderVisual fill hint={hint} title={section.title} />
+      )}
+    </div>
+  );
 }
 
 function PageHeroBlock({ page }: SitePageProps) {
@@ -78,12 +108,11 @@ function ProductBody({ page }: SitePageProps) {
                     <p className="mt-5 text-pretty text-sm leading-7 text-[#54657e]">{section.description}</p>
                   </div>
 
-                  <div
-                    className="relative min-h-[220px] overflow-hidden rounded-[4px] bg-[#f4f7fb] md:min-h-[350px]"
-                    data-testid="site-page-section-visual"
-                  >
-                    <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
-                  </div>
+                  <SectionVisual
+                    className="min-h-[220px] rounded-[4px] md:min-h-[350px]"
+                    hint={page.cover.hint}
+                    section={section}
+                  />
                 </article>
               );
             })}
@@ -232,9 +261,7 @@ function CaseOverview({ page }: SitePageProps) {
                   ) : null}
                 </div>
 
-                <div className="relative min-h-[280px] bg-[#dce7f8]">
-                  <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
-                </div>
+                <SectionVisual className="min-h-[280px] bg-[#dce7f8]" hint={page.cover.hint} section={section} />
               </article>
             );
           })}

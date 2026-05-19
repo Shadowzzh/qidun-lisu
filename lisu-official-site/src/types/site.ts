@@ -143,6 +143,10 @@ export type SitePageSection = {
   title: string;
   description: string;
   points: string[];
+  visual?: {
+    alt: string;
+    src: StaticImageData;
+  };
   sourceSlides: SlideRef[];
 };
 

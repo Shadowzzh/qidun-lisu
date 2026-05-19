@@ -107,12 +107,12 @@ describe("SitePage", () => {
     );
   });
 
-  it("keeps case detail and about page body visuals as placeholders until matching assets exist", () => {
+  it("renders archive-matched body visuals for case detail pages and keeps about body placeholders", () => {
     const casePage = getSitePageByHref("/cases/auto-parts");
     const { unmount } = render(<SitePage page={casePage} />);
 
-    expect(screen.queryByRole("img", { name: "汽车零部件案例缩略图" })).not.toBeInTheDocument();
-    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(2);
+    expect(screen.getByRole("img", { name: "汽车零部件知识中台示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "汽车零部件知识资产管理界面" })).toBeInTheDocument();
 
     unmount();
 
@@ -120,6 +120,24 @@ describe("SitePage", () => {
     render(<SitePage page={aboutPage} />);
 
     expect(screen.queryByRole("img", { name: "核心团队缩略图" })).not.toBeInTheDocument();
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("renders archive-matched visuals for the cases overview cards", () => {
+    const page = getSitePageByHref("/cases");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.getByRole("img", { name: "汽车零部件知识中台示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "叉车制造产品知识图谱流程图" })).toBeInTheDocument();
+  });
+
+  it("renders selected workspace visuals without replacing every placeholder", () => {
+    const page = getSitePageByHref("/capabilities/workspace");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.getByRole("img", { name: "叉车制造知识体系图谱界面" })).toBeInTheDocument();
     expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(1);
   });
 

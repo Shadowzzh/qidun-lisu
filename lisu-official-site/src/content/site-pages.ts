@@ -1,4 +1,8 @@
 import { coverVisuals } from "@/assets/cover";
+import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.jpeg";
+import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.png";
+import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.png";
+import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.png";
 import type { SitePageContent } from "@/types/site";
 
 export const sitePages: SitePageContent[] = [
@@ -467,6 +471,10 @@ export const sitePages: SitePageContent[] = [
         title: "知识体系",
         description: "平台围绕产品技术参数、操作保养维修手册和故障代码表建设向量与图谱能力。",
         points: ["支持基于图谱的智能售前咨询。", "支持售后维修、标配选配查找和技术参数解答。", "将专家经验转化为可调用的企业知识资产。"],
+        visual: {
+          alt: "叉车制造知识体系图谱界面",
+          src: forkliftKnowledgeGraphImage,
+        },
         sourceSlides: ["slide-29"],
       },
     ],
@@ -828,18 +836,30 @@ export const sitePages: SitePageContent[] = [
         title: "汽车零部件知识中台",
         description: "案例围绕全球 AI 知识中台，强调本地部署 GPU 算力、本地知识存储和企业知识安全管理。",
         points: ["企业内部文档智能解析全部本地完成。", "基于企业知识安全管理目标统一管理本地知识。", "对接文件、文件夹、知识库、内网文档同步和文件上传。"],
+        visual: {
+          alt: "汽车零部件知识中台示意图",
+          src: autoPartsKnowledgeHubImage,
+        },
         sourceSlides: ["slide-24", "slide-25"],
       },
       {
         title: "知识资产管理",
         description: "汽车零部件案例中的知识中台覆盖企业和个人双场景，并强调权限与文件生命周期。",
         points: ["覆盖企业和个人双场景的知识资产全生命周期管理。", "强权限与安全管控体系适配多层级、多角色内部管理。", "企业级文件生命周期管理支持 20+ 格式、智能处理和内外源整合。"],
+        visual: {
+          alt: "汽车零部件知识资产管理界面",
+          src: autoPartsKnowledgeWorkspaceImage,
+        },
         sourceSlides: ["slide-26"],
       },
       {
         title: "叉车知识图谱",
         description: "叉车制造案例聚焦工业产品知识图谱，把产品参数、手册和故障代码沉淀为可问答、可推理的知识体系。",
         points: ["围绕产品技术参数、操作保养维修手册和故障代码表做知识梳理。", "以向量和图谱承接产品知识。", "支持基于图谱的智能售前咨询和售后维修。"],
+        visual: {
+          alt: "叉车制造产品知识图谱流程图",
+          src: forkliftProcessMapImage,
+        },
         sourceSlides: ["slide-27", "slide-29"],
       },
       {
@@ -900,12 +920,20 @@ export const sitePages: SitePageContent[] = [
         title: "建设目标",
         description: "案例以本地部署 GPU 算力、统一本地知识存储和企业级知识管理为基础。",
         points: ["保证企业内部文档智能解析在本地完成。", "统一管理企业知识、文档、流程和权限。", "对接文件、知识库和内网文档同步。"],
+        visual: {
+          alt: "汽车零部件知识中台示意图",
+          src: autoPartsKnowledgeHubImage,
+        },
         sourceSlides: ["slide-25"],
       },
       {
         title: "核心能力",
         description: "案例覆盖知识资产全生命周期管理、强权限体系和企业级文件管理。",
         points: ["覆盖企业和个人双场景知识资产。", "适配多层级、多角色的内部管控。", "支持 20+ 格式、智能处理和内外源整合。"],
+        visual: {
+          alt: "汽车零部件知识资产管理界面",
+          src: autoPartsKnowledgeWorkspaceImage,
+        },
         sourceSlides: ["slide-26"],
       },
     ],
@@ -954,12 +982,20 @@ export const sitePages: SitePageContent[] = [
         title: "知识体系",
         description: "案例把产品技术参数、手册、故障代码表等内容进行知识梳理。",
         points: ["形成向量与图谱并行的知识底座。", "支持标配和选配查找。", "支持技术参数解答。"],
+        visual: {
+          alt: "叉车制造知识体系图谱界面",
+          src: forkliftKnowledgeGraphImage,
+        },
         sourceSlides: ["slide-29"],
       },
       {
         title: "应用承接",
         description: "工作台和智能体将知识图谱能力带入售前、售后和服务流程。",
         points: ["智能售前咨询帮助快速回答产品问题。", "售后维修知识问答降低专家依赖。", "定制 AI 智能体承接行业服务流程。"],
+        visual: {
+          alt: "叉车制造产品知识图谱流程图",
+          src: forkliftProcessMapImage,
+        },
         sourceSlides: ["slide-28", "slide-29"],
       },
     ],
