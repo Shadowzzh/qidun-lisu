@@ -20,16 +20,16 @@ describe("SitePage", () => {
     expect(screen.getByRole("img", { name: "主方案总览封面图" })).toBeInTheDocument();
     expect(within(screen.getByTestId("site-page-hero")).queryByText("拒绝概率玩具，打造企业知识大脑。")).not.toBeInTheDocument();
     expect(screen.queryByTestId("site-page-cover-visual")).not.toBeInTheDocument();
-    expect(screen.getAllByRole("img", { name: "平台总览图" }).length).toBeGreaterThan(0);
     expect(screen.getAllByTestId("site-page-section").length).toBeGreaterThanOrEqual(5);
     expect(screen.getAllByTestId("site-page-section-visual").length).toBeGreaterThanOrEqual(5);
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(5);
     expect(screen.getByRole("heading", { level: 1, name: "主方案总览" })).toBeInTheDocument();
     expect(
       screen.getByText(
         "企业级私有化 AI 知识智能平台方案，从数据查询走向知识决策，建设可解释、可审计、可追溯的企业智能中枢。",
       ),
     ).toBeInTheDocument();
-    expect(screen.getByText("为什么现在必须建设")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 3, name: "为什么现在必须建设" })).toBeInTheDocument();
     expect(screen.queryByRole("heading", { level: 2, name: "关键事实" })).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2, name: "核心能力" })).toBeInTheDocument();
     expect(screen.getByTestId("site-page-showcase")).toHaveClass("bg-[#f5f8fc]");
@@ -74,6 +74,53 @@ describe("SitePage", () => {
       "href",
       "/capabilities/data-platform",
     );
+  });
+
+  it("uses placeholder visuals instead of repeated fallback images when a page has no dedicated visual", () => {
+    const page = getSitePageByHref("/scenarios/supply-chain");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.queryByRole("img", { name: "供应链封面图" })).not.toBeInTheDocument();
+    expect(within(screen.getByTestId("site-page-hero")).getByTestId("site-placeholder-visual")).toHaveTextContent(
+      page.cover.title,
+    );
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(2);
+    expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
+  });
+
+  it("does not reuse home imagery inside product page content slots", () => {
+    const page = getSitePageByHref("/solution");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.getByRole("img", { name: "主方案总览封面图" })).toBeInTheDocument();
+    expect(screen.queryByRole("img", { name: "平台总览图" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("img", { name: "核心能力入口图" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(
+      page.sections.length + page.highlights.length,
+    );
+    expect(within(screen.getAllByTestId("site-page-section-visual")[0]).getByTestId("site-placeholder-visual")).toHaveClass(
+      "absolute",
+      "inset-0",
+    );
+  });
+
+  it("keeps case detail and about page body visuals as placeholders until matching assets exist", () => {
+    const casePage = getSitePageByHref("/cases/auto-parts");
+    const { unmount } = render(<SitePage page={casePage} />);
+
+    expect(screen.queryByRole("img", { name: "汽车零部件案例缩略图" })).not.toBeInTheDocument();
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(2);
+
+    unmount();
+
+    const aboutPage = getSitePageByHref("/about");
+    render(<SitePage page={aboutPage} />);
+
+    expect(screen.queryByRole("img", { name: "核心团队缩略图" })).not.toBeInTheDocument();
+    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(1);
   });
 
   it("uses a case-list layout for the cases overview", () => {

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { homeVisuals } from "@/assets/home";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
-import type { HomeVisualSlot, SitePageContent } from "@/types/site";
+import { PlaceholderVisual } from "@/components/site/placeholder-visual";
+import type { SitePageContent } from "@/types/site";
 
 type SitePageProps = {
   page: SitePageContent;
@@ -13,107 +13,8 @@ function getSectionVisualLabel(index: number) {
   return String(index + 1).padStart(2, "0");
 }
 
-type SiteSectionVisual = {
-  alt: string;
-  src: Extract<HomeVisualSlot, { kind: "image" }>["src"];
-};
-
-function getSectionVisual(page: SitePageContent, index: number): SiteSectionVisual | null {
-  if (page.href === "/solution") {
-    if (index === 0 || index === 2) {
-      return homeVisuals.platformOverview.kind === "image"
-        ? { alt: homeVisuals.platformOverview.alt, src: homeVisuals.platformOverview.src }
-        : null;
-    }
-
-    if (index === 1 || index === 4) {
-      return homeVisuals.capabilityVisual.kind === "image"
-        ? { alt: homeVisuals.capabilityVisual.alt, src: homeVisuals.capabilityVisual.src }
-        : null;
-    }
-
-    return homeVisuals.scenarioVisual.kind === "image"
-      ? { alt: homeVisuals.scenarioVisual.alt, src: homeVisuals.scenarioVisual.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/capabilities")) {
-    if (page.href === "/capabilities/data-platform" || index % 2 === 0) {
-      return homeVisuals.platformOverview.kind === "image"
-        ? { alt: homeVisuals.platformOverview.alt, src: homeVisuals.platformOverview.src }
-        : null;
-    }
-
-    return homeVisuals.capabilityVisual.kind === "image"
-      ? { alt: homeVisuals.capabilityVisual.alt, src: homeVisuals.capabilityVisual.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/scenarios")) {
-    return homeVisuals.scenarioVisual.kind === "image"
-      ? { alt: homeVisuals.scenarioVisual.alt, src: homeVisuals.scenarioVisual.src }
-      : null;
-  }
-
-  if (page.href.includes("forklift")) {
-    return homeVisuals.proofCaseTwo.kind === "image"
-      ? { alt: homeVisuals.proofCaseTwo.alt, src: homeVisuals.proofCaseTwo.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/cases")) {
-    return homeVisuals.proofCaseOne.kind === "image"
-      ? { alt: homeVisuals.proofCaseOne.alt, src: homeVisuals.proofCaseOne.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/about")) {
-    return homeVisuals.proofTeam.kind === "image"
-      ? { alt: homeVisuals.proofTeam.alt, src: homeVisuals.proofTeam.src }
-      : null;
-  }
-
-  return null;
-}
-
-function getShowcaseVisual(page: SitePageContent, index: number): SiteSectionVisual | null {
-  if (page.href.includes("forklift")) {
-    return homeVisuals.proofCaseTwo.kind === "image"
-      ? { alt: homeVisuals.proofCaseTwo.alt, src: homeVisuals.proofCaseTwo.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/cases")) {
-    return homeVisuals.proofCaseOne.kind === "image"
-      ? { alt: homeVisuals.proofCaseOne.alt, src: homeVisuals.proofCaseOne.src }
-      : null;
-  }
-
-  if (page.href.startsWith("/about")) {
-    return homeVisuals.proofTeam.kind === "image"
-      ? { alt: homeVisuals.proofTeam.alt, src: homeVisuals.proofTeam.src }
-      : null;
-  }
-
-  if (index === 0) {
-    return homeVisuals.platformOverview.kind === "image"
-      ? { alt: homeVisuals.platformOverview.alt, src: homeVisuals.platformOverview.src }
-      : null;
-  }
-
-  if (index === 1) {
-    return homeVisuals.capabilityVisual.kind === "image"
-      ? { alt: homeVisuals.capabilityVisual.alt, src: homeVisuals.capabilityVisual.src }
-      : null;
-  }
-
-  return homeVisuals.scenarioVisual.kind === "image"
-    ? { alt: homeVisuals.scenarioVisual.alt, src: homeVisuals.scenarioVisual.src }
-    : null;
-}
-
 function PageHeroBlock({ page }: SitePageProps) {
-  const heroVisual = page.cover.visual ?? (homeVisuals.heroDesktop.kind === "image" ? homeVisuals.heroDesktop.src : null);
+  const heroVisual = page.cover.visual ?? null;
 
   return (
     <section
@@ -129,7 +30,14 @@ function PageHeroBlock({ page }: SitePageProps) {
           sizes="100vw"
           src={heroVisual}
         />
-      ) : null}
+      ) : (
+        <PlaceholderVisual
+          className="absolute inset-0 border-0 px-6 md:justify-end md:px-16"
+          hint={page.cover.hint}
+          labelClassName="md:mr-[8%]"
+          title={page.cover.title}
+        />
+      )}
       <div className="absolute inset-0 bg-[#eef4fb]/30" data-testid="site-page-hero-softener" />
       <div className="relative mx-auto flex min-h-[420px] max-w-[1200px] items-center px-5 py-16 sm:px-8 md:min-h-[480px]">
         <div className="max-w-[600px]" data-testid="site-page-hero-copy">
@@ -154,8 +62,6 @@ function ProductBody({ page }: SitePageProps) {
           <h2 className="text-center text-[30px] font-medium leading-[42px] text-[#1f2129]">核心能力</h2>
           <div className="mt-12 space-y-16 lg:mt-[60px] lg:space-y-20">
             {page.sections.map((section, index) => {
-              const visual = getSectionVisual(page, index);
-
               return (
                 <article
                   key={section.title}
@@ -176,19 +82,7 @@ function ProductBody({ page }: SitePageProps) {
                     className="relative min-h-[220px] overflow-hidden rounded-[4px] bg-[#f4f7fb] md:min-h-[350px]"
                     data-testid="site-page-section-visual"
                   >
-                    {visual ? (
-                      <Image
-                        alt={visual.alt}
-                        className="object-contain p-3"
-                        fill
-                        sizes="(max-width: 767px) 100vw, 560px"
-                        src={visual.src}
-                      />
-                    ) : (
-                      <div className="flex min-h-[220px] items-center justify-center p-6 md:min-h-[350px]">
-                        <p className="text-sm font-medium text-[#708099]">{page.cover.title}</p>
-                      </div>
-                    )}
+                    <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
                   </div>
                 </article>
               );
@@ -201,9 +95,7 @@ function ProductBody({ page }: SitePageProps) {
         <div className="mx-auto max-w-[1200px] px-5 py-14 sm:px-8 md:py-[60px]">
           <h2 className="text-center text-[30px] font-medium leading-[42px] text-[#1f2129]">成果展示</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {page.highlights.map((highlight, index) => {
-              const visual = getShowcaseVisual(page, index);
-
+            {page.highlights.map((highlight) => {
               return (
                 <article
                   key={highlight.label}
@@ -211,19 +103,7 @@ function ProductBody({ page }: SitePageProps) {
                   data-testid="site-page-showcase-card"
                 >
                   <div className="relative h-[188px] bg-[#f4f7fb] md:h-[220px]">
-                    {visual ? (
-                      <Image
-                        alt={visual.alt}
-                        className="object-cover"
-                        fill
-                        sizes="(max-width: 767px) 100vw, 33vw"
-                        src={visual.src}
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center p-6">
-                        <p className="text-sm font-medium text-[#708099]">{page.cover.title}</p>
-                      </div>
-                    )}
+                    <PlaceholderVisual fill hint={page.cover.hint} title={highlight.label} />
                   </div>
                   <div className="p-5">
                     <p className="text-sm font-medium text-[#2563eb]">{highlight.label}</p>
@@ -257,7 +137,6 @@ function ScenarioOverview({ page }: SitePageProps) {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {page.sections.slice(0, 4).map((section, index) => {
-            const visual = getSectionVisual(page, index);
             const link = page.relatedLinks[index];
 
             return (
@@ -267,19 +146,7 @@ function ScenarioOverview({ page }: SitePageProps) {
                 data-testid="site-page-scenario-card"
               >
                 <div className="relative h-[220px] bg-[#e6effa]">
-                  {visual ? (
-                    <Image
-                      alt={visual.alt}
-                      className="object-cover"
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      src={visual.src}
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center p-6">
-                      <p className="text-sm font-medium text-[#708099]">{page.cover.title}</p>
-                    </div>
-                  )}
+                  <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
                 </div>
                 <div className="p-7">
                   <p className="tabular-nums text-sm font-semibold text-[#2563eb]">
@@ -329,7 +196,6 @@ function CaseOverview({ page }: SitePageProps) {
 
         <div className="grid gap-6">
           {caseSections.slice(0, 2).map((section, index) => {
-            const visual = getSectionVisual(page, index);
             const link = page.relatedLinks[index];
 
             return (
@@ -367,19 +233,7 @@ function CaseOverview({ page }: SitePageProps) {
                 </div>
 
                 <div className="relative min-h-[280px] bg-[#dce7f8]">
-                  {visual ? (
-                    <Image
-                      alt={visual.alt}
-                      className="object-cover"
-                      fill
-                      sizes="(min-width: 768px) 55vw, 100vw"
-                      src={visual.src}
-                    />
-                  ) : (
-                    <div className="flex h-full min-h-[280px] items-center justify-center p-6">
-                      <p className="text-sm font-medium text-[#708099]">{page.cover.title}</p>
-                    </div>
-                  )}
+                  <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
                 </div>
               </article>
             );
@@ -411,19 +265,7 @@ function CompanyOverview({ page }: SitePageProps) {
           </div>
         </div>
         <div className="relative min-h-[360px] overflow-hidden rounded-lg bg-[#edf3fb]">
-          {homeVisuals.proofTeam.kind === "image" ? (
-            <Image
-              alt={homeVisuals.proofTeam.alt}
-              className="object-cover"
-              fill
-              sizes="(min-width: 1024px) 52vw, 100vw"
-              src={homeVisuals.proofTeam.src}
-            />
-          ) : (
-            <div className="flex h-full min-h-[360px] items-center justify-center p-6">
-              <p className="text-sm font-medium text-[#708099]">{page.cover.title}</p>
-            </div>
-          )}
+          <PlaceholderVisual fill hint={page.cover.hint} title={page.cover.title} />
         </div>
       </section>
 
