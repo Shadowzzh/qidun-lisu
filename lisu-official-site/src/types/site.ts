@@ -143,6 +143,21 @@ export type SitePageSection = {
   title: string;
   description: string;
   points: string[];
+  sourceSlides: SlideRef[];
+};
+
+export type SitePageCover = {
+  alt: string;
+  title: string;
+  hint: string;
+  sourceSlides: SlideRef[];
+};
+
+export type SitePageHighlight = {
+  label: string;
+  value: string;
+  description: string;
+  sourceSlides: SlideRef[];
 };
 
 export type SitePageContent = {
@@ -150,6 +165,8 @@ export type SitePageContent = {
   title: string;
   eyebrow: string;
   description: string;
+  cover: SitePageCover;
+  highlights: SitePageHighlight[];
   summaryPoints: string[];
   sections: SitePageSection[];
   relatedLinks: SiteLinkItem[];

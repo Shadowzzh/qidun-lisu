@@ -14,11 +14,26 @@ describe("site page content", () => {
       sitePages.every(
         (page) =>
           page.sourceSlides.length > 0 &&
+          page.cover.sourceSlides.length > 0 &&
+          page.highlights.length >= 3 &&
+          page.highlights.every((highlight) => highlight.sourceSlides.length > 0) &&
           page.sections.length > 0 &&
+          page.sections.every((section) => section.sourceSlides.length > 0 && section.points.length >= 3) &&
           page.relatedLinks.length > 0 &&
           page.relatedLinks.every((link) => targetRouteSet.has(link.href)),
       ),
     ).toBe(true);
+  });
+
+  it("gives the core first-level pages enough body content for standalone reading", () => {
+    const coreRoutes = ["/solution", "/capabilities", "/scenarios", "/cases", "/about"] as const;
+
+    for (const route of coreRoutes) {
+      const page = sitePages.find((item) => item.href === route);
+
+      expect(page?.sections.length).toBeGreaterThanOrEqual(5);
+      expect(page?.summaryPoints.length).toBeGreaterThanOrEqual(4);
+    }
   });
 
   it("uses the expected top-level page titles", () => {
