@@ -15,7 +15,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "主方案总览占位图",
       title: "企业智能中枢架构占位图",
-      hint: "后续可替换为七层架构、语义层枢纽与安全切面的组合示意图。",
+      hint: "七层架构以知识语义层为核心枢纽，贯通算力、数据、能力开放和业务应用。",
       visual: coverVisuals.solution,
       sourceSlides: ["slide-01", "slide-10"],
     },
@@ -70,13 +70,24 @@ export const sitePages: SitePageContent[] = [
         sourceSlides: ["slide-07", "slide-08"],
       },
       {
-        title: "七层架构",
+        title: "差异化价值",
         description:
-          "总体架构以 L5 知识语义层为核心，向下贯通数据存储和推理算力，向上支撑问答、智能体和决策驾驶舱。",
+          "与通用 AI 中台相比，本方案的关键差异在于把语义、规则、记忆、编排和工具生态放进同一条可治理链路。",
         points: [
-          "L4 数据层组合 Milvus、ES、Neo4j、PGSQL 和 MinIO，支撑向量、全文、图谱、结构化和对象存储。",
-          "L6 能力开放层提供 Skill Engine、Context Engine、知识处理、智能编排、记忆组件和工具连接。",
-          "L7 应用层承接智能客服、知识问答、决策驾驶舱、AI Agents 和业务中台。",
+          "交互方式从技术人员调用 API 转为业务人员自然语言提问，降低核心业务使用门槛。",
+          "生成机制从概率猜测转为语义约束生成，减少幻觉进入决策流程。",
+          "知识沉淀从经验散落在人脑和文档中，转为版本可追溯的结构化资产。",
+        ],
+        sourceSlides: ["slide-08"],
+      },
+      {
+        title: "架构总览",
+        description:
+          "七层架构从 L1 超算底座到 L7 应用层纵向贯通，以 L5 知识语义层为核心枢纽，让数据、语义、能力开放和业务应用在同一架构中协同。",
+        points: [
+          "L5 知识语义层统一业务概念、规则显性化和决策溯源，向上支撑复杂业务应用，向下贯通数据存储与 AI 推理。",
+          "L4 数据层组合 Milvus、ES、Neo4j Fabric、PGSQL 和 MinIO，支撑向量、文档、多媒体和图数据库能力。",
+          "L6 能力开放层通过 Skill Engine、Context Engine、知识处理引擎、智能编排、记忆组件和工具连接层组合平台能力。",
         ],
         sourceSlides: ["slide-10", "slide-13", "slide-15"],
       },
@@ -123,13 +134,13 @@ export const sitePages: SitePageContent[] = [
   {
     href: "/capabilities",
     title: "能力总览",
-    eyebrow: "能力页",
+    eyebrow: "平台能力",
     description:
       "能力体系围绕知识语义层、AI 数据平台、安全管控和员工 AI 工作台展开，把平台能力拆成可理解、可组合、可落地的模块。",
     cover: {
       alt: "能力总览占位图",
       title: "平台能力分层占位图",
-      hint: "后续可替换为 L4 数据层、L5 语义层、L6 编排层和 L7 工作台的分层图。",
+      hint: "能力体系覆盖数据层、知识语义层、能力开放层和员工 AI 工作台。",
       visual: coverVisuals.capabilities,
       sourceSlides: ["slide-10", "slide-13", "slide-14", "slide-15"],
     },
@@ -163,29 +174,19 @@ export const sitePages: SitePageContent[] = [
     sections: [
       {
         title: "能力分层",
-        description: "平台能力围绕数据、语义、编排、安全和工作台展开，让不同业务场景可以按需组合使用。",
-        points: [
-          "L4 数据层负责结构化、非结构化、向量和图数据协同。",
-          "L5 语义层是约束生成和可解释决策的核心。",
-          "L6 能力开放层把语义、上下文、记忆和工具连接抽象为可组合能力。",
-        ],
-        sourceSlides: ["slide-10"],
-      },
-      {
-        title: "AI 数据平台",
         description:
-          "平台保留原有 ERP、CRM、BI 等核心数据源，通过语义统一治理和索引实现异构系统贯通。",
+          "平台能力围绕知识语义层、AI 数据平台、安全管控和员工 AI 工作台展开，向下连接算力与数据基础，向上支撑知识问答、智能体和业务应用。",
         points: [
-          "Milvus 负责稠密向量检索，ES 支撑全文和日志快速索引。",
-          "Neo4j 承接语义存储与推理，PGSQL 存储结构化事实数据。",
-          "MinIO 管理海量非结构化对象，为文档、图片、多媒体等知识资产提供基础。",
+          "知识语义层统一业务概念、规则显性化和决策溯源，是数据智能走向知识智能的核心。",
+          "AI 数据平台通过 Milvus、ES、Neo4j、PGSQL 和 MinIO 协同承接向量、全文、图谱、事实和非结构化对象。",
+          "安全管控与员工 AI 工作台贯穿运行治理、知识搜索、知识问答、智能体中心和工具市场。",
         ],
-        sourceSlides: ["slide-13"],
+        sourceSlides: ["slide-10", "slide-13", "slide-17", "slide-18", "slide-28", "slide-29"],
       },
       {
         title: "知识语义层",
         description:
-          "知识语义层不是数据库结构，而是企业统一的业务语义架构，是从数据智能走向知识智能的关键。",
+          "知识语义层是从数据智能走向知识智能的关键能力，负责把业务概念、规则和数据映射统一起来。",
         points: [
           "领域语义定义供应链、订单等核心业务概念与关系。",
           "规则语义定义延迟到利润等业务逻辑与风控阈值。",
@@ -194,15 +195,15 @@ export const sitePages: SitePageContent[] = [
         sourceSlides: ["slide-14"],
       },
       {
-        title: "能力开放与编排",
+        title: "AI 数据平台",
         description:
-          "能力开放层负责把平台能力以模块化、可组合的方式开放给上层应用，降低复杂业务场景构建门槛。",
+          "AI 数据平台保留原有业务系统，通过多引擎协同和知识增强流程，为问答、智能体和决策提供事实基座。",
         points: [
-          "Skill Engine 直接调用语义概念，实现业务逻辑抽象复用。",
-          "Context Engine 维护语义实例状态，支撑多轮对话上下文。",
-          "Orchestration 支持 DAG 工作流和动态规划，像搭积木一样组合 AI 能力。",
+          "Milvus、ES、Neo4j、PGSQL 和 MinIO 分别承接向量、全文、图谱、事实和非结构化对象。",
+          "RAG/KAG 流程覆盖意图识别、混合召回、融合重排、上下文注入和反馈闭环。",
+          "企业知识中台承接文档同步、文件上传、知识空间和专业词库等知识资产管理。",
         ],
-        sourceSlides: ["slide-15"],
+        sourceSlides: ["slide-13", "slide-25", "slide-26"],
       },
       {
         title: "安全管控",
@@ -243,7 +244,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "知识语义层占位图",
       title: "语义约束生成占位图",
-      hint: "后续可替换为语义解析、规则执行、生成框架、LLM 润色和全路径溯源闭环图。",
+      hint: "受控生成闭环覆盖语义解析、规则执行、生成框架、LLM 润色和全路径溯源。",
       visual: coverVisuals.semanticLayer,
       sourceSlides: ["slide-14"],
     },
@@ -306,7 +307,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "AI 数据平台占位图",
       title: "多引擎协同占位图",
-      hint: "后续可替换为 Milvus、ES、Neo4j、PGSQL、MinIO 与 RAG/KAG 流程图。",
+      hint: "Milvus、ES、Neo4j、PGSQL 和 MinIO 协同支撑 RAG/KAG 知识增强流程。",
       visual: coverVisuals.dataPlatform,
       sourceSlides: ["slide-13"],
     },
@@ -367,7 +368,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "安全管控占位图",
       title: "OVTP 安全闭环占位图",
-      hint: "后续可替换为供应链安全三条底线与 Operator/Voucher/Traceable 全链路图。",
+      hint: "OVTP 体系通过 Operator、Voucher 和 Traceable 管控供应链安全链路。",
       visual: coverVisuals.securityGovernance,
       sourceSlides: ["slide-17", "slide-18"],
     },
@@ -428,7 +429,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "员工 AI 工作台占位图",
       title: "员工工作入口占位图",
-      hint: "后续可替换为企业知识中心、智能体中心、工具市场和统一运营管理的产品界面图。",
+      hint: "员工 AI 工作台整合企业知识中心、智能体中心、工具市场和统一运营管理。",
       visual: coverVisuals.workspace,
       sourceSlides: ["slide-28"],
     },
@@ -493,7 +494,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "应用场景总览占位图",
       title: "四类业务场景占位图",
-      hint: "后续可替换为供应链、财务、风控、客服运营四个业务版块的价值地图。",
+      hint: "首批业务场景覆盖供应链、财务、风控和客服运营四个业务版块。",
       visual: coverVisuals.industrialAi,
       sourceSlides: ["slide-16"],
     },
@@ -578,7 +579,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "供应链场景占位图",
       title: "供应链因果链占位图",
-      hint: "后续可替换为调货决策、延迟、成本、利润之间的业务因果图。",
+      hint: "供应链场景围绕调货决策、延迟、成本和利润建立可解释的业务因果链。",
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -632,7 +633,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "财务场景占位图",
       title: "财务口径治理占位图",
-      hint: "后续可替换为预算、指标口径、审计材料和依据链之间的关系图。",
+      hint: "财务场景聚焦预算、指标口径、审计材料和依据链的统一管理。",
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -686,7 +687,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "风控场景占位图",
       title: "合规预警闭环占位图",
-      hint: "后续可替换为规则审批、预警解释、决策档案和监管报送流程图。",
+      hint: "风控场景覆盖规则审批、预警解释、决策档案和监管报送链路。",
       sourceSlides: ["slide-16", "slide-18"],
     },
     highlights: [
@@ -740,7 +741,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "客服运营场景占位图",
       title: "客服知识运营占位图",
-      hint: "后续可替换为知识问答、售前售后助手、经验传承和反馈闭环示意图。",
+      hint: "客服运营场景聚焦知识问答、售前售后助手、经验传承和反馈闭环。",
       sourceSlides: ["slide-16", "slide-28"],
     },
     highlights: [
@@ -788,13 +789,13 @@ export const sitePages: SitePageContent[] = [
   {
     href: "/cases",
     title: "案例总览",
-    eyebrow: "案例中心",
+    eyebrow: "客户实践",
     description:
       "制造业知识中台与工业产品知识图谱案例，展示平台在本地部署、知识治理、权限管控和业务智能体中的落地方式。",
     cover: {
       alt: "案例总览占位图",
       title: "制造业案例矩阵占位图",
-      hint: "后续可替换为汽车零部件全球 AI 知识中台和叉车工业产品知识图谱的双案例封面。",
+      hint: "案例覆盖汽车零部件全球 AI 知识中台和叉车工业产品知识图谱。",
       visual: coverVisuals.cases,
       sourceSlides: ["slide-24", "slide-27"],
     },
@@ -870,7 +871,7 @@ export const sitePages: SitePageContent[] = [
       },
       {
         title: "背书价值",
-        description: "案例中心与关于我们、团队页互相补充，建立技术、行业和交付能力信任。",
+        description: "制造业案例与团队背景共同证明平台在行业知识、工程交付和安全治理上的综合能力。",
         points: ["制造业案例支撑平台可落地性。", "团队背景支撑复杂项目交付能力。", "行业知识、工程能力和安全治理形成合力。"],
         sourceSlides: ["slide-24", "slide-27", "slide-30"],
       },
@@ -890,7 +891,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "汽车零部件案例占位图",
       title: "全球 AI 知识中台占位图",
-      hint: "后续可替换为本地部署、知识处理平台、文档同步和智能问答的架构图。",
+      hint: "汽车零部件案例围绕本地部署、知识处理平台、文档同步和智能问答展开。",
       sourceSlides: ["slide-24", "slide-25"],
     },
     highlights: [
@@ -952,7 +953,7 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "叉车制造案例占位图",
       title: "工业产品知识图谱占位图",
-      hint: "后续可替换为产品参数、维修手册、故障代码和售前售后应用之间的知识图谱。",
+      hint: "叉车制造案例把产品参数、维修手册、故障代码和售前售后应用连接为知识图谱。",
       sourceSlides: ["slide-27", "slide-29"],
     },
     highlights: [
@@ -1008,13 +1009,13 @@ export const sitePages: SitePageContent[] = [
   {
     href: "/about",
     title: "公司介绍",
-    eyebrow: "关于我们",
+    eyebrow: "公司能力",
     description:
       "北京骊甦科技围绕企业级私有化 AI 知识智能平台，结合人工智能、数智化与安全技术能力，为企业建设知识驱动的智能中枢。",
     cover: {
       alt: "公司介绍占位图",
       title: "骊甦团队与方案占位图",
-      hint: "后续可替换为团队能力、方案主张和制造业案例背书组合图。",
+      hint: "公司能力由团队背景、平台方案和制造业案例共同支撑。",
       visual: coverVisuals.about,
       sourceSlides: ["slide-01", "slide-30"],
     },
@@ -1072,7 +1073,7 @@ export const sitePages: SitePageContent[] = [
       },
       {
         title: "案例背书",
-        description: "关于我们不单独夸大团队，而是通过案例证明平台能力可以进入制造业知识中台和工业产品知识图谱场景。",
+        description: "制造业知识中台和工业产品知识图谱案例，证明平台能力可以进入真实业务场景。",
         points: ["汽车零部件案例展示全球 AI 知识中台。", "叉车制造案例展示工业产品知识图谱。", "员工 AI 工作台和知识体系材料支撑平台落地路径。"],
         sourceSlides: ["slide-24", "slide-27", "slide-28", "slide-29"],
       },
@@ -1086,13 +1087,13 @@ export const sitePages: SitePageContent[] = [
   {
     href: "/about/team",
     title: "核心团队",
-    eyebrow: "关于我们",
+    eyebrow: "团队能力",
     description:
       "核心团队由人工智能、企业数智化和安全技术背景构成，覆盖从知识建模、平台研发到安全治理的关键能力。",
     cover: {
       alt: "核心团队占位图",
       title: "团队能力矩阵占位图",
-      hint: "后续可替换为人工智能、数智化转型、互联网 AI 和安全工程四类能力矩阵。",
+      hint: "核心团队覆盖人工智能、数智化转型、互联网 AI 和安全工程方向。",
       sourceSlides: ["slide-30"],
     },
     highlights: [
@@ -1126,7 +1127,7 @@ export const sitePages: SitePageContent[] = [
       },
       {
         title: "交付价值",
-        description: "团队页重点回答为什么骊甦能做复杂企业私有化 AI 项目。",
+        description: "复杂企业私有化 AI 项目需要业务理解、平台研发和安全治理能力共同支撑。",
         points: ["理解企业业务、知识和流程。", "具备平台研发和安全治理经验。", "能够将方案转化为可验证的场景落地。"],
         sourceSlides: ["slide-21", "slide-30"],
       },
@@ -1140,13 +1141,13 @@ export const sitePages: SitePageContent[] = [
   {
     href: "/about/contact",
     title: "联系方式",
-    eyebrow: "关于我们",
+    eyebrow: "咨询入口",
     description:
       "面向有私有化 AI、知识中台、场景落地和安全治理需求的企业，提供方案咨询与建设路径沟通。",
     cover: {
       alt: "联系方式占位图",
       title: "咨询入口占位图",
-      hint: "当前素材未提供真实电话、邮箱或地址，后续可替换为确认后的联系信息或表单。",
+      hint: "围绕私有化 AI 平台、知识中台、场景落地和安全治理提供方案咨询入口。",
       sourceSlides: ["slide-01", "slide-22"],
     },
     highlights: [
