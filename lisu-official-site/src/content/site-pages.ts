@@ -13,8 +13,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "企业级私有化 AI 知识智能平台方案，从数据查询走向知识决策，建设可解释、可审计、可追溯的企业智能中枢。",
     cover: {
-      alt: "主方案总览占位图",
-      title: "企业智能中枢架构占位图",
+      alt: "主方案总览企业智能中枢架构图",
+      title: "企业智能中枢架构",
       hint: "七层架构以知识语义层为核心枢纽，贯通算力、数据、能力开放和业务应用。",
       visual: coverVisuals.solution,
       sourceSlides: ["slide-01", "slide-10"],
@@ -138,8 +138,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "能力体系围绕知识语义层、AI 数据平台、安全管控和员工 AI 工作台展开，把平台能力拆成可理解、可组合、可落地的模块。",
     cover: {
-      alt: "能力总览占位图",
-      title: "平台能力分层占位图",
+      alt: "能力总览平台能力分层图",
+      title: "平台能力分层",
       hint: "能力体系覆盖数据层、知识语义层、能力开放层和员工 AI 工作台。",
       visual: coverVisuals.capabilities,
       sourceSlides: ["slide-10", "slide-13", "slide-14", "slide-15"],
@@ -242,8 +242,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "知识语义层定义业务是什么、业务之间如何关联、什么规则不可违背，是企业从数据智能走向知识智能的核心。",
     cover: {
-      alt: "知识语义层占位图",
-      title: "语义约束生成占位图",
+      alt: "知识语义层语义约束生成图",
+      title: "语义约束生成",
       hint: "受控生成闭环覆盖语义解析、规则执行、生成框架、LLM 润色和全路径溯源。",
       visual: coverVisuals.semanticLayer,
       sourceSlides: ["slide-14"],
@@ -305,8 +305,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "AI 数据平台以业务系统不动、语义贯通为设计理念，为上层问答、智能体和知识决策提供稳定的数据与知识基石。",
     cover: {
-      alt: "AI 数据平台占位图",
-      title: "多引擎协同占位图",
+      alt: "AI 数据平台多引擎协同图",
+      title: "多引擎协同",
       hint: "Milvus、ES、Neo4j、PGSQL 和 MinIO 协同支撑 RAG/KAG 知识增强流程。",
       visual: coverVisuals.dataPlatform,
       sourceSlides: ["slide-13"],
@@ -366,8 +366,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "安全管控不是外挂组件，而是贯穿 L2 到 L7 的内置能力，通过身份、审批、溯源形成全链路闭环。",
     cover: {
-      alt: "安全管控占位图",
-      title: "OVTP 安全闭环占位图",
+      alt: "安全管控 OVTP 安全闭环图",
+      title: "OVTP 安全闭环",
       hint: "OVTP 体系通过 Operator、Voucher 和 Traceable 管控供应链安全链路。",
       visual: coverVisuals.securityGovernance,
       sourceSlides: ["slide-17", "slide-18"],
@@ -427,8 +427,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "员工 AI 工作台把知识中心、智能体中心、工具市场和统一运营管理组织到同一个工作入口，让 AI 能力进入日常业务界面。",
     cover: {
-      alt: "员工 AI 工作台占位图",
-      title: "员工工作入口占位图",
+      alt: "员工 AI 工作台入口图",
+      title: "员工工作入口",
       hint: "员工 AI 工作台整合企业知识中心、智能体中心、工具市场和统一运营管理。",
       visual: coverVisuals.workspace,
       sourceSlides: ["slide-28"],
@@ -492,8 +492,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "平台能力可进入供应链、财务、风控和客服运营等关键环节，让业务判断建立在统一知识、可解释路径和可审计过程之上。",
     cover: {
-      alt: "应用场景总览占位图",
-      title: "四类业务场景占位图",
+      alt: "应用场景总览四类业务场景图",
+      title: "四类业务场景",
       hint: "首批业务场景覆盖供应链、财务、风控和客服运营四个业务版块。",
       visual: coverVisuals.industrialAi,
       sourceSlides: ["slide-16"],
@@ -577,9 +577,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "供应链场景聚焦调货决策、规则沉淀和跨域因果对齐，把专家经验转化为可复用、可追溯的数字资产。",
     cover: {
-      alt: "供应链场景占位图",
-      title: "供应链因果链占位图",
+      alt: "供应链场景业务因果链图",
+      title: "供应链业务因果链",
       hint: "供应链场景围绕调货决策、延迟、成本和利润建立可解释的业务因果链。",
+      visual: coverVisuals.supplyChain,
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -631,9 +632,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "财务场景聚焦预算智能、口径治理和审计支撑，让财务判断建立在统一知识与可追溯过程之上。",
     cover: {
-      alt: "财务场景占位图",
-      title: "财务口径治理占位图",
+      alt: "财务场景口径治理图",
+      title: "财务口径治理",
       hint: "财务场景聚焦预算、指标口径、审计材料和依据链的统一管理。",
+      visual: coverVisuals.finance,
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -685,9 +687,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "风控场景强调规则显性、预警可解释和监管报送，让 AI 辅助判断可以进入合规管理流程。",
     cover: {
-      alt: "风控场景占位图",
-      title: "合规预警闭环占位图",
+      alt: "风控场景合规预警闭环图",
+      title: "合规预警闭环",
       hint: "风控场景覆盖规则审批、预警解释、决策档案和监管报送链路。",
+      visual: coverVisuals.riskControl,
       sourceSlides: ["slide-16", "slide-18"],
     },
     highlights: [
@@ -739,9 +742,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "客服运营场景通过业务知识、智能问答和经验沉淀，提升答复准确性、分析效率和新人培训速度。",
     cover: {
-      alt: "客服运营场景占位图",
-      title: "客服知识运营占位图",
+      alt: "客服运营场景知识运营图",
+      title: "客服知识运营",
       hint: "客服运营场景聚焦知识问答、售前售后助手、经验传承和反馈闭环。",
+      visual: coverVisuals.customerOperations,
       sourceSlides: ["slide-16", "slide-28"],
     },
     highlights: [
@@ -793,8 +797,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "制造业知识中台与工业产品知识图谱案例，展示平台在本地部署、知识治理、权限管控和业务智能体中的落地方式。",
     cover: {
-      alt: "案例总览占位图",
-      title: "制造业案例矩阵占位图",
+      alt: "案例总览制造业案例矩阵图",
+      title: "制造业案例矩阵",
       hint: "案例覆盖汽车零部件全球 AI 知识中台和叉车工业产品知识图谱。",
       visual: coverVisuals.cases,
       sourceSlides: ["slide-24", "slide-27"],
@@ -889,9 +893,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "汽车零部件案例围绕全球 AI 知识中台建设，展示企业内部文档、本地知识存储、权限管控和智能问答如何组合落地。",
     cover: {
-      alt: "汽车零部件案例占位图",
-      title: "全球 AI 知识中台占位图",
+      alt: "汽车零部件全球 AI 知识中台图",
+      title: "全球 AI 知识中台",
       hint: "汽车零部件案例围绕本地部署、知识处理平台、文档同步和智能问答展开。",
+      visual: coverVisuals.autoParts,
       sourceSlides: ["slide-24", "slide-25"],
     },
     highlights: [
@@ -951,9 +956,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "叉车制造案例聚焦工业产品知识图谱应用，把产品技术参数、操作保养维修手册和故障代码沉淀为可问答、可推理的知识体系。",
     cover: {
-      alt: "叉车制造案例占位图",
-      title: "工业产品知识图谱占位图",
+      alt: "叉车制造工业产品知识图谱图",
+      title: "工业产品知识图谱",
       hint: "叉车制造案例把产品参数、维修手册、故障代码和售前售后应用连接为知识图谱。",
+      visual: coverVisuals.forklift,
       sourceSlides: ["slide-27", "slide-29"],
     },
     highlights: [
@@ -1013,8 +1019,8 @@ export const sitePages: SitePageContent[] = [
     description:
       "北京骊甦科技围绕企业级私有化 AI 知识智能平台，结合人工智能、数智化与安全技术能力，为企业建设知识驱动的智能中枢。",
     cover: {
-      alt: "公司介绍占位图",
-      title: "骊甦团队与方案占位图",
+      alt: "公司介绍团队与方案图",
+      title: "骊甦团队与方案",
       hint: "公司能力由团队背景、平台方案和制造业案例共同支撑。",
       visual: coverVisuals.about,
       sourceSlides: ["slide-01", "slide-30"],
@@ -1091,9 +1097,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "核心团队由人工智能、企业数智化和安全技术背景构成，覆盖从知识建模、平台研发到安全治理的关键能力。",
     cover: {
-      alt: "核心团队占位图",
-      title: "团队能力矩阵占位图",
+      alt: "核心团队能力矩阵图",
+      title: "团队能力矩阵",
       hint: "核心团队覆盖人工智能、数智化转型、互联网 AI 和安全工程方向。",
+      visual: coverVisuals.team,
       sourceSlides: ["slide-30"],
     },
     highlights: [
@@ -1145,9 +1152,10 @@ export const sitePages: SitePageContent[] = [
     description:
       "面向有私有化 AI、知识中台、场景落地和安全治理需求的企业，提供方案咨询与建设路径沟通。",
     cover: {
-      alt: "联系方式占位图",
-      title: "咨询入口占位图",
+      alt: "方案咨询入口流程图",
+      title: "方案咨询入口",
       hint: "围绕私有化 AI 平台、知识中台、场景落地和安全治理提供方案咨询入口。",
+      visual: coverVisuals.contact,
       sourceSlides: ["slide-01", "slide-22"],
     },
     highlights: [

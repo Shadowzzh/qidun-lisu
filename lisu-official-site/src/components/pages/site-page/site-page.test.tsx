@@ -76,15 +76,13 @@ describe("SitePage", () => {
     );
   });
 
-  it("uses placeholder visuals instead of repeated fallback images when a page has no dedicated visual", () => {
+  it("uses generated cover visuals for scenario detail pages while keeping body placeholders", () => {
     const page = getSitePageByHref("/scenarios/supply-chain");
 
     render(<SitePage page={page} />);
 
-    expect(screen.queryByRole("img", { name: "供应链封面图" })).not.toBeInTheDocument();
-    expect(within(screen.getByTestId("site-page-hero")).getByTestId("site-placeholder-visual")).toHaveTextContent(
-      page.cover.title,
-    );
+    expect(screen.getByRole("img", { name: "供应链场景封面图" })).toBeInTheDocument();
+    expect(within(screen.getByTestId("site-page-hero")).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
     expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(2);
     expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
   });

@@ -53,6 +53,31 @@ describe("site page content", () => {
     expect(casesCover).not.toBe(aboutCover);
   });
 
+  it("uses generated cover visuals for the available scenario, case, and contact detail pages", () => {
+    const routesWithGeneratedCovers = [
+      "/scenarios/supply-chain",
+      "/scenarios/finance",
+      "/scenarios/risk-control",
+      "/scenarios/customer-operations",
+      "/cases/auto-parts",
+      "/cases/forklift",
+      "/about/team",
+      "/about/contact",
+    ] as const;
+
+    for (const route of routesWithGeneratedCovers) {
+      expect(sitePages.find((page) => page.href === route)?.cover.visual).toBeDefined();
+    }
+  });
+
+  it("keeps cover visual metadata free from placeholder copy", () => {
+    for (const page of sitePages) {
+      expect(page.cover.visual).toBeDefined();
+      expect(page.cover.alt).not.toContain("占位图");
+      expect(page.cover.title).not.toContain("占位图");
+    }
+  });
+
   it("keeps solution focused on scheme rationale instead of capability module indexing", () => {
     const solution = sitePages.find((page) => page.href === "/solution");
 
