@@ -25,17 +25,19 @@ function SectionVisual({
 }) {
   return (
     <div
-      className={cn("relative overflow-hidden bg-[#f4f7fb]", className)}
+      className={cn("relative min-w-0 overflow-hidden border border-slate-100 bg-white p-2 md:p-3", className)}
       data-testid="site-page-section-visual"
     >
       {section.visual ? (
-        <Image
-          alt={section.visual.alt}
-          className="object-contain object-center p-5"
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          src={section.visual.src}
-        />
+        <div className="relative size-full overflow-hidden rounded-[2px]">
+          <Image
+            alt={section.visual.alt}
+            className="object-cover object-center"
+            fill
+            sizes="(min-width: 1024px) 560px, 100vw"
+            src={section.visual.src}
+          />
+        </div>
       ) : (
         <PlaceholderVisual fill hint={hint} title={section.title} />
       )}
@@ -109,7 +111,7 @@ function ProductBody({ page }: SitePageProps) {
                   </div>
 
                   <SectionVisual
-                    className="min-h-[220px] rounded-[4px] md:min-h-[350px]"
+                    className="aspect-[3/2] rounded-[4px]"
                     hint={page.cover.hint}
                     section={section}
                   />
@@ -132,7 +134,17 @@ function ProductBody({ page }: SitePageProps) {
                   data-testid="site-page-showcase-card"
                 >
                   <div className="relative h-[188px] bg-[#f4f7fb] md:h-[220px]">
-                    <PlaceholderVisual fill hint={page.cover.hint} title={highlight.label} />
+                    {highlight.visual ? (
+                      <Image
+                        alt={highlight.visual.alt}
+                        className="object-cover object-center"
+                        fill
+                        sizes="(min-width: 768px) 33vw, 100vw"
+                        src={highlight.visual.src}
+                      />
+                    ) : (
+                      <PlaceholderVisual fill hint={page.cover.hint} title={highlight.label} />
+                    )}
                   </div>
                   <div className="p-5">
                     <p className="text-sm font-medium text-[#2563eb]">{highlight.label}</p>

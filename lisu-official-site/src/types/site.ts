@@ -162,6 +162,10 @@ export type SitePageHighlight = {
   label: string;
   value: string;
   description: string;
+  visual?: {
+    alt: string;
+    src: StaticImageData;
+  };
   sourceSlides: SlideRef[];
 };
 

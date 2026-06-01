@@ -22,7 +22,7 @@ describe("SitePage", () => {
     expect(screen.queryByTestId("site-page-cover-visual")).not.toBeInTheDocument();
     expect(screen.getAllByTestId("site-page-section").length).toBeGreaterThanOrEqual(5);
     expect(screen.getAllByTestId("site-page-section-visual").length).toBeGreaterThanOrEqual(5);
-    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(5);
+    expect(within(screen.getByTestId("site-page-showcase")).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 1, name: "主方案总览" })).toBeInTheDocument();
     expect(
       screen.getByText(
@@ -34,6 +34,9 @@ describe("SitePage", () => {
     expect(screen.getByRole("heading", { level: 2, name: "核心能力" })).toBeInTheDocument();
     expect(screen.getByTestId("site-page-showcase")).toHaveClass("bg-[#f5f8fc]");
     expect(screen.getAllByTestId("site-page-showcase-card").length).toBe(3);
+    expect(screen.getByRole("img", { name: "算力底座示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "核心主张示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "架构方式示意图" })).toBeInTheDocument();
     expect(screen.getAllByText("64 卡 H20 集群").length).toBeGreaterThan(0);
     expect(within(screen.getByRole("navigation", { name: "相关页面" })).getByRole("link", { name: "能力总览" })).toHaveAttribute(
       "href",
@@ -87,7 +90,7 @@ describe("SitePage", () => {
     expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
   });
 
-  it("does not reuse home imagery inside product page content slots", () => {
+  it("uses generated solution imagery inside product page content slots", () => {
     const page = getSitePageByHref("/solution");
 
     render(<SitePage page={page} />);
@@ -96,13 +99,32 @@ describe("SitePage", () => {
     expect(screen.queryByRole("img", { name: "平台总览图" })).not.toBeInTheDocument();
     expect(screen.queryByRole("img", { name: "核心能力入口图" })).not.toBeInTheDocument();
     expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
-    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(
-      page.sections.length + page.highlights.length,
-    );
-    expect(within(screen.getAllByTestId("site-page-section-visual")[0]).getByTestId("site-placeholder-visual")).toHaveClass(
-      "absolute",
-      "inset-0",
-    );
+    expect(screen.getByRole("img", { name: "企业 AI 生产化建设必要性示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "企业知识智能平台核心定位示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "语义约束与知识沉淀差异化价值示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "企业知识智能平台七层架构总览图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "私有化部署与数据主权价值示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "企业知识平台落地治理闭环示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "决策口径审计确定性承诺示意图" })).toBeInTheDocument();
+    expect(within(screen.getByTestId("site-page-showcase")).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
+    expect(within(screen.getAllByTestId("site-page-section-visual")[0]).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
+  });
+
+  it("uses a single clean frame with consistent inset for generated solution section imagery", () => {
+    const page = getSitePageByHref("/solution");
+
+    render(<SitePage page={page} />);
+
+    const firstVisual = screen.getAllByTestId("site-page-section-visual")[0];
+    const firstImage = within(firstVisual).getByRole("img", { name: "企业 AI 生产化建设必要性示意图" });
+
+    expect(firstVisual).toHaveClass("aspect-[3/2]", "bg-white", "border", "border-slate-100", "p-2", "md:p-3");
+    expect(firstVisual).not.toHaveClass("bg-[#f4f7fb]");
+    expect(firstImage).toHaveClass("object-cover", "object-center");
+    expect(firstImage).not.toHaveClass("object-contain");
+    expect(firstImage).not.toHaveClass("p-5");
+    expect(firstImage).not.toHaveClass("p-2");
+    expect(firstImage).not.toHaveClass("md:p-3");
   });
 
   it("renders archive-matched body visuals for case detail pages and keeps about body placeholders", () => {

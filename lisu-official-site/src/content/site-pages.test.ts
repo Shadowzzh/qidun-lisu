@@ -103,6 +103,21 @@ describe("site page content", () => {
     expect(solution?.sections.map((section) => section.title)).not.toContain("七层架构");
   });
 
+  it("uses generated visuals for every solution core capability section", () => {
+    const solution = sitePages.find((page) => page.href === "/solution");
+
+    expect(solution?.sections.every((section) => section.visual)).toBe(true);
+    expect(solution?.sections.map((section) => section.visual?.alt)).toEqual([
+      "企业 AI 生产化建设必要性示意图",
+      "企业知识智能平台核心定位示意图",
+      "语义约束与知识沉淀差异化价值示意图",
+      "企业知识智能平台七层架构总览图",
+      "私有化部署与数据主权价值示意图",
+      "企业知识平台落地治理闭环示意图",
+      "决策口径审计确定性承诺示意图",
+    ]);
+  });
+
   it("keeps capabilities focused on factual capability groups", () => {
     const capabilities = sitePages.find((page) => page.href === "/capabilities");
 

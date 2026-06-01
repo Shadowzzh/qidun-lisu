@@ -3,6 +3,16 @@ import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-
 import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.png";
 import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.png";
 import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.png";
+import solutionArchitectureMethodImage from "@/assets/site-page/solution/solution-architecture-method.png";
+import solutionArchitectureImage from "@/assets/site-page/solution/solution-architecture.png";
+import solutionComputeFoundationImage from "@/assets/site-page/solution/solution-compute-foundation.png";
+import solutionCorePropositionImage from "@/assets/site-page/solution/solution-core-proposition.png";
+import solutionCorePositioningImage from "@/assets/site-page/solution/solution-core-positioning.png";
+import solutionDeterministicCommitmentImage from "@/assets/site-page/solution/solution-deterministic-commitment.png";
+import solutionDifferentiationImage from "@/assets/site-page/solution/solution-differentiation.png";
+import solutionGovernanceImage from "@/assets/site-page/solution/solution-governance.png";
+import solutionPrivateDeploymentImage from "@/assets/site-page/solution/solution-private-deployment.png";
+import solutionWhyNowImage from "@/assets/site-page/solution/solution-why-now.png";
 import type { SitePageContent } from "@/types/site";
 
 export const sitePages: SitePageContent[] = [
@@ -24,18 +34,30 @@ export const sitePages: SitePageContent[] = [
         label: "算力底座",
         value: "64 卡 H20 集群",
         description: "9024GB 显存支撑，为私有化环境下的生产级推理和复杂知识处理提供基础资源。",
+        visual: {
+          alt: "算力底座示意图",
+          src: solutionComputeFoundationImage,
+        },
         sourceSlides: ["slide-01"],
       },
       {
         label: "核心主张",
         value: "从数据查询到知识决策",
         description: "平台目标不是再做一套查询工具，而是让业务语言直接驱动可解释的决策链路。",
+        visual: {
+          alt: "核心主张示意图",
+          src: solutionCorePropositionImage,
+        },
         sourceSlides: ["slide-01", "slide-07"],
       },
       {
         label: "架构方式",
         value: "七层贯通、语义驱动",
         description: "从 L1 超算底座到 L7 应用层，L5 知识语义层承担业务概念、规则和溯源的核心枢纽。",
+        visual: {
+          alt: "架构方式示意图",
+          src: solutionArchitectureMethodImage,
+        },
         sourceSlides: ["slide-10"],
       },
     ],
@@ -56,6 +78,10 @@ export const sitePages: SitePageContent[] = [
           "供应链、风控、财务等关键业务仍依赖专家经验，响应速度和协同效率受限。",
           "同一业务概念在不同系统中定义不一致，会形成知识孤岛和跨部门口径冲突。",
         ],
+        visual: {
+          alt: "企业 AI 生产化建设必要性示意图",
+          src: solutionWhyNowImage,
+        },
         sourceSlides: ["slide-04", "slide-05"],
       },
       {
@@ -67,6 +93,10 @@ export const sitePages: SitePageContent[] = [
           "业务规则显性约束输出，避免黑箱结论直接进入核心流程。",
           "将经验、规则和语义沉淀为知识资产，替代临时性提示工程和人工转述。",
         ],
+        visual: {
+          alt: "企业知识智能平台核心定位示意图",
+          src: solutionCorePositioningImage,
+        },
         sourceSlides: ["slide-07", "slide-08"],
       },
       {
@@ -78,6 +108,10 @@ export const sitePages: SitePageContent[] = [
           "生成机制从概率猜测转为语义约束生成，减少幻觉进入决策流程。",
           "知识沉淀从经验散落在人脑和文档中，转为版本可追溯的结构化资产。",
         ],
+        visual: {
+          alt: "语义约束与知识沉淀差异化价值示意图",
+          src: solutionDifferentiationImage,
+        },
         sourceSlides: ["slide-08"],
       },
       {
@@ -89,6 +123,10 @@ export const sitePages: SitePageContent[] = [
           "L4 数据层组合 Milvus、ES、Neo4j Fabric、PGSQL 和 MinIO，支撑向量、文档、多媒体和图数据库能力。",
           "L6 能力开放层通过 Skill Engine、Context Engine、知识处理引擎、智能编排、记忆组件和工具连接层组合平台能力。",
         ],
+        visual: {
+          alt: "企业知识智能平台七层架构总览图",
+          src: solutionArchitectureImage,
+        },
         sourceSlides: ["slide-10", "slide-13", "slide-15"],
       },
       {
@@ -100,6 +138,10 @@ export const sitePages: SitePageContent[] = [
           "自研语义层将企业专有规则、流程和知识库深度嵌入，形成真正懂业务的智能决策。",
           "内网闭环可降低公网依赖，保障核心业务系统低延迟、高并发响应。",
         ],
+        visual: {
+          alt: "私有化部署与数据主权价值示意图",
+          src: solutionPrivateDeploymentImage,
+        },
         sourceSlides: ["slide-20"],
       },
       {
@@ -111,6 +153,10 @@ export const sitePages: SitePageContent[] = [
           "项目初期统一核心业务术语，降低多源异构数据的口径冲突。",
           "每完成一个语义域即对接真实业务场景验证，拒绝建完再看效果。",
         ],
+        visual: {
+          alt: "企业知识平台落地治理闭环示意图",
+          src: solutionGovernanceImage,
+        },
         sourceSlides: ["slide-21"],
       },
       {
@@ -122,6 +168,10 @@ export const sitePages: SitePageContent[] = [
           "口径确定性：全集团核心术语统一定义，降低跨部门各说各话。",
           "审计确定性：关键决策全链路留痕，支撑监管审计材料快速生成。",
         ],
+        visual: {
+          alt: "决策口径审计确定性承诺示意图",
+          src: solutionDeterministicCommitmentImage,
+        },
         sourceSlides: ["slide-22"],
       },
     ],
