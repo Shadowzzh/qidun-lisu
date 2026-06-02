@@ -1,6 +1,11 @@
 import { coverVisuals } from "@/assets/cover";
+import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
 import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.webp";
 import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.webp";
+import capabilitiesDataPlatformImage from "@/assets/site-page/capabilities/capabilities-data-platform.webp";
+import capabilitiesLayeringImage from "@/assets/site-page/capabilities/capabilities-layering.webp";
+import capabilitiesSecurityGovernanceImage from "@/assets/site-page/capabilities/capabilities-security-governance.webp";
+import capabilitiesSemanticLayerImage from "@/assets/site-page/capabilities/capabilities-semantic-layer.webp";
 import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.webp";
 import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.webp";
 import solutionArchitectureMethodImage from "@/assets/site-page/solution/solution-architecture-method-flowchart.webp";
@@ -218,7 +223,7 @@ export const sitePages: SitePageContent[] = [
       "知识语义层统一业务概念、规则和溯源路径。",
       "AI 数据平台承接多源数据和知识增强检索。",
       "能力开放层以模块化方式支撑应用组合。",
-      "安全管控和员工工作台让能力进入生产组织。",
+      "安全管控和员工 AI 工作台让平台能力进入日常使用、运行治理和企业级管控。",
     ],
     sourceSlides: ["slide-10", "slide-13", "slide-14", "slide-15", "slide-17", "slide-18", "slide-28", "slide-29"],
     sections: [
@@ -231,6 +236,10 @@ export const sitePages: SitePageContent[] = [
           "AI 数据平台通过 Milvus、ES、Neo4j、PGSQL 和 MinIO 协同承接向量、全文、图谱、事实和非结构化对象。",
           "安全管控与员工 AI 工作台贯穿运行治理、知识搜索、知识问答、智能体中心和工具市场。",
         ],
+        visual: {
+          alt: "能力分层示意图",
+          src: capabilitiesLayeringImage,
+        },
         sourceSlides: ["slide-10", "slide-13", "slide-17", "slide-18", "slide-28", "slide-29"],
       },
       {
@@ -242,6 +251,10 @@ export const sitePages: SitePageContent[] = [
           "规则语义定义延迟到利润等业务逻辑与风控阈值。",
           "数据语义建立表字段、API 与上层业务概念的映射。",
         ],
+        visual: {
+          alt: "知识语义层示意图",
+          src: capabilitiesSemanticLayerImage,
+        },
         sourceSlides: ["slide-14"],
       },
       {
@@ -251,8 +264,12 @@ export const sitePages: SitePageContent[] = [
         points: [
           "Milvus、ES、Neo4j、PGSQL 和 MinIO 分别承接向量、全文、图谱、事实和非结构化对象。",
           "RAG/KAG 流程覆盖意图识别、混合召回、融合重排、上下文注入和反馈闭环。",
-          "企业知识中台承接文档同步、文件上传、知识空间和专业词库等知识资产管理。",
+          "企业知识能力承接文档、知识库、专业词库和权限流程，为检索、问答和智能体应用供给知识。",
         ],
+        visual: {
+          alt: "AI 数据平台示意图",
+          src: capabilitiesDataPlatformImage,
+        },
         sourceSlides: ["slide-13", "slide-25", "slide-26"],
       },
       {
@@ -264,6 +281,10 @@ export const sitePages: SitePageContent[] = [
           "Operator、Voucher、Traceable 构成身份、审批和追溯闭环。",
           "网络微隔离、运行时自动阻断和敏感数据脱敏支撑零信任防护。",
         ],
+        visual: {
+          alt: "安全管控示意图",
+          src: capabilitiesSecurityGovernanceImage,
+        },
         sourceSlides: ["slide-17", "slide-18"],
       },
       {
@@ -275,6 +296,10 @@ export const sitePages: SitePageContent[] = [
           "Web、H5、第三方 IM 和 API 集成应用覆盖多类触达方式。",
           "统一运营管理承接日志安全审计、系统配置和企业级管控。",
         ],
+        visual: {
+          alt: "员工 AI 工作台场景图",
+          src: scenarioVisualImage,
+        },
         sourceSlides: ["slide-28", "slide-29"],
       },
     ],
