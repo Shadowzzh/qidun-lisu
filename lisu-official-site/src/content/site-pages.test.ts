@@ -4,6 +4,18 @@ import { targetSiteRoutes } from "@/content/site-routes";
 
 const targetRouteSet = new Set<string>(targetSiteRoutes);
 
+const getImagePath = (image: unknown) => {
+  if (typeof image === "string") {
+    return image;
+  }
+
+  if (image && typeof image === "object" && "src" in image && typeof image.src === "string") {
+    return image.src;
+  }
+
+  return "";
+};
+
 describe("site page content", () => {
   it("provides content for every target route except the homepage", () => {
     expect(sitePages.map((page) => page.href)).toEqual(targetSiteRoutes.filter((route) => route !== "/"));
@@ -116,6 +128,20 @@ describe("site page content", () => {
       "企业知识平台落地治理闭环示意图",
       "决策口径审计确定性承诺示意图",
     ]);
+  });
+
+  it("uses webp assets for every site-page visual", () => {
+    const visualSources = sitePages.flatMap((page) => [
+      page.cover.visual,
+      ...page.highlights.map((highlight) => highlight.visual?.src),
+      ...page.sections.map((section) => section.visual?.src),
+    ]);
+    const sitePageVisualSources = visualSources
+      .map(getImagePath)
+      .filter((source) => source.includes("/assets/site-page/"));
+
+    expect(sitePageVisualSources.length).toBeGreaterThan(0);
+    expect(sitePageVisualSources.filter((source) => !source.endsWith(".webp"))).toEqual([]);
   });
 
   it("keeps capabilities focused on factual capability groups", () => {

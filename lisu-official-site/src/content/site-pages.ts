@@ -1,18 +1,18 @@
 import { coverVisuals } from "@/assets/cover";
-import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.jpeg";
-import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.png";
-import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.png";
-import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.png";
-import solutionArchitectureMethodImage from "@/assets/site-page/solution/solution-architecture-method.png";
-import solutionArchitectureImage from "@/assets/site-page/solution/solution-architecture.png";
-import solutionComputeFoundationImage from "@/assets/site-page/solution/solution-compute-foundation.png";
-import solutionCorePropositionImage from "@/assets/site-page/solution/solution-core-proposition.png";
-import solutionCorePositioningImage from "@/assets/site-page/solution/solution-core-positioning.png";
-import solutionDeterministicCommitmentImage from "@/assets/site-page/solution/solution-deterministic-commitment.png";
-import solutionDifferentiationImage from "@/assets/site-page/solution/solution-differentiation.png";
-import solutionGovernanceImage from "@/assets/site-page/solution/solution-governance.png";
-import solutionPrivateDeploymentImage from "@/assets/site-page/solution/solution-private-deployment.png";
-import solutionWhyNowImage from "@/assets/site-page/solution/solution-why-now.png";
+import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.webp";
+import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.webp";
+import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.webp";
+import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.webp";
+import solutionArchitectureMethodImage from "@/assets/site-page/solution/solution-architecture-method-flowchart.webp";
+import solutionArchitectureImage from "@/assets/site-page/solution/solution-architecture.webp";
+import solutionComputeFoundationImage from "@/assets/site-page/solution/solution-compute-foundation.webp";
+import solutionCorePropositionImage from "@/assets/site-page/solution/solution-core-proposition.webp";
+import solutionCorePositioningImage from "@/assets/site-page/solution/solution-core-positioning.webp";
+import solutionDeterministicCommitmentImage from "@/assets/site-page/solution/solution-deterministic-commitment.webp";
+import solutionDifferentiationImage from "@/assets/site-page/solution/solution-differentiation.webp";
+import solutionGovernanceImage from "@/assets/site-page/solution/solution-governance.webp";
+import solutionPrivateDeploymentImage from "@/assets/site-page/solution/solution-private-deployment.webp";
+import solutionWhyNowImage from "@/assets/site-page/solution/solution-why-now.webp";
 import type { SitePageContent } from "@/types/site";
 
 export const sitePages: SitePageContent[] = [
