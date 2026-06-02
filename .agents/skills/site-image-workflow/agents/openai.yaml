@@ -1,0 +1,4 @@
+interface:
+  display_name: "官网图片工作流"
+  short_description: "按事实依据生成、预览并替换官网图片"
+  default_prompt: "使用 $site-image-workflow 基于 archive 事实依据生成或优化官网区块图片，先预览确认，再替换已批准的资源。"
