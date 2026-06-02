@@ -87,6 +87,8 @@ function PageHeroBlock({ page }: SitePageProps) {
 }
 
 function ProductBody({ page }: SitePageProps) {
+  const showcaseTitle = page.showcase?.title ?? "成果展示";
+
   return (
     <>
       <section aria-label={`${page.title}内容`} className="bg-white">
@@ -124,7 +126,16 @@ function ProductBody({ page }: SitePageProps) {
 
       <section className="relative overflow-hidden bg-[#f5f8fc]" data-testid="site-page-showcase">
         <div className="mx-auto max-w-[1200px] px-5 py-14 sm:px-8 md:py-[60px]">
-          <h2 className="text-center text-[30px] font-medium leading-[42px] text-[#1f2129]">成果展示</h2>
+          <div className="mx-auto max-w-[760px] text-center">
+            <h2 className="text-balance text-[30px] font-medium leading-[42px] text-[#1f2129]">
+              {showcaseTitle}
+            </h2>
+            {page.showcase?.description ? (
+              <p className="mt-4 text-pretty text-sm leading-7 text-[#54657e] md:text-base">
+                {page.showcase.description}
+              </p>
+            ) : null}
+          </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {page.highlights.map((highlight) => {
               return (

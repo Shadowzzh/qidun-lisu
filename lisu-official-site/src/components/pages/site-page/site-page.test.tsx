@@ -64,6 +64,24 @@ describe("SitePage", () => {
     }
   });
 
+  it("renders factual capability highlights with a capability-specific showcase heading", () => {
+    const page = getSitePageByHref("/capabilities");
+
+    render(<SitePage page={page} />);
+
+    const showcase = screen.getByTestId("site-page-showcase");
+
+    expect(within(showcase).getByRole("heading", { level: 2, name: "能力亮点" })).toBeInTheDocument();
+    expect(
+      within(showcase).getByText("从数据承接、语义约束到能力编排，形成可组合、可治理、可落地的平台能力。"),
+    ).toBeInTheDocument();
+    expect(within(showcase).queryByRole("heading", { level: 2, name: "成果展示" })).not.toBeInTheDocument();
+    expect(within(showcase).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
+    expect(within(showcase).getByRole("img", { name: "AI 数据平台多引擎事实基座示意图" })).toBeInTheDocument();
+    expect(within(showcase).getByRole("img", { name: "知识语义层业务语义约束示意图" })).toBeInTheDocument();
+    expect(within(showcase).getByRole("img", { name: "能力开放层业务能力编排示意图" })).toBeInTheDocument();
+  });
+
   it("renders detail pages with a parent route and sibling links", () => {
     const page = getSitePageByHref("/capabilities/semantic-layer");
 

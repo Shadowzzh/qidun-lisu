@@ -4,6 +4,7 @@ import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-
 import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.webp";
 import capabilitiesDataPlatformImage from "@/assets/site-page/capabilities/capabilities-data-platform.webp";
 import capabilitiesLayeringImage from "@/assets/site-page/capabilities/capabilities-layering.webp";
+import capabilitiesOrchestrationImage from "@/assets/site-page/capabilities/capabilities-orchestration.webp";
 import capabilitiesSecurityGovernanceImage from "@/assets/site-page/capabilities/capabilities-security-governance.webp";
 import capabilitiesSemanticLayerImage from "@/assets/site-page/capabilities/capabilities-semantic-layer.webp";
 import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.webp";
@@ -199,23 +200,39 @@ export const sitePages: SitePageContent[] = [
       visual: coverVisuals.capabilities,
       sourceSlides: ["slide-10", "slide-13", "slide-14", "slide-15"],
     },
+    showcase: {
+      title: "能力亮点",
+      description: "从数据承接、语义约束到能力编排，形成可组合、可治理、可落地的平台能力。",
+    },
     highlights: [
       {
         label: "数据层",
-        value: "五大数据引擎",
-        description: "Milvus、ES、Neo4j、PGSQL、MinIO 协同承接向量、全文、图谱、事实和非结构化对象。",
+        value: "多引擎事实基座",
+        description: "Milvus、ES、Neo4j、PGSQL、MinIO 分别承接向量、全文、图谱、事实和非结构化对象。",
+        visual: {
+          alt: "AI 数据平台多引擎事实基座示意图",
+          src: capabilitiesDataPlatformImage,
+        },
         sourceSlides: ["slide-13"],
       },
       {
         label: "语义层",
-        value: "领域、规则、数据语义",
-        description: "语义层定义业务是什么、业务之间如何关联，以及什么规则不可违背。",
+        value: "可约束的业务语义",
+        description: "领域语义、规则语义和数据语义共同定义业务概念、业务关系与不可违背规则。",
+        visual: {
+          alt: "知识语义层业务语义约束示意图",
+          src: capabilitiesSemanticLayerImage,
+        },
         sourceSlides: ["slide-14"],
       },
       {
         label: "开放层",
-        value: "模块化能力编排",
-        description: "通过 Skill、Context、知识处理、Orchestration、Memory 和 Tool Connector 支撑复杂业务场景。",
+        value: "可编排的业务能力",
+        description: "Skill、Context、知识处理、Orchestration、Memory 和 Tool Connector 以模块化方式支撑上层应用。",
+        visual: {
+          alt: "能力开放层业务能力编排示意图",
+          src: capabilitiesOrchestrationImage,
+        },
         sourceSlides: ["slide-15"],
       },
     ],

@@ -169,12 +169,18 @@ export type SitePageHighlight = {
   sourceSlides: SlideRef[];
 };
 
+export type SitePageShowcase = {
+  title: string;
+  description?: string;
+};
+
 export type SitePageContent = {
   href: import("@/content/site-routes").TargetSiteRoute;
   title: string;
   eyebrow: string;
   description: string;
   cover: SitePageCover;
+  showcase?: SitePageShowcase;
   highlights: SitePageHighlight[];
   summaryPoints: string[];
   sections: SitePageSection[];

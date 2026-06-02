@@ -147,6 +147,16 @@ describe("site page content", () => {
   it("keeps capabilities focused on factual capability groups", () => {
     const capabilities = sitePages.find((page) => page.href === "/capabilities");
 
+    expect(capabilities?.showcase?.title).toBe("能力亮点");
+    expect(capabilities?.showcase?.description).toBe(
+      "从数据承接、语义约束到能力编排，形成可组合、可治理、可落地的平台能力。",
+    );
+    expect(capabilities?.highlights.map((highlight) => highlight.value)).toEqual([
+      "多引擎事实基座",
+      "可约束的业务语义",
+      "可编排的业务能力",
+    ]);
+    expect(capabilities?.highlights.every((highlight) => highlight.visual)).toBe(true);
     expect(capabilities?.sections.map((section) => section.title)).toEqual([
       "能力分层",
       "知识语义层",
