@@ -37,11 +37,12 @@ describe("HomeVisual", () => {
     expect(featureImage).toHaveClass("object-cover");
   });
 
-  it("renders feature placeholders as a muted light centered label block", () => {
+  it("renders the solution overview entry as generated imagery", () => {
     const { container } = render(<HomeVisual slot={homeVisuals.solutionOverviewEntry} className="w-full" sizes="100vw" />);
 
-    expect(screen.getByText("占位图")).toBeInTheDocument();
-    expect(screen.getByTestId("home-visual-feature")).toHaveClass("bg-slate-100/80", "border-slate-200");
+    expect(screen.getByRole("img", { name: "主方案总览入口示意图" })).toBeInTheDocument();
+    expect(screen.queryByText("占位图")).not.toBeInTheDocument();
+    expect(screen.getByTestId("home-visual-feature")).toHaveClass("bg-white", "border-sky-100");
     expect(container.querySelector("svg")).toBeNull();
   });
 });

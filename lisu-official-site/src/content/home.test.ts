@@ -9,6 +9,18 @@ import {
 } from "@/content/home";
 import { siteNavMenus } from "@/content/site-nav";
 
+const getImageSource = (source: unknown) => {
+  if (typeof source === "string") {
+    return source;
+  }
+
+  if (source && typeof source === "object" && "src" in source && typeof source.src === "string") {
+    return source.src;
+  }
+
+  return "";
+};
+
 describe("home content contract", () => {
   it("maps the homepage into a multipage-entry structure", () => {
     expect(homeHero.id).toBe("hero");
@@ -67,13 +79,16 @@ describe("home content contract", () => {
 
   it("uses solution entry copy that explains knowledge assets before deeper pages exist", () => {
     expect(homeEntryBands[0]?.description).toBe(
-      "先解释平台为何不止是 AI 工具，而是把知识库、业务规则与决策链路沉淀为可追溯的企业知识资产。",
+      "展示业务人员自然语言提问，平台通过企业知识语义层和业务规则组织依据，形成“提问-回答-带依据”的可解释决策链路。",
     );
     expect(homeEntryBands[1]?.description).toBe(
-      "说明知识库中的术语、规则和数据映射如何被统一约束，让问答与决策建立在可解释的业务语义之上。",
+      "展示领域语义、规则语义、数据语义汇聚到 L5 核心语义层，通过受控生成约束回答和决策输出。",
     );
     expect(homeEntryBands[2]?.description).toBe(
-      "说明多源文档、结构化数据与召回重排如何形成可调用知识，为上层问答和智能体持续供给事实依据。",
+      "展示 ERP / CRM / BI 与文档对象进入 Milvus、ES、Neo4j、PGSQL、MinIO 多引擎底座，经混合召回、重排和上下文注入支撑上层应用。",
+    );
+    expect(homeEntryBands[3]?.description).toBe(
+      "展示 OVTP 的身份确认、操作审批、全程追溯贯穿 L2-L7，并以镜像签名、模型哈希、SBOM 留存守住生产准入底线。",
     );
     expect(homeEntryBands[4]?.description).toBe(
       "说明员工如何通过企业知识中心使用多模态知识库、知识搜索与智能体应用，让知识真正进入日常工作界面。",
@@ -94,12 +109,20 @@ describe("home content contract", () => {
     expect(homeProofSection.sourceSlides).toEqual(["slide-24", "slide-27", "slide-30"]);
   });
 
-  it("uses a shared placeholder treatment for the first four solution entry modules", () => {
+  it("uses generated WebP imagery for the first four solution entry modules", () => {
     const entryVisuals = homeEntryBands.slice(0, 4).map((band) => band.visual);
 
-    expect(entryVisuals.every((visual) => visual.kind === "placeholder")).toBe(true);
+    expect(entryVisuals.every((visual) => visual.kind === "image")).toBe(true);
+    expect(entryVisuals.map((visual) => visual.alt)).toEqual([
+      "主方案总览入口示意图",
+      "知识语义层入口示意图",
+      "AI 数据平台入口示意图",
+      "安全管控入口示意图",
+    ]);
     expect(
-      entryVisuals.every((visual) => visual.kind === "placeholder" && visual.title === "占位图" && visual.hint === ""),
+      entryVisuals.every(
+        (visual) => visual.kind === "image" && getImageSource(visual.src).includes("/assets/home/") && getImageSource(visual.src).endsWith(".webp"),
+      ),
     ).toBe(true);
   });
 });

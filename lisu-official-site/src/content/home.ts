@@ -105,7 +105,7 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "solution-overview",
     title: "主方案总览",
-    description: "先解释平台为何不止是 AI 工具，而是把知识库、业务规则与决策链路沉淀为可追溯的企业知识资产。",
+    description: "展示业务人员自然语言提问，平台通过企业知识语义层和业务规则组织依据，形成“提问-回答-带依据”的可解释决策链路。",
     visual: homeVisuals.solutionOverviewEntry,
     action: { label: "查看详情", href: "/solution", kind: "route" },
     sourceSlides: ["slide-01", "slide-07", "slide-10", "slide-20", "slide-22"],
@@ -113,7 +113,7 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "semantic-layer",
     title: "知识语义层",
-    description: "说明知识库中的术语、规则和数据映射如何被统一约束，让问答与决策建立在可解释的业务语义之上。",
+    description: "展示领域语义、规则语义、数据语义汇聚到 L5 核心语义层，通过受控生成约束回答和决策输出。",
     visual: homeVisuals.semanticLayerEntry,
     action: { label: "查看详情", href: "/capabilities/semantic-layer", kind: "route" },
     sourceSlides: ["slide-07", "slide-14"],
@@ -121,7 +121,7 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "data-platform",
     title: "AI 数据平台",
-    description: "说明多源文档、结构化数据与召回重排如何形成可调用知识，为上层问答和智能体持续供给事实依据。",
+    description: "展示 ERP / CRM / BI 与文档对象进入 Milvus、ES、Neo4j、PGSQL、MinIO 多引擎底座，经混合召回、重排和上下文注入支撑上层应用。",
     visual: homeVisuals.dataPlatformEntry,
     action: { label: "查看详情", href: "/capabilities/data-platform", kind: "route" },
     sourceSlides: ["slide-13", "slide-15", "slide-25"],
@@ -129,7 +129,7 @@ export const homeEntryBands: HomeEntryBand[] = [
   {
     id: "security",
     title: "安全管控",
-    description: "说明平台为什么能够进入核心业务生产环境，并满足运行时治理与合规审计要求。",
+    description: "展示 OVTP 的身份确认、操作审批、全程追溯贯穿 L2-L7，并以镜像签名、模型哈希、SBOM 留存守住生产准入底线。",
     visual: homeVisuals.securityEntry,
     action: { label: "查看详情", href: "/capabilities/security", kind: "route" },
     sourceSlides: ["slide-17", "slide-18"],

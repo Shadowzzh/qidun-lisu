@@ -1,10 +1,14 @@
 import capabilityVisualImage from "@/assets/home/capability-visual.jpeg";
+import dataPlatformEntryImage from "@/assets/home/data-platform-entry.webp";
 import heroBackground from "@/assets/home/hero-background.jpeg";
 import platformArchitectureOverviewDesktopImage from "@/assets/home/platform-architecture-overview-desktop.png";
 import proofCaseOneImage from "@/assets/home/proof-case-one.jpeg";
 import proofCaseTwoImage from "@/assets/home/proof-case-two.png";
 import proofTeamImage from "@/assets/home/proof-team.jpeg";
 import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
+import securityEntryImage from "@/assets/home/security-entry.webp";
+import semanticLayerEntryImage from "@/assets/home/semantic-layer-entry.webp";
+import solutionOverviewEntryImage from "@/assets/home/solution-overview-entry.webp";
 import type { HomeVisualSlot } from "@/types/site";
 
 const image1Path = "archive/ppt-source/images/image1.jpeg";
@@ -14,6 +18,14 @@ const image104Path = "archive/ppt-source/images/image104.jpeg";
 const image109Path = "archive/ppt-source/images/image109.png";
 const image122Path = "archive/ppt-source/images/image122.jpeg";
 const platformArchitectureOverviewDesktopPath = "lisu-official-site/src/assets/home/platform-architecture-overview-desktop.png";
+const solutionOverviewEntryPath =
+  "$CODEX_HOME/generated_images/019e8643-0164-7ff0-a85e-5fddd5634c7d/ig_09b7bc24fa9d19b1016a1e52d0432881918370e78aedea4d07.png";
+const semanticLayerEntryPath =
+  "$CODEX_HOME/generated_images/019e8643-0164-7ff0-a85e-5fddd5634c7d/ig_09b7bc24fa9d19b1016a1e533187f8819195e4e9d9c8fa62ce.png";
+const dataPlatformEntryPath =
+  "$CODEX_HOME/generated_images/019e8643-0164-7ff0-a85e-5fddd5634c7d/ig_09b7bc24fa9d19b1016a1e5384aec081918b84e0e899558fc3.png";
+const securityEntryPath =
+  "$CODEX_HOME/generated_images/019e8643-0164-7ff0-a85e-5fddd5634c7d/ig_09b7bc24fa9d19b1016a1e53d5cf148191808e13161961a62f.png";
 
 export const homeVisuals = {
   heroPlaceholder: {
@@ -68,40 +80,36 @@ export const homeVisuals = {
     sourceArchiveFiles: [image53Path],
   },
   solutionOverviewEntry: {
-    kind: "placeholder",
+    kind: "image",
     frame: "feature",
-    alt: "主方案总览占位图",
-    title: "占位图",
-    hint: "",
+    alt: "主方案总览入口示意图",
+    src: solutionOverviewEntryImage,
     sourceSlides: ["slide-01", "slide-07", "slide-10"],
-    sourceArchiveFiles: [],
+    sourceArchiveFiles: [solutionOverviewEntryPath],
   },
   semanticLayerEntry: {
-    kind: "placeholder",
+    kind: "image",
     frame: "feature",
-    alt: "知识语义层占位图",
-    title: "占位图",
-    hint: "",
+    alt: "知识语义层入口示意图",
+    src: semanticLayerEntryImage,
     sourceSlides: ["slide-07", "slide-14"],
-    sourceArchiveFiles: [],
+    sourceArchiveFiles: [semanticLayerEntryPath],
   },
   dataPlatformEntry: {
-    kind: "placeholder",
+    kind: "image",
     frame: "feature",
-    alt: "AI 数据平台占位图",
-    title: "占位图",
-    hint: "",
+    alt: "AI 数据平台入口示意图",
+    src: dataPlatformEntryImage,
     sourceSlides: ["slide-13", "slide-15"],
-    sourceArchiveFiles: [],
+    sourceArchiveFiles: [dataPlatformEntryPath],
   },
   securityEntry: {
-    kind: "placeholder",
+    kind: "image",
     frame: "feature",
-    alt: "安全管控占位图",
-    title: "占位图",
-    hint: "",
+    alt: "安全管控入口示意图",
+    src: securityEntryImage,
     sourceSlides: ["slide-17", "slide-18"],
-    sourceArchiveFiles: [],
+    sourceArchiveFiles: [securityEntryPath],
   },
   scenarioVisual: {
     kind: "image",
