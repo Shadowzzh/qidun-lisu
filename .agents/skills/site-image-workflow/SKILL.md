@@ -58,6 +58,8 @@ description: 当需要为骊甦官网创建、评估、迭代或替换页面区�
 
 提示词要简洁，并明确列出必须出现的文字。图片中文字优先使用短中文标签，避免长段落。
 
+图片内容不要渲染区块标题或大标题。区块 title 已经由页面文字承担，图片内部只放帮助理解画面的必要短标签。除非用户明确要求，`Required visible Chinese labels` 不要包含区块 title。
+
 基础模板：
 
 ```text
@@ -65,10 +67,10 @@ Use case: infographic-diagram
 Asset type: website section illustration, 1536x1024 landscape enterprise infographic
 Primary request: Generate an official-site image for “<区块标题>”.
 Composition: <布局说明>.
-Required visible Chinese labels: <必须出现的准确文字>.
+Required visible Chinese labels: <必须出现的准确文字，不包含区块标题>.
 Visual meaning: <这张图必须表达什么>.
 Style: clean white and light-blue enterprise SaaS infographic, restrained 3D icons, thin connector lines, soft shadows, crisp typography, no watermark, no logo, no decorative gradient blobs.
-Text constraints: prioritize Chinese text accuracy; keep text large, sharp, aligned, and not overlapping; avoid tiny placeholder lines.
+Text constraints: do not render the section title inside the image; prioritize Chinese text accuracy; keep text large, sharp, aligned, and not overlapping; avoid tiny placeholder lines.
 ```
 
 架构图要把“中间模块”和“右侧职责”分开：
@@ -80,6 +82,8 @@ Do not repeat the same wording between center and right.
 ```
 
 生成后必须检查文字。关键术语错了就重新生成，不要接受“视觉好看但核心文字错误”的图。
+
+如果图片把区块标题做成了大标题，应视为不合格，重新生成或后期裁改。
 
 ## 预览循环
 
@@ -97,6 +101,7 @@ Do not repeat the same wording between center and right.
 常见反馈处理：
 
 - 用户说“内容少了文字”：补短说明卡片。
+- 用户说“图片内容不需要 title”：移除图片内部大标题，只保留必要短标签。
 - 用户说“有点丑”：减少密度，增加留白，简化箭头，加强层级。
 - 用户说“右边和中间重复”：中间写组件名，右侧写职责或结果。
 - 用户说“接近实物”：从信息图转向真实机房、服务器或产品感图。
