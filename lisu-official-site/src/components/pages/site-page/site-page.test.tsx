@@ -15,7 +15,7 @@ describe("SitePage", () => {
     expect(hero).toHaveClass("md:min-h-[480px]");
     expect(hero.querySelector('[class*="bg-[#eef4fb]/70"]')).not.toBeInTheDocument();
     expect(within(hero).getByTestId("site-page-hero-softener")).toHaveClass("bg-[#eef4fb]/30");
-    expect(within(hero).getByTestId("site-page-hero-copy")).toHaveClass("max-w-[600px]");
+    expect(within(hero).getByTestId("site-page-hero-copy")).toHaveClass("max-w-[400px]");
     expect(screen.getByText(page.description)).toHaveClass("max-w-[560px]");
     expect(screen.getByRole("img", { name: "主方案总览封面图" })).toBeInTheDocument();
     expect(within(screen.getByTestId("site-page-hero")).queryByText("拒绝概率玩具，打造企业知识大脑。")).not.toBeInTheDocument();
@@ -108,6 +108,14 @@ describe("SitePage", () => {
     expect(screen.queryByRole("img", { name: "业务场景价值图" })).not.toBeInTheDocument();
   });
 
+  it("right-aligns scenario detail cover visuals in the hero", () => {
+    const page = getSitePageByHref("/scenarios/finance");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.getByRole("img", { name: "财务场景封面图" })).toHaveClass("object-cover", "object-right");
+  });
+
   it("uses generated solution imagery inside product page content slots", () => {
     const page = getSitePageByHref("/solution");
 
@@ -196,6 +204,18 @@ describe("SitePage", () => {
 
     expect(screen.getByTestId("site-page-scenario-grid")).toBeInTheDocument();
     expect(screen.getAllByTestId("site-page-scenario-card").length).toBeGreaterThanOrEqual(4);
+  });
+
+  it("uses scenario section imagery inside the scenarios overview cards", () => {
+    const page = getSitePageByHref("/scenarios");
+
+    render(<SitePage page={page} />);
+
+    expect(screen.getByRole("img", { name: "供应链智能决策图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "财务精准提效图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "风控合规可视图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "客服运营智能传承图" })).toBeInTheDocument();
+    expect(within(screen.getByTestId("site-page-scenario-grid")).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
   });
 
   it("uses a company layout for the about overview", () => {

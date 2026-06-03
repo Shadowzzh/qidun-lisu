@@ -155,6 +155,7 @@ export type SitePageCover = {
   title: string;
   hint: string;
   visual?: StaticImageData;
+  objectPosition?: "center" | "right";
   sourceSlides: SlideRef[];
 };
 

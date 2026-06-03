@@ -9,6 +9,10 @@ import capabilitiesSecurityGovernanceImage from "@/assets/site-page/capabilities
 import capabilitiesSemanticLayerImage from "@/assets/site-page/capabilities/capabilities-semantic-layer.webp";
 import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.webp";
 import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.webp";
+import scenarioCustomerOperationsCardCenterImage from "@/assets/site-page/scenarios/scenario-customer-operations-card-center.webp";
+import scenarioFinanceCardCenterImage from "@/assets/site-page/scenarios/scenario-finance-card-center.webp";
+import scenarioRiskControlCardCenterImage from "@/assets/site-page/scenarios/scenario-risk-control-card-center.webp";
+import scenarioSupplyChainCardCenterImage from "@/assets/site-page/scenarios/scenario-supply-chain-card-center.webp";
 import solutionArchitectureMethodImage from "@/assets/site-page/solution/solution-architecture-method-flowchart.webp";
 import solutionArchitectureImage from "@/assets/site-page/solution/solution-architecture.webp";
 import solutionComputeFoundationImage from "@/assets/site-page/solution/solution-compute-foundation.webp";
@@ -620,26 +624,45 @@ export const sitePages: SitePageContent[] = [
     sections: [
       {
         title: "供应链智能决策",
-        description: "供应链场景把专家经验、跨域规则和自然语言问答引入调货、延迟、成本和利润决策。",
+        description:
+          "围绕调货决策，沉淀专家经验与业务规则，自动关联延迟、成本和利润因果链，让供应链判断从天级协同压缩到分钟级问答与复核。",
         points: ["调货决策周期从 3 天压缩到 10 分钟。", "专家经验显性化，沉淀为数字资产。", "自动关联延迟、成本和利润因果链。"],
+        visual: {
+          alt: "供应链智能决策图",
+          src: scenarioSupplyChainCardCenterImage,
+        },
         sourceSlides: ["slide-16"],
       },
       {
         title: "财务精准提效",
-        description: "财务场景围绕预算智能、指标口径和审计支撑，把判断建立在统一知识与依据链之上。",
+        description:
+          "围绕预算编制、核心指标口径和审计材料准备，统一业务定义与依据链，让财务判断从口径对齐走向可追溯的智能分析。",
         points: ["预算智能提升编制科学性与准确性。", "核心指标统一定义，解决数据冲突。", "审计支撑材料准备从周级压缩到分钟级。"],
+        visual: {
+          alt: "财务精准提效图",
+          src: scenarioFinanceCardCenterImage,
+        },
         sourceSlides: ["slide-16"],
       },
       {
         title: "风控合规可视",
-        description: "风控场景强调规则显性、预警可解释和监管报送，让 AI 辅助判断可以进入合规管理流程。",
+        description:
+          "将风险规则、变更审批、预警解释和决策档案纳入同一治理链路，让风控结果能说明触发原因、推理路径和合规依据。",
         points: ["风险规则纳入知识大脑，变更需要审批。", "预警附带推理路径，拒绝黑盒警报。", "自动生成标准化决策档案，支撑监管报送。"],
+        visual: {
+          alt: "风控合规可视图",
+          src: scenarioRiskControlCardCenterImage,
+        },
         sourceSlides: ["slide-16"],
       },
       {
         title: "客服运营智能传承",
-        description: "客服运营场景通过业务知识、智能问答和经验沉淀，提升答复准确性、分析效率和新人培训速度。",
+        description: "基于业务知识提供精准答复，支持业务语言自助分析，并沉淀服务经验，缩短新人上岗培训周期。",
         points: ["智能客服基于业务知识提供精准答案。", "业务语言提问可生成分析图表。", "经验传承显著缩短新人上岗培训周期。"],
+        visual: {
+          alt: "客服运营智能传承图",
+          src: scenarioCustomerOperationsCardCenterImage,
+        },
         sourceSlides: ["slide-16"],
       },
       {
@@ -667,12 +690,13 @@ export const sitePages: SitePageContent[] = [
     title: "供应链场景",
     eyebrow: "场景详情",
     description:
-      "供应链场景聚焦调货决策、规则沉淀和跨域因果对齐，把专家经验转化为可复用、可追溯的数字资产。",
+      "围绕调货决策，沉淀专家经验与业务规则，自动关联延迟、成本和利润因果链，让供应链判断从天级协同压缩到分钟级问答与复核。",
     cover: {
       alt: "供应链场景业务因果链图",
       title: "供应链业务因果链",
       hint: "供应链场景围绕调货决策、延迟、成本和利润建立可解释的业务因果链。",
       visual: coverVisuals.supplyChain,
+      objectPosition: "right",
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -722,12 +746,13 @@ export const sitePages: SitePageContent[] = [
     title: "财务场景",
     eyebrow: "场景详情",
     description:
-      "财务场景聚焦预算智能、口径治理和审计支撑，让财务判断建立在统一知识与可追溯过程之上。",
+      "围绕预算编制、核心指标口径和审计材料准备，统一业务定义与依据链，让财务判断从口径对齐走向可追溯的智能分析。",
     cover: {
       alt: "财务场景口径治理图",
       title: "财务口径治理",
       hint: "财务场景聚焦预算、指标口径、审计材料和依据链的统一管理。",
       visual: coverVisuals.finance,
+      objectPosition: "right",
       sourceSlides: ["slide-16"],
     },
     highlights: [
@@ -777,12 +802,13 @@ export const sitePages: SitePageContent[] = [
     title: "风控场景",
     eyebrow: "场景详情",
     description:
-      "风控场景强调规则显性、预警可解释和监管报送，让 AI 辅助判断可以进入合规管理流程。",
+      "将风险规则、变更审批、预警解释和决策档案纳入同一治理链路，让风控结果能说明触发原因、推理路径和合规依据。",
     cover: {
       alt: "风控场景合规预警闭环图",
       title: "合规预警闭环",
       hint: "风控场景覆盖规则审批、预警解释、决策档案和监管报送链路。",
       visual: coverVisuals.riskControl,
+      objectPosition: "right",
       sourceSlides: ["slide-16", "slide-18"],
     },
     highlights: [
@@ -831,13 +857,13 @@ export const sitePages: SitePageContent[] = [
     href: "/scenarios/customer-operations",
     title: "客服运营场景",
     eyebrow: "场景详情",
-    description:
-      "客服运营场景通过业务知识、智能问答和经验沉淀，提升答复准确性、分析效率和新人培训速度。",
+    description: "基于业务知识提供精准答复，支持业务语言自助分析，并沉淀服务经验，缩短新人上岗培训周期。",
     cover: {
       alt: "客服运营场景知识运营图",
       title: "客服知识运营",
       hint: "客服运营场景聚焦知识问答、售前售后助手、经验传承和反馈闭环。",
       visual: coverVisuals.customerOperations,
+      objectPosition: "right",
       sourceSlides: ["slide-16", "slide-28"],
     },
     highlights: [

@@ -56,6 +56,43 @@ describe("site page content", () => {
     expect(sitePages.find((page) => page.href === "/about")?.title).toBe("公司介绍");
   });
 
+  it("keeps scenario descriptions grounded in slide 16 facts", () => {
+    const scenarios = sitePages.find((page) => page.href === "/scenarios");
+    const scenarioDetails = [
+      sitePages.find((page) => page.href === "/scenarios/supply-chain"),
+      sitePages.find((page) => page.href === "/scenarios/finance"),
+      sitePages.find((page) => page.href === "/scenarios/risk-control"),
+      sitePages.find((page) => page.href === "/scenarios/customer-operations"),
+    ];
+
+    expect(scenarios?.sections.slice(0, 4).map((section) => section.description)).toEqual([
+      "围绕调货决策，沉淀专家经验与业务规则，自动关联延迟、成本和利润因果链，让供应链判断从天级协同压缩到分钟级问答与复核。",
+      "围绕预算编制、核心指标口径和审计材料准备，统一业务定义与依据链，让财务判断从口径对齐走向可追溯的智能分析。",
+      "将风险规则、变更审批、预警解释和决策档案纳入同一治理链路，让风控结果能说明触发原因、推理路径和合规依据。",
+      "基于业务知识提供精准答复，支持业务语言自助分析，并沉淀服务经验，缩短新人上岗培训周期。",
+    ]);
+    expect(scenarioDetails.map((page) => page?.description)).toEqual([
+      "围绕调货决策，沉淀专家经验与业务规则，自动关联延迟、成本和利润因果链，让供应链判断从天级协同压缩到分钟级问答与复核。",
+      "围绕预算编制、核心指标口径和审计材料准备，统一业务定义与依据链，让财务判断从口径对齐走向可追溯的智能分析。",
+      "将风险规则、变更审批、预警解释和决策档案纳入同一治理链路，让风控结果能说明触发原因、推理路径和合规依据。",
+      "基于业务知识提供精准答复，支持业务语言自助分析，并沉淀服务经验，缩短新人上岗培训周期。",
+    ]);
+    expect(scenarios?.sections.slice(0, 4).every((section) => section.sourceSlides.includes("slide-16"))).toBe(true);
+    expect(scenarioDetails.every((page) => page?.sourceSlides.includes("slide-16"))).toBe(true);
+  });
+
+  it("keeps scenario cover and card visuals on purpose-specific assets", () => {
+    const scenarios = sitePages.find((page) => page.href === "/scenarios");
+
+    expect(getImagePath(scenarios?.cover.visual)).toContain("industrial-ai-cover");
+    expect(scenarios?.sections.slice(0, 4).map((section) => getImagePath(section.visual?.src))).toEqual([
+      expect.stringContaining("scenario-supply-chain-card-center"),
+      expect.stringContaining("scenario-finance-card-center"),
+      expect.stringContaining("scenario-risk-control-card-center"),
+      expect.stringContaining("scenario-customer-operations-card-center"),
+    ]);
+  });
+
   it("uses dedicated cover visuals for cases and about pages", () => {
     const casesCover = sitePages.find((page) => page.href === "/cases")?.cover.visual;
     const aboutCover = sitePages.find((page) => page.href === "/about")?.cover.visual;

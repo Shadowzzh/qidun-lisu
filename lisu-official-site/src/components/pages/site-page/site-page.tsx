@@ -25,7 +25,10 @@ function SectionVisual({
 }) {
   return (
     <div
-      className={cn("relative min-w-0 overflow-hidden border border-slate-100 bg-white p-2 md:p-3", className)}
+      className={cn(
+        "relative min-w-0 overflow-hidden border border-slate-100 bg-white p-2 md:p-3",
+        className,
+      )}
       data-testid="site-page-section-visual"
     >
       {section.visual ? (
@@ -47,6 +50,8 @@ function SectionVisual({
 
 function PageHeroBlock({ page }: SitePageProps) {
   const heroVisual = page.cover.visual ?? null;
+  const heroObjectPositionClass =
+    page.cover.objectPosition === "right" ? "object-right" : "object-center";
 
   return (
     <section
@@ -56,7 +61,7 @@ function PageHeroBlock({ page }: SitePageProps) {
       {heroVisual ? (
         <Image
           alt={`${page.title}封面图`}
-          className="object-cover object-center"
+          className={cn("object-cover", heroObjectPositionClass)}
           fill
           priority
           sizes="100vw"
@@ -70,9 +75,12 @@ function PageHeroBlock({ page }: SitePageProps) {
           title={page.cover.title}
         />
       )}
-      <div className="absolute inset-0 bg-[#eef4fb]/30" data-testid="site-page-hero-softener" />
+      <div
+        className="absolute inset-0 bg-[#eef4fb]/30"
+        data-testid="site-page-hero-softener"
+      />
       <div className="relative mx-auto flex min-h-[420px] max-w-[1200px] items-center px-5 py-16 sm:px-8 md:min-h-[480px]">
-        <div className="max-w-[600px]" data-testid="site-page-hero-copy">
+        <div className="max-w-[400px]" data-testid="site-page-hero-copy">
           <p className="text-sm font-semibold text-[#2563eb]">{page.eyebrow}</p>
           <h1 className="mt-5 max-w-3xl text-balance text-[34px] font-semibold leading-tight text-[#1f2129] md:text-[48px]">
             {page.title}
@@ -93,7 +101,9 @@ function ProductBody({ page }: SitePageProps) {
     <>
       <section aria-label={`${page.title}内容`} className="bg-white">
         <div className="mx-auto max-w-[1200px] px-5 py-16 sm:px-8 lg:py-24">
-          <h2 className="text-center text-[30px] font-medium leading-[42px] text-[#1f2129]">核心能力</h2>
+          <h2 className="text-center text-[30px] font-medium leading-[42px] text-[#1f2129]">
+            核心能力
+          </h2>
           <div className="mt-12 space-y-16 lg:mt-[60px] lg:space-y-20">
             {page.sections.map((section, index) => {
               return (
@@ -109,7 +119,9 @@ function ProductBody({ page }: SitePageProps) {
                     <h3 className="mt-4 text-balance text-[22px] font-medium leading-8 text-[#1f2129] md:text-[30px] md:leading-[42px]">
                       {section.title}
                     </h3>
-                    <p className="mt-5 text-pretty text-sm leading-7 text-[#54657e]">{section.description}</p>
+                    <p className="mt-5 text-pretty text-sm leading-7 text-[#54657e]">
+                      {section.description}
+                    </p>
                   </div>
 
                   <SectionVisual
@@ -124,7 +136,10 @@ function ProductBody({ page }: SitePageProps) {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-[#f5f8fc]" data-testid="site-page-showcase">
+      <section
+        className="relative overflow-hidden bg-[#f5f8fc]"
+        data-testid="site-page-showcase"
+      >
         <div className="mx-auto max-w-[1200px] px-5 py-14 sm:px-8 md:py-[60px]">
           <div className="mx-auto max-w-[760px] text-center">
             <h2 className="text-balance text-[30px] font-medium leading-[42px] text-[#1f2129]">
@@ -154,15 +169,23 @@ function ProductBody({ page }: SitePageProps) {
                         src={highlight.visual.src}
                       />
                     ) : (
-                      <PlaceholderVisual fill hint={page.cover.hint} title={highlight.label} />
+                      <PlaceholderVisual
+                        fill
+                        hint={page.cover.hint}
+                        title={highlight.label}
+                      />
                     )}
                   </div>
                   <div className="p-5">
-                    <p className="text-sm font-medium text-[#2563eb]">{highlight.label}</p>
+                    <p className="text-sm font-medium text-[#2563eb]">
+                      {highlight.label}
+                    </p>
                     <h3 className="mt-3 line-clamp-2 min-h-[56px] text-balance text-xl font-medium leading-7 text-[#1f2129]">
                       {highlight.value}
                     </h3>
-                    <p className="mt-3 text-pretty text-sm leading-7 text-[#54657e]">{highlight.description}</p>
+                    <p className="mt-3 text-pretty text-sm leading-7 text-[#54657e]">
+                      {highlight.description}
+                    </p>
                   </div>
                 </article>
               );
@@ -198,17 +221,38 @@ function ScenarioOverview({ page }: SitePageProps) {
                 data-testid="site-page-scenario-card"
               >
                 <div className="relative h-[220px] bg-[#e6effa]">
-                  <PlaceholderVisual fill hint={page.cover.hint} title={section.title} />
+                  {section.visual ? (
+                    <Image
+                      alt={section.visual.alt}
+                      className="object-cover object-center"
+                      fill
+                      sizes="(min-width: 768px) 560px, 100vw"
+                      src={section.visual.src}
+                    />
+                  ) : (
+                    <PlaceholderVisual
+                      fill
+                      hint={page.cover.hint}
+                      title={section.title}
+                    />
+                  )}
                 </div>
                 <div className="p-7">
                   <p className="tabular-nums text-sm font-semibold text-[#2563eb]">
                     0{index + 1}
                   </p>
-                  <h3 className="mt-4 text-balance text-2xl font-semibold text-[#111827]">{section.title}</h3>
-                  <p className="mt-5 text-pretty text-sm leading-7 text-[#516070]">{section.description}</p>
+                  <h3 className="mt-4 text-balance text-2xl font-semibold text-[#111827]">
+                    {section.title}
+                  </h3>
+                  <p className="mt-5 text-pretty text-sm leading-7 text-[#516070]">
+                    {section.description}
+                  </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {section.points.slice(0, 3).map((point) => (
-                      <span key={point} className="rounded-full border border-[#d8e1ef] px-3 py-1 text-sm text-[#3d4b5f]">
+                      <span
+                        key={point}
+                        className="rounded-full border border-[#d8e1ef] px-3 py-1 text-sm text-[#3d4b5f]"
+                      >
                         {point}
                       </span>
                     ))}
@@ -233,17 +277,24 @@ function ScenarioOverview({ page }: SitePageProps) {
 }
 
 function CaseOverview({ page }: SitePageProps) {
-  const caseSections = page.sections.filter((section) => section.title.includes("汽车") || section.title.includes("叉车"));
+  const caseSections = page.sections.filter(
+    (section) =>
+      section.title.includes("汽车") || section.title.includes("叉车"),
+  );
 
   return (
     <section className="bg-[#f5f8fc]" data-testid="site-page-case-list">
       <div className="mx-auto grid max-w-[1220px] gap-8 px-5 py-16 sm:px-8 lg:py-24">
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold text-[#2563eb]">Customer Practice</p>
+          <p className="text-sm font-semibold text-[#2563eb]">
+            Customer Practice
+          </p>
           <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827] sm:text-4xl">
             客户实践
           </h2>
-          <p className="mt-5 text-pretty text-base leading-8 text-[#516070]">{page.description}</p>
+          <p className="mt-5 text-pretty text-base leading-8 text-[#516070]">
+            {page.description}
+          </p>
         </div>
 
         <div className="grid gap-6">
@@ -264,11 +315,16 @@ function CaseOverview({ page }: SitePageProps) {
                     <h3 className="mt-4 text-balance text-2xl font-semibold text-[#111827]">
                       {section.title}
                     </h3>
-                    <p className="mt-5 text-pretty text-base leading-8 text-[#516070]">{section.description}</p>
+                    <p className="mt-5 text-pretty text-base leading-8 text-[#516070]">
+                      {section.description}
+                    </p>
                   </div>
                   <div className="mt-8 flex flex-wrap gap-2">
                     {section.points.slice(0, 3).map((point) => (
-                      <span key={point} className="rounded-full border border-[#d8e1ef] px-3 py-1 text-sm text-[#3d4b5f]">
+                      <span
+                        key={point}
+                        className="rounded-full border border-[#d8e1ef] px-3 py-1 text-sm text-[#3d4b5f]"
+                      >
                         {point}
                       </span>
                     ))}
@@ -284,7 +340,11 @@ function CaseOverview({ page }: SitePageProps) {
                   ) : null}
                 </div>
 
-                <SectionVisual className="min-h-[280px] bg-[#dce7f8]" hint={page.cover.hint} section={section} />
+                <SectionVisual
+                  className="min-h-[280px] bg-[#dce7f8]"
+                  hint={page.cover.hint}
+                  section={section}
+                />
               </article>
             );
           })}
@@ -295,7 +355,9 @@ function CaseOverview({ page }: SitePageProps) {
 }
 
 function CompanyOverview({ page }: SitePageProps) {
-  const teamSections = page.sections.filter((section) => section.title.includes("能力"));
+  const teamSections = page.sections.filter((section) =>
+    section.title.includes("能力"),
+  );
 
   return (
     <div data-testid="site-page-company">
@@ -305,32 +367,47 @@ function CompanyOverview({ page }: SitePageProps) {
           <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827] sm:text-4xl">
             {page.title}
           </h2>
-          <p className="mt-6 text-pretty text-base leading-8 text-[#516070]">{page.description}</p>
+          <p className="mt-6 text-pretty text-base leading-8 text-[#516070]">
+            {page.description}
+          </p>
           <div className="mt-8 grid gap-4">
             {page.summaryPoints.slice(0, 3).map((point) => (
-              <p key={point} className="rounded-lg border border-[#e1eaf5] bg-white p-5 text-sm leading-7 text-[#516070]">
+              <p
+                key={point}
+                className="rounded-lg border border-[#e1eaf5] bg-white p-5 text-sm leading-7 text-[#516070]"
+              >
                 {point}
               </p>
             ))}
           </div>
         </div>
         <div className="relative min-h-[360px] overflow-hidden rounded-lg bg-[#edf3fb]">
-          <PlaceholderVisual fill hint={page.cover.hint} title={page.cover.title} />
+          <PlaceholderVisual
+            fill
+            hint={page.cover.hint}
+            title={page.cover.title}
+          />
         </div>
       </section>
 
       <section className="bg-[#f5f8fc] px-5 py-16 sm:px-8 lg:py-24">
         <div className="mx-auto max-w-[1220px]">
           <p className="text-sm font-semibold text-[#2563eb]">Team</p>
-          <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827]">核心团队</h2>
+          <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827]">
+            核心团队
+          </h2>
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {teamSections.slice(0, 3).map((section) => (
               <article
                 className="rounded-lg border border-[#e1eaf5] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
                 key={section.title}
               >
-                <h3 className="text-xl font-semibold text-[#111827]">{section.title}</h3>
-                <p className="mt-4 text-pretty text-base leading-8 text-[#516070]">{section.description}</p>
+                <h3 className="text-xl font-semibold text-[#111827]">
+                  {section.title}
+                </h3>
+                <p className="mt-4 text-pretty text-base leading-8 text-[#516070]">
+                  {section.description}
+                </p>
               </article>
             ))}
           </div>
@@ -339,16 +416,24 @@ function CompanyOverview({ page }: SitePageProps) {
 
       <section className="mx-auto w-full max-w-[1220px] px-5 py-16 sm:px-8 lg:py-24">
         <p className="text-sm font-semibold text-[#2563eb]">Contact</p>
-        <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827]">联系我们</h2>
+        <h2 className="mt-3 text-balance text-3xl font-semibold text-[#111827]">
+          联系我们
+        </h2>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {page.highlights.slice(0, 2).map((highlight) => (
             <article
               className="rounded-lg border border-[#e1eaf5] bg-white p-7 shadow-[0_18px_45px_rgba(15,23,42,0.05)]"
               key={highlight.label}
             >
-              <p className="text-sm font-medium text-[#2563eb]">{highlight.label}</p>
-              <h3 className="mt-4 text-balance text-xl font-semibold text-[#111827]">{highlight.value}</h3>
-              <p className="mt-4 text-pretty text-base leading-8 text-[#516070]">{highlight.description}</p>
+              <p className="text-sm font-medium text-[#2563eb]">
+                {highlight.label}
+              </p>
+              <h3 className="mt-4 text-balance text-xl font-semibold text-[#111827]">
+                {highlight.value}
+              </h3>
+              <p className="mt-4 text-pretty text-base leading-8 text-[#516070]">
+                {highlight.description}
+              </p>
             </article>
           ))}
         </div>
@@ -364,7 +449,9 @@ function RelatedPagesNav({ page }: SitePageProps) {
         <div className="grid gap-6 md:grid-cols-[0.7fr_1.3fr] md:items-center">
           <div>
             <p className="text-sm font-semibold text-[#2563eb]">Next</p>
-            <h2 className="mt-2 text-balance text-2xl font-semibold text-[#1f2129]">继续浏览</h2>
+            <h2 className="mt-2 text-balance text-2xl font-semibold text-[#1f2129]">
+              继续浏览
+            </h2>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
             {page.relatedLinks.map((link) => (
