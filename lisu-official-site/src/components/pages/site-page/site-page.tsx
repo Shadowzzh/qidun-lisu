@@ -14,6 +14,42 @@ function getSectionVisualLabel(index: number) {
   return String(index + 1).padStart(2, "0");
 }
 
+function getScenarioVisualAspectRatio(section: SitePageSection) {
+  const visualSrc = section.visual?.src as
+    | { height?: number; src?: string; width?: number }
+    | string
+    | undefined;
+
+  if (
+    visualSrc &&
+    typeof visualSrc === "object" &&
+    typeof visualSrc.width === "number" &&
+    typeof visualSrc.height === "number"
+  ) {
+    return `${visualSrc.width} / ${visualSrc.height}`;
+  }
+
+  const visualPath = typeof visualSrc === "string" ? visualSrc : visualSrc?.src;
+
+  if (visualPath?.includes("scenario-supply-chain-card-center")) {
+    return "1827 / 861";
+  }
+
+  if (visualPath?.includes("scenario-finance-card-center")) {
+    return "1827 / 861";
+  }
+
+  if (visualPath?.includes("scenario-risk-control-card-center")) {
+    return "2172 / 724";
+  }
+
+  if (visualPath?.includes("scenario-customer-operations-card-center")) {
+    return "2172 / 724";
+  }
+
+  return "16 / 9";
+}
+
 function SectionVisual({
   className,
   hint,
@@ -213,6 +249,7 @@ function ScenarioOverview({ page }: SitePageProps) {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {page.sections.slice(0, 4).map((section, index) => {
             const link = page.relatedLinks[index];
+            const visualAspectRatio = getScenarioVisualAspectRatio(section);
 
             return (
               <article
@@ -220,11 +257,15 @@ function ScenarioOverview({ page }: SitePageProps) {
                 className="overflow-hidden rounded-[4px] bg-white shadow-[0_12px_32px_rgba(95,126,189,0.12)]"
                 data-testid="site-page-scenario-card"
               >
-                <div className="relative h-[220px] bg-[#e6effa]">
+                <div
+                  className="relative bg-[#e6effa]"
+                  data-testid="site-page-scenario-visual"
+                  style={{ aspectRatio: visualAspectRatio }}
+                >
                   {section.visual ? (
                     <Image
                       alt={section.visual.alt}
-                      className="object-cover object-center"
+                      className="object-contain object-center"
                       fill
                       sizes="(min-width: 768px) 560px, 100vw"
                       src={section.visual.src}

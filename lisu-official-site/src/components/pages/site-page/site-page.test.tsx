@@ -218,6 +218,20 @@ describe("SitePage", () => {
     expect(within(screen.getByTestId("site-page-scenario-grid")).queryByTestId("site-placeholder-visual")).not.toBeInTheDocument();
   });
 
+  it("sizes scenario overview imagery from each image aspect ratio", () => {
+    const page = getSitePageByHref("/scenarios");
+
+    render(<SitePage page={page} />);
+
+    const visuals = screen.getAllByTestId("site-page-scenario-visual");
+
+    expect(visuals[0].style.aspectRatio).toBe("1827 / 861");
+    expect(visuals[1].style.aspectRatio).toBe("1827 / 861");
+    expect(visuals[2].style.aspectRatio).toBe("2172 / 724");
+    expect(visuals[3].style.aspectRatio).toBe("2172 / 724");
+    expect(screen.getByRole("img", { name: "供应链智能决策图" })).toHaveClass("object-contain", "object-center");
+  });
+
   it("uses a company layout for the about overview", () => {
     const page = getSitePageByHref("/about");
 
