@@ -90,6 +90,11 @@ describe("SitePage", () => {
     const relatedRegion = screen.getByRole("navigation", { name: "相关页面" });
 
     expect(screen.getByRole("heading", { level: 1, name: "知识语义层" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "企业知识大脑语义架构示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "受控生成闭环示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "语义边界统一业务定义示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "语义映射打通概念规则与数据示意图" })).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "受控生成可审计决策链路示意图" })).toBeInTheDocument();
     expect(within(relatedRegion).getByRole("link", { name: "能力总览" })).toHaveAttribute("href", "/capabilities");
     expect(within(relatedRegion).getByRole("link", { name: "AI 数据平台" })).toHaveAttribute(
       "href",
@@ -141,9 +146,12 @@ describe("SitePage", () => {
 
     render(<SitePage page={page} />);
 
+    const sections = screen.getAllByTestId("site-page-section");
     const firstVisual = screen.getAllByTestId("site-page-section-visual")[0];
     const firstImage = within(firstVisual).getByRole("img", { name: "企业 AI 生产化建设必要性示意图" });
 
+    expect(sections[0]).toHaveClass("lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)]");
+    expect(sections[1]).toHaveClass("lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)]", "lg:[&>*:first-child]:order-2");
     expect(firstVisual).toHaveClass("aspect-[3/2]", "bg-white", "border", "border-slate-100", "p-2", "md:p-3");
     expect(firstVisual).not.toHaveClass("bg-[#f4f7fb]");
     expect(firstImage).toHaveClass("object-cover", "object-center");
@@ -153,7 +161,7 @@ describe("SitePage", () => {
     expect(firstImage).not.toHaveClass("md:p-3");
   });
 
-  it("renders archive-matched body visuals for case detail pages and keeps about body placeholders", () => {
+  it("renders archive-matched body visuals for case detail pages and the about company matrix", () => {
     const casePage = getSitePageByHref("/cases/auto-parts");
     const { unmount } = render(<SitePage page={casePage} />);
 
@@ -165,8 +173,8 @@ describe("SitePage", () => {
     const aboutPage = getSitePageByHref("/about");
     render(<SitePage page={aboutPage} />);
 
+    expect(screen.getByRole("img", { name: "公司能力矩阵与交付路径示意图" })).toBeInTheDocument();
     expect(screen.queryByRole("img", { name: "核心团队缩略图" })).not.toBeInTheDocument();
-    expect(screen.getAllByTestId("site-placeholder-visual").length).toBeGreaterThanOrEqual(1);
   });
 
   it("renders archive-matched visuals for the cases overview cards", () => {
@@ -238,6 +246,13 @@ describe("SitePage", () => {
     render(<SitePage page={page} />);
 
     expect(screen.getByTestId("site-page-company")).toBeInTheDocument();
+    const companyVisual = screen.getByTestId("site-page-company-visual");
+    const companyImage = screen.getByRole("img", { name: "公司能力矩阵与交付路径示意图" });
+
+    expect(companyVisual).toHaveClass("aspect-[3/2]", "p-2", "md:p-3");
+    expect(companyImage).toBeInTheDocument();
+    expect(companyImage).toHaveClass("object-contain", "object-center");
+    expect(companyImage).not.toHaveClass("p-4");
     expect(screen.getByRole("heading", { level: 2, name: "核心团队" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 2, name: "联系我们" })).toBeInTheDocument();
   });

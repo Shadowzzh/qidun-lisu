@@ -142,10 +142,18 @@ function ProductBody({ page }: SitePageProps) {
           </h2>
           <div className="mt-12 space-y-16 lg:mt-[60px] lg:space-y-20">
             {page.sections.map((section, index) => {
+              const isMirroredSection = index % 2 === 1;
+              const sectionGridClassName = cn(
+                "grid items-center gap-10",
+                isMirroredSection
+                  ? "lg:grid-cols-[minmax(0,1fr)_minmax(0,380px)] lg:[&>*:first-child]:order-2"
+                  : "lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)]",
+              );
+
               return (
                 <article
                   key={section.title}
-                  className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_560px] lg:[&:nth-child(even)>*:first-child]:order-2"
+                  className={sectionGridClassName}
                   data-testid="site-page-section"
                 >
                   <div className="min-w-0">
@@ -422,12 +430,27 @@ function CompanyOverview({ page }: SitePageProps) {
             ))}
           </div>
         </div>
-        <div className="relative min-h-[360px] overflow-hidden rounded-lg bg-[#edf3fb]">
-          <PlaceholderVisual
-            fill
-            hint={page.cover.hint}
-            title={page.cover.title}
-          />
+        <div
+          className="relative aspect-[3/2] overflow-hidden rounded-[4px] border border-[#e1eaf5] bg-white p-2 md:p-3"
+          data-testid="site-page-company-visual"
+        >
+          {page.cover.detailVisual ? (
+            <div className="relative size-full">
+              <Image
+                alt={page.cover.detailVisual.alt}
+                className="object-contain object-center"
+                fill
+                sizes="(min-width: 1024px) 640px, 100vw"
+                src={page.cover.detailVisual.src}
+              />
+            </div>
+          ) : (
+            <PlaceholderVisual
+              fill
+              hint={page.cover.hint}
+              title={page.cover.title}
+            />
+          )}
         </div>
       </section>
 

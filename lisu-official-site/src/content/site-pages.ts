@@ -1,11 +1,17 @@
 import { coverVisuals } from "@/assets/cover";
 import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
+import aboutCompanyMatrixImage from "@/assets/site-page/about-company-matrix.webp";
 import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.webp";
 import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.webp";
 import capabilitiesDataPlatformImage from "@/assets/site-page/capabilities/capabilities-data-platform.webp";
 import capabilitiesLayeringImage from "@/assets/site-page/capabilities/capabilities-layering.webp";
 import capabilitiesOrchestrationImage from "@/assets/site-page/capabilities/capabilities-orchestration.webp";
 import capabilitiesSecurityGovernanceImage from "@/assets/site-page/capabilities/capabilities-security-governance.webp";
+import capabilitiesSemanticLayerControlledGenerationImage from "@/assets/site-page/capabilities/capabilities-semantic-layer-controlled-generation.webp";
+import capabilitiesSemanticLayerHighlightBoundaryImage from "@/assets/site-page/capabilities/capabilities-semantic-layer-highlight-boundary.webp";
+import capabilitiesSemanticLayerHighlightControlledGenerationImage from "@/assets/site-page/capabilities/capabilities-semantic-layer-highlight-controlled-generation.webp";
+import capabilitiesSemanticLayerHighlightMappingImage from "@/assets/site-page/capabilities/capabilities-semantic-layer-highlight-mapping.webp";
+import capabilitiesSemanticLayerKnowledgeBrainImage from "@/assets/site-page/capabilities/capabilities-semantic-layer-knowledge-brain.webp";
 import capabilitiesSemanticLayerImage from "@/assets/site-page/capabilities/capabilities-semantic-layer.webp";
 import forkliftKnowledgeGraphImage from "@/assets/site-page/forklift-knowledge-graph.webp";
 import forkliftProcessMapImage from "@/assets/site-page/forklift-process-map.webp";
@@ -269,7 +275,7 @@ export const sitePages: SitePageContent[] = [
           "知识语义层是从数据智能走向知识智能的关键能力，负责把业务概念、规则和数据映射统一起来。",
         points: [
           "领域语义定义供应链、订单等核心业务概念与关系。",
-          "规则语义定义延迟到利润等业务逻辑与风控阈值。",
+          "规则语义定义延迟→利润等业务逻辑与风控阈值。",
           "数据语义建立表字段、API 与上层业务概念的映射。",
         ],
         visual: {
@@ -340,27 +346,39 @@ export const sitePages: SitePageContent[] = [
     cover: {
       alt: "知识语义层语义约束生成图",
       title: "语义约束生成",
-      hint: "受控生成闭环覆盖语义解析、规则执行、生成框架、LLM 润色和全路径溯源。",
+      hint: "受控生成闭环覆盖语义解析、规则执行、结构化决策链、边界内表达和全路径溯源。",
       visual: coverVisuals.semanticLayer,
       sourceSlides: ["slide-14"],
     },
     highlights: [
       {
-        label: "核心定位",
-        value: "企业知识大脑",
-        description: "语义层定义业务概念、业务关系和不可违背规则，为 LLM 提供企业定义的语义边界。",
+        label: "语义边界",
+        value: "统一业务定义",
+        description: "把业务概念、业务关系和不可违背规则沉淀为企业统一语义边界，让模型输出运行在企业定义的语义边界内。",
+        visual: {
+          alt: "语义边界统一业务定义示意图",
+          src: capabilitiesSemanticLayerHighlightBoundaryImage,
+        },
         sourceSlides: ["slide-14"],
       },
       {
-        label: "语义范围",
-        value: "三类语义",
-        description: "领域语义、规则语义和数据语义共同建立业务、规则和数据之间的映射。",
+        label: "语义映射",
+        value: "打通概念、规则与数据",
+        description: "以领域语义、规则语义和数据语义连接业务概念、业务逻辑、字段与 API，让自然语言问题能落到可计算对象。",
+        visual: {
+          alt: "语义映射打通概念规则与数据示意图",
+          src: capabilitiesSemanticLayerHighlightMappingImage,
+        },
         sourceSlides: ["slide-14"],
       },
       {
-        label: "生成机制",
-        value: "受控生成",
-        description: "语义解析、规则执行、生成框架、LLM 润色和可审计溯源共同约束输出。",
+        label: "受控生成",
+        value: "可审计的决策链路",
+        description: "通过语义解析、规则执行、结构化决策链和边界内表达输出结果，并附带全路径溯源。",
+        visual: {
+          alt: "受控生成可审计决策链路示意图",
+          src: capabilitiesSemanticLayerHighlightControlledGenerationImage,
+        },
         sourceSlides: ["slide-14"],
       },
     ],
@@ -372,19 +390,27 @@ export const sitePages: SitePageContent[] = [
         description: "语义层不是数据库结构，而是企业统一的业务语义架构。",
         points: [
           "领域语义定义供应链、订单等核心业务概念与关系。",
-          "规则语义定义延迟到利润等业务逻辑与风控阈值。",
+          "规则语义定义延迟→利润等业务逻辑与风控阈值。",
           "数据语义建立字段、API 和上层业务概念映射。",
         ],
+        visual: {
+          alt: "企业知识大脑语义架构示意图",
+          src: capabilitiesSemanticLayerKnowledgeBrainImage,
+        },
         sourceSlides: ["slide-14"],
       },
       {
         title: "受控生成",
-        description: "平台通过语义解析、规则执行、生成框架和 LLM 润色，让自然语言结果始终运行在业务边界内。",
+        description: "平台通过语义解析、规则执行、结构化决策链和边界内表达，让自然语言结果始终运行在业务边界内。",
         points: [
           "先识别业务概念，再进入确定性规则计算。",
           "输出结构化决策链，避免黑箱答案直接进入核心流程。",
           "附带全路径溯源，支撑复核、追责和审计。",
         ],
+        visual: {
+          alt: "受控生成闭环示意图",
+          src: capabilitiesSemanticLayerControlledGenerationImage,
+        },
         sourceSlides: ["slide-14"],
       },
     ],
@@ -1141,6 +1167,10 @@ export const sitePages: SitePageContent[] = [
       title: "骊甦团队与方案",
       hint: "公司能力由团队背景、平台方案和制造业案例共同支撑。",
       visual: coverVisuals.about,
+      detailVisual: {
+        alt: "公司能力矩阵与交付路径示意图",
+        src: aboutCompanyMatrixImage,
+      },
       sourceSlides: ["slide-01", "slide-30"],
     },
     highlights: [

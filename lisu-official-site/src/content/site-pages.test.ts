@@ -222,6 +222,33 @@ describe("site page content", () => {
     ]);
   });
 
+  it("frames semantic layer highlights as factual capability outputs", () => {
+    const semanticLayer = sitePages.find((page) => page.href === "/capabilities/semantic-layer");
+
+    expect(semanticLayer?.highlights.map((highlight) => highlight.label)).toEqual(["语义边界", "语义映射", "受控生成"]);
+    expect(semanticLayer?.highlights.map((highlight) => highlight.value)).toEqual([
+      "统一业务定义",
+      "打通概念、规则与数据",
+      "可审计的决策链路",
+    ]);
+    expect(semanticLayer?.highlights.map((highlight) => highlight.description)).toEqual([
+      "把业务概念、业务关系和不可违背规则沉淀为企业统一语义边界，让模型输出运行在企业定义的语义边界内。",
+      "以领域语义、规则语义和数据语义连接业务概念、业务逻辑、字段与 API，让自然语言问题能落到可计算对象。",
+      "通过语义解析、规则执行、结构化决策链和边界内表达输出结果，并附带全路径溯源。",
+    ]);
+    expect(semanticLayer?.highlights.map((highlight) => highlight.visual?.alt)).toEqual([
+      "语义边界统一业务定义示意图",
+      "语义映射打通概念规则与数据示意图",
+      "受控生成可审计决策链路示意图",
+    ]);
+    expect(semanticLayer?.highlights.map((highlight) => getImagePath(highlight.visual?.src))).toEqual([
+      expect.stringContaining("capabilities-semantic-layer-highlight-boundary"),
+      expect.stringContaining("capabilities-semantic-layer-highlight-mapping"),
+      expect.stringContaining("capabilities-semantic-layer-highlight-controlled-generation"),
+    ]);
+    expect(semanticLayer?.highlights.every((highlight) => highlight.sourceSlides.includes("slide-14"))).toBe(true);
+  });
+
   it("keeps customer-facing copy free from internal planning language", () => {
     const internalCopyPatterns = [
       /首页/,
