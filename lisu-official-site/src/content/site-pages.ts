@@ -3,6 +3,9 @@ import scenarioVisualImage from "@/assets/home/scenario-visual.jpeg";
 import aboutCompanyMatrixImage from "@/assets/site-page/about-company-matrix.webp";
 import autoPartsKnowledgeHubImage from "@/assets/site-page/auto-parts-knowledge-hub.webp";
 import autoPartsKnowledgeWorkspaceImage from "@/assets/site-page/auto-parts-knowledge-workspace.webp";
+import capabilitiesDataPlatformKnowledgeHubImage from "@/assets/site-page/capabilities/capabilities-data-platform-knowledge-hub.webp";
+import capabilitiesDataPlatformMultiEngineImage from "@/assets/site-page/capabilities/capabilities-data-platform-multi-engine.webp";
+import capabilitiesDataPlatformRagFlowImage from "@/assets/site-page/capabilities/capabilities-data-platform-rag-flow.webp";
 import capabilitiesDataPlatformImage from "@/assets/site-page/capabilities/capabilities-data-platform.webp";
 import capabilitiesLayeringImage from "@/assets/site-page/capabilities/capabilities-layering.webp";
 import capabilitiesOrchestrationImage from "@/assets/site-page/capabilities/capabilities-orchestration.webp";
@@ -458,20 +461,47 @@ export const sitePages: SitePageContent[] = [
     sections: [
       {
         title: "多引擎协同",
-        description: "平台组合 Milvus、ES、Neo4j、PGSQL 和 MinIO，分别承接向量、全文、图谱、事实和非结构化对象。",
-        points: ["Milvus 负责稠密向量检索。", "ES 支撑全文和日志快速索引。", "Neo4j 承接语义存储与推理。"],
+        description:
+          "平台不替换原有 ERP、CRM、BI 等业务系统，而是在其上建立统一的数据与知识承接层，让不同类型数据进入适合的检索、推理和存储引擎。",
+        points: [
+          "Milvus 承接向量检索，支撑语义相似度召回。",
+          "ES 承接全文与日志索引，提升关键词和过程记录检索效率。",
+          "Neo4j、PGSQL 和 MinIO 分别承接图谱关系、结构化事实和非结构化对象。",
+        ],
+        visual: {
+          alt: "AI 数据平台多引擎协同示意图",
+          src: capabilitiesDataPlatformMultiEngineImage,
+        },
         sourceSlides: ["slide-13"],
       },
       {
         title: "知识增强数据流",
-        description: "从查询意图识别到用户反馈，平台建立可持续更新的 RAG/KAG 流程。",
-        points: ["多路并行混合召回提升覆盖率。", "知识处理引擎融合与重排序提升准确性。", "幻觉检测和精准上下文注入控制输出边界。"],
+        description:
+          "平台将一次自然语言查询拆解为可治理的数据流，从意图识别、混合召回到重排序、幻觉检测和上下文注入，控制答案生成的依据边界。",
+        points: [
+          "先识别 Query 意图，再进行多路并行混合召回。",
+          "通过知识处理引擎融合、重排序和幻觉检测提升答案可信度。",
+          "将精准上下文注入 LLM，并通过用户反馈持续更新知识链路。",
+        ],
+        visual: {
+          alt: "AI 数据平台知识增强数据流示意图",
+          src: capabilitiesDataPlatformRagFlowImage,
+        },
         sourceSlides: ["slide-13"],
       },
       {
         title: "企业知识中台",
-        description: "在企业内部文档、知识库、权限和流程中统一管理知识资产。",
-        points: ["支持文档同步、文件上传和内网文档处理。", "承接知识空间、知识库、专业词库和日志管理。", "为知识检索、智能问答和后续智能体应用供给知识。"],
+        description:
+          "平台把企业内部文档、知识库、专业词库、权限流程和运行日志纳入统一管理，让知识不只可检索，也能被运营、治理和复用。",
+        points: [
+          "支持文档同步、文件上传和内网文档处理，沉淀企业知识资产。",
+          "通过知识空间、知识库和专业词库管理不同业务域的知识口径。",
+          "结合权限、日志和运营管理，为问答、检索和智能体应用持续供给知识。",
+        ],
+        visual: {
+          alt: "AI 数据平台企业知识中台示意图",
+          src: capabilitiesDataPlatformKnowledgeHubImage,
+        },
         sourceSlides: ["slide-25", "slide-26"],
       },
     ],

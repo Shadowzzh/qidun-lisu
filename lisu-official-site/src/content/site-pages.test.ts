@@ -249,6 +249,44 @@ describe("site page content", () => {
     expect(semanticLayer?.highlights.every((highlight) => highlight.sourceSlides.includes("slide-14"))).toBe(true);
   });
 
+  it("frames data platform core capabilities as enterprise data and knowledge operations", () => {
+    const dataPlatform = sitePages.find((page) => page.href === "/capabilities/data-platform");
+
+    expect(dataPlatform?.sections.map((section) => section.title)).toEqual(["多引擎协同", "知识增强数据流", "企业知识中台"]);
+    expect(dataPlatform?.sections.map((section) => section.description)).toEqual([
+      "平台不替换原有 ERP、CRM、BI 等业务系统，而是在其上建立统一的数据与知识承接层，让不同类型数据进入适合的检索、推理和存储引擎。",
+      "平台将一次自然语言查询拆解为可治理的数据流，从意图识别、混合召回到重排序、幻觉检测和上下文注入，控制答案生成的依据边界。",
+      "平台把企业内部文档、知识库、专业词库、权限流程和运行日志纳入统一管理，让知识不只可检索，也能被运营、治理和复用。",
+    ]);
+    expect(dataPlatform?.sections.map((section) => section.points)).toEqual([
+      [
+        "Milvus 承接向量检索，支撑语义相似度召回。",
+        "ES 承接全文与日志索引，提升关键词和过程记录检索效率。",
+        "Neo4j、PGSQL 和 MinIO 分别承接图谱关系、结构化事实和非结构化对象。",
+      ],
+      [
+        "先识别 Query 意图，再进行多路并行混合召回。",
+        "通过知识处理引擎融合、重排序和幻觉检测提升答案可信度。",
+        "将精准上下文注入 LLM，并通过用户反馈持续更新知识链路。",
+      ],
+      [
+        "支持文档同步、文件上传和内网文档处理，沉淀企业知识资产。",
+        "通过知识空间、知识库和专业词库管理不同业务域的知识口径。",
+        "结合权限、日志和运营管理，为问答、检索和智能体应用持续供给知识。",
+      ],
+    ]);
+    expect(dataPlatform?.sections.map((section) => section.visual?.alt)).toEqual([
+      "AI 数据平台多引擎协同示意图",
+      "AI 数据平台知识增强数据流示意图",
+      "AI 数据平台企业知识中台示意图",
+    ]);
+    expect(dataPlatform?.sections.map((section) => getImagePath(section.visual?.src))).toEqual([
+      expect.stringContaining("capabilities-data-platform-multi-engine"),
+      expect.stringContaining("capabilities-data-platform-rag-flow"),
+      expect.stringContaining("capabilities-data-platform-knowledge-hub"),
+    ]);
+  });
+
   it("keeps customer-facing copy free from internal planning language", () => {
     const internalCopyPatterns = [
       /首页/,
